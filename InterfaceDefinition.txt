@@ -1,0 +1,41 @@
+RoomGuests room1Guests = new RoomGuests(adults: 2, childs: 1);
+RoomGuests room2Guests = new RoomGuests(adults: 2, childs: 1);
+
+List<RoomType> availibleRoomTypes1 = HotelSystem.Reservations.GetAvailibleRoomTypes(room1Guests);
+List<RoomType> availibleRoomTypes2 = HotelSystem.Reservations.GetAvailibleRoomTypes(room2Guests);
+
+//select a room type
+RoomType roomType1 = availibleRoomTypes1.First();
+RoomType roomType2 = availibleRoomTypes2.First();
+            
+List<RoomBooking> roomInterests = new List<RoomBooking>
+{
+    new RoomBooking(roomType: roomType1, responsible: new RoomResponsible("David"),guests: room1Guests),
+    new RoomBooking(roomType: roomType2, responsible: new RoomResponsible("Omar"), guests: room2Guests)
+};
+
+PaymentDetails paymentDetails = new PaymentDetails();
+
+Reservation r = new Reservation();
+
+Reservation reservation = HotelSystem.Reservations.Create(roomInterests, paymentDetails, payNow: false);
+
+int reservationNumber = reservation.number;
+
+//Find Davids room type reservation - alternative 1
+reservation = HotelSystem.Reservations.Find(reservationNumber);
+RoomBooking roomBooking = reservation.GetRoomBookingByResponsible("David");
+
+//Find Davids room type reservation - alternative 2
+roomBooking = HotelSystem.RoomBookings.Find(reservationNumber,"David");
+
+//Find Davids room type reservation - alternative 3
+roomBooking = HotelSystem.RoomBookings.Find(personalNumber:"930816-xxxx");
+
+
+HotelSystem.RoomBookings.CheckIn(roomBooking);
+            
+HotelSystem.RoomBookings.CheckOut(roomBooking);
+
+//Alternative
+HotelSystem.RoomBookings.CheckOut(roomBooking.room.Number);
