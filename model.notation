@@ -376,7 +376,7 @@
           <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xLQFUJa0EeW6iMusCgrdvA"/>
         </children>
         <element xmi:type="uml:Class" href="model.uml#_xLOQEJa0EeW6iMusCgrdvA"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xLPeMZa0EeW6iMusCgrdvA" x="163" y="16" width="273" height="152"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xLPeMZa0EeW6iMusCgrdvA" x="63" y="16" width="372" height="149"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_uTw6wJa0EeW6iMusCgrdvA" type="2008">
         <children xmi:type="notation:DecorationNode" xmi:id="_uTyI4Ja0EeW6iMusCgrdvA" type="5029"/>
@@ -538,6 +538,21 @@
             <element xmi:type="uml:Operation" href="model.uml#_jqnrIJgPEeWYQbOYnriDZw"/>
             <layoutConstraint xmi:type="notation:Location" xmi:id="_jr8g0ZgPEeWYQbOYnriDZw"/>
           </children>
+          <children xmi:type="notation:Shape" xmi:id="_O5UQUJgYEeWtBYA9pVjaKA" type="3013">
+            <styles xmi:type="notation:StringListValueStyle" xmi:id="_boZ8oJgZEeWtBYA9pVjaKA" name="maskLabel">
+              <stringListValue>parametersType</stringListValue>
+              <stringListValue>parametersName</stringListValue>
+              <stringListValue>visibility</stringListValue>
+              <stringListValue>name</stringListValue>
+              <stringListValue>returnType</stringListValue>
+            </styles>
+            <element xmi:type="uml:Operation" href="model.uml#_O3ymUJgYEeWtBYA9pVjaKA"/>
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_O5UQUZgYEeWtBYA9pVjaKA"/>
+          </children>
+          <children xmi:type="notation:Shape" xmi:id="_SEVTcJgbEeWtBYA9pVjaKA" type="3013">
+            <element xmi:type="uml:Operation" href="model.uml#_SDSKkJgbEeWtBYA9pVjaKA"/>
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_SEVTcZgbEeWtBYA9pVjaKA"/>
+          </children>
           <styles xmi:type="notation:TitleStyle" xmi:id="_W_rgS5dkEeW9FdtnBhCZ1w"/>
           <styles xmi:type="notation:SortingStyle" xmi:id="_W_rgTJdkEeW9FdtnBhCZ1w"/>
           <styles xmi:type="notation:FilteringStyle" xmi:id="_W_rgTZdkEeW9FdtnBhCZ1w"/>
@@ -550,7 +565,7 @@
           <layoutConstraint xmi:type="notation:Bounds" xmi:id="_W_sHVJdkEeW9FdtnBhCZ1w"/>
         </children>
         <element xmi:type="uml:Class" href="model.uml#_W_QpgJdkEeW9FdtnBhCZ1w"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_W_rgQZdkEeW9FdtnBhCZ1w" x="1" y="65" width="710" height="133"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_W_rgQZdkEeW9FdtnBhCZ1w" x="1" y="65" width="710" height="144"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_hrBBkJdkEeW9FdtnBhCZ1w" type="3010">
         <children xmi:type="notation:DecorationNode" xmi:id="_hrBooJdkEeW9FdtnBhCZ1w" type="5014"/>
@@ -944,7 +959,7 @@
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_h8f8s5dwEeW9FdtnBhCZ1w"/>
     </children>
     <element xmi:type="uml:Package" href="model.uml#_h8eHgJdwEeW9FdtnBhCZ1w"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_h8fVoZdwEeW9FdtnBhCZ1w" x="65" y="1843" width="618" height="186"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_h8fVoZdwEeW9FdtnBhCZ1w" x="-187" y="1843" width="869" height="186"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_ll33IJdwEeW9FdtnBhCZ1w" type="2007">
     <children xmi:type="notation:DecorationNode" xmi:id="_ll4eMJdwEeW9FdtnBhCZ1w" type="5026"/>

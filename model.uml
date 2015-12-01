@@ -178,9 +178,11 @@
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_6H5GQJgLEeW8a_cAkdpyGQ" name="reservationNumber">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
         </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_L-YB0JgbEeWtBYA9pVjaKA" type="_i-whgJXcEeWtZbi4EnRFrQ" direction="return"/>
       </ownedOperation>
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_-NnlgJgLEeW8a_cAkdpyGQ" name="addNew">
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_-NnlgJgLEeW8a_cAkdpyGQ" name="addNew" visibility="public">
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_KN_nIJgMEeW8a_cAkdpyGQ" name="reservation" type="_i-whgJXcEeWtZbi4EnRFrQ"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_ECCn8JgcEeWtBYA9pVjaKA" type="_i-whgJXcEeWtZbi4EnRFrQ" direction="return"/>
       </ownedOperation>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_xFZVkJgMEeW8a_cAkdpyGQ" name="remove">
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_qvZK4JgOEeWYQbOYnriDZw" name="reservationNumber" direction="out">
@@ -257,6 +259,7 @@
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_B8_S4JgPEeWYQbOYnriDZw" name="reservationNumber">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
         </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_KBflwJgYEeWtBYA9pVjaKA" name="reservation" type="_i-whgJXcEeWtZbi4EnRFrQ" direction="return"/>
       </ownedOperation>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_jqnrIJgPEeWYQbOYnriDZw" name="makeReservation" visibility="public">
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_0-iqAJgPEeWYQbOYnriDZw" name="selectedRooms" type="_5lCx4JXcEeWtZbi4EnRFrQ"/>
@@ -264,7 +267,27 @@
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_d-nDMJgSEeWYQbOYnriDZw" name="payNow">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
         </ownedParameter>
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_cn5VoJgXEeWtBYA9pVjaKA" name="reservation" type="_i-whgJXcEeWtZbi4EnRFrQ" direction="return"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_cn5VoJgXEeWtBYA9pVjaKA" type="_i-whgJXcEeWtZbi4EnRFrQ" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_O3ymUJgYEeWtBYA9pVjaKA" name="getAvailableRoomTypes" visibility="public" concurrency="concurrent">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_L3Oi4JgZEeWtBYA9pVjaKA" name="adults">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_O82QAJgZEeWtBYA9pVjaKA" name="children">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_6djr4JgZEeWtBYA9pVjaKA" name="startDate">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_8em9oJgZEeWtBYA9pVjaKA" name="endDate">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_1SGeMJgaEeWtBYA9pVjaKA" type="_uJFr8JXcEeWtZbi4EnRFrQ" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_SDSKkJgbEeWtBYA9pVjaKA" name="cancelReservation">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_XMTS0JgbEeWtBYA9pVjaKA" name="reservationNumber">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedParameter>
       </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_hqjHgJdkEeW9FdtnBhCZ1w" name="Billing">
