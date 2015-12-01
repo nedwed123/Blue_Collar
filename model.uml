@@ -298,6 +298,7 @@
       <ownedOperation xmi:type="uml:Operation" xmi:id="_mJngkJd0EeWxL-7mJgccVg" name="checkOut">
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_wrm4oJd0EeWxL-7mJgccVg" name="roomBooking" type="_5lCx4JXcEeWtZbi4EnRFrQ"/>
       </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_0hxdYJguEeWshPrMD0A9Hg" name="checkIn"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_o0ciYJdkEeW9FdtnBhCZ1w" name="RoomOperations">
       <ownedAttribute xmi:type="uml:Property" xmi:id="_t1gzEJdlEeW9FdtnBhCZ1w" name="roomrepository" type="_ggSeYJdlEeW9FdtnBhCZ1w" association="_t1fk8JdlEeW9FdtnBhCZ1w"/>
