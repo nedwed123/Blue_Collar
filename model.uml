@@ -80,6 +80,10 @@
       <ownedAttribute xmi:type="uml:Property" xmi:id="_BBAkUJd2EeW_4PdgZcIXdQ" name="roomTypeId">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
       </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_b9WiAphSEeWatpqnQATTNw" name="beds" type="_Apr8gJhSEeWatpqnQATTNw" association="_b9V68JhSEeWatpqnQATTNw">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_dSUw4JhSEeWatpqnQATTNw" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_dSWmEJhSEeWatpqnQATTNw" value="*"/>
+      </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_v3-yMJdGEeWbutPRr4NuZg" name="PaymentDetails">
       <ownedAttribute xmi:type="uml:Property" xmi:id="_zb3EcJdNEeWbutPRr4NuZg" name="name">
@@ -151,9 +155,7 @@
       <ownedAttribute xmi:type="uml:Property" xmi:id="_GATkIJdbEeW9FdtnBhCZ1w" name="number">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
       </ownedAttribute>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_NiVyMJdbEeW9FdtnBhCZ1w" name="availability">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EEnumerator"/>
-      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_HesFcJhSEeWatpqnQATTNw" name="availability" type="_uXjB4JhREeWatpqnQATTNw" association="_HeppMJhSEeWatpqnQATTNw"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_5u21MJXcEeWtZbi4EnRFrQ" name="Service">
       <ownedAttribute xmi:type="uml:Property" xmi:id="_xxF40JdaEeW9FdtnBhCZ1w" name="serviceDate">
@@ -166,6 +168,13 @@
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
       </ownedAttribute>
     </packagedElement>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_uXjB4JhREeWatpqnQATTNw" name="Availability">
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_JLyZEJhVEeWatpqnQATTNw" name="Availible"/>
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_KczVAJhVEeWatpqnQATTNw" name="Used"/>
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_oy37kJhVEeWatpqnQATTNw" name="UnderMaintenence"/>
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_s_E2QJhVEeWatpqnQATTNw" name="ToBeCleaned"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_Apr8gJhSEeWatpqnQATTNw" name="BedType"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Package" xmi:id="_Hg_sEJdhEeW9FdtnBhCZ1w" name="DataAccess">
     <packagedElement xmi:type="uml:Class" xmi:id="_xLOQEJa0EeW6iMusCgrdvA" name="ReservationsRepository">
@@ -483,6 +492,18 @@
       <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_lJN8oZf6EeWmDIVFfg4USw" key="nature" value="UML_Nature"/>
     </eAnnotations>
     <ownedEnd xmi:type="uml:Property" xmi:id="_lJPx0Jf6EeWmDIVFfg4USw" name="roommanagementview" type="_fx9RYJdoEeW9FdtnBhCZ1w" association="_lJH2AJf6EeWmDIVFfg4USw"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_HeppMJhSEeWatpqnQATTNw" memberEnd="_HesFcJhSEeWatpqnQATTNw _HessgJhSEeWatpqnQATTNw">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Heq3UJhSEeWatpqnQATTNw" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Heq3UZhSEeWatpqnQATTNw" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_HessgJhSEeWatpqnQATTNw" name="room" type="_jC8d8JXcEeWtZbi4EnRFrQ" association="_HeppMJhSEeWatpqnQATTNw"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_b9V68JhSEeWatpqnQATTNw" memberEnd="_b9WiAphSEeWatpqnQATTNw _b9XJEJhSEeWatpqnQATTNw">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_b9WiAJhSEeWatpqnQATTNw" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_b9WiAZhSEeWatpqnQATTNw" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_b9XJEJhSEeWatpqnQATTNw" name="roomtype" type="_uJFr8JXcEeWtZbi4EnRFrQ" association="_b9V68JhSEeWatpqnQATTNw"/>
   </packagedElement>
   <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_iC-xQJdGEeWbutPRr4NuZg">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_iDBNgJdGEeWbutPRr4NuZg" source="http://www.eclipse.org/uml2/2.0.0/UML">
