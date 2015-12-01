@@ -22,7 +22,7 @@ Reservation reservation = HotelSystem.Reservations.Create(roomInterests, payment
 
 int reservationNumber = reservation.number;
 
-//Find Davids room type reservation - alternative 1
+//Find Davids room booking - alternative 1
 reservation = HotelSystem.Reservations.Find(reservationNumber);
 RoomBooking roomBooking = reservation.GetRoomBookingByResponsible("David");
 

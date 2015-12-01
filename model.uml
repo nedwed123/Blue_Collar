@@ -195,6 +195,38 @@
       </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_4OdqQJdtEeW9FdtnBhCZ1w" name="AuthorizationRepository"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_ggSeYJdlEeW9FdtnBhCZ1w" name="RoomRepository">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_lVUToJdlEeW9FdtnBhCZ1w" type="_uJFr8JXcEeWtZbi4EnRFrQ" association="_lVTskJdlEeW9FdtnBhCZ1w">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_gbpZgJdmEeW9FdtnBhCZ1w" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_gbrOsJdmEeW9FdtnBhCZ1w" value="*"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_oNVCkJdlEeW9FdtnBhCZ1w" type="_jC8d8JXcEeWtZbi4EnRFrQ" association="_oNT0cJdlEeW9FdtnBhCZ1w">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_hoiqcJdmEeW9FdtnBhCZ1w" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_hokfoJdmEeW9FdtnBhCZ1w" value="*"/>
+      </ownedAttribute>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_UAKLYJd1EeW_4PdgZcIXdQ" name="updateRoom">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_a4LVMJf7EeWmDIVFfg4USw" name="room" type="_jC8d8JXcEeWtZbi4EnRFrQ"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_Vje_UJd1EeW_4PdgZcIXdQ" name="updateRoomType" visibility="public">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_WjnvwJf7EeWmDIVFfg4USw" name="roomType" type="_uJFr8JXcEeWtZbi4EnRFrQ"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_YxX3oJd1EeW_4PdgZcIXdQ" name="getRoom">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_EDNvoJf7EeWmDIVFfg4USw" name="roomNumber">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_ah7PQJd1EeW_4PdgZcIXdQ" name="getRoomType">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_60FGkJf6EeWmDIVFfg4USw" name="roomTypeId">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_evVq4Jd1EeW_4PdgZcIXdQ" name="removeRoom">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_fHrbgJf7EeWmDIVFfg4USw" name="room" type="_jC8d8JXcEeWtZbi4EnRFrQ"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_i5gHUJf7EeWmDIVFfg4USw" name="addRoom">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_lvpOAJf7EeWmDIVFfg4USw" name="room" type="_jC8d8JXcEeWtZbi4EnRFrQ"/>
+      </ownedOperation>
+    </packagedElement>
   </packagedElement>
   <packagedElement xmi:type="uml:Association" xmi:id="_9e7UwJdhEeW9FdtnBhCZ1w" memberEnd="_9e9J8JdhEeW9FdtnBhCZ1w _9e-YEJdhEeW9FdtnBhCZ1w">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_9e770JdhEeW9FdtnBhCZ1w" source="org.eclipse.papyrus">
@@ -387,38 +419,6 @@
       <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_lJN8oZf6EeWmDIVFfg4USw" key="nature" value="UML_Nature"/>
     </eAnnotations>
     <ownedEnd xmi:type="uml:Property" xmi:id="_lJPx0Jf6EeWmDIVFfg4USw" name="roommanagementview" type="_fx9RYJdoEeW9FdtnBhCZ1w" association="_lJH2AJf6EeWmDIVFfg4USw"/>
-  </packagedElement>
-  <packagedElement xmi:type="uml:Class" xmi:id="_ggSeYJdlEeW9FdtnBhCZ1w" name="RoomRepository">
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_lVUToJdlEeW9FdtnBhCZ1w" type="_uJFr8JXcEeWtZbi4EnRFrQ" association="_lVTskJdlEeW9FdtnBhCZ1w">
-      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_gbpZgJdmEeW9FdtnBhCZ1w" value="1"/>
-      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_gbrOsJdmEeW9FdtnBhCZ1w" value="*"/>
-    </ownedAttribute>
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_oNVCkJdlEeW9FdtnBhCZ1w" type="_jC8d8JXcEeWtZbi4EnRFrQ" association="_oNT0cJdlEeW9FdtnBhCZ1w">
-      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_hoiqcJdmEeW9FdtnBhCZ1w" value="1"/>
-      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_hokfoJdmEeW9FdtnBhCZ1w" value="*"/>
-    </ownedAttribute>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_UAKLYJd1EeW_4PdgZcIXdQ" name="updateRoom">
-      <ownedParameter xmi:type="uml:Parameter" xmi:id="_a4LVMJf7EeWmDIVFfg4USw" name="room" type="_jC8d8JXcEeWtZbi4EnRFrQ"/>
-    </ownedOperation>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_Vje_UJd1EeW_4PdgZcIXdQ" name="updateRoomType" visibility="public">
-      <ownedParameter xmi:type="uml:Parameter" xmi:id="_WjnvwJf7EeWmDIVFfg4USw" name="roomType" type="_uJFr8JXcEeWtZbi4EnRFrQ"/>
-    </ownedOperation>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_YxX3oJd1EeW_4PdgZcIXdQ" name="getRoom">
-      <ownedParameter xmi:type="uml:Parameter" xmi:id="_EDNvoJf7EeWmDIVFfg4USw" name="roomNumber">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
-      </ownedParameter>
-    </ownedOperation>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_ah7PQJd1EeW_4PdgZcIXdQ" name="getRoomType">
-      <ownedParameter xmi:type="uml:Parameter" xmi:id="_60FGkJf6EeWmDIVFfg4USw" name="roomTypeId">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
-      </ownedParameter>
-    </ownedOperation>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_evVq4Jd1EeW_4PdgZcIXdQ" name="removeRoom">
-      <ownedParameter xmi:type="uml:Parameter" xmi:id="_fHrbgJf7EeWmDIVFfg4USw" name="room" type="_jC8d8JXcEeWtZbi4EnRFrQ"/>
-    </ownedOperation>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_i5gHUJf7EeWmDIVFfg4USw" name="addRoom">
-      <ownedParameter xmi:type="uml:Parameter" xmi:id="_lvpOAJf7EeWmDIVFfg4USw" name="room" type="_jC8d8JXcEeWtZbi4EnRFrQ"/>
-    </ownedOperation>
   </packagedElement>
   <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_iC-xQJdGEeWbutPRr4NuZg">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_iDBNgJdGEeWbutPRr4NuZg" source="http://www.eclipse.org/uml2/2.0.0/UML">
