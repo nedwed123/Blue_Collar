@@ -112,7 +112,9 @@
       <ownedAttribute xmi:type="uml:Property" xmi:id="_9e9J8JdhEeW9FdtnBhCZ1w" name="paymentdetails" type="_v3-yMJdGEeWbutPRr4NuZg" association="_9e7UwJdhEeW9FdtnBhCZ1w"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_5lCx4JXcEeWtZbi4EnRFrQ" name="RoomBooking">
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_EzdVkJaiEeW6iMusCgrdvA" name="IsCheckedIn"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_EzdVkJaiEeW6iMusCgrdvA" name="IsCheckedIn">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+      </ownedAttribute>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_N4CeYpb4EeW6iMusCgrdvA" name="roomresponsible" type="_LU3-EJb4EeW6iMusCgrdvA" association="_N4B3UJb4EeW6iMusCgrdvA"/>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_ep9nAJdGEeWbutPRr4NuZg" name="adults">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
