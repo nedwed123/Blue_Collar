@@ -257,12 +257,9 @@
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_mTeVQJd2EeW_4PdgZcIXdQ" name="modifyRoom">
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_mTeVQJd2EeW_4PdgZcIXdQ" name="makeRoomAvailable">
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_vUeaQJf7EeWmDIVFfg4USw" name="roomNumber">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
-        </ownedParameter>
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_zf3coJf7EeWmDIVFfg4USw" name="availability">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EEnumerator"/>
         </ownedParameter>
       </ownedOperation>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_AfjmMJf8EeWmDIVFfg4USw" name="addRoom">
@@ -271,6 +268,16 @@
         </ownedParameter>
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_K6CBAJf8EeWmDIVFfg4USw" name="availability">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EEnumerator"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_ySpBQJgLEeWU5YK8QYdiFQ" name="removeRoom">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_9xCXMJgLEeWU5YK8QYdiFQ" name="roomNumber">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_uPe4YJgMEeWU5YK8QYdiFQ" name="makeRoomUnavailable">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_y0KkgJgMEeWU5YK8QYdiFQ" name="roomNumber">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
         </ownedParameter>
       </ownedOperation>
     </packagedElement>
