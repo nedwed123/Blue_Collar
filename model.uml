@@ -171,6 +171,22 @@
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_NtOLgJdmEeW9FdtnBhCZ1w" value="1"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_NtQAsJdmEeW9FdtnBhCZ1w" value="*"/>
       </ownedAttribute>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_YV81wJgLEeW8a_cAkdpyGQ" name="update">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_iJtO0JgLEeW8a_cAkdpyGQ" name="reservation" type="_i-whgJXcEeWtZbi4EnRFrQ"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_yYcHQJgLEeW8a_cAkdpyGQ" name="get">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_6H5GQJgLEeW8a_cAkdpyGQ" name="reservationNumber">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_-NnlgJgLEeW8a_cAkdpyGQ" name="addNew">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_KN_nIJgMEeW8a_cAkdpyGQ" name="reservation" type="_i-whgJXcEeWtZbi4EnRFrQ"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_xFZVkJgMEeW8a_cAkdpyGQ" name="remove">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_qvZK4JgOEeWYQbOYnriDZw" name="reservationNumber" direction="out">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedParameter>
+      </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_uTq0IJa0EeW6iMusCgrdvA" name="RoomBookingsRepository">
       <ownedAttribute xmi:type="uml:Property" xmi:id="_RplTYJdmEeW9FdtnBhCZ1w" type="_5lCx4JXcEeWtZbi4EnRFrQ" association="_RpksUJdmEeW9FdtnBhCZ1w">
@@ -235,8 +251,20 @@
     <ownedEnd xmi:type="uml:Property" xmi:id="_9e-YEJdhEeW9FdtnBhCZ1w" name="reservation" type="_i-whgJXcEeWtZbi4EnRFrQ" association="_9e7UwJdhEeW9FdtnBhCZ1w"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Package" xmi:id="_EbnIIJdkEeW9FdtnBhCZ1w" name="BusinessLogic">
-    <packagedElement xmi:type="uml:Class" xmi:id="_W_QpgJdkEeW9FdtnBhCZ1w" name="Reservations">
+    <packagedElement xmi:type="uml:Class" xmi:id="_W_QpgJdkEeW9FdtnBhCZ1w" name="modifyReservation">
       <ownedAttribute xmi:type="uml:Property" xmi:id="_e9coEZdkEeW9FdtnBhCZ1w" name="reservationsrepository" type="_xLOQEJa0EeW6iMusCgrdvA" association="_e9cBAJdkEeW9FdtnBhCZ1w"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_5APaUJgOEeWYQbOYnriDZw" name="modifyRoom">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_B8_S4JgPEeWYQbOYnriDZw" name="reservationNumber">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_jqnrIJgPEeWYQbOYnriDZw" name="makeReservation" visibility="public">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_0-iqAJgPEeWYQbOYnriDZw" name="selectedRooms" type="_5lCx4JXcEeWtZbi4EnRFrQ"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_91hm4JgREeWYQbOYnriDZw" name="paymentDetails" type="_v3-yMJdGEeWbutPRr4NuZg"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_d-nDMJgSEeWYQbOYnriDZw" name="payNow">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+        </ownedParameter>
+      </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_hqjHgJdkEeW9FdtnBhCZ1w" name="Billing">
       <ownedAttribute xmi:type="uml:Property" xmi:id="_u-plYpdlEeW9FdtnBhCZ1w" name="roombookingsrepository" type="_uTq0IJa0EeW6iMusCgrdvA" association="_u-o-UJdlEeW9FdtnBhCZ1w"/>
