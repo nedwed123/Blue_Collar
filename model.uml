@@ -259,6 +259,24 @@
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_j6bCEJhZEeWatpqnQATTNw" name="rooms" type="_jC8d8JXcEeWtZbi4EnRFrQ" direction="return"/>
       </ownedOperation>
     </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_RiAtEJhpEeWatpqnQATTNw" name="DatabaseContext&lt;&lt;Singleton>">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_3BiCkJhpEeWatpqnQATTNw" name="rooms" type="_jC8d8JXcEeWtZbi4EnRFrQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_GWPiwJhqEeWatpqnQATTNw"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_GWR_AJhqEeWatpqnQATTNw" value="*"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_AKP6kJhqEeWatpqnQATTNw" name="roomTypes" type="_uJFr8JXcEeWtZbi4EnRFrQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_E3P1MJhqEeWatpqnQATTNw"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_E3RqYJhqEeWatpqnQATTNw" value="*"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_JKHYkJhqEeWatpqnQATTNw" name="reservations" type="_i-whgJXcEeWtZbi4EnRFrQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_OqPZQJhqEeWatpqnQATTNw"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OqQnYJhqEeWatpqnQATTNw" value="*"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_PggS4JhqEeWatpqnQATTNw" name="roomBookings" type="_5lCx4JXcEeWtZbi4EnRFrQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_TPFdcJhqEeWatpqnQATTNw"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_TPGrkJhqEeWatpqnQATTNw" value="*"/>
+      </ownedAttribute>
+    </packagedElement>
   </packagedElement>
   <packagedElement xmi:type="uml:Association" xmi:id="_9e7UwJdhEeW9FdtnBhCZ1w" memberEnd="_9e9J8JdhEeW9FdtnBhCZ1w _9e-YEJdhEeW9FdtnBhCZ1w">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_9e770JdhEeW9FdtnBhCZ1w" source="org.eclipse.papyrus">
@@ -297,6 +315,11 @@
       </ownedOperation>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_0hxdYJguEeWshPrMD0A9Hg" name="checkIn">
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_KM4PMJhAEeWshPrMD0A9Hg" name="roomBooking" type="_5lCx4JXcEeWtZbi4EnRFrQ" effect="create"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_bywZkJhoEeWatpqnQATTNw" name="findByRoomNr">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_oTNpcJhoEeWatpqnQATTNw" name="roomNr">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        </ownedParameter>
       </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_o0ciYJdkEeW9FdtnBhCZ1w" name="RoomOperations">
