@@ -2627,7 +2627,7 @@
       <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_t4GzYJh-EeWtxMjZa_7njg" id="(1.0,0.4900826446280992){R}"/>
     </edges>
   </notation:Diagram>
-  <notation:Diagram xmi:id="_OLiyAJjhEeWd7cQ9VBEZ9w" type="PapyrusUMLSequenceDiagram" name="Sequence Diagram" measurementUnit="Pixel">
+  <notation:Diagram xmi:id="_OLiyAJjhEeWd7cQ9VBEZ9w" type="PapyrusUMLSequenceDiagram" name="CheckOut" measurementUnit="Pixel">
     <children xmi:type="notation:Shape" xmi:id="_OLiyAZjhEeWd7cQ9VBEZ9w" type="2001">
       <children xmi:type="notation:DecorationNode" xmi:id="_OLiyApjhEeWd7cQ9VBEZ9w" type="5001"/>
       <children xmi:type="notation:DecorationNode" xmi:id="_OLiyA5jhEeWd7cQ9VBEZ9w" type="7001">

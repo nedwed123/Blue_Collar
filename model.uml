@@ -664,8 +664,8 @@
       <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_SnGFYpjjEeWd7cQ9VBEZ9w" name="MessageRecv0" covered="_XPnakJjhEeWd7cQ9VBEZ9w" message="_SnGFYJjjEeWd7cQ9VBEZ9w"/>
       <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_nQGmMJjiEeWd7cQ9VBEZ9w" name="ActionExecSpecFinish" covered="_XPnakJjhEeWd7cQ9VBEZ9w" execution="_63aZcZjhEeWd7cQ9VBEZ9w"/>
       <message xmi:type="uml:Message" xmi:id="_IWX48JjiEeWd7cQ9VBEZ9w" name="GetRoomBooking_Message" receiveEvent="_IWX48pjiEeWd7cQ9VBEZ9w" sendEvent="_IWX48ZjiEeWd7cQ9VBEZ9w" signature="_ozdMIJjeEeWNkry9trC1Ww"/>
-      <message xmi:type="uml:Message" xmi:id="_buEtcJjiEeWd7cQ9VBEZ9w" name="display room booking" messageSort="reply" receiveEvent="_buK0EZjiEeWd7cQ9VBEZ9w" sendEvent="_buK0EJjiEeWd7cQ9VBEZ9w"/>
-      <message xmi:type="uml:Message" xmi:id="_SnGFYJjjEeWd7cQ9VBEZ9w" name="generate bill" messageSort="reply" receiveEvent="_SnGFYpjjEeWd7cQ9VBEZ9w" sendEvent="_SnGFYZjjEeWd7cQ9VBEZ9w"/>
+      <message xmi:type="uml:Message" xmi:id="_buEtcJjiEeWd7cQ9VBEZ9w" name="RoomBoking" messageSort="reply" receiveEvent="_buK0EZjiEeWd7cQ9VBEZ9w" sendEvent="_buK0EJjiEeWd7cQ9VBEZ9w"/>
+      <message xmi:type="uml:Message" xmi:id="_SnGFYJjjEeWd7cQ9VBEZ9w" name="success" messageSort="reply" receiveEvent="_SnGFYpjjEeWd7cQ9VBEZ9w" sendEvent="_SnGFYZjjEeWd7cQ9VBEZ9w"/>
       <message xmi:type="uml:Message" xmi:id="_ifikwJjjEeWd7cQ9VBEZ9w" name="CheckOut_Message" receiveEvent="_iforYJjjEeWd7cQ9VBEZ9w" sendEvent="_ifikwZjjEeWd7cQ9VBEZ9w" signature="_rhccYJjeEeWNkry9trC1Ww"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Interaction" xmi:id="_UYplwJjnEeWp0I64NPhkKg" name="Interaction3">
@@ -739,7 +739,9 @@
       <ownedOperation xmi:type="uml:Operation" xmi:id="_qnJ-YJjeEeWNkry9trC1Ww" name="CheckIn">
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_mj_0gJjqEeWp0I64NPhkKg" name="roomBooking" type="_5lCx4JXcEeWtZbi4EnRFrQ"/>
       </ownedOperation>
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_rhccYJjeEeWNkry9trC1Ww" name="CheckOut"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_rhccYJjeEeWNkry9trC1Ww" name="CheckOut">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_GSY44JjrEeWp0I64NPhkKg" name="roomBooking" type="_5lCx4JXcEeWtZbi4EnRFrQ"/>
+      </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Interface" xmi:id="_KmCLQJjeEeWNkry9trC1Ww" name="PaymentAuthorization"/>
   </packagedElement>
