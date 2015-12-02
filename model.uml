@@ -691,6 +691,33 @@
       <message xmi:type="uml:Message" xmi:id="_rzh70JjnEeWp0I64NPhkKg" name="RoomBoking" messageSort="reply" receiveEvent="_rzii4JjnEeWp0I64NPhkKg" sendEvent="_rzh70ZjnEeWp0I64NPhkKg"/>
       <message xmi:type="uml:Message" xmi:id="_vId3UJjnEeWp0I64NPhkKg" name="RoomNumber" messageSort="reply" receiveEvent="_vIeeYZjnEeWp0I64NPhkKg" sendEvent="_vIeeYJjnEeWp0I64NPhkKg"/>
     </packagedElement>
+    <packagedElement xmi:type="uml:Interaction" xmi:id="_vKG5QJjrEeWshPrMD0A9Hg" name="Interaction2">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_6rCl0JjrEeWshPrMD0A9Hg" name="" type="_AtexwJjeEeWNkry9trC1Ww"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_7Lb9IZjrEeWshPrMD0A9Hg" name="" type="_3Aeg8JjdEeWNkry9trC1Ww"/>
+      <lifeline xmi:type="uml:Lifeline" xmi:id="_6rB-wJjrEeWshPrMD0A9Hg" name="" represents="_6rCl0JjrEeWshPrMD0A9Hg" coveredBy="_7u3aUJjrEeWshPrMD0A9Hg _7u3aUZjrEeWshPrMD0A9Hg _EjHeMJjsEeWshPrMD0A9Hg _JiJkAJjsEeWshPrMD0A9Hg _Y1YdgJjsEeWshPrMD0A9Hg _gcs0MJjsEeWshPrMD0A9Hg"/>
+      <lifeline xmi:type="uml:Lifeline" xmi:id="_7Lb9IJjrEeWshPrMD0A9Hg" name="" represents="_7Lb9IZjrEeWshPrMD0A9Hg" coveredBy="_8IWRUZjrEeWshPrMD0A9Hg _EjIFQJjsEeWshPrMD0A9Hg _JiI88ZjsEeWshPrMD0A9Hg _KoDcIJjsEeWshPrMD0A9Hg _gcsNIJjsEeWshPrMD0A9Hg _TtG8IZjsEeWshPrMD0A9Hg _Y1ZEkJjsEeWshPrMD0A9Hg _TtG8IJjsEeWshPrMD0A9Hg"/>
+      <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_7u3aUJjrEeWshPrMD0A9Hg" name="ActionExecSpecStart" covered="_6rB-wJjrEeWshPrMD0A9Hg" execution="_7u3aUZjrEeWshPrMD0A9Hg"/>
+      <fragment xmi:type="uml:ActionExecutionSpecification" xmi:id="_7u3aUZjrEeWshPrMD0A9Hg" name="ActionExecSpec" covered="_6rB-wJjrEeWshPrMD0A9Hg" finish="_gcs0MJjsEeWshPrMD0A9Hg" start="_7u3aUJjrEeWshPrMD0A9Hg"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_EjHeMJjsEeWshPrMD0A9Hg" name="AvailableRoomTypes_MessageSend" covered="_6rB-wJjrEeWshPrMD0A9Hg" message="_EjG3IJjsEeWshPrMD0A9Hg"/>
+      <fragment xmi:type="uml:ActionExecutionSpecification" xmi:id="_8IWRUZjrEeWshPrMD0A9Hg" name="ActionExecSpec0" covered="_7Lb9IJjrEeWshPrMD0A9Hg" finish="_KoDcIJjsEeWshPrMD0A9Hg" start="_EjIFQJjsEeWshPrMD0A9Hg"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_EjIFQJjsEeWshPrMD0A9Hg" name="AvailableRoomTypes_MessageRecv" covered="_7Lb9IJjrEeWshPrMD0A9Hg" message="_EjG3IJjsEeWshPrMD0A9Hg"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_JiI88ZjsEeWshPrMD0A9Hg" name="MessageSend" covered="_7Lb9IJjrEeWshPrMD0A9Hg" message="_JiI88JjsEeWshPrMD0A9Hg"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_JiJkAJjsEeWshPrMD0A9Hg" name="MessageRecv" covered="_6rB-wJjrEeWshPrMD0A9Hg" message="_JiI88JjsEeWshPrMD0A9Hg"/>
+      <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="__KwSYZjrEeWshPrMD0A9Hg" name="ActionExecSpec0Start" execution="_8IWRUZjrEeWshPrMD0A9Hg"/>
+      <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_KoDcIJjsEeWshPrMD0A9Hg" name="ActionExecSpec0Finish" covered="_7Lb9IJjrEeWshPrMD0A9Hg" execution="_8IWRUZjrEeWshPrMD0A9Hg"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_Y1YdgJjsEeWshPrMD0A9Hg" name="Make_MessageSend" covered="_6rB-wJjrEeWshPrMD0A9Hg" message="_Y1X2cJjsEeWshPrMD0A9Hg"/>
+      <fragment xmi:type="uml:ActionExecutionSpecification" xmi:id="_TtG8IJjsEeWshPrMD0A9Hg" name="ActionExecSpec2" covered="_7Lb9IJjrEeWshPrMD0A9Hg" finish="_TtG8IZjsEeWshPrMD0A9Hg" start="_Y1ZEkJjsEeWshPrMD0A9Hg"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_Y1ZEkJjsEeWshPrMD0A9Hg" name="Make_MessageRecv" covered="_7Lb9IJjrEeWshPrMD0A9Hg" message="_Y1X2cJjsEeWshPrMD0A9Hg"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_gcsNIJjsEeWshPrMD0A9Hg" name="MessageSend0" covered="_7Lb9IJjrEeWshPrMD0A9Hg" message="_gcpw4JjsEeWshPrMD0A9Hg"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_gcs0MJjsEeWshPrMD0A9Hg" name="MessageRecv0" covered="_6rB-wJjrEeWshPrMD0A9Hg" message="_gcpw4JjsEeWshPrMD0A9Hg"/>
+      <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="__Kho4ZjrEeWshPrMD0A9Hg" name="ActionExecSpec1Finish" execution="__Kho4JjrEeWshPrMD0A9Hg"/>
+      <fragment xmi:type="uml:ActionExecutionSpecification" xmi:id="__Kho4JjrEeWshPrMD0A9Hg" name="ActionExecSpec1" finish="__Kho4ZjrEeWshPrMD0A9Hg"/>
+      <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_TtG8IZjsEeWshPrMD0A9Hg" name="ActionExecSpec2Finish" covered="_7Lb9IJjrEeWshPrMD0A9Hg" execution="_TtG8IJjsEeWshPrMD0A9Hg"/>
+      <message xmi:type="uml:Message" xmi:id="_EjG3IJjsEeWshPrMD0A9Hg" name="AvailableRoomTypes()" receiveEvent="_EjIFQJjsEeWshPrMD0A9Hg" sendEvent="_EjHeMJjsEeWshPrMD0A9Hg" signature="_hWGCsJjeEeWNkry9trC1Ww"/>
+      <message xmi:type="uml:Message" xmi:id="_JiI88JjsEeWshPrMD0A9Hg" name="availible room types" messageSort="reply" receiveEvent="_JiJkAJjsEeWshPrMD0A9Hg" sendEvent="_JiI88ZjsEeWshPrMD0A9Hg"/>
+      <message xmi:type="uml:Message" xmi:id="_Y1X2cJjsEeWshPrMD0A9Hg" name="MakeReservation" receiveEvent="_Y1ZEkJjsEeWshPrMD0A9Hg" sendEvent="_Y1YdgJjsEeWshPrMD0A9Hg" signature="_dmfkcJjeEeWNkry9trC1Ww"/>
+      <message xmi:type="uml:Message" xmi:id="_gcpw4JjsEeWshPrMD0A9Hg" name="Reservation" messageSort="reply" receiveEvent="_gcs0MJjsEeWshPrMD0A9Hg" sendEvent="_gcsNIJjsEeWshPrMD0A9Hg"/>
+    </packagedElement>
   </packagedElement>
   <packagedElement xmi:type="uml:Package" xmi:id="_OvvjUJh1EeWatpqnQATTNw" name="ComponentDiagram">
     <packagedElement xmi:type="uml:Component" xmi:id="_3Aeg8JjdEeWNkry9trC1Ww" name="Hotel System">
@@ -717,18 +744,50 @@
       <packagedElement xmi:type="uml:Dependency" xmi:id="_HWlh0JjgEeWNkry9trC1Ww" client="_B4fMUJjeEeWNkry9trC1Ww" supplier="_I5ZDQJjeEeWNkry9trC1Ww"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Interface" xmi:id="_EGtXYJjeEeWNkry9trC1Ww" name="RoomManagement">
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_SEF4QJjeEeWNkry9trC1Ww" name="Create"/>
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_UOi9oJjeEeWNkry9trC1Ww" name="Remove"/>
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_WPgv0JjeEeWNkry9trC1Ww" name="Update"/>
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_XbPjIJjeEeWNkry9trC1Ww" name="Delete"/>
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_Y8Pb0JjeEeWNkry9trC1Ww" name="SetRate"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_SEF4QJjeEeWNkry9trC1Ww" name="addRoom">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_b4z80JjtEeWshPrMD0A9Hg" name="roomNr">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_eHkTYJjtEeWshPrMD0A9Hg" name="availability" type="_uXjB4JhREeWatpqnQATTNw"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_UOi9oJjeEeWNkry9trC1Ww" name="removeRoom">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_XJyB4JjtEeWshPrMD0A9Hg" name="room" type="_jC8d8JXcEeWtZbi4EnRFrQ"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_Y8Pb0JjeEeWNkry9trC1Ww" name="SetRate">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_UwDKYJjtEeWshPrMD0A9Hg" name="room" type="_jC8d8JXcEeWtZbi4EnRFrQ"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_DgLlEJjtEeWshPrMD0A9Hg" name="makeRoomUnavailible">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_PVzIMJjtEeWshPrMD0A9Hg" name="room" type="_jC8d8JXcEeWtZbi4EnRFrQ"/>
+      </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Interface" xmi:id="_GUOX0JjeEeWNkry9trC1Ww" name="Reservations">
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_dmfkcJjeEeWNkry9trC1Ww" name="Make"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_dmfkcJjeEeWNkry9trC1Ww" name="MakeReservation">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_VoDT8JjuEeWshPrMD0A9Hg" name="selectedRooms" type="_5lCx4JXcEeWtZbi4EnRFrQ"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_mNuswJjuEeWshPrMD0A9Hg" name="paymentDetails" type="_v3-yMJdGEeWbutPRr4NuZg"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_qBaZwJjuEeWshPrMD0A9Hg" name="payNow">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_t9a8UJjuEeWshPrMD0A9Hg" name="madeByCustomer">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+        </ownedParameter>
+      </ownedOperation>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_fBsXIJjeEeWNkry9trC1Ww" name="Cancel"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Interface" xmi:id="_HojtgJjeEeWNkry9trC1Ww" name="Rooms">
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_hWGCsJjeEeWNkry9trC1Ww" name="AvailableRoomTypes"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_hWGCsJjeEeWNkry9trC1Ww" name="AvailableRoomTypes">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_xA6_AJjtEeWshPrMD0A9Hg" name="adults">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_yYP-UJjtEeWshPrMD0A9Hg" name="children">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_64PpcJjtEeWshPrMD0A9Hg" name="startDate">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_86AF0JjtEeWshPrMD0A9Hg" name="endDate">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
+        </ownedParameter>
+      </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Interface" xmi:id="_I5ZDQJjeEeWNkry9trC1Ww" name="RoomBookings">
       <ownedOperation xmi:type="uml:Operation" xmi:id="_ozdMIJjeEeWNkry9trC1Ww" name="GetRoomBooking" concurrency="concurrent">
