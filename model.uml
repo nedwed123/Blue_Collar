@@ -641,7 +641,7 @@
       <message xmi:type="uml:Message" xmi:id="_nnZDQJh-EeWtxMjZa_7njg" name="Display reservation number" receiveEvent="_nnaRYJh-EeWtxMjZa_7njg" sendEvent="_nnZqUJh-EeWtxMjZa_7njg"/>
       <message xmi:type="uml:Message" xmi:id="_t3tx0Jh-EeWtxMjZa_7njg" name="reservation" receiveEvent="_t3u_8Jh-EeWtxMjZa_7njg" sendEvent="_t3uY4Jh-EeWtxMjZa_7njg"/>
     </packagedElement>
-    <packagedElement xmi:type="uml:Interaction" xmi:id="_MOa-AJjhEeWd7cQ9VBEZ9w" name="Interaction2">
+    <packagedElement xmi:type="uml:Interaction" xmi:id="_MOa-AJjhEeWd7cQ9VBEZ9w" name="Check out">
       <ownedAttribute xmi:type="uml:Property" xmi:id="_XPnakZjhEeWd7cQ9VBEZ9w" name="" type="_B4fMUJjeEeWNkry9trC1Ww"/>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_c6i9EZjhEeWd7cQ9VBEZ9w" name="" type="_3Aeg8JjdEeWNkry9trC1Ww"/>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_kecMUJjhEeWd7cQ9VBEZ9w" name="" type="_I5ZDQJjeEeWNkry9trC1Ww"/>
@@ -668,7 +668,7 @@
       <message xmi:type="uml:Message" xmi:id="_SnGFYJjjEeWd7cQ9VBEZ9w" name="success" messageSort="reply" receiveEvent="_SnGFYpjjEeWd7cQ9VBEZ9w" sendEvent="_SnGFYZjjEeWd7cQ9VBEZ9w"/>
       <message xmi:type="uml:Message" xmi:id="_ifikwJjjEeWd7cQ9VBEZ9w" name="CheckOut_Message" receiveEvent="_iforYJjjEeWd7cQ9VBEZ9w" sendEvent="_ifikwZjjEeWd7cQ9VBEZ9w" signature="_rhccYJjeEeWNkry9trC1Ww"/>
     </packagedElement>
-    <packagedElement xmi:type="uml:Interaction" xmi:id="_UYplwJjnEeWp0I64NPhkKg" name="Interaction3">
+    <packagedElement xmi:type="uml:Interaction" xmi:id="_UYplwJjnEeWp0I64NPhkKg" name="Check in">
       <ownedAttribute xmi:type="uml:Property" xmi:id="_Wt3JoJjnEeWp0I64NPhkKg" name="" type="_B4fMUJjeEeWNkry9trC1Ww"/>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_XfYtMJjnEeWp0I64NPhkKg" name="" type="_3Aeg8JjdEeWNkry9trC1Ww"/>
       <lifeline xmi:type="uml:Lifeline" xmi:id="_Wt2ikJjnEeWp0I64NPhkKg" name="" represents="_Wt3JoJjnEeWp0I64NPhkKg" coveredBy="_YUjaoJjnEeWp0I64NPhkKg _YUkBsJjnEeWp0I64NPhkKg _YUjaoZjnEeWp0I64NPhkKg _fQTEwJjnEeWp0I64NPhkKg _m1R5IJjnEeWp0I64NPhkKg _rzii4JjnEeWp0I64NPhkKg _vIeeYZjnEeWp0I64NPhkKg"/>
