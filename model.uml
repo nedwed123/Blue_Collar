@@ -731,8 +731,14 @@
       <ownedOperation xmi:type="uml:Operation" xmi:id="_hWGCsJjeEeWNkry9trC1Ww" name="AvailableRoomTypes"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Interface" xmi:id="_I5ZDQJjeEeWNkry9trC1Ww" name="RoomBookings">
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_ozdMIJjeEeWNkry9trC1Ww" name="GetRoomBooking"/>
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_qnJ-YJjeEeWNkry9trC1Ww" name="CheckIn"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_ozdMIJjeEeWNkry9trC1Ww" name="GetRoomBooking" concurrency="concurrent">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_XfDEEJjpEeWp0I64NPhkKg" name="name">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_qnJ-YJjeEeWNkry9trC1Ww" name="CheckIn">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_mj_0gJjqEeWp0I64NPhkKg" name="roomBooking" type="_5lCx4JXcEeWtZbi4EnRFrQ"/>
+      </ownedOperation>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_rhccYJjeEeWNkry9trC1Ww" name="CheckOut"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Interface" xmi:id="_KmCLQJjeEeWNkry9trC1Ww" name="PaymentAuthorization"/>
