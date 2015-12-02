@@ -170,7 +170,13 @@
         </ownedParameter>
       </ownedOperation>
     </packagedElement>
-    <packagedElement xmi:type="uml:Class" xmi:id="_4OdqQJdtEeW9FdtnBhCZ1w" name="AuthorizationRepository"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_4OdqQJdtEeW9FdtnBhCZ1w" name="AuthorizationRepository">
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_zf9QQJjMEeWshPrMD0A9Hg" name="getPasswords">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_3vfLwJjMEeWshPrMD0A9Hg" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_ggSeYJdlEeW9FdtnBhCZ1w" name="RoomRepository">
       <ownedAttribute xmi:type="uml:Property" xmi:id="_lVUToJdlEeW9FdtnBhCZ1w" type="_uJFr8JXcEeWtZbi4EnRFrQ" association="_lVTskJdlEeW9FdtnBhCZ1w">
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_gbpZgJdmEeW9FdtnBhCZ1w" value="1"/>
@@ -303,9 +309,18 @@
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_LpFsYJdtEeW9FdtnBhCZ1w" name="Authorizer">
       <ownedAttribute xmi:type="uml:Property" xmi:id="_HAhJUJduEeW9FdtnBhCZ1w" name="managerrepository" type="_4OdqQJdtEeW9FdtnBhCZ1w" association="_HAf7MJduEeW9FdtnBhCZ1w"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_dMrbcJjMEeWshPrMD0A9Hg" name="Authorize">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_qLNucJjMEeWshPrMD0A9Hg" name="password">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_snVyoJjMEeWshPrMD0A9Hg" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+        </ownedParameter>
+      </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_864EQJhYEeWatpqnQATTNw" name="AvailibleRoomFinder">
       <ownedAttribute xmi:type="uml:Property" xmi:id="_Myy_MphZEeWatpqnQATTNw" name="roomrepository" type="_ggSeYJdlEeW9FdtnBhCZ1w" association="_MyyYIJhZEeWatpqnQATTNw"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_CoaSkJjMEeWshPrMD0A9Hg" name="roombookingsrepository" type="_uTq0IJa0EeW6iMusCgrdvA" association="_CoUL8JjMEeWshPrMD0A9Hg"/>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_O3ymUJgYEeWtBYA9pVjaKA" name="availableRoomTypes" visibility="public" concurrency="concurrent">
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_L3Oi4JgZEeWtBYA9pVjaKA" name="adults">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
@@ -399,14 +414,14 @@
   <packagedElement xmi:type="uml:Package" xmi:id="_h8eHgJdwEeW9FdtnBhCZ1w" name="CustomerClient">
     <packagedElement xmi:type="uml:Class" xmi:id="_ztBYAJdwEeW9FdtnBhCZ1w" name="Client">
       <ownedAttribute xmi:type="uml:Property" xmi:id="__MxY0ZdwEeW9FdtnBhCZ1w" name="frame&lt;&lt;singleton>>" type="_ayqQYJdpEeW9FdtnBhCZ1w" association="__MwxwJdwEeW9FdtnBhCZ1w"/>
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_gIffMJhyEeWatpqnQATTNw" name="main"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_gIffMJhyEeWatpqnQATTNw" name="main" isStatic="true"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Dependency" xmi:id="_jT9CYJdxEeWC3IBRAUSVQQ" client="_ztBYAJdwEeW9FdtnBhCZ1w" supplier="_eeeswJdnEeW9FdtnBhCZ1w"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Package" xmi:id="_ll2pAJdwEeW9FdtnBhCZ1w" name="EmployeeClient">
     <packagedElement xmi:type="uml:Class" xmi:id="_7oR-YJdwEeW9FdtnBhCZ1w" name="Client">
       <ownedAttribute xmi:type="uml:Property" xmi:id="_-FbWQJdwEeW9FdtnBhCZ1w" name="frame&lt;&lt;singleton>>" type="_ayqQYJdpEeW9FdtnBhCZ1w" association="_-FavMJdwEeW9FdtnBhCZ1w"/>
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_h7wzoJhyEeWatpqnQATTNw" name="main"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_h7wzoJhyEeWatpqnQATTNw" name="main" isStatic="true"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Dependency" xmi:id="_Yv8REJdxEeWC3IBRAUSVQQ" client="_7oR-YJdwEeW9FdtnBhCZ1w" supplier="_v91l8JdvEeW9FdtnBhCZ1w"/>
   </packagedElement>
@@ -629,12 +644,12 @@
   </packagedElement>
   <packagedElement xmi:type="uml:Package" xmi:id="_OvvjUJh1EeWatpqnQATTNw" name="ComponentDiagram">
     <packagedElement xmi:type="uml:Component" xmi:id="_XtJjMJh1EeWatpqnQATTNw" name="ReservationMaking">
-      <packagedElement xmi:type="uml:Dependency" xmi:id="_EmKucJh5EeWatpqnQATTNw" client="_XtJjMJh1EeWatpqnQATTNw" supplier="_Zvw7MJh1EeWatpqnQATTNw"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_Rvvr0JjREeWshPrMD0A9Hg" client="_XtJjMJh1EeWatpqnQATTNw" supplier="_2xcSUJjQEeWshPrMD0A9Hg"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Component" xmi:id="_dcrR0Jh1EeWatpqnQATTNw" name="Menus">
       <packagedElement xmi:type="uml:Dependency" xmi:id="_2HjlQJh3EeWatpqnQATTNw" client="_dcrR0Jh1EeWatpqnQATTNw" supplier="_XtJjMJh1EeWatpqnQATTNw"/>
-      <packagedElement xmi:type="uml:Dependency" xmi:id="_CMsVoJh5EeWatpqnQATTNw" client="_dcrR0Jh1EeWatpqnQATTNw" supplier="_WwMLsJh1EeWatpqnQATTNw"/>
-      <packagedElement xmi:type="uml:Dependency" xmi:id="_CsIqsJh5EeWatpqnQATTNw" client="_dcrR0Jh1EeWatpqnQATTNw" supplier="_Zvw7MJh1EeWatpqnQATTNw"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_RI_8QJjOEeWshPrMD0A9Hg" client="_dcrR0Jh1EeWatpqnQATTNw" supplier="_D1ZYMJjOEeWshPrMD0A9Hg"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_VKi0MJjQEeWshPrMD0A9Hg" client="_dcrR0Jh1EeWatpqnQATTNw" supplier="_hHqYYJjOEeWshPrMD0A9Hg"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Component" xmi:id="_iaz_wJh1EeWatpqnQATTNw" name="EmployeeClient">
       <packagedElement xmi:type="uml:Dependency" xmi:id="_yw-rAJh3EeWatpqnQATTNw" client="_iaz_wJh1EeWatpqnQATTNw" supplier="_dcrR0Jh1EeWatpqnQATTNw"/>
@@ -642,19 +657,42 @@
     <packagedElement xmi:type="uml:Component" xmi:id="_uyQdkJh1EeWatpqnQATTNw" name="CustomerClient">
       <packagedElement xmi:type="uml:Dependency" xmi:id="_zTYNcJh3EeWatpqnQATTNw" client="_uyQdkJh1EeWatpqnQATTNw" supplier="_dcrR0Jh1EeWatpqnQATTNw"/>
     </packagedElement>
-    <packagedElement xmi:type="uml:Component" xmi:id="_WwMLsJh1EeWatpqnQATTNw" name="RoomBooking">
-      <packagedElement xmi:type="uml:Dependency" xmi:id="_DZguEJh5EeWatpqnQATTNw" client="_WwMLsJh1EeWatpqnQATTNw" supplier="_-xI0wJh4EeWatpqnQATTNw"/>
-      <packagedElement xmi:type="uml:Dependency" xmi:id="_JBMIQJh5EeWatpqnQATTNw" client="_WwMLsJh1EeWatpqnQATTNw" supplier="_Zvw7MJh1EeWatpqnQATTNw"/>
-    </packagedElement>
-    <packagedElement xmi:type="uml:Component" xmi:id="_Zvw7MJh1EeWatpqnQATTNw" name="AvailibleRoomListing">
-      <packagedElement xmi:type="uml:Dependency" xmi:id="_D08F0Jh5EeWatpqnQATTNw" client="_Zvw7MJh1EeWatpqnQATTNw" supplier="_-xI0wJh4EeWatpqnQATTNw"/>
-    </packagedElement>
-    <packagedElement xmi:type="uml:Component" xmi:id="_-xI0wJh4EeWatpqnQATTNw" name="Rooms"/>
     <packagedElement xmi:type="uml:Component" xmi:id="_OGOIYJh5EeWatpqnQATTNw" name="ObjectRelationalMapper">
       <packagedElement xmi:type="uml:Dependency" xmi:id="_RSTp4Jh5EeWatpqnQATTNw" client="_OGOIYJh5EeWatpqnQATTNw" supplier="_P5HCUJh5EeWatpqnQATTNw"/>
-      <packagedElement xmi:type="uml:Dependency" xmi:id="_SUnbcJh5EeWatpqnQATTNw" client="_OGOIYJh5EeWatpqnQATTNw" supplier="_-xI0wJh4EeWatpqnQATTNw"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_ev36QJjREeWshPrMD0A9Hg" client="_OGOIYJh5EeWatpqnQATTNw" supplier="_KscoMJjREeWshPrMD0A9Hg"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Component" xmi:id="_P5HCUJh5EeWatpqnQATTNw" name="Database"/>
+    <packagedElement xmi:type="uml:Interface" xmi:id="_2c2pwJjNEeWshPrMD0A9Hg" name="RoomCRUDOperations">
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_axPMYJjPEeWshPrMD0A9Hg" name="add"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_cLuNYJjPEeWshPrMD0A9Hg" name="remove"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_dqvJEJjPEeWshPrMD0A9Hg" name="update"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_e20hsJjPEeWshPrMD0A9Hg" name="delete"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Component" xmi:id="_D1ZYMJjOEeWshPrMD0A9Hg" name="ManagerMenu">
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_SBLhcJjOEeWshPrMD0A9Hg" client="_D1ZYMJjOEeWshPrMD0A9Hg" supplier="_2c2pwJjNEeWshPrMD0A9Hg"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Component" xmi:id="_hHqYYJjOEeWshPrMD0A9Hg" name="Reservations"/>
+    <packagedElement xmi:type="uml:Component" xmi:id="_iPLaEJjOEeWshPrMD0A9Hg" name="RoomBookings">
+      <generalization xmi:type="uml:Generalization" xmi:id="_6D9zAJjQEeWshPrMD0A9Hg" general="_2xcSUJjQEeWshPrMD0A9Hg"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_bxVFgJjREeWshPrMD0A9Hg" client="_iPLaEJjOEeWshPrMD0A9Hg" supplier="_KscoMJjREeWshPrMD0A9Hg"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Interface" xmi:id="_2xcSUJjQEeWshPrMD0A9Hg" name="Rooms">
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_8JCCEJjQEeWshPrMD0A9Hg" name="checkIn"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_9VenEJjQEeWshPrMD0A9Hg" name="checkOut"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_EozqwJjREeWshPrMD0A9Hg" name="getAvailibleRooms"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_HNqNIJjREeWshPrMD0A9Hg" name="getAvailibleRoomTypes"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Component" xmi:id="_KscoMJjREeWshPrMD0A9Hg" name="RoomRepository"/>
+    <packagedElement xmi:type="uml:Component" xmi:id="_Ud57MJjREeWshPrMD0A9Hg" name="RoomOperations">
+      <generalization xmi:type="uml:Generalization" xmi:id="_WIBToJjREeWshPrMD0A9Hg" general="_2c2pwJjNEeWshPrMD0A9Hg"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_bJSOEJjREeWshPrMD0A9Hg" client="_Ud57MJjREeWshPrMD0A9Hg" supplier="_KscoMJjREeWshPrMD0A9Hg"/>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_CoUL8JjMEeWshPrMD0A9Hg" memberEnd="_CoaSkJjMEeWshPrMD0A9Hg _Coa5oJjMEeWshPrMD0A9Hg">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_CoX2UJjMEeWshPrMD0A9Hg" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_CoX2UZjMEeWshPrMD0A9Hg" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_Coa5oJjMEeWshPrMD0A9Hg" name="availibleroomfinder" type="_864EQJhYEeWatpqnQATTNw" association="_CoUL8JjMEeWshPrMD0A9Hg"/>
   </packagedElement>
   <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_iC-xQJdGEeWbutPRr4NuZg">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_iDBNgJdGEeWbutPRr4NuZg" source="http://www.eclipse.org/uml2/2.0.0/UML">

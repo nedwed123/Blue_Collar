@@ -1,8 +1,8 @@
 RoomGuests room1Guests = new RoomGuests(adults: 2, childs: 1);
 RoomGuests room2Guests = new RoomGuests(adults: 2, childs: 1);
 
-List<RoomType> availibleRoomTypes1 = HotelSystem.Reservations.GetAvailibleRoomTypes(room1Guests);
-List<RoomType> availibleRoomTypes2 = HotelSystem.Reservations.GetAvailibleRoomTypes(room2Guests);
+List<RoomType> availibleRoomTypes1 = HotelSystem.Rooms.GetAvailibleRoomTypes(room1Guests);
+List<RoomType> availibleRoomTypes2 = HotelSystem.Rooms.GetAvailibleRoomTypes(room2Guests);
 
 //select a room type
 RoomType roomType1 = availibleRoomTypes1.First();
