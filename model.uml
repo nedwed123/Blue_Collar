@@ -642,52 +642,7 @@
       <message xmi:type="uml:Message" xmi:id="_t3tx0Jh-EeWtxMjZa_7njg" name="reservation" receiveEvent="_t3u_8Jh-EeWtxMjZa_7njg" sendEvent="_t3uY4Jh-EeWtxMjZa_7njg"/>
     </packagedElement>
   </packagedElement>
-  <packagedElement xmi:type="uml:Package" xmi:id="_OvvjUJh1EeWatpqnQATTNw" name="ComponentDiagram">
-    <packagedElement xmi:type="uml:Component" xmi:id="_XtJjMJh1EeWatpqnQATTNw" name="ReservationMaking">
-      <packagedElement xmi:type="uml:Dependency" xmi:id="_Rvvr0JjREeWshPrMD0A9Hg" client="_XtJjMJh1EeWatpqnQATTNw" supplier="_2xcSUJjQEeWshPrMD0A9Hg"/>
-    </packagedElement>
-    <packagedElement xmi:type="uml:Component" xmi:id="_dcrR0Jh1EeWatpqnQATTNw" name="Menus">
-      <packagedElement xmi:type="uml:Dependency" xmi:id="_2HjlQJh3EeWatpqnQATTNw" client="_dcrR0Jh1EeWatpqnQATTNw" supplier="_XtJjMJh1EeWatpqnQATTNw"/>
-      <packagedElement xmi:type="uml:Dependency" xmi:id="_RI_8QJjOEeWshPrMD0A9Hg" client="_dcrR0Jh1EeWatpqnQATTNw" supplier="_D1ZYMJjOEeWshPrMD0A9Hg"/>
-      <packagedElement xmi:type="uml:Dependency" xmi:id="_VKi0MJjQEeWshPrMD0A9Hg" client="_dcrR0Jh1EeWatpqnQATTNw" supplier="_hHqYYJjOEeWshPrMD0A9Hg"/>
-    </packagedElement>
-    <packagedElement xmi:type="uml:Component" xmi:id="_iaz_wJh1EeWatpqnQATTNw" name="EmployeeClient">
-      <packagedElement xmi:type="uml:Dependency" xmi:id="_yw-rAJh3EeWatpqnQATTNw" client="_iaz_wJh1EeWatpqnQATTNw" supplier="_dcrR0Jh1EeWatpqnQATTNw"/>
-    </packagedElement>
-    <packagedElement xmi:type="uml:Component" xmi:id="_uyQdkJh1EeWatpqnQATTNw" name="CustomerClient">
-      <packagedElement xmi:type="uml:Dependency" xmi:id="_zTYNcJh3EeWatpqnQATTNw" client="_uyQdkJh1EeWatpqnQATTNw" supplier="_dcrR0Jh1EeWatpqnQATTNw"/>
-    </packagedElement>
-    <packagedElement xmi:type="uml:Component" xmi:id="_OGOIYJh5EeWatpqnQATTNw" name="ObjectRelationalMapper">
-      <packagedElement xmi:type="uml:Dependency" xmi:id="_RSTp4Jh5EeWatpqnQATTNw" client="_OGOIYJh5EeWatpqnQATTNw" supplier="_P5HCUJh5EeWatpqnQATTNw"/>
-      <packagedElement xmi:type="uml:Dependency" xmi:id="_ev36QJjREeWshPrMD0A9Hg" client="_OGOIYJh5EeWatpqnQATTNw" supplier="_KscoMJjREeWshPrMD0A9Hg"/>
-    </packagedElement>
-    <packagedElement xmi:type="uml:Component" xmi:id="_P5HCUJh5EeWatpqnQATTNw" name="Database"/>
-    <packagedElement xmi:type="uml:Interface" xmi:id="_2c2pwJjNEeWshPrMD0A9Hg" name="RoomCRUDOperations">
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_axPMYJjPEeWshPrMD0A9Hg" name="add"/>
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_cLuNYJjPEeWshPrMD0A9Hg" name="remove"/>
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_dqvJEJjPEeWshPrMD0A9Hg" name="update"/>
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_e20hsJjPEeWshPrMD0A9Hg" name="delete"/>
-    </packagedElement>
-    <packagedElement xmi:type="uml:Component" xmi:id="_D1ZYMJjOEeWshPrMD0A9Hg" name="ManagerMenu">
-      <packagedElement xmi:type="uml:Dependency" xmi:id="_SBLhcJjOEeWshPrMD0A9Hg" client="_D1ZYMJjOEeWshPrMD0A9Hg" supplier="_2c2pwJjNEeWshPrMD0A9Hg"/>
-    </packagedElement>
-    <packagedElement xmi:type="uml:Component" xmi:id="_hHqYYJjOEeWshPrMD0A9Hg" name="Reservations"/>
-    <packagedElement xmi:type="uml:Component" xmi:id="_iPLaEJjOEeWshPrMD0A9Hg" name="RoomBookings">
-      <generalization xmi:type="uml:Generalization" xmi:id="_6D9zAJjQEeWshPrMD0A9Hg" general="_2xcSUJjQEeWshPrMD0A9Hg"/>
-      <packagedElement xmi:type="uml:Dependency" xmi:id="_bxVFgJjREeWshPrMD0A9Hg" client="_iPLaEJjOEeWshPrMD0A9Hg" supplier="_KscoMJjREeWshPrMD0A9Hg"/>
-    </packagedElement>
-    <packagedElement xmi:type="uml:Interface" xmi:id="_2xcSUJjQEeWshPrMD0A9Hg" name="Rooms">
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_8JCCEJjQEeWshPrMD0A9Hg" name="checkIn"/>
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_9VenEJjQEeWshPrMD0A9Hg" name="checkOut"/>
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_EozqwJjREeWshPrMD0A9Hg" name="getAvailibleRooms"/>
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_HNqNIJjREeWshPrMD0A9Hg" name="getAvailibleRoomTypes"/>
-    </packagedElement>
-    <packagedElement xmi:type="uml:Component" xmi:id="_KscoMJjREeWshPrMD0A9Hg" name="RoomRepository"/>
-    <packagedElement xmi:type="uml:Component" xmi:id="_Ud57MJjREeWshPrMD0A9Hg" name="RoomOperations">
-      <generalization xmi:type="uml:Generalization" xmi:id="_WIBToJjREeWshPrMD0A9Hg" general="_2c2pwJjNEeWshPrMD0A9Hg"/>
-      <packagedElement xmi:type="uml:Dependency" xmi:id="_bJSOEJjREeWshPrMD0A9Hg" client="_Ud57MJjREeWshPrMD0A9Hg" supplier="_KscoMJjREeWshPrMD0A9Hg"/>
-    </packagedElement>
-  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_OvvjUJh1EeWatpqnQATTNw" name="ComponentDiagram"/>
   <packagedElement xmi:type="uml:Association" xmi:id="_CoUL8JjMEeWshPrMD0A9Hg" memberEnd="_CoaSkJjMEeWshPrMD0A9Hg _Coa5oJjMEeWshPrMD0A9Hg">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_CoX2UJjMEeWshPrMD0A9Hg" source="org.eclipse.papyrus">
       <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_CoX2UZjMEeWshPrMD0A9Hg" key="nature" value="UML_Nature"/>
