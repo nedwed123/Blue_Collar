@@ -254,14 +254,17 @@
         <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="SoftwareModel.ecore#//BusinessLogic/Rooms/checkIn">
           <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="SoftwareModel.ecore#//BusinessLogic/Rooms/checkIn/roomBooking"/>
         </genOperations>
-        <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="SoftwareModel.ecore#//BusinessLogic/Rooms/findByRoomNr">
-          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="SoftwareModel.ecore#//BusinessLogic/Rooms/findByRoomNr/roomNr"/>
+        <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="SoftwareModel.ecore#//BusinessLogic/Rooms/getBooking">
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="SoftwareModel.ecore#//BusinessLogic/Rooms/getBooking/roomNr"/>
         </genOperations>
         <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="SoftwareModel.ecore#//BusinessLogic/Rooms/availibleRoomTypes">
           <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="SoftwareModel.ecore#//BusinessLogic/Rooms/availibleRoomTypes/adults"/>
           <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="SoftwareModel.ecore#//BusinessLogic/Rooms/availibleRoomTypes/children"/>
           <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="SoftwareModel.ecore#//BusinessLogic/Rooms/availibleRoomTypes/startDate"/>
           <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="SoftwareModel.ecore#//BusinessLogic/Rooms/availibleRoomTypes/endDate"/>
+        </genOperations>
+        <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="SoftwareModel.ecore#//BusinessLogic/Rooms/getBooking.1">
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="SoftwareModel.ecore#//BusinessLogic/Rooms/getBooking.1/nameOfRoomResponsible"/>
         </genOperations>
       </genClasses>
     </nestedGenPackages>

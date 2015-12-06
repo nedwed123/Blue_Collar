@@ -7,8 +7,6 @@ import SoftwareModel.DataAccess.DatabaseContext;
 import SoftwareModel.DataAccess.ReservationsRepository;
 
 import SoftwareModel.DomainEntities.Reservation;
-import SoftwareModel.DomainEntities.Room;
-
 import java.lang.reflect.InvocationTargetException;
 import org.eclipse.emf.common.notify.Notification;
 

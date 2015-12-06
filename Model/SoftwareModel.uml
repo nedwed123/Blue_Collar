@@ -343,10 +343,11 @@
       <ownedOperation xmi:type="uml:Operation" xmi:id="_5chMYJhrEeWatpqnQATTNw" name="checkIn">
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_CfGnMJhsEeWatpqnQATTNw" name="roomBooking" type="_5lCx4JXcEeWtZbi4EnRFrQ"/>
       </ownedOperation>
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_7T8oEJhrEeWatpqnQATTNw" name="findByRoomNr">
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_7T8oEJhrEeWatpqnQATTNw" name="getBooking" concurrency="concurrent">
         <ownedParameter xmi:type="uml:Parameter" xmi:id="__zUWYJhrEeWatpqnQATTNw" name="roomNr">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
         </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_G0FIcJxTEeWIRtM0UUTKxA" type="_5lCx4JXcEeWtZbi4EnRFrQ" direction="return"/>
       </ownedOperation>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_HwC8YJhsEeWatpqnQATTNw" name="availibleRoomTypes">
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_aYFOgJhsEeWatpqnQATTNw" name="adults">
@@ -362,6 +363,12 @@
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
         </ownedParameter>
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_8QJ8MJhsEeWatpqnQATTNw" type="_uJFr8JXcEeWtZbi4EnRFrQ" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_GQsSEJxUEeWIRtM0UUTKxA" name="getBooking">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_Nxxd4JxUEeWIRtM0UUTKxA" name="nameOfRoomResponsible">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_QhAEQJxUEeWIRtM0UUTKxA" type="_5lCx4JXcEeWtZbi4EnRFrQ" direction="return"/>
       </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Dependency" xmi:id="_SpoxkJhrEeWatpqnQATTNw" client="_z-rgIJhqEeWatpqnQATTNw" supplier="_864EQJhYEeWatpqnQATTNw"/>

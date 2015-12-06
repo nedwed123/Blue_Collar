@@ -431,7 +431,7 @@ public class BusinessLogicPackageImpl extends EPackageImpl implements BusinessLo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getRooms__FindByRoomNr__int() {
+	public EOperation getRooms__GetBooking__int() {
 		return roomsEClass.getEOperations().get(2);
 	}
 
@@ -442,6 +442,15 @@ public class BusinessLogicPackageImpl extends EPackageImpl implements BusinessLo
 	 */
 	public EOperation getRooms__AvailibleRoomTypes__int_int_Date_Date() {
 		return roomsEClass.getEOperations().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getRooms__GetBooking__String() {
+		return roomsEClass.getEOperations().get(4);
 	}
 
 	/**
@@ -507,8 +516,9 @@ public class BusinessLogicPackageImpl extends EPackageImpl implements BusinessLo
 		roomsEClass = createEClass(ROOMS);
 		createEOperation(roomsEClass, ROOMS___CHECK_OUT__ROOMBOOKING);
 		createEOperation(roomsEClass, ROOMS___CHECK_IN__ROOMBOOKING);
-		createEOperation(roomsEClass, ROOMS___FIND_BY_ROOM_NR__INT);
+		createEOperation(roomsEClass, ROOMS___GET_BOOKING__INT);
 		createEOperation(roomsEClass, ROOMS___AVAILIBLE_ROOM_TYPES__INT_INT_DATE_DATE);
+		createEOperation(roomsEClass, ROOMS___GET_BOOKING__STRING);
 	}
 
 	/**
@@ -623,7 +633,7 @@ public class BusinessLogicPackageImpl extends EPackageImpl implements BusinessLo
 		op = initEOperation(getRooms__CheckIn__RoomBooking(), null, "checkIn", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, theDomainEntitiesPackage.getRoomBooking(), "roomBooking", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		op = initEOperation(getRooms__FindByRoomNr__int(), null, "findByRoomNr", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		op = initEOperation(getRooms__GetBooking__int(), theDomainEntitiesPackage.getRoomBooking(), "getBooking", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, theTypesPackage.getInteger(), "roomNr", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		op = initEOperation(getRooms__AvailibleRoomTypes__int_int_Date_Date(), theDomainEntitiesPackage.getRoomType(), "availibleRoomTypes", 1, 1, IS_UNIQUE, !IS_ORDERED);
@@ -631,6 +641,9 @@ public class BusinessLogicPackageImpl extends EPackageImpl implements BusinessLo
 		addEParameter(op, theTypesPackage.getInteger(), "children", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDate(), "startDate", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDate(), "endDate", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		op = initEOperation(getRooms__GetBooking__String(), theDomainEntitiesPackage.getRoomBooking(), "getBooking", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theTypesPackage.getString(), "nameOfRoomResponsible", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

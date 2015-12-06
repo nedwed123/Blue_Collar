@@ -72,7 +72,7 @@ public class RoomsImpl extends MinimalEObjectImpl.Container implements Rooms {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void findByRoomNr(int roomNr) {
+	public RoomBooking getBooking(int roomNr) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -94,6 +94,17 @@ public class RoomsImpl extends MinimalEObjectImpl.Container implements Rooms {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public RoomBooking getBooking(String nameOfRoomResponsible) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
@@ -103,11 +114,12 @@ public class RoomsImpl extends MinimalEObjectImpl.Container implements Rooms {
 			case BusinessLogicPackage.ROOMS___CHECK_IN__ROOMBOOKING:
 				checkIn((RoomBooking)arguments.get(0));
 				return null;
-			case BusinessLogicPackage.ROOMS___FIND_BY_ROOM_NR__INT:
-				findByRoomNr((Integer)arguments.get(0));
-				return null;
+			case BusinessLogicPackage.ROOMS___GET_BOOKING__INT:
+				return getBooking((Integer)arguments.get(0));
 			case BusinessLogicPackage.ROOMS___AVAILIBLE_ROOM_TYPES__INT_INT_DATE_DATE:
 				return availibleRoomTypes((Integer)arguments.get(0), (Integer)arguments.get(1), (Date)arguments.get(2), (Date)arguments.get(3));
+			case BusinessLogicPackage.ROOMS___GET_BOOKING__STRING:
+				return getBooking((String)arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

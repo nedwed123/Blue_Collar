@@ -39,10 +39,10 @@ public interface Rooms extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model roomNrDataType="org.eclipse.uml2.types.Integer" roomNrRequired="true" roomNrOrdered="false"
+	 * @model required="true" ordered="false" roomNrDataType="org.eclipse.uml2.types.Integer" roomNrRequired="true" roomNrOrdered="false"
 	 * @generated
 	 */
-	void findByRoomNr(int roomNr);
+	RoomBooking getBooking(int roomNr);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -51,5 +51,13 @@ public interface Rooms extends EObject {
 	 * @generated
 	 */
 	RoomType availibleRoomTypes(int adults, int children, Date startDate, Date endDate);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" ordered="false" nameOfRoomResponsibleDataType="org.eclipse.uml2.types.String" nameOfRoomResponsibleRequired="true" nameOfRoomResponsibleOrdered="false"
+	 * @generated
+	 */
+	RoomBooking getBooking(String nameOfRoomResponsible);
 
 } // Rooms

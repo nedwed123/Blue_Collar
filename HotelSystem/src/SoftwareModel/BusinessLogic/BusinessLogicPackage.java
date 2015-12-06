@@ -432,13 +432,13 @@ public interface BusinessLogicPackage extends EPackage {
 	int ROOMS___CHECK_IN__ROOMBOOKING = 1;
 
 	/**
-	 * The operation id for the '<em>Find By Room Nr</em>' operation.
+	 * The operation id for the '<em>Get Booking</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROOMS___FIND_BY_ROOM_NR__INT = 2;
+	int ROOMS___GET_BOOKING__INT = 2;
 
 	/**
 	 * The operation id for the '<em>Availible Room Types</em>' operation.
@@ -450,13 +450,22 @@ public interface BusinessLogicPackage extends EPackage {
 	int ROOMS___AVAILIBLE_ROOM_TYPES__INT_INT_DATE_DATE = 3;
 
 	/**
+	 * The operation id for the '<em>Get Booking</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOMS___GET_BOOKING__STRING = 4;
+
+	/**
 	 * The number of operations of the '<em>Rooms</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROOMS_OPERATION_COUNT = 4;
+	int ROOMS_OPERATION_COUNT = 5;
 
 
 	/**
@@ -767,14 +776,14 @@ public interface BusinessLogicPackage extends EPackage {
 	EOperation getRooms__CheckIn__RoomBooking();
 
 	/**
-	 * Returns the meta object for the '{@link SoftwareModel.BusinessLogic.Rooms#findByRoomNr(int) <em>Find By Room Nr</em>}' operation.
+	 * Returns the meta object for the '{@link SoftwareModel.BusinessLogic.Rooms#getBooking(int) <em>Get Booking</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Find By Room Nr</em>' operation.
-	 * @see SoftwareModel.BusinessLogic.Rooms#findByRoomNr(int)
+	 * @return the meta object for the '<em>Get Booking</em>' operation.
+	 * @see SoftwareModel.BusinessLogic.Rooms#getBooking(int)
 	 * @generated
 	 */
-	EOperation getRooms__FindByRoomNr__int();
+	EOperation getRooms__GetBooking__int();
 
 	/**
 	 * Returns the meta object for the '{@link SoftwareModel.BusinessLogic.Rooms#availibleRoomTypes(int, int, java.util.Date, java.util.Date) <em>Availible Room Types</em>}' operation.
@@ -785,6 +794,16 @@ public interface BusinessLogicPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getRooms__AvailibleRoomTypes__int_int_Date_Date();
+
+	/**
+	 * Returns the meta object for the '{@link SoftwareModel.BusinessLogic.Rooms#getBooking(java.lang.String) <em>Get Booking</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Booking</em>' operation.
+	 * @see SoftwareModel.BusinessLogic.Rooms#getBooking(java.lang.String)
+	 * @generated
+	 */
+	EOperation getRooms__GetBooking__String();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1062,12 +1081,12 @@ public interface BusinessLogicPackage extends EPackage {
 		EOperation ROOMS___CHECK_IN__ROOMBOOKING = eINSTANCE.getRooms__CheckIn__RoomBooking();
 
 		/**
-		 * The meta object literal for the '<em><b>Find By Room Nr</b></em>' operation.
+		 * The meta object literal for the '<em><b>Get Booking</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation ROOMS___FIND_BY_ROOM_NR__INT = eINSTANCE.getRooms__FindByRoomNr__int();
+		EOperation ROOMS___GET_BOOKING__INT = eINSTANCE.getRooms__GetBooking__int();
 
 		/**
 		 * The meta object literal for the '<em><b>Availible Room Types</b></em>' operation.
@@ -1076,6 +1095,14 @@ public interface BusinessLogicPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation ROOMS___AVAILIBLE_ROOM_TYPES__INT_INT_DATE_DATE = eINSTANCE.getRooms__AvailibleRoomTypes__int_int_Date_Date();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Booking</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ROOMS___GET_BOOKING__STRING = eINSTANCE.getRooms__GetBooking__String();
 
 	}
 

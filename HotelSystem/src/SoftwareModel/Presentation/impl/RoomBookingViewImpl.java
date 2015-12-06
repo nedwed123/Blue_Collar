@@ -3,11 +3,15 @@
 package SoftwareModel.Presentation.impl;
 
 import SoftwareModel.BusinessLogic.Rooms;
+import SoftwareModel.BusinessLogic.impl.RoomsImpl;
+import SoftwareModel.DomainEntities.RoomBooking;
+import SoftwareModel.DomainEntities.impl.RoomBookingImpl;
 import SoftwareModel.Presentation.Frame;
 import SoftwareModel.Presentation.PresentationPackage;
 import SoftwareModel.Presentation.RoomBookingView;
 
 import java.lang.reflect.InvocationTargetException;
+import java.util.Scanner;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -38,10 +42,9 @@ public class RoomBookingViewImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getRooms()
-	 * @generated
 	 * @ordered
 	 */
-	protected Rooms rooms;
+	protected Rooms rooms = new RoomsImpl();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -104,15 +107,45 @@ public class RoomBookingViewImpl extends MinimalEObjectImpl.Container implements
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PresentationPackage.ROOM_BOOKING_VIEW__ROOMS, newRooms, newRooms));
 	}
-
+	
+	private boolean isInt(String input){
+	    return input.matches("\\d+");
+	}
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	public void Run(Frame frame) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
+		System.out.println("Input room nr or name of room responsible guest");
+
+		Scanner in = new Scanner(System.in);
+		String input = in.next();
+		
+		RoomBooking roombooking;
+		// could be inside getBooking?
+		if(isInt(input)){
+			roombooking = rooms.getBooking(Integer.parseInt(input));
+		}else{
+			roombooking = rooms.getBooking(input);
+		}
+		
+		if(roombooking == null){
+			System.out.println("Unable to find roombooking");
+			frame.ChangeView(new EmployeeHomeViewImpl());
+		}
+		
+		// Display room booking
+
+		System.out.println("What do you want to do with the room booking?"
+				+ "1: Check in guests"
+				+ "2: Check out guests");
+		
+		//TODO: input switch
+		
+		//rooms.checkIn(roomBooking);
+		//rooms.checkOut(roomBooking);
+		
 		throw new UnsupportedOperationException();
 	}
 
