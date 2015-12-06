@@ -81,9 +81,7 @@
       <message xmi:type="uml:Message" xmi:id="_2j0RMJh8EeWtxMjZa_7njg" name="changeView(reservationView)" receiveEvent="_2j1fUJh8EeWtxMjZa_7njg" sendEvent="_2j04QJh8EeWtxMjZa_7njg">
         <signature xmi:type="uml:Operation" href="SoftwareModel.uml#_JPamoJdqEeW9FdtnBhCZ1w"/>
       </message>
-      <message xmi:type="uml:Message" xmi:id="_P_jrwJh9EeWtxMjZa_7njg" name="Run()" receiveEvent="_P_k54Jh9EeWtxMjZa_7njg" sendEvent="_P_kS0Jh9EeWtxMjZa_7njg">
-        <signature xmi:type="uml:Operation" href="SoftwareModel.uml#_KG9IYJh3EeWatpqnQATTNw"/>
-      </message>
+      <message xmi:type="uml:Message" xmi:id="_P_jrwJh9EeWtxMjZa_7njg" name="Run()" receiveEvent="_P_k54Jh9EeWtxMjZa_7njg" sendEvent="_P_kS0Jh9EeWtxMjZa_7njg"/>
       <message xmi:type="uml:Message" xmi:id="_jj4nAJh9EeWtxMjZa_7njg" name="Ask foor room requirements" receiveEvent="_jj5OEZh9EeWtxMjZa_7njg" sendEvent="_jj5OEJh9EeWtxMjZa_7njg"/>
       <message xmi:type="uml:Message" xmi:id="_oq3H4Jh9EeWtxMjZa_7njg" name="Enter room requirements" receiveEvent="_oq4WAJh9EeWtxMjZa_7njg" sendEvent="_oq3u8Jh9EeWtxMjZa_7njg"/>
       <message xmi:type="uml:Message" xmi:id="_xjeHUJh9EeWtxMjZa_7njg" name="availibleRoomTypes" receiveEvent="_xjeuYZh9EeWtxMjZa_7njg" sendEvent="_xjeuYJh9EeWtxMjZa_7njg">
@@ -278,6 +276,16 @@
     <packagedElement xmi:type="uml:Interface" xmi:id="_KmCLQJjeEeWNkry9trC1Ww" name="PaymentAuthorization"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Package" href="SoftwareModel.uml#_7ZzmIJulEeWYeq6AFoWyvA"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_8DjwgJwjEeWjaPenJUjglw">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_8Dk-oJwjEeWjaPenJUjglw" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_8Dk-oZwjEeWjaPenJUjglw" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <memberEnd xmi:type="uml:Property" href="SoftwareModel.uml#_8DmMwJwjEeWjaPenJUjglw"/>
+    <memberEnd xmi:type="uml:Property" href="#_8DmMwZwjEeWjaPenJUjglw"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_8DmMwZwjEeWjaPenJUjglw" name="frame" association="_8DjwgJwjEeWjaPenJUjglw">
+      <type xmi:type="uml:Class" href="SoftwareModel.uml#_ayqQYJdpEeW9FdtnBhCZ1w"/>
+    </ownedEnd>
+  </packagedElement>
   <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_iC-xQJdGEeWbutPRr4NuZg">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_iDBNgJdGEeWbutPRr4NuZg" source="http://www.eclipse.org/uml2/2.0.0/UML">
       <references xmi:type="ecore:EPackage" href="pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#_Kv8EIKFXEeS_KNX0nfvIVQ"/>

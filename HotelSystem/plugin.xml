@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated model -->
+      <package
+            uri="http:///SoftwareModel/DomainEntities.ecore"
+            class="SoftwareModel.DomainEntities.DomainEntitiesPackage"
+            genModel="model/model.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated model -->
+      <package
+            uri="http:///SoftwareModel/DataAccess.ecore"
+            class="SoftwareModel.DataAccess.DataAccessPackage"
+            genModel="model/model.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated model -->
+      <package
+            uri="http:///SoftwareModel/BusinessLogic.ecore"
+            class="SoftwareModel.BusinessLogic.BusinessLogicPackage"
+            genModel="model/model.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated model -->
+      <package
+            uri="http:///SoftwareModel/Presentation.ecore"
+            class="SoftwareModel.Presentation.PresentationPackage"
+            genModel="model/model.genmodel"/>
+   </extension>
+
+</plugin>

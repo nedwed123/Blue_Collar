@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/uml2/2.2.0/GenModel"
+    modelDirectory="/HotelSystem/src" modelPluginID="HotelSystem" modelName="Model"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.uml2.uml.ecore.importer"
+    complianceLevel="5.0" copyrightFields="false" publicConstructors="true" usedGenPackages="../../org.eclipse.uml2.types/model/Types.genmodel#//types"
+    operationReflection="true" importOrganizing="true">
+  <genAnnotations source="http://www.eclipse.org/emf/2002/GenModel/importer/org.eclipse.uml2.uml.ecore.importer">
+    <details key="OPPOSITE_ROLE_NAMES" value="IGNORE"/>
+    <details key="DUPLICATE_FEATURES" value="DISCARD"/>
+    <details key="ANNOTATION_DETAILS" value="PROCESS"/>
+    <details key="PROPERTY_DEFAULT_EXPRESSIONS" value="IGNORE"/>
+    <details key="DUPLICATE_FEATURE_INHERITANCE" value="DISCARD"/>
+    <details key="COMMENTS" value="PROCESS"/>
+    <details key="DERIVED_FEATURES" value="PROCESS"/>
+    <details key="SUPER_CLASS_ORDER" value="PROCESS"/>
+    <details key="DUPLICATE_OPERATION_INHERITANCE" value="DISCARD"/>
+    <details key="REDEFINING_OPERATIONS" value="REPORT"/>
+    <details key="INVARIANT_CONSTRAINTS" value="PROCESS"/>
+    <details key="UNION_PROPERTIES" value="REPORT"/>
+    <details key="DUPLICATE_OPERATIONS" value="DISCARD"/>
+    <details key="NON_API_INVARIANTS" value="IGNORE"/>
+    <details key="CAMEL_CASE_NAMES" value="IGNORE"/>
+    <details key="SUBSETTING_PROPERTIES" value="REPORT"/>
+    <details key="OPERATION_BODIES" value="IGNORE"/>
+    <details key="ECORE_TAGGED_VALUES" value="PROCESS"/>
+    <details key="UNTYPED_PROPERTIES" value="REPORT"/>
+    <details key="REDEFINING_PROPERTIES" value="REPORT"/>
+    <details key="INVOCATION_DELEGATES" value="IGNORE"/>
+    <details key="VALIDATION_DELEGATES" value="IGNORE"/>
+  </genAnnotations>
+  <foreignModel>../../Model/SoftwareModel.uml</foreignModel>
+  <genPackages xsi:type="genmodel:GenPackage" prefix="SoftwareModel" disposableProviderFactory="true"
+      ecorePackage="SoftwareModel.ecore#/">
+    <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="DomainEntities" basePackage="SoftwareModel"
+        disposableProviderFactory="true" ecorePackage="SoftwareModel.ecore#//DomainEntities">
+      <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="SoftwareModel.ecore#//DomainEntities/BedType">
+        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="SoftwareModel.ecore#//DomainEntities/BedType/King"/>
+        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="SoftwareModel.ecore#//DomainEntities/BedType/Queen"/>
+      </genEnums>
+      <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="SoftwareModel.ecore#//DomainEntities/Availability">
+        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="SoftwareModel.ecore#//DomainEntities/Availability/Availible"/>
+        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="SoftwareModel.ecore#//DomainEntities/Availability/Used"/>
+        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="SoftwareModel.ecore#//DomainEntities/Availability/UnderMaintenence"/>
+        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="SoftwareModel.ecore#//DomainEntities/Availability/ToBeCleaned"/>
+      </genEnums>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="SoftwareModel.ecore#//DomainEntities/RoomType">
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute SoftwareModel.ecore#//DomainEntities/RoomType/size"/>
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute SoftwareModel.ecore#//DomainEntities/RoomType/view"/>
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute SoftwareModel.ecore#//DomainEntities/RoomType/disableAccess"/>
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute SoftwareModel.ecore#//DomainEntities/RoomType/rate"/>
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute SoftwareModel.ecore#//DomainEntities/RoomType/smoking"/>
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute SoftwareModel.ecore#//DomainEntities/RoomType/petsAllowed"/>
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute SoftwareModel.ecore#//DomainEntities/RoomType/roomTypeId"/>
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute SoftwareModel.ecore#//DomainEntities/RoomType/bedtype"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="SoftwareModel.ecore#//DomainEntities/PaymentDetails">
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute SoftwareModel.ecore#//DomainEntities/PaymentDetails/name"/>
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute SoftwareModel.ecore#//DomainEntities/PaymentDetails/address"/>
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute SoftwareModel.ecore#//DomainEntities/PaymentDetails/phoneNumber"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="SoftwareModel.ecore#//DomainEntities/Reservation">
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference SoftwareModel.ecore#//DomainEntities/Reservation/roombooking"/>
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute SoftwareModel.ecore#//DomainEntities/Reservation/preliminaryCheckIn"/>
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute SoftwareModel.ecore#//DomainEntities/Reservation/preliminaryCheckOut"/>
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute SoftwareModel.ecore#//DomainEntities/Reservation/reservationId"/>
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute SoftwareModel.ecore#//DomainEntities/Reservation/discountCode"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference SoftwareModel.ecore#//DomainEntities/Reservation/paymentdetails"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="SoftwareModel.ecore#//DomainEntities/RoomBooking">
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute SoftwareModel.ecore#//DomainEntities/RoomBooking/IsCheckedIn"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference SoftwareModel.ecore#//DomainEntities/RoomBooking/roomresponsible"/>
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute SoftwareModel.ecore#//DomainEntities/RoomBooking/adults"/>
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute SoftwareModel.ecore#//DomainEntities/RoomBooking/children"/>
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute SoftwareModel.ecore#//DomainEntities/RoomBooking/checkOutDate"/>
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute SoftwareModel.ecore#//DomainEntities/RoomBooking/checkInDate"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference SoftwareModel.ecore#//DomainEntities/RoomBooking/roomtype"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="SoftwareModel.ecore#//DomainEntities/RoomResponsible">
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute SoftwareModel.ecore#//DomainEntities/RoomResponsible/firstName"/>
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute SoftwareModel.ecore#//DomainEntities/RoomResponsible/lastName"/>
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute SoftwareModel.ecore#//DomainEntities/RoomResponsible/address"/>
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute SoftwareModel.ecore#//DomainEntities/RoomResponsible/phoneNumber"/>
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute SoftwareModel.ecore#//DomainEntities/RoomResponsible/email"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="SoftwareModel.ecore#//DomainEntities/Bill"/>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="SoftwareModel.ecore#//DomainEntities/Room">
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute SoftwareModel.ecore#//DomainEntities/Room/number"/>
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute SoftwareModel.ecore#//DomainEntities/Room/availability"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="SoftwareModel.ecore#//DomainEntities/Service">
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute SoftwareModel.ecore#//DomainEntities/Service/serviceDate"/>
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute SoftwareModel.ecore#//DomainEntities/Service/description"/>
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute SoftwareModel.ecore#//DomainEntities/Service/price"/>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="DataAccess" basePackage="SoftwareModel"
+        disposableProviderFactory="true" ecorePackage="SoftwareModel.ecore#//DataAccess">
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="SoftwareModel.ecore#//DataAccess/ReservationsRepository">
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference SoftwareModel.ecore#//DataAccess/ReservationsRepository/databasecontext"/>
+        <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="SoftwareModel.ecore#//DataAccess/ReservationsRepository/update">
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="SoftwareModel.ecore#//DataAccess/ReservationsRepository/update/reservation"/>
+        </genOperations>
+        <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="SoftwareModel.ecore#//DataAccess/ReservationsRepository/get">
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="SoftwareModel.ecore#//DataAccess/ReservationsRepository/get/reservationNumber"/>
+        </genOperations>
+        <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="SoftwareModel.ecore#//DataAccess/ReservationsRepository/addNew">
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="SoftwareModel.ecore#//DataAccess/ReservationsRepository/addNew/reservation"/>
+        </genOperations>
+        <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="SoftwareModel.ecore#//DataAccess/ReservationsRepository/remove">
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="SoftwareModel.ecore#//DataAccess/ReservationsRepository/remove/reservationNumber"/>
+        </genOperations>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="SoftwareModel.ecore#//DataAccess/DatabaseContext">
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference SoftwareModel.ecore#//DataAccess/DatabaseContext/rooms"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference SoftwareModel.ecore#//DataAccess/DatabaseContext/roomTypes"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference SoftwareModel.ecore#//DataAccess/DatabaseContext/reservations"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference SoftwareModel.ecore#//DataAccess/DatabaseContext/roomBookings"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="SoftwareModel.ecore#//DataAccess/RoomBookingsRepository">
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference SoftwareModel.ecore#//DataAccess/RoomBookingsRepository/databasecontext"/>
+        <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="SoftwareModel.ecore#//DataAccess/RoomBookingsRepository/update">
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="SoftwareModel.ecore#//DataAccess/RoomBookingsRepository/update/roomBooking"/>
+        </genOperations>
+        <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="SoftwareModel.ecore#//DataAccess/RoomBookingsRepository/get">
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="SoftwareModel.ecore#//DataAccess/RoomBookingsRepository/get/name"/>
+        </genOperations>
+        <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="SoftwareModel.ecore#//DataAccess/RoomBookingsRepository/get.1">
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="SoftwareModel.ecore#//DataAccess/RoomBookingsRepository/get.1/reservationNumber"/>
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="SoftwareModel.ecore#//DataAccess/RoomBookingsRepository/get.1/name"/>
+        </genOperations>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="SoftwareModel.ecore#//DataAccess/AuthorizationRepository">
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference SoftwareModel.ecore#//DataAccess/AuthorizationRepository/databasecontext"/>
+        <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="SoftwareModel.ecore#//DataAccess/AuthorizationRepository/getPasswords"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="SoftwareModel.ecore#//DataAccess/RoomRepository">
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference SoftwareModel.ecore#//DataAccess/RoomRepository/databasecontext"/>
+        <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="SoftwareModel.ecore#//DataAccess/RoomRepository/updateRoom">
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="SoftwareModel.ecore#//DataAccess/RoomRepository/updateRoom/room"/>
+        </genOperations>
+        <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="SoftwareModel.ecore#//DataAccess/RoomRepository/updateRoomType">
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="SoftwareModel.ecore#//DataAccess/RoomRepository/updateRoomType/roomType"/>
+        </genOperations>
+        <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="SoftwareModel.ecore#//DataAccess/RoomRepository/getRoom">
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="SoftwareModel.ecore#//DataAccess/RoomRepository/getRoom/roomNumber"/>
+        </genOperations>
+        <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="SoftwareModel.ecore#//DataAccess/RoomRepository/getRoomType">
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="SoftwareModel.ecore#//DataAccess/RoomRepository/getRoomType/roomTypeId"/>
+        </genOperations>
+        <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="SoftwareModel.ecore#//DataAccess/RoomRepository/removeRoom">
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="SoftwareModel.ecore#//DataAccess/RoomRepository/removeRoom/room"/>
+        </genOperations>
+        <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="SoftwareModel.ecore#//DataAccess/RoomRepository/addRoom">
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="SoftwareModel.ecore#//DataAccess/RoomRepository/addRoom/room"/>
+        </genOperations>
+        <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="SoftwareModel.ecore#//DataAccess/RoomRepository/getRooms"/>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="BusinessLogic" basePackage="SoftwareModel"
+        disposableProviderFactory="true" ecorePackage="SoftwareModel.ecore#//BusinessLogic">
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="SoftwareModel.ecore#//BusinessLogic/Reservations">
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference SoftwareModel.ecore#//BusinessLogic/Reservations/reservationsrepository"/>
+        <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="SoftwareModel.ecore#//BusinessLogic/Reservations/updateReservationDetails">
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="SoftwareModel.ecore#//BusinessLogic/Reservations/updateReservationDetails/reservation"/>
+        </genOperations>
+        <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="SoftwareModel.ecore#//BusinessLogic/Reservations/make">
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="SoftwareModel.ecore#//BusinessLogic/Reservations/make/selectedRooms"/>
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="SoftwareModel.ecore#//BusinessLogic/Reservations/make/paymentDetails"/>
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="SoftwareModel.ecore#//BusinessLogic/Reservations/make/payNow"/>
+        </genOperations>
+        <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="SoftwareModel.ecore#//BusinessLogic/Reservations/cancel">
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="SoftwareModel.ecore#//BusinessLogic/Reservations/cancel/reservation"/>
+        </genOperations>
+        <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="SoftwareModel.ecore#//BusinessLogic/Reservations/getReservation">
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="SoftwareModel.ecore#//BusinessLogic/Reservations/getReservation/reservationNumber"/>
+        </genOperations>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="SoftwareModel.ecore#//BusinessLogic/RoomBookings">
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference SoftwareModel.ecore#//BusinessLogic/RoomBookings/roombookingsrepository"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference SoftwareModel.ecore#//BusinessLogic/RoomBookings/availibleroomfinder"/>
+        <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="SoftwareModel.ecore#//BusinessLogic/RoomBookings/checkOut">
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="SoftwareModel.ecore#//BusinessLogic/RoomBookings/checkOut/roomBooking"/>
+        </genOperations>
+        <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="SoftwareModel.ecore#//BusinessLogic/RoomBookings/checkIn">
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="SoftwareModel.ecore#//BusinessLogic/RoomBookings/checkIn/roomBooking"/>
+        </genOperations>
+        <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="SoftwareModel.ecore#//BusinessLogic/RoomBookings/findByRoomNr">
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="SoftwareModel.ecore#//BusinessLogic/RoomBookings/findByRoomNr/roomNr"/>
+        </genOperations>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="SoftwareModel.ecore#//BusinessLogic/AvailibleRoomFinder">
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference SoftwareModel.ecore#//BusinessLogic/AvailibleRoomFinder/roomrepository"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference SoftwareModel.ecore#//BusinessLogic/AvailibleRoomFinder/roombookingsrepository"/>
+        <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="SoftwareModel.ecore#//BusinessLogic/AvailibleRoomFinder/availableRoomTypes">
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="SoftwareModel.ecore#//BusinessLogic/AvailibleRoomFinder/availableRoomTypes/adults"/>
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="SoftwareModel.ecore#//BusinessLogic/AvailibleRoomFinder/availableRoomTypes/children"/>
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="SoftwareModel.ecore#//BusinessLogic/AvailibleRoomFinder/availableRoomTypes/startDate"/>
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="SoftwareModel.ecore#//BusinessLogic/AvailibleRoomFinder/availableRoomTypes/endDate"/>
+        </genOperations>
+        <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="SoftwareModel.ecore#//BusinessLogic/AvailibleRoomFinder/availibleRoom">
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="SoftwareModel.ecore#//BusinessLogic/AvailibleRoomFinder/availibleRoom/roomBooking"/>
+        </genOperations>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="SoftwareModel.ecore#//BusinessLogic/RoomOperations">
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference SoftwareModel.ecore#//BusinessLogic/RoomOperations/roomrepository"/>
+        <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="SoftwareModel.ecore#//BusinessLogic/RoomOperations/modifyRate">
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="SoftwareModel.ecore#//BusinessLogic/RoomOperations/modifyRate/roomTypeId"/>
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="SoftwareModel.ecore#//BusinessLogic/RoomOperations/modifyRate/rate"/>
+        </genOperations>
+        <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="SoftwareModel.ecore#//BusinessLogic/RoomOperations/makeRoomAvailable">
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="SoftwareModel.ecore#//BusinessLogic/RoomOperations/makeRoomAvailable/roomNumber"/>
+        </genOperations>
+        <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="SoftwareModel.ecore#//BusinessLogic/RoomOperations/addRoom">
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="SoftwareModel.ecore#//BusinessLogic/RoomOperations/addRoom/roomNumber"/>
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="SoftwareModel.ecore#//BusinessLogic/RoomOperations/addRoom/availability"/>
+        </genOperations>
+        <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="SoftwareModel.ecore#//BusinessLogic/RoomOperations/removeRoom">
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="SoftwareModel.ecore#//BusinessLogic/RoomOperations/removeRoom/roomNumber"/>
+        </genOperations>
+        <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="SoftwareModel.ecore#//BusinessLogic/RoomOperations/makeRoomUnavailable">
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="SoftwareModel.ecore#//BusinessLogic/RoomOperations/makeRoomUnavailable/roomNumber"/>
+        </genOperations>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="SoftwareModel.ecore#//BusinessLogic/Authorizer">
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference SoftwareModel.ecore#//BusinessLogic/Authorizer/managerrepository"/>
+        <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="SoftwareModel.ecore#//BusinessLogic/Authorizer/Authorize">
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="SoftwareModel.ecore#//BusinessLogic/Authorizer/Authorize/password"/>
+        </genOperations>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="SoftwareModel.ecore#//BusinessLogic/Rooms">
+        <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="SoftwareModel.ecore#//BusinessLogic/Rooms/checkOut">
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="SoftwareModel.ecore#//BusinessLogic/Rooms/checkOut/roomBooking"/>
+        </genOperations>
+        <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="SoftwareModel.ecore#//BusinessLogic/Rooms/checkIn">
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="SoftwareModel.ecore#//BusinessLogic/Rooms/checkIn/roomBooking"/>
+        </genOperations>
+        <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="SoftwareModel.ecore#//BusinessLogic/Rooms/findByRoomNr">
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="SoftwareModel.ecore#//BusinessLogic/Rooms/findByRoomNr/roomNr"/>
+        </genOperations>
+        <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="SoftwareModel.ecore#//BusinessLogic/Rooms/availibleRoomTypes">
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="SoftwareModel.ecore#//BusinessLogic/Rooms/availibleRoomTypes/adults"/>
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="SoftwareModel.ecore#//BusinessLogic/Rooms/availibleRoomTypes/children"/>
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="SoftwareModel.ecore#//BusinessLogic/Rooms/availibleRoomTypes/startDate"/>
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="SoftwareModel.ecore#//BusinessLogic/Rooms/availibleRoomTypes/endDate"/>
+        </genOperations>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="Presentation" basePackage="SoftwareModel"
+        disposableProviderFactory="true" ecorePackage="SoftwareModel.ecore#//Presentation">
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="SoftwareModel.ecore#//Presentation/CustomerHomeView"/>
+      <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="SoftwareModel.ecore#//Presentation/IView">
+        <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="SoftwareModel.ecore#//Presentation/IView/Run">
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="SoftwareModel.ecore#//Presentation/IView/Run/frame"/>
+        </genOperations>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="SoftwareModel.ecore#//Presentation/Frame">
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference SoftwareModel.ecore#//Presentation/Frame/currentView"/>
+        <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="SoftwareModel.ecore#//Presentation/Frame/ChangeView">
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="SoftwareModel.ecore#//Presentation/Frame/ChangeView/view"/>
+        </genOperations>
+        <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="SoftwareModel.ecore#//Presentation/Frame/Start">
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="SoftwareModel.ecore#//Presentation/Frame/Start/View"/>
+        </genOperations>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="SoftwareModel.ecore#//Presentation/RoomBookingView"/>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="SoftwareModel.ecore#//Presentation/ReservationView"/>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="SoftwareModel.ecore#//Presentation/RoomManagementView"/>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="SoftwareModel.ecore#//Presentation/LoginView"/>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="SoftwareModel.ecore#//Presentation/EmployeeHomeView"/>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="SoftwareModel.ecore#//Presentation/MakeReservationView"/>
+    </nestedGenPackages>
+    <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="ClassDiagramEdges" basePackage="SoftwareModel"
+        disposableProviderFactory="true" ecorePackage="SoftwareModel.ecore#//ClassDiagramEdges"/>
+  </genPackages>
+</genmodel:GenModel>
