@@ -38,10 +38,9 @@ public class RoomBookingsRepositoryImpl extends MinimalEObjectImpl.Container imp
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getDatabasecontext()
-	 * @generated
 	 * @ordered
 	 */
-	protected DatabaseContext databasecontext;
+	protected DatabaseContext databasecontext = DatabaseContextImpl.GetDatabaseContext();
 
 	/**
 	 * <!-- begin-user-doc -->

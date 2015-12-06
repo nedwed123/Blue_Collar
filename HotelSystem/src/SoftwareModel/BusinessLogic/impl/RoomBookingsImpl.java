@@ -14,6 +14,7 @@ import java.lang.reflect.InvocationTargetException;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
@@ -38,7 +39,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  */
 public class RoomBookingsImpl extends MinimalEObjectImpl.Container implements RoomBookings {
 	/**
-	 * The cached value of the '{@link #getRoombookingsrepository() <em>Roombookingsrepository</em>}' reference.
+	 * The cached value of the '{@link #getRoombookingsrepository() <em>Roombookingsrepository</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getRoombookingsrepository()
@@ -82,14 +83,6 @@ public class RoomBookingsImpl extends MinimalEObjectImpl.Container implements Ro
 	 * @generated
 	 */
 	public RoomBookingsRepository getRoombookingsrepository() {
-		if (roombookingsrepository != null && roombookingsrepository.eIsProxy()) {
-			InternalEObject oldRoombookingsrepository = (InternalEObject)roombookingsrepository;
-			roombookingsrepository = (RoomBookingsRepository)eResolveProxy(oldRoombookingsrepository);
-			if (roombookingsrepository != oldRoombookingsrepository) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BusinessLogicPackage.ROOM_BOOKINGS__ROOMBOOKINGSREPOSITORY, oldRoombookingsrepository, roombookingsrepository));
-			}
-		}
 		return roombookingsrepository;
 	}
 
@@ -98,8 +91,14 @@ public class RoomBookingsImpl extends MinimalEObjectImpl.Container implements Ro
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RoomBookingsRepository basicGetRoombookingsrepository() {
-		return roombookingsrepository;
+	public NotificationChain basicSetRoombookingsrepository(RoomBookingsRepository newRoombookingsrepository, NotificationChain msgs) {
+		RoomBookingsRepository oldRoombookingsrepository = roombookingsrepository;
+		roombookingsrepository = newRoombookingsrepository;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, BusinessLogicPackage.ROOM_BOOKINGS__ROOMBOOKINGSREPOSITORY, oldRoombookingsrepository, newRoombookingsrepository);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -108,10 +107,17 @@ public class RoomBookingsImpl extends MinimalEObjectImpl.Container implements Ro
 	 * @generated
 	 */
 	public void setRoombookingsrepository(RoomBookingsRepository newRoombookingsrepository) {
-		RoomBookingsRepository oldRoombookingsrepository = roombookingsrepository;
-		roombookingsrepository = newRoombookingsrepository;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BusinessLogicPackage.ROOM_BOOKINGS__ROOMBOOKINGSREPOSITORY, oldRoombookingsrepository, roombookingsrepository));
+		if (newRoombookingsrepository != roombookingsrepository) {
+			NotificationChain msgs = null;
+			if (roombookingsrepository != null)
+				msgs = ((InternalEObject)roombookingsrepository).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - BusinessLogicPackage.ROOM_BOOKINGS__ROOMBOOKINGSREPOSITORY, null, msgs);
+			if (newRoombookingsrepository != null)
+				msgs = ((InternalEObject)newRoombookingsrepository).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - BusinessLogicPackage.ROOM_BOOKINGS__ROOMBOOKINGSREPOSITORY, null, msgs);
+			msgs = basicSetRoombookingsrepository(newRoombookingsrepository, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BusinessLogicPackage.ROOM_BOOKINGS__ROOMBOOKINGSREPOSITORY, newRoombookingsrepository, newRoombookingsrepository));
 	}
 
 	/**
@@ -191,11 +197,24 @@ public class RoomBookingsImpl extends MinimalEObjectImpl.Container implements Ro
 	 * @generated
 	 */
 	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case BusinessLogicPackage.ROOM_BOOKINGS__ROOMBOOKINGSREPOSITORY:
+				return basicSetRoombookingsrepository(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case BusinessLogicPackage.ROOM_BOOKINGS__ROOMBOOKINGSREPOSITORY:
-				if (resolve) return getRoombookingsrepository();
-				return basicGetRoombookingsrepository();
+				return getRoombookingsrepository();
 			case BusinessLogicPackage.ROOM_BOOKINGS__AVAILIBLEROOMFINDER:
 				if (resolve) return getAvailibleroomfinder();
 				return basicGetAvailibleroomfinder();

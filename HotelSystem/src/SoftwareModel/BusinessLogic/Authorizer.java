@@ -24,26 +24,26 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Authorizer extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Managerrepository</b></em>' reference.
+	 * Returns the value of the '<em><b>Managerrepository</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Managerrepository</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Managerrepository</em>' reference.
+	 * @return the value of the '<em>Managerrepository</em>' containment reference.
 	 * @see #setManagerrepository(AuthorizationRepository)
 	 * @see SoftwareModel.BusinessLogic.BusinessLogicPackage#getAuthorizer_Managerrepository()
-	 * @model required="true" ordered="false"
+	 * @model containment="true" required="true" ordered="false"
 	 * @generated
 	 */
 	AuthorizationRepository getManagerrepository();
 
 	/**
-	 * Sets the value of the '{@link SoftwareModel.BusinessLogic.Authorizer#getManagerrepository <em>Managerrepository</em>}' reference.
+	 * Sets the value of the '{@link SoftwareModel.BusinessLogic.Authorizer#getManagerrepository <em>Managerrepository</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Managerrepository</em>' reference.
+	 * @param value the new value of the '<em>Managerrepository</em>' containment reference.
 	 * @see #getManagerrepository()
 	 * @generated
 	 */

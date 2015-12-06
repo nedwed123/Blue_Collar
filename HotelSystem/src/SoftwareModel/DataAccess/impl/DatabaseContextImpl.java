@@ -237,4 +237,12 @@ public class DatabaseContextImpl extends MinimalEObjectImpl.Container implements
 		return super.eIsSet(featureID);
 	}
 
+	public static DatabaseContext instance = null;
+	
+	public static DatabaseContext GetDatabaseContext() {
+		if(instance == null)
+			instance = new DatabaseContextImpl();
+		return instance;
+	}
+
 } //DatabaseContextImpl

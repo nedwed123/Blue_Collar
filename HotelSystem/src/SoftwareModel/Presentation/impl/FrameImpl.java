@@ -101,24 +101,24 @@ public class FrameImpl extends MinimalEObjectImpl.Container implements Frame {
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * Runs the inputed view
 	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	public void ChangeView(IView view) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		setCurrentView(view);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * Runs the inputed view
 	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	public void Start(IView View) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		setCurrentView(View);
+		while(currentView != null)
+		{
+			currentView.Run(this);
+		}
 	}
 
 	/**

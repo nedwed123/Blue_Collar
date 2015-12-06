@@ -547,7 +547,7 @@ public class BusinessLogicPackageImpl extends EPackageImpl implements BusinessLo
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(reservationsEClass, Reservations.class, "Reservations", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getReservations_Reservationsrepository(), theDataAccessPackage.getReservationsRepository(), null, "reservationsrepository", null, 1, 1, Reservations.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getReservations_Reservationsrepository(), theDataAccessPackage.getReservationsRepository(), null, "reservationsrepository", null, 1, 1, Reservations.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		EOperation op = initEOperation(getReservations__UpdateReservationDetails__Reservation(), null, "updateReservationDetails", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, theDomainEntitiesPackage.getReservation(), "reservation", 1, 1, IS_UNIQUE, !IS_ORDERED);
@@ -560,11 +560,11 @@ public class BusinessLogicPackageImpl extends EPackageImpl implements BusinessLo
 		op = initEOperation(getReservations__Cancel__Reservation(), null, "cancel", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, theDomainEntitiesPackage.getReservation(), "reservation", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		op = initEOperation(getReservations__GetReservation__int(), null, "getReservation", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		op = initEOperation(getReservations__GetReservation__int(), theDomainEntitiesPackage.getReservation(), "getReservation", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, theTypesPackage.getInteger(), "reservationNumber", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(roomBookingsEClass, RoomBookings.class, "RoomBookings", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getRoomBookings_Roombookingsrepository(), theDataAccessPackage.getRoomBookingsRepository(), null, "roombookingsrepository", null, 1, 1, RoomBookings.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getRoomBookings_Roombookingsrepository(), theDataAccessPackage.getRoomBookingsRepository(), null, "roombookingsrepository", null, 1, 1, RoomBookings.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getRoomBookings_Availibleroomfinder(), this.getAvailibleRoomFinder(), null, "availibleroomfinder", null, 1, 1, RoomBookings.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		op = initEOperation(getRoomBookings__CheckOut__RoomBooking(), null, "checkOut", 1, 1, IS_UNIQUE, !IS_ORDERED);
@@ -577,7 +577,7 @@ public class BusinessLogicPackageImpl extends EPackageImpl implements BusinessLo
 		addEParameter(op, theTypesPackage.getInteger(), "roomNr", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(availibleRoomFinderEClass, AvailibleRoomFinder.class, "AvailibleRoomFinder", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAvailibleRoomFinder_Roomrepository(), theDataAccessPackage.getRoomRepository(), null, "roomrepository", null, 1, 1, AvailibleRoomFinder.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getAvailibleRoomFinder_Roomrepository(), theDataAccessPackage.getRoomRepository(), null, "roomrepository", null, 1, 1, AvailibleRoomFinder.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getAvailibleRoomFinder_Roombookingsrepository(), theDataAccessPackage.getRoomBookingsRepository(), null, "roombookingsrepository", null, 1, 1, AvailibleRoomFinder.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		op = initEOperation(getAvailibleRoomFinder__AvailableRoomTypes__int_int_Date_Date(), theDomainEntitiesPackage.getRoomType(), "availableRoomTypes", 1, 1, IS_UNIQUE, !IS_ORDERED);
@@ -590,7 +590,7 @@ public class BusinessLogicPackageImpl extends EPackageImpl implements BusinessLo
 		addEParameter(op, theDomainEntitiesPackage.getRoomBooking(), "roomBooking", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(roomOperationsEClass, RoomOperations.class, "RoomOperations", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getRoomOperations_Roomrepository(), theDataAccessPackage.getRoomRepository(), null, "roomrepository", null, 1, 1, RoomOperations.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getRoomOperations_Roomrepository(), theDataAccessPackage.getRoomRepository(), null, "roomrepository", null, 1, 1, RoomOperations.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		op = initEOperation(getRoomOperations__ModifyRate__int_double(), null, "modifyRate", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "roomTypeId", 1, 1, IS_UNIQUE, !IS_ORDERED);
@@ -610,7 +610,7 @@ public class BusinessLogicPackageImpl extends EPackageImpl implements BusinessLo
 		addEParameter(op, ecorePackage.getEInt(), "roomNumber", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(authorizerEClass, Authorizer.class, "Authorizer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAuthorizer_Managerrepository(), theDataAccessPackage.getAuthorizationRepository(), null, "managerrepository", null, 1, 1, Authorizer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getAuthorizer_Managerrepository(), theDataAccessPackage.getAuthorizationRepository(), null, "managerrepository", null, 1, 1, Authorizer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		op = initEOperation(getAuthorizer__Authorize__String(), theTypesPackage.getBoolean(), "Authorize", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, theTypesPackage.getString(), "password", 1, 1, IS_UNIQUE, !IS_ORDERED);

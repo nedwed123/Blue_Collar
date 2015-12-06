@@ -11,6 +11,7 @@ import java.lang.reflect.InvocationTargetException;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
@@ -34,7 +35,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  */
 public class AuthorizerImpl extends MinimalEObjectImpl.Container implements Authorizer {
 	/**
-	 * The cached value of the '{@link #getManagerrepository() <em>Managerrepository</em>}' reference.
+	 * The cached value of the '{@link #getManagerrepository() <em>Managerrepository</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getManagerrepository()
@@ -68,14 +69,6 @@ public class AuthorizerImpl extends MinimalEObjectImpl.Container implements Auth
 	 * @generated
 	 */
 	public AuthorizationRepository getManagerrepository() {
-		if (managerrepository != null && managerrepository.eIsProxy()) {
-			InternalEObject oldManagerrepository = (InternalEObject)managerrepository;
-			managerrepository = (AuthorizationRepository)eResolveProxy(oldManagerrepository);
-			if (managerrepository != oldManagerrepository) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BusinessLogicPackage.AUTHORIZER__MANAGERREPOSITORY, oldManagerrepository, managerrepository));
-			}
-		}
 		return managerrepository;
 	}
 
@@ -84,8 +77,14 @@ public class AuthorizerImpl extends MinimalEObjectImpl.Container implements Auth
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AuthorizationRepository basicGetManagerrepository() {
-		return managerrepository;
+	public NotificationChain basicSetManagerrepository(AuthorizationRepository newManagerrepository, NotificationChain msgs) {
+		AuthorizationRepository oldManagerrepository = managerrepository;
+		managerrepository = newManagerrepository;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, BusinessLogicPackage.AUTHORIZER__MANAGERREPOSITORY, oldManagerrepository, newManagerrepository);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -94,10 +93,17 @@ public class AuthorizerImpl extends MinimalEObjectImpl.Container implements Auth
 	 * @generated
 	 */
 	public void setManagerrepository(AuthorizationRepository newManagerrepository) {
-		AuthorizationRepository oldManagerrepository = managerrepository;
-		managerrepository = newManagerrepository;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BusinessLogicPackage.AUTHORIZER__MANAGERREPOSITORY, oldManagerrepository, managerrepository));
+		if (newManagerrepository != managerrepository) {
+			NotificationChain msgs = null;
+			if (managerrepository != null)
+				msgs = ((InternalEObject)managerrepository).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - BusinessLogicPackage.AUTHORIZER__MANAGERREPOSITORY, null, msgs);
+			if (newManagerrepository != null)
+				msgs = ((InternalEObject)newManagerrepository).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - BusinessLogicPackage.AUTHORIZER__MANAGERREPOSITORY, null, msgs);
+			msgs = basicSetManagerrepository(newManagerrepository, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BusinessLogicPackage.AUTHORIZER__MANAGERREPOSITORY, newManagerrepository, newManagerrepository));
 	}
 
 	/**
@@ -117,11 +123,24 @@ public class AuthorizerImpl extends MinimalEObjectImpl.Container implements Auth
 	 * @generated
 	 */
 	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case BusinessLogicPackage.AUTHORIZER__MANAGERREPOSITORY:
+				return basicSetManagerrepository(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case BusinessLogicPackage.AUTHORIZER__MANAGERREPOSITORY:
-				if (resolve) return getManagerrepository();
-				return basicGetManagerrepository();
+				return getManagerrepository();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}

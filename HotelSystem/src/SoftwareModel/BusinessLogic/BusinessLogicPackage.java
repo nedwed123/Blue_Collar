@@ -67,7 +67,7 @@ public interface BusinessLogicPackage extends EPackage {
 	int RESERVATIONS = 0;
 
 	/**
-	 * The feature id for the '<em><b>Reservationsrepository</b></em>' reference.
+	 * The feature id for the '<em><b>Reservationsrepository</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -140,7 +140,7 @@ public interface BusinessLogicPackage extends EPackage {
 	int ROOM_BOOKINGS = 1;
 
 	/**
-	 * The feature id for the '<em><b>Roombookingsrepository</b></em>' reference.
+	 * The feature id for the '<em><b>Roombookingsrepository</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -213,7 +213,7 @@ public interface BusinessLogicPackage extends EPackage {
 	int AVAILIBLE_ROOM_FINDER = 2;
 
 	/**
-	 * The feature id for the '<em><b>Roomrepository</b></em>' reference.
+	 * The feature id for the '<em><b>Roomrepository</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -277,7 +277,7 @@ public interface BusinessLogicPackage extends EPackage {
 	int ROOM_OPERATIONS = 3;
 
 	/**
-	 * The feature id for the '<em><b>Roomrepository</b></em>' reference.
+	 * The feature id for the '<em><b>Roomrepository</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -359,7 +359,7 @@ public interface BusinessLogicPackage extends EPackage {
 	int AUTHORIZER = 4;
 
 	/**
-	 * The feature id for the '<em><b>Managerrepository</b></em>' reference.
+	 * The feature id for the '<em><b>Managerrepository</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -470,10 +470,10 @@ public interface BusinessLogicPackage extends EPackage {
 	EClass getReservations();
 
 	/**
-	 * Returns the meta object for the reference '{@link SoftwareModel.BusinessLogic.Reservations#getReservationsrepository <em>Reservationsrepository</em>}'.
+	 * Returns the meta object for the containment reference '{@link SoftwareModel.BusinessLogic.Reservations#getReservationsrepository <em>Reservationsrepository</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Reservationsrepository</em>'.
+	 * @return the meta object for the containment reference '<em>Reservationsrepository</em>'.
 	 * @see SoftwareModel.BusinessLogic.Reservations#getReservationsrepository()
 	 * @see #getReservations()
 	 * @generated
@@ -531,10 +531,10 @@ public interface BusinessLogicPackage extends EPackage {
 	EClass getRoomBookings();
 
 	/**
-	 * Returns the meta object for the reference '{@link SoftwareModel.BusinessLogic.RoomBookings#getRoombookingsrepository <em>Roombookingsrepository</em>}'.
+	 * Returns the meta object for the containment reference '{@link SoftwareModel.BusinessLogic.RoomBookings#getRoombookingsrepository <em>Roombookingsrepository</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Roombookingsrepository</em>'.
+	 * @return the meta object for the containment reference '<em>Roombookingsrepository</em>'.
 	 * @see SoftwareModel.BusinessLogic.RoomBookings#getRoombookingsrepository()
 	 * @see #getRoomBookings()
 	 * @generated
@@ -593,10 +593,10 @@ public interface BusinessLogicPackage extends EPackage {
 	EClass getAvailibleRoomFinder();
 
 	/**
-	 * Returns the meta object for the reference '{@link SoftwareModel.BusinessLogic.AvailibleRoomFinder#getRoomrepository <em>Roomrepository</em>}'.
+	 * Returns the meta object for the containment reference '{@link SoftwareModel.BusinessLogic.AvailibleRoomFinder#getRoomrepository <em>Roomrepository</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Roomrepository</em>'.
+	 * @return the meta object for the containment reference '<em>Roomrepository</em>'.
 	 * @see SoftwareModel.BusinessLogic.AvailibleRoomFinder#getRoomrepository()
 	 * @see #getAvailibleRoomFinder()
 	 * @generated
@@ -645,10 +645,10 @@ public interface BusinessLogicPackage extends EPackage {
 	EClass getRoomOperations();
 
 	/**
-	 * Returns the meta object for the reference '{@link SoftwareModel.BusinessLogic.RoomOperations#getRoomrepository <em>Roomrepository</em>}'.
+	 * Returns the meta object for the containment reference '{@link SoftwareModel.BusinessLogic.RoomOperations#getRoomrepository <em>Roomrepository</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Roomrepository</em>'.
+	 * @return the meta object for the containment reference '<em>Roomrepository</em>'.
 	 * @see SoftwareModel.BusinessLogic.RoomOperations#getRoomrepository()
 	 * @see #getRoomOperations()
 	 * @generated
@@ -716,10 +716,10 @@ public interface BusinessLogicPackage extends EPackage {
 	EClass getAuthorizer();
 
 	/**
-	 * Returns the meta object for the reference '{@link SoftwareModel.BusinessLogic.Authorizer#getManagerrepository <em>Managerrepository</em>}'.
+	 * Returns the meta object for the containment reference '{@link SoftwareModel.BusinessLogic.Authorizer#getManagerrepository <em>Managerrepository</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Managerrepository</em>'.
+	 * @return the meta object for the containment reference '<em>Managerrepository</em>'.
 	 * @see SoftwareModel.BusinessLogic.Authorizer#getManagerrepository()
 	 * @see #getAuthorizer()
 	 * @generated
@@ -820,7 +820,7 @@ public interface BusinessLogicPackage extends EPackage {
 		EClass RESERVATIONS = eINSTANCE.getReservations();
 
 		/**
-		 * The meta object literal for the '<em><b>Reservationsrepository</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Reservationsrepository</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -870,7 +870,7 @@ public interface BusinessLogicPackage extends EPackage {
 		EClass ROOM_BOOKINGS = eINSTANCE.getRoomBookings();
 
 		/**
-		 * The meta object literal for the '<em><b>Roombookingsrepository</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Roombookingsrepository</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -920,7 +920,7 @@ public interface BusinessLogicPackage extends EPackage {
 		EClass AVAILIBLE_ROOM_FINDER = eINSTANCE.getAvailibleRoomFinder();
 
 		/**
-		 * The meta object literal for the '<em><b>Roomrepository</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Roomrepository</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -962,7 +962,7 @@ public interface BusinessLogicPackage extends EPackage {
 		EClass ROOM_OPERATIONS = eINSTANCE.getRoomOperations();
 
 		/**
-		 * The meta object literal for the '<em><b>Roomrepository</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Roomrepository</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1020,7 +1020,7 @@ public interface BusinessLogicPackage extends EPackage {
 		EClass AUTHORIZER = eINSTANCE.getAuthorizer();
 
 		/**
-		 * The meta object literal for the '<em><b>Managerrepository</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Managerrepository</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

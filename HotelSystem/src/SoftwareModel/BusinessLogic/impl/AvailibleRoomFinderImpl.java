@@ -17,6 +17,7 @@ import java.util.Date;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
@@ -41,7 +42,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  */
 public class AvailibleRoomFinderImpl extends MinimalEObjectImpl.Container implements AvailibleRoomFinder {
 	/**
-	 * The cached value of the '{@link #getRoomrepository() <em>Roomrepository</em>}' reference.
+	 * The cached value of the '{@link #getRoomrepository() <em>Roomrepository</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getRoomrepository()
@@ -85,14 +86,6 @@ public class AvailibleRoomFinderImpl extends MinimalEObjectImpl.Container implem
 	 * @generated
 	 */
 	public RoomRepository getRoomrepository() {
-		if (roomrepository != null && roomrepository.eIsProxy()) {
-			InternalEObject oldRoomrepository = (InternalEObject)roomrepository;
-			roomrepository = (RoomRepository)eResolveProxy(oldRoomrepository);
-			if (roomrepository != oldRoomrepository) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BusinessLogicPackage.AVAILIBLE_ROOM_FINDER__ROOMREPOSITORY, oldRoomrepository, roomrepository));
-			}
-		}
 		return roomrepository;
 	}
 
@@ -101,8 +94,14 @@ public class AvailibleRoomFinderImpl extends MinimalEObjectImpl.Container implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RoomRepository basicGetRoomrepository() {
-		return roomrepository;
+	public NotificationChain basicSetRoomrepository(RoomRepository newRoomrepository, NotificationChain msgs) {
+		RoomRepository oldRoomrepository = roomrepository;
+		roomrepository = newRoomrepository;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, BusinessLogicPackage.AVAILIBLE_ROOM_FINDER__ROOMREPOSITORY, oldRoomrepository, newRoomrepository);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -111,10 +110,17 @@ public class AvailibleRoomFinderImpl extends MinimalEObjectImpl.Container implem
 	 * @generated
 	 */
 	public void setRoomrepository(RoomRepository newRoomrepository) {
-		RoomRepository oldRoomrepository = roomrepository;
-		roomrepository = newRoomrepository;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BusinessLogicPackage.AVAILIBLE_ROOM_FINDER__ROOMREPOSITORY, oldRoomrepository, roomrepository));
+		if (newRoomrepository != roomrepository) {
+			NotificationChain msgs = null;
+			if (roomrepository != null)
+				msgs = ((InternalEObject)roomrepository).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - BusinessLogicPackage.AVAILIBLE_ROOM_FINDER__ROOMREPOSITORY, null, msgs);
+			if (newRoomrepository != null)
+				msgs = ((InternalEObject)newRoomrepository).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - BusinessLogicPackage.AVAILIBLE_ROOM_FINDER__ROOMREPOSITORY, null, msgs);
+			msgs = basicSetRoomrepository(newRoomrepository, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BusinessLogicPackage.AVAILIBLE_ROOM_FINDER__ROOMREPOSITORY, newRoomrepository, newRoomrepository));
 	}
 
 	/**
@@ -183,11 +189,24 @@ public class AvailibleRoomFinderImpl extends MinimalEObjectImpl.Container implem
 	 * @generated
 	 */
 	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case BusinessLogicPackage.AVAILIBLE_ROOM_FINDER__ROOMREPOSITORY:
+				return basicSetRoomrepository(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case BusinessLogicPackage.AVAILIBLE_ROOM_FINDER__ROOMREPOSITORY:
-				if (resolve) return getRoomrepository();
-				return basicGetRoomrepository();
+				return getRoomrepository();
 			case BusinessLogicPackage.AVAILIBLE_ROOM_FINDER__ROOMBOOKINGSREPOSITORY:
 				if (resolve) return getRoombookingsrepository();
 				return basicGetRoombookingsrepository();

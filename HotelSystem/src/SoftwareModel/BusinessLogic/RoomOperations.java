@@ -26,26 +26,26 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface RoomOperations extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Roomrepository</b></em>' reference.
+	 * Returns the value of the '<em><b>Roomrepository</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Roomrepository</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Roomrepository</em>' reference.
+	 * @return the value of the '<em>Roomrepository</em>' containment reference.
 	 * @see #setRoomrepository(RoomRepository)
 	 * @see SoftwareModel.BusinessLogic.BusinessLogicPackage#getRoomOperations_Roomrepository()
-	 * @model required="true" ordered="false"
+	 * @model containment="true" required="true" ordered="false"
 	 * @generated
 	 */
 	RoomRepository getRoomrepository();
 
 	/**
-	 * Sets the value of the '{@link SoftwareModel.BusinessLogic.RoomOperations#getRoomrepository <em>Roomrepository</em>}' reference.
+	 * Sets the value of the '{@link SoftwareModel.BusinessLogic.RoomOperations#getRoomrepository <em>Roomrepository</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Roomrepository</em>' reference.
+	 * @param value the new value of the '<em>Roomrepository</em>' containment reference.
 	 * @see #getRoomrepository()
 	 * @generated
 	 */

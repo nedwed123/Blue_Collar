@@ -4,24 +4,32 @@ package SoftwareModel.BusinessLogic.impl;
 
 import SoftwareModel.BusinessLogic.BusinessLogicPackage;
 import SoftwareModel.BusinessLogic.Reservations;
-
+import SoftwareModel.DataAccess.DatabaseContext;
 import SoftwareModel.DataAccess.ReservationsRepository;
-
+import SoftwareModel.DataAccess.impl.DataAccessFactoryImpl;
+import SoftwareModel.DataAccess.impl.ReservationsRepositoryImpl;
 import SoftwareModel.DomainEntities.PaymentDetails;
 import SoftwareModel.DomainEntities.Reservation;
 import SoftwareModel.DomainEntities.RoomBooking;
 
 import java.lang.reflect.InvocationTargetException;
 
+import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
-
+import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EOperation;
+import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.eclipse.emf.ecore.resource.Resource;
 
 /**
  * <!-- begin-user-doc -->
@@ -38,14 +46,13 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  */
 public class ReservationsImpl extends MinimalEObjectImpl.Container implements Reservations {
 	/**
-	 * The cached value of the '{@link #getReservationsrepository() <em>Reservationsrepository</em>}' reference.
+	 * The cached value of the '{@link #getReservationsrepository() <em>Reservationsrepository</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getReservationsrepository()
-	 * @generated
 	 * @ordered
 	 */
-	protected ReservationsRepository reservationsrepository;
+	protected ReservationsRepository reservationsrepository = new ReservationsRepositoryImpl();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -72,14 +79,6 @@ public class ReservationsImpl extends MinimalEObjectImpl.Container implements Re
 	 * @generated
 	 */
 	public ReservationsRepository getReservationsrepository() {
-		if (reservationsrepository != null && reservationsrepository.eIsProxy()) {
-			InternalEObject oldReservationsrepository = (InternalEObject)reservationsrepository;
-			reservationsrepository = (ReservationsRepository)eResolveProxy(oldReservationsrepository);
-			if (reservationsrepository != oldReservationsrepository) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BusinessLogicPackage.RESERVATIONS__RESERVATIONSREPOSITORY, oldReservationsrepository, reservationsrepository));
-			}
-		}
 		return reservationsrepository;
 	}
 
@@ -88,8 +87,14 @@ public class ReservationsImpl extends MinimalEObjectImpl.Container implements Re
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ReservationsRepository basicGetReservationsrepository() {
-		return reservationsrepository;
+	public NotificationChain basicSetReservationsrepository(ReservationsRepository newReservationsrepository, NotificationChain msgs) {
+		ReservationsRepository oldReservationsrepository = reservationsrepository;
+		reservationsrepository = newReservationsrepository;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, BusinessLogicPackage.RESERVATIONS__RESERVATIONSREPOSITORY, oldReservationsrepository, newReservationsrepository);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -98,10 +103,17 @@ public class ReservationsImpl extends MinimalEObjectImpl.Container implements Re
 	 * @generated
 	 */
 	public void setReservationsrepository(ReservationsRepository newReservationsrepository) {
-		ReservationsRepository oldReservationsrepository = reservationsrepository;
-		reservationsrepository = newReservationsrepository;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BusinessLogicPackage.RESERVATIONS__RESERVATIONSREPOSITORY, oldReservationsrepository, reservationsrepository));
+		if (newReservationsrepository != reservationsrepository) {
+			NotificationChain msgs = null;
+			if (reservationsrepository != null)
+				msgs = ((InternalEObject)reservationsrepository).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - BusinessLogicPackage.RESERVATIONS__RESERVATIONSREPOSITORY, null, msgs);
+			if (newReservationsrepository != null)
+				msgs = ((InternalEObject)newReservationsrepository).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - BusinessLogicPackage.RESERVATIONS__RESERVATIONSREPOSITORY, null, msgs);
+			msgs = basicSetReservationsrepository(newReservationsrepository, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BusinessLogicPackage.RESERVATIONS__RESERVATIONSREPOSITORY, newReservationsrepository, newReservationsrepository));
 	}
 
 	/**
@@ -139,13 +151,25 @@ public class ReservationsImpl extends MinimalEObjectImpl.Container implements Re
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * Finds the reservation with the specified reservationNumber
+	 * <!-- end-user-doc -->
+	 */
+	public Reservation getReservation(int reservationNumber) {
+		return reservationsrepository.get(reservationNumber);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void getReservation(int reservationNumber) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case BusinessLogicPackage.RESERVATIONS__RESERVATIONSREPOSITORY:
+				return basicSetReservationsrepository(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -157,8 +181,7 @@ public class ReservationsImpl extends MinimalEObjectImpl.Container implements Re
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case BusinessLogicPackage.RESERVATIONS__RESERVATIONSREPOSITORY:
-				if (resolve) return getReservationsrepository();
-				return basicGetReservationsrepository();
+				return getReservationsrepository();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -225,8 +248,7 @@ public class ReservationsImpl extends MinimalEObjectImpl.Container implements Re
 				cancel((Reservation)arguments.get(0));
 				return null;
 			case BusinessLogicPackage.RESERVATIONS___GET_RESERVATION__INT:
-				getReservation((Integer)arguments.get(0));
-				return null;
+				return getReservation((Integer)arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

@@ -257,8 +257,26 @@ public class PresentationPackageImpl extends EPackageImpl implements Presentatio
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getRoomBookingView_Rooms() {
+		return (EReference)roomBookingViewEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getReservationView() {
 		return reservationViewEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getReservationView_Reservations() {
+		return (EReference)reservationViewEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -275,8 +293,26 @@ public class PresentationPackageImpl extends EPackageImpl implements Presentatio
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getRoomManagementView_Roomoperations() {
+		return (EReference)roomManagementViewEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getLoginView() {
 		return loginViewEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getLoginView_Authorizer() {
+		return (EReference)loginViewEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -295,6 +331,24 @@ public class PresentationPackageImpl extends EPackageImpl implements Presentatio
 	 */
 	public EClass getMakeReservationView() {
 		return makeReservationViewEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getMakeReservationView_Reservations() {
+		return (EReference)makeReservationViewEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getMakeReservationView_Rooms() {
+		return (EReference)makeReservationViewEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -336,16 +390,22 @@ public class PresentationPackageImpl extends EPackageImpl implements Presentatio
 		createEOperation(frameEClass, FRAME___START__IVIEW);
 
 		roomBookingViewEClass = createEClass(ROOM_BOOKING_VIEW);
+		createEReference(roomBookingViewEClass, ROOM_BOOKING_VIEW__ROOMS);
 
 		reservationViewEClass = createEClass(RESERVATION_VIEW);
+		createEReference(reservationViewEClass, RESERVATION_VIEW__RESERVATIONS);
 
 		roomManagementViewEClass = createEClass(ROOM_MANAGEMENT_VIEW);
+		createEReference(roomManagementViewEClass, ROOM_MANAGEMENT_VIEW__ROOMOPERATIONS);
 
 		loginViewEClass = createEClass(LOGIN_VIEW);
+		createEReference(loginViewEClass, LOGIN_VIEW__AUTHORIZER);
 
 		employeeHomeViewEClass = createEClass(EMPLOYEE_HOME_VIEW);
 
 		makeReservationViewEClass = createEClass(MAKE_RESERVATION_VIEW);
+		createEReference(makeReservationViewEClass, MAKE_RESERVATION_VIEW__RESERVATIONS);
+		createEReference(makeReservationViewEClass, MAKE_RESERVATION_VIEW__ROOMS);
 	}
 
 	/**
@@ -370,6 +430,9 @@ public class PresentationPackageImpl extends EPackageImpl implements Presentatio
 		setName(eNAME);
 		setNsPrefix(eNS_PREFIX);
 		setNsURI(eNS_URI);
+
+		// Obtain other dependent packages
+		BusinessLogicPackage theBusinessLogicPackage = (BusinessLogicPackage)EPackage.Registry.INSTANCE.getEPackage(BusinessLogicPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -402,16 +465,22 @@ public class PresentationPackageImpl extends EPackageImpl implements Presentatio
 		addEParameter(op, this.getIView(), "View", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(roomBookingViewEClass, RoomBookingView.class, "RoomBookingView", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getRoomBookingView_Rooms(), theBusinessLogicPackage.getRooms(), null, "rooms", null, 1, 1, RoomBookingView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(reservationViewEClass, ReservationView.class, "ReservationView", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getReservationView_Reservations(), theBusinessLogicPackage.getReservations(), null, "reservations", null, 1, 1, ReservationView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(roomManagementViewEClass, RoomManagementView.class, "RoomManagementView", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getRoomManagementView_Roomoperations(), theBusinessLogicPackage.getRoomOperations(), null, "roomoperations", null, 1, 1, RoomManagementView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(loginViewEClass, LoginView.class, "LoginView", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getLoginView_Authorizer(), theBusinessLogicPackage.getAuthorizer(), null, "authorizer", null, 1, 1, LoginView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(employeeHomeViewEClass, EmployeeHomeView.class, "EmployeeHomeView", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(makeReservationViewEClass, MakeReservationView.class, "MakeReservationView", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getMakeReservationView_Reservations(), theBusinessLogicPackage.getReservations(), null, "reservations", null, 1, 1, MakeReservationView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getMakeReservationView_Rooms(), theBusinessLogicPackage.getRooms(), null, "rooms", null, 1, 1, MakeReservationView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

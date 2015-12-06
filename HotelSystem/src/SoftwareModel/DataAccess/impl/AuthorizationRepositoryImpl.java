@@ -37,10 +37,9 @@ public class AuthorizationRepositoryImpl extends MinimalEObjectImpl.Container im
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getDatabasecontext()
-	 * @generated
 	 * @ordered
 	 */
-	protected DatabaseContext databasecontext;
+	protected DatabaseContext databasecontext  = DatabaseContextImpl.GetDatabaseContext();
 
 	/**
 	 * <!-- begin-user-doc -->

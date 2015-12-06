@@ -7,6 +7,7 @@ import SoftwareModel.DataAccess.DatabaseContext;
 import SoftwareModel.DataAccess.ReservationsRepository;
 
 import SoftwareModel.DomainEntities.Reservation;
+import SoftwareModel.DomainEntities.Room;
 
 import java.lang.reflect.InvocationTargetException;
 import org.eclipse.emf.common.notify.Notification;
@@ -38,10 +39,9 @@ public class ReservationsRepositoryImpl extends MinimalEObjectImpl.Container imp
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getDatabasecontext()
-	 * @generated
 	 * @ordered
 	 */
-	protected DatabaseContext databasecontext;
+	protected DatabaseContext databasecontext = DatabaseContextImpl.GetDatabaseContext();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -113,13 +113,19 @@ public class ReservationsRepositoryImpl extends MinimalEObjectImpl.Container imp
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * Finds a reservation, returns null if not found
 	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	public Reservation get(int reservationNumber) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		EList<Reservation> reservations = databasecontext.getReservations();
+
+		for (int i = 0; i < reservations.size(); i++) {
+			Reservation reservation = reservations.get(i);
+			if(reservationNumber == reservation.getReservationId()){
+				return reservation;
+			}
+		}
+		return null;
 	}
 
 	/**

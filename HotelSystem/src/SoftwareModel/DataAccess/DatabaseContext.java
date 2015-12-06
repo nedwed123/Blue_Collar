@@ -95,4 +95,5 @@ public interface DatabaseContext extends EObject {
 	 */
 	EList<RoomBooking> getRoomBookings();
 
+
 } // DatabaseContext

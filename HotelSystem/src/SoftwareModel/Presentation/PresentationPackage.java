@@ -196,13 +196,22 @@ public interface PresentationPackage extends EPackage {
 	int ROOM_BOOKING_VIEW = 3;
 
 	/**
+	 * The feature id for the '<em><b>Rooms</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_BOOKING_VIEW__ROOMS = IVIEW_FEATURE_COUNT + 0;
+
+	/**
 	 * The number of structural features of the '<em>Room Booking View</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_BOOKING_VIEW_FEATURE_COUNT = IVIEW_FEATURE_COUNT + 0;
+	int ROOM_BOOKING_VIEW_FEATURE_COUNT = IVIEW_FEATURE_COUNT + 1;
 
 	/**
 	 * The operation id for the '<em>Run</em>' operation.
@@ -233,13 +242,22 @@ public interface PresentationPackage extends EPackage {
 	int RESERVATION_VIEW = 4;
 
 	/**
+	 * The feature id for the '<em><b>Reservations</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESERVATION_VIEW__RESERVATIONS = IVIEW_FEATURE_COUNT + 0;
+
+	/**
 	 * The number of structural features of the '<em>Reservation View</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RESERVATION_VIEW_FEATURE_COUNT = IVIEW_FEATURE_COUNT + 0;
+	int RESERVATION_VIEW_FEATURE_COUNT = IVIEW_FEATURE_COUNT + 1;
 
 	/**
 	 * The operation id for the '<em>Run</em>' operation.
@@ -270,13 +288,22 @@ public interface PresentationPackage extends EPackage {
 	int ROOM_MANAGEMENT_VIEW = 5;
 
 	/**
+	 * The feature id for the '<em><b>Roomoperations</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_MANAGEMENT_VIEW__ROOMOPERATIONS = IVIEW_FEATURE_COUNT + 0;
+
+	/**
 	 * The number of structural features of the '<em>Room Management View</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_MANAGEMENT_VIEW_FEATURE_COUNT = IVIEW_FEATURE_COUNT + 0;
+	int ROOM_MANAGEMENT_VIEW_FEATURE_COUNT = IVIEW_FEATURE_COUNT + 1;
 
 	/**
 	 * The operation id for the '<em>Run</em>' operation.
@@ -307,13 +334,22 @@ public interface PresentationPackage extends EPackage {
 	int LOGIN_VIEW = 6;
 
 	/**
+	 * The feature id for the '<em><b>Authorizer</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOGIN_VIEW__AUTHORIZER = IVIEW_FEATURE_COUNT + 0;
+
+	/**
 	 * The number of structural features of the '<em>Login View</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LOGIN_VIEW_FEATURE_COUNT = IVIEW_FEATURE_COUNT + 0;
+	int LOGIN_VIEW_FEATURE_COUNT = IVIEW_FEATURE_COUNT + 1;
 
 	/**
 	 * The operation id for the '<em>Run</em>' operation.
@@ -381,13 +417,31 @@ public interface PresentationPackage extends EPackage {
 	int MAKE_RESERVATION_VIEW = 8;
 
 	/**
+	 * The feature id for the '<em><b>Reservations</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAKE_RESERVATION_VIEW__RESERVATIONS = IVIEW_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Rooms</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAKE_RESERVATION_VIEW__ROOMS = IVIEW_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Make Reservation View</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MAKE_RESERVATION_VIEW_FEATURE_COUNT = IVIEW_FEATURE_COUNT + 0;
+	int MAKE_RESERVATION_VIEW_FEATURE_COUNT = IVIEW_FEATURE_COUNT + 2;
 
 	/**
 	 * The operation id for the '<em>Run</em>' operation.
@@ -490,6 +544,17 @@ public interface PresentationPackage extends EPackage {
 	EClass getRoomBookingView();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link SoftwareModel.Presentation.RoomBookingView#getRooms <em>Rooms</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Rooms</em>'.
+	 * @see SoftwareModel.Presentation.RoomBookingView#getRooms()
+	 * @see #getRoomBookingView()
+	 * @generated
+	 */
+	EReference getRoomBookingView_Rooms();
+
+	/**
 	 * Returns the meta object for class '{@link SoftwareModel.Presentation.ReservationView <em>Reservation View</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -498,6 +563,17 @@ public interface PresentationPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getReservationView();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link SoftwareModel.Presentation.ReservationView#getReservations <em>Reservations</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Reservations</em>'.
+	 * @see SoftwareModel.Presentation.ReservationView#getReservations()
+	 * @see #getReservationView()
+	 * @generated
+	 */
+	EReference getReservationView_Reservations();
 
 	/**
 	 * Returns the meta object for class '{@link SoftwareModel.Presentation.RoomManagementView <em>Room Management View</em>}'.
@@ -510,6 +586,17 @@ public interface PresentationPackage extends EPackage {
 	EClass getRoomManagementView();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link SoftwareModel.Presentation.RoomManagementView#getRoomoperations <em>Roomoperations</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Roomoperations</em>'.
+	 * @see SoftwareModel.Presentation.RoomManagementView#getRoomoperations()
+	 * @see #getRoomManagementView()
+	 * @generated
+	 */
+	EReference getRoomManagementView_Roomoperations();
+
+	/**
 	 * Returns the meta object for class '{@link SoftwareModel.Presentation.LoginView <em>Login View</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -518,6 +605,17 @@ public interface PresentationPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getLoginView();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link SoftwareModel.Presentation.LoginView#getAuthorizer <em>Authorizer</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Authorizer</em>'.
+	 * @see SoftwareModel.Presentation.LoginView#getAuthorizer()
+	 * @see #getLoginView()
+	 * @generated
+	 */
+	EReference getLoginView_Authorizer();
 
 	/**
 	 * Returns the meta object for class '{@link SoftwareModel.Presentation.EmployeeHomeView <em>Employee Home View</em>}'.
@@ -538,6 +636,28 @@ public interface PresentationPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getMakeReservationView();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link SoftwareModel.Presentation.MakeReservationView#getReservations <em>Reservations</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Reservations</em>'.
+	 * @see SoftwareModel.Presentation.MakeReservationView#getReservations()
+	 * @see #getMakeReservationView()
+	 * @generated
+	 */
+	EReference getMakeReservationView_Reservations();
+
+	/**
+	 * Returns the meta object for the reference '{@link SoftwareModel.Presentation.MakeReservationView#getRooms <em>Rooms</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Rooms</em>'.
+	 * @see SoftwareModel.Presentation.MakeReservationView#getRooms()
+	 * @see #getMakeReservationView()
+	 * @generated
+	 */
+	EReference getMakeReservationView_Rooms();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -635,6 +755,14 @@ public interface PresentationPackage extends EPackage {
 		EClass ROOM_BOOKING_VIEW = eINSTANCE.getRoomBookingView();
 
 		/**
+		 * The meta object literal for the '<em><b>Rooms</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ROOM_BOOKING_VIEW__ROOMS = eINSTANCE.getRoomBookingView_Rooms();
+
+		/**
 		 * The meta object literal for the '{@link SoftwareModel.Presentation.impl.ReservationViewImpl <em>Reservation View</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -643,6 +771,14 @@ public interface PresentationPackage extends EPackage {
 		 * @generated
 		 */
 		EClass RESERVATION_VIEW = eINSTANCE.getReservationView();
+
+		/**
+		 * The meta object literal for the '<em><b>Reservations</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference RESERVATION_VIEW__RESERVATIONS = eINSTANCE.getReservationView_Reservations();
 
 		/**
 		 * The meta object literal for the '{@link SoftwareModel.Presentation.impl.RoomManagementViewImpl <em>Room Management View</em>}' class.
@@ -655,6 +791,14 @@ public interface PresentationPackage extends EPackage {
 		EClass ROOM_MANAGEMENT_VIEW = eINSTANCE.getRoomManagementView();
 
 		/**
+		 * The meta object literal for the '<em><b>Roomoperations</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ROOM_MANAGEMENT_VIEW__ROOMOPERATIONS = eINSTANCE.getRoomManagementView_Roomoperations();
+
+		/**
 		 * The meta object literal for the '{@link SoftwareModel.Presentation.impl.LoginViewImpl <em>Login View</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -663,6 +807,14 @@ public interface PresentationPackage extends EPackage {
 		 * @generated
 		 */
 		EClass LOGIN_VIEW = eINSTANCE.getLoginView();
+
+		/**
+		 * The meta object literal for the '<em><b>Authorizer</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference LOGIN_VIEW__AUTHORIZER = eINSTANCE.getLoginView_Authorizer();
 
 		/**
 		 * The meta object literal for the '{@link SoftwareModel.Presentation.impl.EmployeeHomeViewImpl <em>Employee Home View</em>}' class.
@@ -683,6 +835,22 @@ public interface PresentationPackage extends EPackage {
 		 * @generated
 		 */
 		EClass MAKE_RESERVATION_VIEW = eINSTANCE.getMakeReservationView();
+
+		/**
+		 * The meta object literal for the '<em><b>Reservations</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MAKE_RESERVATION_VIEW__RESERVATIONS = eINSTANCE.getMakeReservationView_Reservations();
+
+		/**
+		 * The meta object literal for the '<em><b>Rooms</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MAKE_RESERVATION_VIEW__ROOMS = eINSTANCE.getMakeReservationView_Rooms();
 
 	}
 

@@ -283,12 +283,29 @@
           <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="SoftwareModel.ecore#//Presentation/Frame/Start/View"/>
         </genOperations>
       </genClasses>
-      <genClasses xsi:type="genmodel:GenClass" ecoreClass="SoftwareModel.ecore#//Presentation/RoomBookingView"/>
-      <genClasses xsi:type="genmodel:GenClass" ecoreClass="SoftwareModel.ecore#//Presentation/ReservationView"/>
-      <genClasses xsi:type="genmodel:GenClass" ecoreClass="SoftwareModel.ecore#//Presentation/RoomManagementView"/>
-      <genClasses xsi:type="genmodel:GenClass" ecoreClass="SoftwareModel.ecore#//Presentation/LoginView"/>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="SoftwareModel.ecore#//Presentation/RoomBookingView">
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference SoftwareModel.ecore#//Presentation/RoomBookingView/rooms"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="SoftwareModel.ecore#//Presentation/ReservationView">
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference SoftwareModel.ecore#//Presentation/ReservationView/reservations"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="SoftwareModel.ecore#//Presentation/RoomManagementView">
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference SoftwareModel.ecore#//Presentation/RoomManagementView/roomoperations"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="SoftwareModel.ecore#//Presentation/LoginView">
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference SoftwareModel.ecore#//Presentation/LoginView/authorizer"/>
+      </genClasses>
       <genClasses xsi:type="genmodel:GenClass" ecoreClass="SoftwareModel.ecore#//Presentation/EmployeeHomeView"/>
-      <genClasses xsi:type="genmodel:GenClass" ecoreClass="SoftwareModel.ecore#//Presentation/MakeReservationView"/>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="SoftwareModel.ecore#//Presentation/MakeReservationView">
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference SoftwareModel.ecore#//Presentation/MakeReservationView/reservations"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference SoftwareModel.ecore#//Presentation/MakeReservationView/rooms"/>
+      </genClasses>
     </nestedGenPackages>
     <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="ClassDiagramEdges" basePackage="SoftwareModel"
         disposableProviderFactory="true" ecorePackage="SoftwareModel.ecore#//ClassDiagramEdges"/>

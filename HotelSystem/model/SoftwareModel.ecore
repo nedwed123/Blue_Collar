@@ -182,11 +182,12 @@
       <eOperations name="cancel" ordered="false" lowerBound="1">
         <eParameters name="reservation" ordered="false" lowerBound="1" eType="#//DomainEntities/Reservation"/>
       </eOperations>
-      <eOperations name="getReservation" ordered="false" lowerBound="1">
+      <eOperations name="getReservation" ordered="false" lowerBound="1" eType="#//DomainEntities/Reservation">
         <eParameters name="reservationNumber" ordered="false" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//Integer"/>
       </eOperations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="reservationsrepository"
-          ordered="false" lowerBound="1" eType="#//DataAccess/ReservationsRepository"/>
+          ordered="false" lowerBound="1" eType="#//DataAccess/ReservationsRepository"
+          containment="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="RoomBookings">
       <eOperations name="checkOut" ordered="false" lowerBound="1">
@@ -199,7 +200,8 @@
         <eParameters name="roomNr" ordered="false" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//Integer"/>
       </eOperations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="roombookingsrepository"
-          ordered="false" lowerBound="1" eType="#//DataAccess/RoomBookingsRepository"/>
+          ordered="false" lowerBound="1" eType="#//DataAccess/RoomBookingsRepository"
+          containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="availibleroomfinder"
           ordered="false" lowerBound="1" eType="#//BusinessLogic/AvailibleRoomFinder"/>
     </eClassifiers>
@@ -214,7 +216,7 @@
         <eParameters name="roomBooking" ordered="false" lowerBound="1" eType="#//DomainEntities/RoomBooking"/>
       </eOperations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="roomrepository" ordered="false"
-          lowerBound="1" eType="#//DataAccess/RoomRepository"/>
+          lowerBound="1" eType="#//DataAccess/RoomRepository" containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="roombookingsrepository"
           ordered="false" lowerBound="1" eType="#//DataAccess/RoomBookingsRepository"/>
     </eClassifiers>
@@ -237,14 +239,14 @@
         <eParameters name="roomNumber" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
       </eOperations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="roomrepository" ordered="false"
-          lowerBound="1" eType="#//DataAccess/RoomRepository"/>
+          lowerBound="1" eType="#//DataAccess/RoomRepository" containment="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Authorizer">
       <eOperations name="Authorize" ordered="false" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//Boolean">
         <eParameters name="password" ordered="false" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
       </eOperations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="managerrepository" ordered="false"
-          lowerBound="1" eType="#//DataAccess/AuthorizationRepository"/>
+          lowerBound="1" eType="#//DataAccess/AuthorizationRepository" containment="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Rooms">
       <eOperations name="checkOut" ordered="false" lowerBound="1">
@@ -282,12 +284,29 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="currentView" ordered="false"
           lowerBound="1" eType="#//Presentation/IView"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="RoomBookingView" eSuperTypes="#//Presentation/IView"/>
-    <eClassifiers xsi:type="ecore:EClass" name="ReservationView" eSuperTypes="#//Presentation/IView"/>
-    <eClassifiers xsi:type="ecore:EClass" name="RoomManagementView" eSuperTypes="#//Presentation/IView"/>
-    <eClassifiers xsi:type="ecore:EClass" name="LoginView" eSuperTypes="#//Presentation/IView"/>
+    <eClassifiers xsi:type="ecore:EClass" name="RoomBookingView" eSuperTypes="#//Presentation/IView">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="rooms" ordered="false"
+          lowerBound="1" eType="#//BusinessLogic/Rooms" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ReservationView" eSuperTypes="#//Presentation/IView">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="reservations" ordered="false"
+          lowerBound="1" eType="#//BusinessLogic/Reservations" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="RoomManagementView" eSuperTypes="#//Presentation/IView">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="roomoperations" ordered="false"
+          lowerBound="1" eType="#//BusinessLogic/RoomOperations" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="LoginView" eSuperTypes="#//Presentation/IView">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="authorizer" ordered="false"
+          lowerBound="1" eType="#//BusinessLogic/Authorizer" containment="true"/>
+    </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="EmployeeHomeView" eSuperTypes="#//Presentation/IView"/>
-    <eClassifiers xsi:type="ecore:EClass" name="MakeReservationView" eSuperTypes="#//Presentation/IView"/>
+    <eClassifiers xsi:type="ecore:EClass" name="MakeReservationView" eSuperTypes="#//Presentation/IView">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="reservations" ordered="false"
+          lowerBound="1" eType="#//BusinessLogic/Reservations" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="rooms" ordered="false"
+          lowerBound="1" eType="#//BusinessLogic/Rooms"/>
+    </eClassifiers>
   </eSubpackages>
   <eSubpackages name="ClassDiagramEdges" nsURI="http:///SoftwareModel/ClassDiagramEdges.ecore"
       nsPrefix="SoftwareModel.ClassDiagramEdges"/>

@@ -27,26 +27,26 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface RoomBookings extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Roombookingsrepository</b></em>' reference.
+	 * Returns the value of the '<em><b>Roombookingsrepository</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Roombookingsrepository</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Roombookingsrepository</em>' reference.
+	 * @return the value of the '<em>Roombookingsrepository</em>' containment reference.
 	 * @see #setRoombookingsrepository(RoomBookingsRepository)
 	 * @see SoftwareModel.BusinessLogic.BusinessLogicPackage#getRoomBookings_Roombookingsrepository()
-	 * @model required="true" ordered="false"
+	 * @model containment="true" required="true" ordered="false"
 	 * @generated
 	 */
 	RoomBookingsRepository getRoombookingsrepository();
 
 	/**
-	 * Sets the value of the '{@link SoftwareModel.BusinessLogic.RoomBookings#getRoombookingsrepository <em>Roombookingsrepository</em>}' reference.
+	 * Sets the value of the '{@link SoftwareModel.BusinessLogic.RoomBookings#getRoombookingsrepository <em>Roombookingsrepository</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Roombookingsrepository</em>' reference.
+	 * @param value the new value of the '<em>Roombookingsrepository</em>' containment reference.
 	 * @see #getRoombookingsrepository()
 	 * @generated
 	 */

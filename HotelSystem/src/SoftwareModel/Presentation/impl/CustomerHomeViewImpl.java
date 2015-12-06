@@ -7,6 +7,7 @@ import SoftwareModel.Presentation.Frame;
 import SoftwareModel.Presentation.PresentationPackage;
 
 import java.lang.reflect.InvocationTargetException;
+import java.util.Scanner;
 
 import org.eclipse.emf.common.util.EList;
 
@@ -43,13 +44,28 @@ public class CustomerHomeViewImpl extends MinimalEObjectImpl.Container implement
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * Welcomes customer and asks for input
 	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	public void Run(Frame frame) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		System.out.println("-- Welcome customer --\n"
+				+ "1: Make Reservation\n"
+				+ "2: View Reservation\n"
+				+ "3: Exit\n");
+
+		Scanner in = new Scanner(System.in);
+		int input = in.nextInt();
+		
+		switch (input) {
+			case 1:
+				frame.ChangeView(new MakeReservationViewImpl());
+				break;
+			case 2:
+				frame.ChangeView(new ReservationViewImpl());
+				break;
+			default:
+				frame.ChangeView(null);
+		}
 	}
 
 	/**
