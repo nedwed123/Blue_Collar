@@ -277,26 +277,6 @@
     </packagedElement>
     <packagedElement xmi:type="uml:Interface" xmi:id="_KmCLQJjeEeWNkry9trC1Ww" name="PaymentAuthorization"/>
   </packagedElement>
-  <packagedElement xmi:type="uml:Association" xmi:id="_CoUL8JjMEeWshPrMD0A9Hg">
-    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_CoX2UJjMEeWshPrMD0A9Hg" source="org.eclipse.papyrus">
-      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_CoX2UZjMEeWshPrMD0A9Hg" key="nature" value="UML_Nature"/>
-    </eAnnotations>
-    <memberEnd xmi:type="uml:Property" href="SoftwareModel.uml#_CoaSkJjMEeWshPrMD0A9Hg"/>
-    <memberEnd xmi:type="uml:Property" href="#_Coa5oJjMEeWshPrMD0A9Hg"/>
-    <ownedEnd xmi:type="uml:Property" xmi:id="_Coa5oJjMEeWshPrMD0A9Hg" name="availibleroomfinder" association="_CoUL8JjMEeWshPrMD0A9Hg">
-      <type xmi:type="uml:Class" href="SoftwareModel.uml#_864EQJhYEeWatpqnQATTNw"/>
-    </ownedEnd>
-  </packagedElement>
-  <packagedElement xmi:type="uml:Association" xmi:id="_D3xqQJuhEeWYeq6AFoWyvA">
-    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_D3xqQZuhEeWYeq6AFoWyvA" source="org.eclipse.papyrus">
-      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_D3xqQpuhEeWYeq6AFoWyvA" key="nature" value="UML_Nature"/>
-    </eAnnotations>
-    <memberEnd xmi:type="uml:Property" href="SoftwareModel.uml#_D3xqQ5uhEeWYeq6AFoWyvA"/>
-    <memberEnd xmi:type="uml:Property" href="#_D3yRUJuhEeWYeq6AFoWyvA"/>
-    <ownedEnd xmi:type="uml:Property" xmi:id="_D3yRUJuhEeWYeq6AFoWyvA" name="roomtype" association="_D3xqQJuhEeWYeq6AFoWyvA">
-      <type xmi:type="uml:Class" href="SoftwareModel.uml#_uJFr8JXcEeWtZbi4EnRFrQ"/>
-    </ownedEnd>
-  </packagedElement>
   <packagedElement xmi:type="uml:Package" href="SoftwareModel.uml#_7ZzmIJulEeWYeq6AFoWyvA"/>
   <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_iC-xQJdGEeWbutPRr4NuZg">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_iDBNgJdGEeWbutPRr4NuZg" source="http://www.eclipse.org/uml2/2.0.0/UML">
