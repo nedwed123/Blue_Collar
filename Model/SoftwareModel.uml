@@ -372,7 +372,10 @@
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_zQOMwJhsEeWatpqnQATTNw" name="endDate">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
         </ownedParameter>
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_8QJ8MJhsEeWatpqnQATTNw" type="_uJFr8JXcEeWtZbi4EnRFrQ" direction="return"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_8QJ8MJhsEeWatpqnQATTNw" type="_uJFr8JXcEeWtZbi4EnRFrQ" direction="return">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_vgLCAJzfEeWTQI_Ux5FEeQ"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_vgUL8JzfEeWTQI_Ux5FEeQ" value="*"/>
+        </ownedParameter>
       </ownedOperation>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_GQsSEJxUEeWIRtM0UUTKxA" name="getBooking">
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_Nxxd4JxUEeWIRtM0UUTKxA" name="nameOfRoomResponsible">
