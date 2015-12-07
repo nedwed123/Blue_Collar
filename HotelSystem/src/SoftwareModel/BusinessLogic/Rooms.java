@@ -7,6 +7,7 @@ import SoftwareModel.DomainEntities.RoomType;
 
 import java.util.Date;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -47,10 +48,10 @@ public interface Rooms extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false" adultsDataType="org.eclipse.uml2.types.Integer" adultsRequired="true" adultsOrdered="false" childrenDataType="org.eclipse.uml2.types.Integer" childrenRequired="true" childrenOrdered="false" startDateRequired="true" startDateOrdered="false" endDateRequired="true" endDateOrdered="false"
+	 * @model ordered="false" adultsDataType="org.eclipse.uml2.types.Integer" adultsRequired="true" adultsOrdered="false" childrenDataType="org.eclipse.uml2.types.Integer" childrenRequired="true" childrenOrdered="false" startDateRequired="true" startDateOrdered="false" endDateRequired="true" endDateOrdered="false"
 	 * @generated
 	 */
-	RoomType availibleRoomTypes(int adults, int children, Date startDate, Date endDate);
+	EList<RoomType> availibleRoomTypes(int adults, int children, Date startDate, Date endDate);
 
 	/**
 	 * <!-- begin-user-doc -->

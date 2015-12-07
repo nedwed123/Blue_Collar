@@ -208,7 +208,7 @@ public class MakeReservationViewImpl extends MinimalEObjectImpl.Container implem
 			numberOfChildrenForRooms[i] = scanner.nextInt();
 		}
 		
-		RoomType roomType = rooms.availibleRoomTypes(numberOfAdultsForRooms[0], numberOfChildrenForRooms[0], checkInDate, checkOutDate);
+		//RoomType roomType = rooms.availibleRoomTypes(numberOfAdultsForRooms[0], numberOfChildrenForRooms[0], checkInDate, checkOutDate);
 		
 		
 		//Recieve this input from user

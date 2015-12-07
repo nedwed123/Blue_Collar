@@ -83,7 +83,7 @@ public class RoomsImpl extends MinimalEObjectImpl.Container implements Rooms {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RoomType availibleRoomTypes(int adults, int children, Date startDate, Date endDate) {
+	public EList<RoomType> availibleRoomTypes(int adults, int children, Date startDate, Date endDate) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
