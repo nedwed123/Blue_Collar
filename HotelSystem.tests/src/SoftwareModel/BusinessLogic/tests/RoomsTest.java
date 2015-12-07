@@ -4,6 +4,9 @@ package SoftwareModel.BusinessLogic.tests;
 
 import java.util.Date;
 
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.util.EcoreEList;
+
 import SoftwareModel.BusinessLogic.BusinessLogicFactory;
 import SoftwareModel.BusinessLogic.Rooms;
 import SoftwareModel.BusinessLogic.impl.AvailibleRoomFinderImpl;
@@ -148,14 +151,13 @@ public class RoomsTest extends TestCase {
 	 */
 	public void testAvailibleRoomTypes__int_int_Date_Date() {
 		RoomRepository newRoomrepository = new RoomRepositoryImpl();
-		
+
 		((AvailibleRoomFinderImpl)fixture).setRoomrepository(newRoomrepository );
 		int adults = 1;
 		int children = 1;
 		Date startDate = new Date(1993, 8, 16);
 		Date endDate = new Date(1993, 8, 16);
-		RoomType roomtype = fixture.availibleRoomTypes(adults, children, startDate, endDate);
-		
+		EList<RoomType> roomtype = fixture.availibleRoomTypes(adults, children, startDate, endDate);
 		//TODO: Implement
 		
 		

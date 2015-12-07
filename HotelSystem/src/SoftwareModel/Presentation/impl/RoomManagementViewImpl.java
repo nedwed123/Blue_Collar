@@ -108,10 +108,10 @@ public class RoomManagementViewImpl extends MinimalEObjectImpl.Container impleme
 		System.out.print("Available operations: \n" + "1.Add Room \n" + "2.Modify Rate \n" + "3.Make Room Available \n"
 				+ "4.Make Room Unavailable \n" + "5.Remove Room \n");
 		Scanner scan = new Scanner(System.in);
-		int choice = (int) scan.nextLine().charAt(0);
+		int choice = scan.nextInt();
 		switch (choice) {
 		case 1:
-			System.out.println("Please enter room number");
+			System.out.println("Please enter room number to add");
 			int roomNumber = scan.nextInt();
 			System.out.println("Please choose Availability \n" + "1.Available \n" + "2.To Be Cleaned \n"
 					+ "3.Under Maintenence \n" + "4.Occupied");
@@ -133,12 +133,34 @@ public class RoomManagementViewImpl extends MinimalEObjectImpl.Container impleme
 				break;
 			}
 		case 2:
+			System.out.println("Please enter room type id");
+			int roomTypeId=scan.nextInt();
+			System.out.println("Please enter the new rate");
+			int rate=scan.nextInt();
+			roomoperations.modifyRate(roomTypeId, rate);
+			break;
+		case 3:
+			System.out.println("Please enter room number to make available");
+			int roomNumberAv=scan.nextInt();
+			roomoperations.makeRoomAvailable(roomNumberAv);
+			break;
+		case 4:
+			System.out.println("Please enter room number to make unavailable");
+			int roomNumUnav=scan.nextInt();
+			roomoperations.makeRoomUnavailable(roomNumUnav);
+			break;
+		case 5:
+			System.out.println("Please enter room number to remove");
+			int roomNumberR=scan.nextInt();
+			roomoperations.removeRoom(roomNumberR);
+		default:
+			break;
 		
 
 		}
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		//throw new UnsupportedOperationException();
 	}
 
 	/**
