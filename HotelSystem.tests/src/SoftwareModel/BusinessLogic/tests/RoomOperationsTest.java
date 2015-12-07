@@ -129,14 +129,14 @@ public class RoomOperationsTest extends TestCase {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see SoftwareModel.BusinessLogic.RoomOperations#addRoom(int, org.eclipse.emf.common.util.Enumerator)
-	 * @generated
 	 */
 	public void testAddRoom__int_Enumerator() {
 		RoomRepository roomRepo = new RoomRepositoryImpl();
 		fixture.setRoomrepository(roomRepo);
 		fixture.addRoom(0, Availability.AVAILIBLE);
+		//TODO: implement
 		//assertTrue(roomRepo.getRooms());
-		//fail();
+		fail();
 	}
 
 	/**

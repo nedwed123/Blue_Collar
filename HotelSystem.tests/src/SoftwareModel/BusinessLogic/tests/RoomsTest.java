@@ -2,9 +2,14 @@
  */
 package SoftwareModel.BusinessLogic.tests;
 
+import java.util.Date;
+
 import SoftwareModel.BusinessLogic.BusinessLogicFactory;
 import SoftwareModel.BusinessLogic.Rooms;
-
+import SoftwareModel.BusinessLogic.impl.AvailibleRoomFinderImpl;
+import SoftwareModel.DataAccess.RoomRepository;
+import SoftwareModel.DataAccess.impl.RoomRepositoryImpl;
+import SoftwareModel.DomainEntities.RoomType;
 import junit.framework.TestCase;
 
 import junit.textui.TestRunner;
@@ -140,11 +145,20 @@ public class RoomsTest extends TestCase {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see SoftwareModel.BusinessLogic.Rooms#availibleRoomTypes(int, int, java.util.Date, java.util.Date)
-	 * @generated
 	 */
 	public void testAvailibleRoomTypes__int_int_Date_Date() {
-		// TODO: implement this operation test method
-		// Ensure that you remove @generated or mark it @generated NOT
+		RoomRepository newRoomrepository = new RoomRepositoryImpl();
+		
+		((AvailibleRoomFinderImpl)fixture).setRoomrepository(newRoomrepository );
+		int adults = 1;
+		int children = 1;
+		Date startDate = new Date(1993, 8, 16);
+		Date endDate = new Date(1993, 8, 16);
+		RoomType roomtype = fixture.availibleRoomTypes(adults, children, startDate, endDate);
+		
+		//TODO: Implement
+		
+		
 		fail();
 	}
 
