@@ -115,7 +115,7 @@ public class RoomBookingsRepositoryImpl extends MinimalEObjectImpl.Container imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void get(String name) {
+	public RoomBooking getByRoomResponsible(String name) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -126,7 +126,7 @@ public class RoomBookingsRepositoryImpl extends MinimalEObjectImpl.Container imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void get(int reservationNumber, String name) {
+	public void getByReservationNr(int reservationNumber, RoomBooking _) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -214,11 +214,10 @@ public class RoomBookingsRepositoryImpl extends MinimalEObjectImpl.Container imp
 			case DataAccessPackage.ROOM_BOOKINGS_REPOSITORY___UPDATE__ROOMBOOKING:
 				update((RoomBooking)arguments.get(0));
 				return null;
-			case DataAccessPackage.ROOM_BOOKINGS_REPOSITORY___GET__STRING:
-				get((String)arguments.get(0));
-				return null;
-			case DataAccessPackage.ROOM_BOOKINGS_REPOSITORY___GET__INT_STRING:
-				get((Integer)arguments.get(0), (String)arguments.get(1));
+			case DataAccessPackage.ROOM_BOOKINGS_REPOSITORY___GET_BY_ROOM_RESPONSIBLE__STRING:
+				return getByRoomResponsible((String)arguments.get(0));
+			case DataAccessPackage.ROOM_BOOKINGS_REPOSITORY___GET_BY_RESERVATION_NR__INT_ROOMBOOKING:
+				getByReservationNr((Integer)arguments.get(0), (RoomBooking)arguments.get(1));
 				return null;
 			case DataAccessPackage.ROOM_BOOKINGS_REPOSITORY___GET_ALL__ROOMBOOKING:
 				getAll((RoomBooking)arguments.get(0));

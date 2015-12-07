@@ -59,18 +59,18 @@ public interface RoomBookingsRepository extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model nameDataType="org.eclipse.uml2.types.String" nameRequired="true" nameOrdered="false"
+	 * @model required="true" ordered="false" nameDataType="org.eclipse.uml2.types.String" nameRequired="true" nameOrdered="false"
 	 * @generated
 	 */
-	void get(String name);
+	RoomBooking getByRoomResponsible(String name);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model reservationNumberRequired="true" reservationNumberOrdered="false" nameDataType="org.eclipse.uml2.types.String" nameRequired="true" nameOrdered="false"
+	 * @model reservationNumberRequired="true" reservationNumberOrdered="false" _Required="true" _Ordered="false"
 	 * @generated
 	 */
-	void get(int reservationNumber, String name);
+	void getByReservationNr(int reservationNumber, RoomBooking _);
 
 	/**
 	 * <!-- begin-user-doc -->

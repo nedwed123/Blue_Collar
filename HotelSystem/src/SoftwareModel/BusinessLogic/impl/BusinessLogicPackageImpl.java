@@ -260,7 +260,7 @@ public class BusinessLogicPackageImpl extends EPackageImpl implements BusinessLo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getRoomBookings__FindByRoomNr__int() {
+	public EOperation getRoomBookings__FindByRoomNr__int_EList() {
 		return roomBookingsEClass.getEOperations().get(2);
 	}
 
@@ -520,7 +520,7 @@ public class BusinessLogicPackageImpl extends EPackageImpl implements BusinessLo
 		createEReference(roomBookingsEClass, ROOM_BOOKINGS__AVAILIBLEROOMFINDER);
 		createEOperation(roomBookingsEClass, ROOM_BOOKINGS___CHECK_OUT__ROOMBOOKING);
 		createEOperation(roomBookingsEClass, ROOM_BOOKINGS___CHECK_IN__ROOMBOOKING);
-		createEOperation(roomBookingsEClass, ROOM_BOOKINGS___FIND_BY_ROOM_NR__INT);
+		createEOperation(roomBookingsEClass, ROOM_BOOKINGS___FIND_BY_ROOM_NR__INT_ELIST);
 		createEOperation(roomBookingsEClass, ROOM_BOOKINGS___FIND_BY_ROOM_RESPONSIBLE__STRING);
 
 		availibleRoomFinderEClass = createEClass(AVAILIBLE_ROOM_FINDER);
@@ -613,8 +613,9 @@ public class BusinessLogicPackageImpl extends EPackageImpl implements BusinessLo
 		op = initEOperation(getRoomBookings__CheckIn__RoomBooking(), null, "checkIn", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, theDomainEntitiesPackage.getRoomBooking(), "roomBooking", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		op = initEOperation(getRoomBookings__FindByRoomNr__int(), null, "findByRoomNr", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		op = initEOperation(getRoomBookings__FindByRoomNr__int_EList(), null, "findByRoomNr", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, theTypesPackage.getInteger(), "roomNr", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theDomainEntitiesPackage.getRoomBooking(), "_", 0, -1, IS_UNIQUE, !IS_ORDERED);
 
 		op = initEOperation(getRoomBookings__FindByRoomResponsible__String(), theDomainEntitiesPackage.getRoomBooking(), "findByRoomResponsible", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, theTypesPackage.getString(), "roomResponsible", 1, 1, IS_UNIQUE, !IS_ORDERED);

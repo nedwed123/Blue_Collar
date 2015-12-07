@@ -6,6 +6,7 @@ import SoftwareModel.DataAccess.RoomBookingsRepository;
 
 import SoftwareModel.DomainEntities.RoomBooking;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -97,10 +98,10 @@ public interface RoomBookings extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model roomNrDataType="org.eclipse.uml2.types.Integer" roomNrRequired="true" roomNrOrdered="false"
+	 * @model roomNrDataType="org.eclipse.uml2.types.Integer" roomNrRequired="true" roomNrOrdered="false" _Many="true" _Ordered="false"
 	 * @generated
 	 */
-	void findByRoomNr(int roomNr);
+	void findByRoomNr(int roomNr, EList<RoomBooking> _);
 
 	/**
 	 * <!-- begin-user-doc -->

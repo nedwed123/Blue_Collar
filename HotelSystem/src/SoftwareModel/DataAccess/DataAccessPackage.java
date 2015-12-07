@@ -231,22 +231,22 @@ public interface DataAccessPackage extends EPackage {
 	int ROOM_BOOKINGS_REPOSITORY___UPDATE__ROOMBOOKING = 0;
 
 	/**
-	 * The operation id for the '<em>Get</em>' operation.
+	 * The operation id for the '<em>Get By Room Responsible</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_BOOKINGS_REPOSITORY___GET__STRING = 1;
+	int ROOM_BOOKINGS_REPOSITORY___GET_BY_ROOM_RESPONSIBLE__STRING = 1;
 
 	/**
-	 * The operation id for the '<em>Get</em>' operation.
+	 * The operation id for the '<em>Get By Reservation Nr</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_BOOKINGS_REPOSITORY___GET__INT_STRING = 2;
+	int ROOM_BOOKINGS_REPOSITORY___GET_BY_RESERVATION_NR__INT_ROOMBOOKING = 2;
 
 	/**
 	 * The operation id for the '<em>Get All</em>' operation.
@@ -560,24 +560,24 @@ public interface DataAccessPackage extends EPackage {
 	EOperation getRoomBookingsRepository__Update__RoomBooking();
 
 	/**
-	 * Returns the meta object for the '{@link SoftwareModel.DataAccess.RoomBookingsRepository#get(java.lang.String) <em>Get</em>}' operation.
+	 * Returns the meta object for the '{@link SoftwareModel.DataAccess.RoomBookingsRepository#getByRoomResponsible(java.lang.String) <em>Get By Room Responsible</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Get</em>' operation.
-	 * @see SoftwareModel.DataAccess.RoomBookingsRepository#get(java.lang.String)
+	 * @return the meta object for the '<em>Get By Room Responsible</em>' operation.
+	 * @see SoftwareModel.DataAccess.RoomBookingsRepository#getByRoomResponsible(java.lang.String)
 	 * @generated
 	 */
-	EOperation getRoomBookingsRepository__Get__String();
+	EOperation getRoomBookingsRepository__GetByRoomResponsible__String();
 
 	/**
-	 * Returns the meta object for the '{@link SoftwareModel.DataAccess.RoomBookingsRepository#get(int, java.lang.String) <em>Get</em>}' operation.
+	 * Returns the meta object for the '{@link SoftwareModel.DataAccess.RoomBookingsRepository#getByReservationNr(int, SoftwareModel.DomainEntities.RoomBooking) <em>Get By Reservation Nr</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Get</em>' operation.
-	 * @see SoftwareModel.DataAccess.RoomBookingsRepository#get(int, java.lang.String)
+	 * @return the meta object for the '<em>Get By Reservation Nr</em>' operation.
+	 * @see SoftwareModel.DataAccess.RoomBookingsRepository#getByReservationNr(int, SoftwareModel.DomainEntities.RoomBooking)
 	 * @generated
 	 */
-	EOperation getRoomBookingsRepository__Get__int_String();
+	EOperation getRoomBookingsRepository__GetByReservationNr__int_RoomBooking();
 
 	/**
 	 * Returns the meta object for the '{@link SoftwareModel.DataAccess.RoomBookingsRepository#getAll(SoftwareModel.DomainEntities.RoomBooking) <em>Get All</em>}' operation.
@@ -853,20 +853,20 @@ public interface DataAccessPackage extends EPackage {
 		EOperation ROOM_BOOKINGS_REPOSITORY___UPDATE__ROOMBOOKING = eINSTANCE.getRoomBookingsRepository__Update__RoomBooking();
 
 		/**
-		 * The meta object literal for the '<em><b>Get</b></em>' operation.
+		 * The meta object literal for the '<em><b>Get By Room Responsible</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation ROOM_BOOKINGS_REPOSITORY___GET__STRING = eINSTANCE.getRoomBookingsRepository__Get__String();
+		EOperation ROOM_BOOKINGS_REPOSITORY___GET_BY_ROOM_RESPONSIBLE__STRING = eINSTANCE.getRoomBookingsRepository__GetByRoomResponsible__String();
 
 		/**
-		 * The meta object literal for the '<em><b>Get</b></em>' operation.
+		 * The meta object literal for the '<em><b>Get By Reservation Nr</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation ROOM_BOOKINGS_REPOSITORY___GET__INT_STRING = eINSTANCE.getRoomBookingsRepository__Get__int_String();
+		EOperation ROOM_BOOKINGS_REPOSITORY___GET_BY_RESERVATION_NR__INT_ROOMBOOKING = eINSTANCE.getRoomBookingsRepository__GetByReservationNr__int_RoomBooking();
 
 		/**
 		 * The meta object literal for the '<em><b>Get All</b></em>' operation.
