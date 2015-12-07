@@ -77,10 +77,10 @@ public interface RoomRepository extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model roomTypeIdRequired="true" roomTypeIdOrdered="false"
+	 * @model nameDataType="org.eclipse.uml2.types.String" nameRequired="true" nameOrdered="false"
 	 * @generated
 	 */
-	void getRoomType(int roomTypeId);
+	void getRoomType(String name);
 
 	/**
 	 * <!-- begin-user-doc -->

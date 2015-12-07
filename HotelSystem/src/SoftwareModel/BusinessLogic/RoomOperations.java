@@ -54,10 +54,10 @@ public interface RoomOperations extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model roomTypeIdRequired="true" roomTypeIdOrdered="false" rateRequired="true" rateOrdered="false"
+	 * @model nameofRoomTypeDataType="org.eclipse.uml2.types.String" nameofRoomTypeRequired="true" nameofRoomTypeOrdered="false" rateRequired="true" rateOrdered="false"
 	 * @generated
 	 */
-	void modifyRate(int roomTypeId, double rate);
+	void modifyRate(String nameofRoomType, double rate);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -70,10 +70,10 @@ public interface RoomOperations extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model roomNumberRequired="true" roomNumberOrdered="false" availabilityRequired="true" availabilityOrdered="false"
+	 * @model roomNumberRequired="true" roomNumberOrdered="false" availabilityRequired="true" availabilityOrdered="false" typeDataType="org.eclipse.uml2.types.String" typeRequired="true" typeOrdered="false"
 	 * @generated
 	 */
-	void addRoom(int roomNumber, Enumerator availability);
+	void addRoom(int roomNumber, Enumerator availability, String type);
 
 	/**
 	 * <!-- begin-user-doc -->

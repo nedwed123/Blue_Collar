@@ -365,7 +365,7 @@ public interface DataAccessPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_REPOSITORY___GET_ROOM_TYPE__INT = 3;
+	int ROOM_REPOSITORY___GET_ROOM_TYPE__STRING = 3;
 
 	/**
 	 * The operation id for the '<em>Remove Room</em>' operation.
@@ -653,14 +653,14 @@ public interface DataAccessPackage extends EPackage {
 	EOperation getRoomRepository__GetRoom__int();
 
 	/**
-	 * Returns the meta object for the '{@link SoftwareModel.DataAccess.RoomRepository#getRoomType(int) <em>Get Room Type</em>}' operation.
+	 * Returns the meta object for the '{@link SoftwareModel.DataAccess.RoomRepository#getRoomType(java.lang.String) <em>Get Room Type</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Get Room Type</em>' operation.
-	 * @see SoftwareModel.DataAccess.RoomRepository#getRoomType(int)
+	 * @see SoftwareModel.DataAccess.RoomRepository#getRoomType(java.lang.String)
 	 * @generated
 	 */
-	EOperation getRoomRepository__GetRoomType__int();
+	EOperation getRoomRepository__GetRoomType__String();
 
 	/**
 	 * Returns the meta object for the '{@link SoftwareModel.DataAccess.RoomRepository#removeRoom(SoftwareModel.DomainEntities.Room) <em>Remove Room</em>}' operation.
@@ -923,7 +923,7 @@ public interface DataAccessPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation ROOM_REPOSITORY___GET_ROOM_TYPE__INT = eINSTANCE.getRoomRepository__GetRoomType__int();
+		EOperation ROOM_REPOSITORY___GET_ROOM_TYPE__STRING = eINSTANCE.getRoomRepository__GetRoomType__String();
 
 		/**
 		 * The meta object literal for the '<em><b>Remove Room</b></em>' operation.

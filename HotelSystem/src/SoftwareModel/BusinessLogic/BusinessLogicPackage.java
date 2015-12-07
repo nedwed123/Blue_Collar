@@ -301,7 +301,7 @@ public interface BusinessLogicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_OPERATIONS___MODIFY_RATE__INT_DOUBLE = 0;
+	int ROOM_OPERATIONS___MODIFY_RATE__STRING_DOUBLE = 0;
 
 	/**
 	 * The operation id for the '<em>Make Room Available</em>' operation.
@@ -319,7 +319,7 @@ public interface BusinessLogicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_OPERATIONS___ADD_ROOM__INT_ENUMERATOR = 2;
+	int ROOM_OPERATIONS___ADD_ROOM__INT_ENUMERATOR_STRING = 2;
 
 	/**
 	 * The operation id for the '<em>Remove Room</em>' operation.
@@ -665,14 +665,14 @@ public interface BusinessLogicPackage extends EPackage {
 	EReference getRoomOperations_Roomrepository();
 
 	/**
-	 * Returns the meta object for the '{@link SoftwareModel.BusinessLogic.RoomOperations#modifyRate(int, double) <em>Modify Rate</em>}' operation.
+	 * Returns the meta object for the '{@link SoftwareModel.BusinessLogic.RoomOperations#modifyRate(java.lang.String, double) <em>Modify Rate</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Modify Rate</em>' operation.
-	 * @see SoftwareModel.BusinessLogic.RoomOperations#modifyRate(int, double)
+	 * @see SoftwareModel.BusinessLogic.RoomOperations#modifyRate(java.lang.String, double)
 	 * @generated
 	 */
-	EOperation getRoomOperations__ModifyRate__int_double();
+	EOperation getRoomOperations__ModifyRate__String_double();
 
 	/**
 	 * Returns the meta object for the '{@link SoftwareModel.BusinessLogic.RoomOperations#makeRoomAvailable(int) <em>Make Room Available</em>}' operation.
@@ -685,14 +685,14 @@ public interface BusinessLogicPackage extends EPackage {
 	EOperation getRoomOperations__MakeRoomAvailable__int();
 
 	/**
-	 * Returns the meta object for the '{@link SoftwareModel.BusinessLogic.RoomOperations#addRoom(int, org.eclipse.emf.common.util.Enumerator) <em>Add Room</em>}' operation.
+	 * Returns the meta object for the '{@link SoftwareModel.BusinessLogic.RoomOperations#addRoom(int, org.eclipse.emf.common.util.Enumerator, java.lang.String) <em>Add Room</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Add Room</em>' operation.
-	 * @see SoftwareModel.BusinessLogic.RoomOperations#addRoom(int, org.eclipse.emf.common.util.Enumerator)
+	 * @see SoftwareModel.BusinessLogic.RoomOperations#addRoom(int, org.eclipse.emf.common.util.Enumerator, java.lang.String)
 	 * @generated
 	 */
-	EOperation getRoomOperations__AddRoom__int_Enumerator();
+	EOperation getRoomOperations__AddRoom__int_Enumerator_String();
 
 	/**
 	 * Returns the meta object for the '{@link SoftwareModel.BusinessLogic.RoomOperations#removeRoom(int) <em>Remove Room</em>}' operation.
@@ -994,7 +994,7 @@ public interface BusinessLogicPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation ROOM_OPERATIONS___MODIFY_RATE__INT_DOUBLE = eINSTANCE.getRoomOperations__ModifyRate__int_double();
+		EOperation ROOM_OPERATIONS___MODIFY_RATE__STRING_DOUBLE = eINSTANCE.getRoomOperations__ModifyRate__String_double();
 
 		/**
 		 * The meta object literal for the '<em><b>Make Room Available</b></em>' operation.
@@ -1010,7 +1010,7 @@ public interface BusinessLogicPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation ROOM_OPERATIONS___ADD_ROOM__INT_ENUMERATOR = eINSTANCE.getRoomOperations__AddRoom__int_Enumerator();
+		EOperation ROOM_OPERATIONS___ADD_ROOM__INT_ENUMERATOR_STRING = eINSTANCE.getRoomOperations__AddRoom__int_Enumerator_String();
 
 		/**
 		 * The meta object literal for the '<em><b>Remove Room</b></em>' operation.

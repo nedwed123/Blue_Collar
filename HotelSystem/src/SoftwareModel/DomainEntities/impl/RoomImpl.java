@@ -23,6 +23,10 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <ul>
  *   <li>{@link SoftwareModel.DomainEntities.impl.RoomImpl#getNumber <em>Number</em>}</li>
  *   <li>{@link SoftwareModel.DomainEntities.impl.RoomImpl#getAvailability <em>Availability</em>}</li>
+ *   <li>{@link SoftwareModel.DomainEntities.impl.RoomImpl#getView <em>View</em>}</li>
+ *   <li>{@link SoftwareModel.DomainEntities.impl.RoomImpl#isSmoking <em>Smoking</em>}</li>
+ *   <li>{@link SoftwareModel.DomainEntities.impl.RoomImpl#isPetsAllowed <em>Pets Allowed</em>}</li>
+ *   <li>{@link SoftwareModel.DomainEntities.impl.RoomImpl#isDisabledAccess <em>Disabled Access</em>}</li>
  * </ul>
  *
  * @generated
@@ -67,6 +71,86 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 * @ordered
 	 */
 	protected Availability availability = AVAILABILITY_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getView() <em>View</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getView()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VIEW_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getView() <em>View</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getView()
+	 * @generated
+	 * @ordered
+	 */
+	protected String view = VIEW_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isSmoking() <em>Smoking</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isSmoking()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean SMOKING_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isSmoking() <em>Smoking</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isSmoking()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean smoking = SMOKING_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isPetsAllowed() <em>Pets Allowed</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isPetsAllowed()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean PETS_ALLOWED_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isPetsAllowed() <em>Pets Allowed</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isPetsAllowed()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean petsAllowed = PETS_ALLOWED_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isDisabledAccess() <em>Disabled Access</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isDisabledAccess()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean DISABLED_ACCESS_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isDisabledAccess() <em>Disabled Access</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isDisabledAccess()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean disabledAccess = DISABLED_ACCESS_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -134,6 +218,90 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getView() {
+		return view;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setView(String newView) {
+		String oldView = view;
+		view = newView;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DomainEntitiesPackage.ROOM__VIEW, oldView, view));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isSmoking() {
+		return smoking;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSmoking(boolean newSmoking) {
+		boolean oldSmoking = smoking;
+		smoking = newSmoking;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DomainEntitiesPackage.ROOM__SMOKING, oldSmoking, smoking));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isPetsAllowed() {
+		return petsAllowed;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setPetsAllowed(boolean newPetsAllowed) {
+		boolean oldPetsAllowed = petsAllowed;
+		petsAllowed = newPetsAllowed;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DomainEntitiesPackage.ROOM__PETS_ALLOWED, oldPetsAllowed, petsAllowed));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isDisabledAccess() {
+		return disabledAccess;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setDisabledAccess(boolean newDisabledAccess) {
+		boolean oldDisabledAccess = disabledAccess;
+		disabledAccess = newDisabledAccess;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DomainEntitiesPackage.ROOM__DISABLED_ACCESS, oldDisabledAccess, disabledAccess));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -141,6 +309,14 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 				return getNumber();
 			case DomainEntitiesPackage.ROOM__AVAILABILITY:
 				return getAvailability();
+			case DomainEntitiesPackage.ROOM__VIEW:
+				return getView();
+			case DomainEntitiesPackage.ROOM__SMOKING:
+				return isSmoking();
+			case DomainEntitiesPackage.ROOM__PETS_ALLOWED:
+				return isPetsAllowed();
+			case DomainEntitiesPackage.ROOM__DISABLED_ACCESS:
+				return isDisabledAccess();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -158,6 +334,18 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 				return;
 			case DomainEntitiesPackage.ROOM__AVAILABILITY:
 				setAvailability((Availability)newValue);
+				return;
+			case DomainEntitiesPackage.ROOM__VIEW:
+				setView((String)newValue);
+				return;
+			case DomainEntitiesPackage.ROOM__SMOKING:
+				setSmoking((Boolean)newValue);
+				return;
+			case DomainEntitiesPackage.ROOM__PETS_ALLOWED:
+				setPetsAllowed((Boolean)newValue);
+				return;
+			case DomainEntitiesPackage.ROOM__DISABLED_ACCESS:
+				setDisabledAccess((Boolean)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -177,6 +365,18 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 			case DomainEntitiesPackage.ROOM__AVAILABILITY:
 				setAvailability(AVAILABILITY_EDEFAULT);
 				return;
+			case DomainEntitiesPackage.ROOM__VIEW:
+				setView(VIEW_EDEFAULT);
+				return;
+			case DomainEntitiesPackage.ROOM__SMOKING:
+				setSmoking(SMOKING_EDEFAULT);
+				return;
+			case DomainEntitiesPackage.ROOM__PETS_ALLOWED:
+				setPetsAllowed(PETS_ALLOWED_EDEFAULT);
+				return;
+			case DomainEntitiesPackage.ROOM__DISABLED_ACCESS:
+				setDisabledAccess(DISABLED_ACCESS_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -193,6 +393,14 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 				return number != NUMBER_EDEFAULT;
 			case DomainEntitiesPackage.ROOM__AVAILABILITY:
 				return availability != AVAILABILITY_EDEFAULT;
+			case DomainEntitiesPackage.ROOM__VIEW:
+				return VIEW_EDEFAULT == null ? view != null : !VIEW_EDEFAULT.equals(view);
+			case DomainEntitiesPackage.ROOM__SMOKING:
+				return smoking != SMOKING_EDEFAULT;
+			case DomainEntitiesPackage.ROOM__PETS_ALLOWED:
+				return petsAllowed != PETS_ALLOWED_EDEFAULT;
+			case DomainEntitiesPackage.ROOM__DISABLED_ACCESS:
+				return disabledAccess != DISABLED_ACCESS_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -211,6 +419,14 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 		result.append(number);
 		result.append(", availability: ");
 		result.append(availability);
+		result.append(", view: ");
+		result.append(view);
+		result.append(", smoking: ");
+		result.append(smoking);
+		result.append(", petsAllowed: ");
+		result.append(petsAllowed);
+		result.append(", disabledAccess: ");
+		result.append(disabledAccess);
 		result.append(')');
 		return result.toString();
 	}

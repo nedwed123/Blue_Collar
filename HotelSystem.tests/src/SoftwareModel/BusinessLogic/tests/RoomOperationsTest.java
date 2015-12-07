@@ -133,7 +133,7 @@ public class RoomOperationsTest extends TestCase {
 	public void testAddRoom__int_Enumerator() {
 		RoomRepository roomRepo = new RoomRepositoryImpl();
 		fixture.setRoomrepository(roomRepo);
-		fixture.addRoom(0, Availability.AVAILIBLE);
+		//fixture.addRoom(0, Availability.AVAILIBLE);
 		//TODO: implement
 		//assertTrue(roomRepo.getRooms());
 		fail();

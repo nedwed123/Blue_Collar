@@ -212,7 +212,7 @@ public class DomainEntitiesPackageImpl extends EPackageImpl implements DomainEnt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getRoomType_View() {
+	public EAttribute getRoomType_Rate() {
 		return (EAttribute)roomTypeEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -221,7 +221,7 @@ public class DomainEntitiesPackageImpl extends EPackageImpl implements DomainEnt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getRoomType_DisableAccess() {
+	public EAttribute getRoomType_Bedtype() {
 		return (EAttribute)roomTypeEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -230,44 +230,8 @@ public class DomainEntitiesPackageImpl extends EPackageImpl implements DomainEnt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getRoomType_Rate() {
+	public EAttribute getRoomType_Name() {
 		return (EAttribute)roomTypeEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getRoomType_Smoking() {
-		return (EAttribute)roomTypeEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getRoomType_PetsAllowed() {
-		return (EAttribute)roomTypeEClass.getEStructuralFeatures().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getRoomType_RoomTypeId() {
-		return (EAttribute)roomTypeEClass.getEStructuralFeatures().get(6);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getRoomType_Bedtype() {
-		return (EAttribute)roomTypeEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -536,6 +500,42 @@ public class DomainEntitiesPackageImpl extends EPackageImpl implements DomainEnt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getRoom_View() {
+		return (EAttribute)roomEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getRoom_Smoking() {
+		return (EAttribute)roomEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getRoom_PetsAllowed() {
+		return (EAttribute)roomEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getRoom_DisabledAccess() {
+		return (EAttribute)roomEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getService() {
 		return serviceEClass;
 	}
@@ -615,13 +615,9 @@ public class DomainEntitiesPackageImpl extends EPackageImpl implements DomainEnt
 		// Create classes and their features
 		roomTypeEClass = createEClass(ROOM_TYPE);
 		createEAttribute(roomTypeEClass, ROOM_TYPE__SIZE);
-		createEAttribute(roomTypeEClass, ROOM_TYPE__VIEW);
-		createEAttribute(roomTypeEClass, ROOM_TYPE__DISABLE_ACCESS);
 		createEAttribute(roomTypeEClass, ROOM_TYPE__RATE);
-		createEAttribute(roomTypeEClass, ROOM_TYPE__SMOKING);
-		createEAttribute(roomTypeEClass, ROOM_TYPE__PETS_ALLOWED);
-		createEAttribute(roomTypeEClass, ROOM_TYPE__ROOM_TYPE_ID);
 		createEAttribute(roomTypeEClass, ROOM_TYPE__BEDTYPE);
+		createEAttribute(roomTypeEClass, ROOM_TYPE__NAME);
 
 		paymentDetailsEClass = createEClass(PAYMENT_DETAILS);
 		createEAttribute(paymentDetailsEClass, PAYMENT_DETAILS__NAME);
@@ -657,6 +653,10 @@ public class DomainEntitiesPackageImpl extends EPackageImpl implements DomainEnt
 		roomEClass = createEClass(ROOM);
 		createEAttribute(roomEClass, ROOM__NUMBER);
 		createEAttribute(roomEClass, ROOM__AVAILABILITY);
+		createEAttribute(roomEClass, ROOM__VIEW);
+		createEAttribute(roomEClass, ROOM__SMOKING);
+		createEAttribute(roomEClass, ROOM__PETS_ALLOWED);
+		createEAttribute(roomEClass, ROOM__DISABLED_ACCESS);
 
 		serviceEClass = createEClass(SERVICE);
 		createEAttribute(serviceEClass, SERVICE__SERVICE_DATE);
@@ -703,13 +703,9 @@ public class DomainEntitiesPackageImpl extends EPackageImpl implements DomainEnt
 		// Initialize classes, features, and operations; add parameters
 		initEClass(roomTypeEClass, RoomType.class, "RoomType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getRoomType_Size(), ecorePackage.getEDouble(), "size", null, 1, 1, RoomType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getRoomType_View(), theTypesPackage.getString(), "view", null, 1, 1, RoomType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getRoomType_DisableAccess(), ecorePackage.getEBoolean(), "disableAccess", null, 1, 1, RoomType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getRoomType_Rate(), ecorePackage.getEDouble(), "rate", null, 1, 1, RoomType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getRoomType_Smoking(), ecorePackage.getEBoolean(), "smoking", null, 1, 1, RoomType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getRoomType_PetsAllowed(), ecorePackage.getEBoolean(), "petsAllowed", null, 1, 1, RoomType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getRoomType_RoomTypeId(), ecorePackage.getEInt(), "roomTypeId", null, 1, 1, RoomType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getRoomType_Bedtype(), this.getBedType(), "bedtype", null, 1, -1, RoomType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getRoomType_Name(), theTypesPackage.getString(), "name", null, 1, 1, RoomType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(paymentDetailsEClass, PaymentDetails.class, "PaymentDetails", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getPaymentDetails_Name(), theTypesPackage.getString(), "name", null, 1, 1, PaymentDetails.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -745,6 +741,10 @@ public class DomainEntitiesPackageImpl extends EPackageImpl implements DomainEnt
 		initEClass(roomEClass, Room.class, "Room", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getRoom_Number(), ecorePackage.getEInt(), "number", null, 1, 1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getRoom_Availability(), this.getAvailability(), "availability", null, 1, 1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getRoom_View(), theTypesPackage.getString(), "view", null, 1, 1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getRoom_Smoking(), theTypesPackage.getBoolean(), "smoking", null, 1, 1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getRoom_PetsAllowed(), ecorePackage.getEBoolean(), "petsAllowed", null, 1, 1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getRoom_DisabledAccess(), ecorePackage.getEBoolean(), "disabledAccess", null, 1, 1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(serviceEClass, Service.class, "Service", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getService_ServiceDate(), ecorePackage.getEDate(), "serviceDate", null, 1, 1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);

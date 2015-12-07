@@ -5,27 +5,15 @@
       <ownedAttribute xmi:type="uml:Property" xmi:id="_jrc-YJdbEeW9FdtnBhCZ1w" name="size">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
       </ownedAttribute>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_nvbxMJdbEeW9FdtnBhCZ1w" name="view">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-      </ownedAttribute>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_uXoNMJdbEeW9FdtnBhCZ1w" name="disableAccess">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
-      </ownedAttribute>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_x3NScJdbEeW9FdtnBhCZ1w" name="rate">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
-      </ownedAttribute>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_48ONUJdbEeW9FdtnBhCZ1w" name="smoking">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
-      </ownedAttribute>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_LL1YYJdcEeW9FdtnBhCZ1w" name="petsAllowed">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
-      </ownedAttribute>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_BBAkUJd2EeW_4PdgZcIXdQ" name="roomTypeId">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
       </ownedAttribute>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_D3xqQ5uhEeWYeq6AFoWyvA" name="bedtype" type="_Apr8gJhSEeWatpqnQATTNw" association="_D3xqQJuhEeWYeq6AFoWyvA">
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_E7nF0JuhEeWYeq6AFoWyvA" value="1"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_E7oT8JuhEeWYeq6AFoWyvA" value="*"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_ugmMoJzlEeWJusbskP8Asw" name="name">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_v3-yMJdGEeWbutPRr4NuZg" name="PaymentDetails">
@@ -100,6 +88,18 @@
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
       </ownedAttribute>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_HesFcJhSEeWatpqnQATTNw" name="availability" type="_uXjB4JhREeWatpqnQATTNw" association="_HeppMJhSEeWatpqnQATTNw"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_DCq_AJzlEeWJusbskP8Asw" name="view">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_gUprUJzlEeWJusbskP8Asw" name="smoking">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_jY0m8JzlEeWJusbskP8Asw" name="petsAllowed">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_n60LcJzlEeWJusbskP8Asw" name="disabledAccess">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+      </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_5u21MJXcEeWtZbi4EnRFrQ" name="Service">
       <ownedAttribute xmi:type="uml:Property" xmi:id="_xxF40JdaEeW9FdtnBhCZ1w" name="serviceDate">
@@ -186,8 +186,8 @@
         </ownedParameter>
       </ownedOperation>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_ah7PQJd1EeW_4PdgZcIXdQ" name="getRoomType">
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_60FGkJf6EeWmDIVFfg4USw" name="roomTypeId">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_60FGkJf6EeWmDIVFfg4USw" name="name">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         </ownedParameter>
       </ownedOperation>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_evVq4Jd1EeW_4PdgZcIXdQ" name="removeRoom">
@@ -275,8 +275,8 @@
     <packagedElement xmi:type="uml:Class" xmi:id="_o0ciYJdkEeW9FdtnBhCZ1w" name="RoomOperations">
       <ownedAttribute xmi:type="uml:Property" xmi:id="_t1gzEJdlEeW9FdtnBhCZ1w" name="roomrepository" type="_ggSeYJdlEeW9FdtnBhCZ1w" aggregation="composite" association="_t1fk8JdlEeW9FdtnBhCZ1w"/>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_blLmkJd2EeW_4PdgZcIXdQ" name="modifyRate">
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_8qpKIJf7EeWmDIVFfg4USw" name="roomTypeId">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_8qpKIJf7EeWmDIVFfg4USw" name="nameofRoomType">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         </ownedParameter>
         <ownedParameter xmi:type="uml:Parameter" xmi:id="__P8_gJf7EeWmDIVFfg4USw" name="rate">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
@@ -293,6 +293,9 @@
         </ownedParameter>
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_K6CBAJf8EeWmDIVFfg4USw" name="availability">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EEnumerator"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_ro8NkJzmEeWJusbskP8Asw" name="type">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         </ownedParameter>
       </ownedOperation>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_ySpBQJgLEeWU5YK8QYdiFQ" name="removeRoom">
@@ -445,19 +448,6 @@
     </packagedElement>
   </packagedElement>
   <packagedElement xmi:type="uml:Package" xmi:id="_xThV4Jh0EeWatpqnQATTNw" name="ClassDiagramEdges">
-    <packagedElement xmi:type="uml:Association" xmi:id="_Etxu8JXfEeWtZbi4EnRFrQ" name="has" memberEnd="_EtyWApXfEeWtZbi4EnRFrQ _EtzkIJXfEeWtZbi4EnRFrQ">
-      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_EtyWAJXfEeWtZbi4EnRFrQ" source="org.eclipse.papyrus">
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_EtyWAZXfEeWtZbi4EnRFrQ" key="nature" value="UML_Nature"/>
-      </eAnnotations>
-      <ownedEnd xmi:type="uml:Property" xmi:id="_EtzkIJXfEeWtZbi4EnRFrQ" name="room" type="_jC8d8JXcEeWtZbi4EnRFrQ" association="_Etxu8JXfEeWtZbi4EnRFrQ">
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_b2FuUJXfEeWtZbi4EnRFrQ" value="1"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_b2HjgJXfEeWtZbi4EnRFrQ" value="*"/>
-      </ownedEnd>
-      <ownedEnd xmi:type="uml:Property" xmi:id="_EtyWApXfEeWtZbi4EnRFrQ" name="roomtype" type="_uJFr8JXcEeWtZbi4EnRFrQ" association="_Etxu8JXfEeWtZbi4EnRFrQ">
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_GJamgJXfEeWtZbi4EnRFrQ" value="1"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_GJbNkJXfEeWtZbi4EnRFrQ" value="1"/>
-      </ownedEnd>
-    </packagedElement>
     <packagedElement xmi:type="uml:Association" xmi:id="_DZoxEJXgEeWtZbi4EnRFrQ" name="is assigned" memberEnd="_DZpYIZXgEeWtZbi4EnRFrQ _DZp_MJXgEeWtZbi4EnRFrQ">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_DZoxEZXgEeWtZbi4EnRFrQ" source="org.eclipse.papyrus">
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_DZpYIJXgEeWtZbi4EnRFrQ" key="nature" value="UML_Nature"/>

@@ -369,7 +369,7 @@ public class DataAccessPackageImpl extends EPackageImpl implements DataAccessPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getRoomRepository__GetRoomType__int() {
+	public EOperation getRoomRepository__GetRoomType__String() {
 		return roomRepositoryEClass.getEOperations().get(3);
 	}
 
@@ -456,7 +456,7 @@ public class DataAccessPackageImpl extends EPackageImpl implements DataAccessPac
 		createEOperation(roomRepositoryEClass, ROOM_REPOSITORY___UPDATE_ROOM__ROOM);
 		createEOperation(roomRepositoryEClass, ROOM_REPOSITORY___UPDATE_ROOM_TYPE__ROOMTYPE);
 		createEOperation(roomRepositoryEClass, ROOM_REPOSITORY___GET_ROOM__INT);
-		createEOperation(roomRepositoryEClass, ROOM_REPOSITORY___GET_ROOM_TYPE__INT);
+		createEOperation(roomRepositoryEClass, ROOM_REPOSITORY___GET_ROOM_TYPE__STRING);
 		createEOperation(roomRepositoryEClass, ROOM_REPOSITORY___REMOVE_ROOM__ROOM);
 		createEOperation(roomRepositoryEClass, ROOM_REPOSITORY___ADD_ROOM__ROOM);
 		createEOperation(roomRepositoryEClass, ROOM_REPOSITORY___GET_ROOMS);
@@ -547,8 +547,8 @@ public class DataAccessPackageImpl extends EPackageImpl implements DataAccessPac
 		op = initEOperation(getRoomRepository__GetRoom__int(), null, "getRoom", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "roomNumber", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		op = initEOperation(getRoomRepository__GetRoomType__int(), null, "getRoomType", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEInt(), "roomTypeId", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		op = initEOperation(getRoomRepository__GetRoomType__String(), null, "getRoomType", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theTypesPackage.getString(), "name", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		op = initEOperation(getRoomRepository__RemoveRoom__Room(), null, "removeRoom", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, theDomainEntitiesPackage.getRoom(), "room", 1, 1, IS_UNIQUE, !IS_ORDERED);

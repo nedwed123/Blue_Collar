@@ -112,7 +112,7 @@ public class RoomOperationsImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void modifyRate(int roomTypeId, double rate) {
+	public void modifyRate(String nameofRoomType, double rate) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -134,7 +134,7 @@ public class RoomOperationsImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void addRoom(int roomNumber, Enumerator availability) {
+	public void addRoom(int roomNumber, Enumerator availability, String type) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -242,14 +242,14 @@ public class RoomOperationsImpl extends MinimalEObjectImpl.Container implements 
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case BusinessLogicPackage.ROOM_OPERATIONS___MODIFY_RATE__INT_DOUBLE:
-				modifyRate((Integer)arguments.get(0), (Double)arguments.get(1));
+			case BusinessLogicPackage.ROOM_OPERATIONS___MODIFY_RATE__STRING_DOUBLE:
+				modifyRate((String)arguments.get(0), (Double)arguments.get(1));
 				return null;
 			case BusinessLogicPackage.ROOM_OPERATIONS___MAKE_ROOM_AVAILABLE__INT:
 				makeRoomAvailable((Integer)arguments.get(0));
 				return null;
-			case BusinessLogicPackage.ROOM_OPERATIONS___ADD_ROOM__INT_ENUMERATOR:
-				addRoom((Integer)arguments.get(0), (Enumerator)arguments.get(1));
+			case BusinessLogicPackage.ROOM_OPERATIONS___ADD_ROOM__INT_ENUMERATOR_STRING:
+				addRoom((Integer)arguments.get(0), (Enumerator)arguments.get(1), (String)arguments.get(2));
 				return null;
 			case BusinessLogicPackage.ROOM_OPERATIONS___REMOVE_ROOM__INT:
 				removeRoom((Integer)arguments.get(0));

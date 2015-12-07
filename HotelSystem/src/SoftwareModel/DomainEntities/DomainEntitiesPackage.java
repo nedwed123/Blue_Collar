@@ -77,58 +77,13 @@ public interface DomainEntitiesPackage extends EPackage {
 	int ROOM_TYPE__SIZE = 0;
 
 	/**
-	 * The feature id for the '<em><b>View</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROOM_TYPE__VIEW = 1;
-
-	/**
-	 * The feature id for the '<em><b>Disable Access</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROOM_TYPE__DISABLE_ACCESS = 2;
-
-	/**
 	 * The feature id for the '<em><b>Rate</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_TYPE__RATE = 3;
-
-	/**
-	 * The feature id for the '<em><b>Smoking</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROOM_TYPE__SMOKING = 4;
-
-	/**
-	 * The feature id for the '<em><b>Pets Allowed</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROOM_TYPE__PETS_ALLOWED = 5;
-
-	/**
-	 * The feature id for the '<em><b>Room Type Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROOM_TYPE__ROOM_TYPE_ID = 6;
+	int ROOM_TYPE__RATE = 1;
 
 	/**
 	 * The feature id for the '<em><b>Bedtype</b></em>' attribute list.
@@ -137,7 +92,16 @@ public interface DomainEntitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_TYPE__BEDTYPE = 7;
+	int ROOM_TYPE__BEDTYPE = 2;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_TYPE__NAME = 3;
 
 	/**
 	 * The number of structural features of the '<em>Room Type</em>' class.
@@ -146,7 +110,7 @@ public interface DomainEntitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_TYPE_FEATURE_COUNT = 8;
+	int ROOM_TYPE_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Room Type</em>' class.
@@ -515,13 +479,49 @@ public interface DomainEntitiesPackage extends EPackage {
 	int ROOM__AVAILABILITY = 1;
 
 	/**
+	 * The feature id for the '<em><b>View</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM__VIEW = 2;
+
+	/**
+	 * The feature id for the '<em><b>Smoking</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM__SMOKING = 3;
+
+	/**
+	 * The feature id for the '<em><b>Pets Allowed</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM__PETS_ALLOWED = 4;
+
+	/**
+	 * The feature id for the '<em><b>Disabled Access</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM__DISABLED_ACCESS = 5;
+
+	/**
 	 * The number of structural features of the '<em>Room</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_FEATURE_COUNT = 2;
+	int ROOM_FEATURE_COUNT = 6;
 
 	/**
 	 * The number of operations of the '<em>Room</em>' class.
@@ -630,28 +630,6 @@ public interface DomainEntitiesPackage extends EPackage {
 	EAttribute getRoomType_Size();
 
 	/**
-	 * Returns the meta object for the attribute '{@link SoftwareModel.DomainEntities.RoomType#getView <em>View</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>View</em>'.
-	 * @see SoftwareModel.DomainEntities.RoomType#getView()
-	 * @see #getRoomType()
-	 * @generated
-	 */
-	EAttribute getRoomType_View();
-
-	/**
-	 * Returns the meta object for the attribute '{@link SoftwareModel.DomainEntities.RoomType#isDisableAccess <em>Disable Access</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Disable Access</em>'.
-	 * @see SoftwareModel.DomainEntities.RoomType#isDisableAccess()
-	 * @see #getRoomType()
-	 * @generated
-	 */
-	EAttribute getRoomType_DisableAccess();
-
-	/**
 	 * Returns the meta object for the attribute '{@link SoftwareModel.DomainEntities.RoomType#getRate <em>Rate</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -663,39 +641,6 @@ public interface DomainEntitiesPackage extends EPackage {
 	EAttribute getRoomType_Rate();
 
 	/**
-	 * Returns the meta object for the attribute '{@link SoftwareModel.DomainEntities.RoomType#isSmoking <em>Smoking</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Smoking</em>'.
-	 * @see SoftwareModel.DomainEntities.RoomType#isSmoking()
-	 * @see #getRoomType()
-	 * @generated
-	 */
-	EAttribute getRoomType_Smoking();
-
-	/**
-	 * Returns the meta object for the attribute '{@link SoftwareModel.DomainEntities.RoomType#isPetsAllowed <em>Pets Allowed</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Pets Allowed</em>'.
-	 * @see SoftwareModel.DomainEntities.RoomType#isPetsAllowed()
-	 * @see #getRoomType()
-	 * @generated
-	 */
-	EAttribute getRoomType_PetsAllowed();
-
-	/**
-	 * Returns the meta object for the attribute '{@link SoftwareModel.DomainEntities.RoomType#getRoomTypeId <em>Room Type Id</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Room Type Id</em>'.
-	 * @see SoftwareModel.DomainEntities.RoomType#getRoomTypeId()
-	 * @see #getRoomType()
-	 * @generated
-	 */
-	EAttribute getRoomType_RoomTypeId();
-
-	/**
 	 * Returns the meta object for the attribute list '{@link SoftwareModel.DomainEntities.RoomType#getBedtype <em>Bedtype</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -705,6 +650,17 @@ public interface DomainEntitiesPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getRoomType_Bedtype();
+
+	/**
+	 * Returns the meta object for the attribute '{@link SoftwareModel.DomainEntities.RoomType#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see SoftwareModel.DomainEntities.RoomType#getName()
+	 * @see #getRoomType()
+	 * @generated
+	 */
+	EAttribute getRoomType_Name();
 
 	/**
 	 * Returns the meta object for class '{@link SoftwareModel.DomainEntities.PaymentDetails <em>Payment Details</em>}'.
@@ -1020,6 +976,50 @@ public interface DomainEntitiesPackage extends EPackage {
 	EAttribute getRoom_Availability();
 
 	/**
+	 * Returns the meta object for the attribute '{@link SoftwareModel.DomainEntities.Room#getView <em>View</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>View</em>'.
+	 * @see SoftwareModel.DomainEntities.Room#getView()
+	 * @see #getRoom()
+	 * @generated
+	 */
+	EAttribute getRoom_View();
+
+	/**
+	 * Returns the meta object for the attribute '{@link SoftwareModel.DomainEntities.Room#isSmoking <em>Smoking</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Smoking</em>'.
+	 * @see SoftwareModel.DomainEntities.Room#isSmoking()
+	 * @see #getRoom()
+	 * @generated
+	 */
+	EAttribute getRoom_Smoking();
+
+	/**
+	 * Returns the meta object for the attribute '{@link SoftwareModel.DomainEntities.Room#isPetsAllowed <em>Pets Allowed</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Pets Allowed</em>'.
+	 * @see SoftwareModel.DomainEntities.Room#isPetsAllowed()
+	 * @see #getRoom()
+	 * @generated
+	 */
+	EAttribute getRoom_PetsAllowed();
+
+	/**
+	 * Returns the meta object for the attribute '{@link SoftwareModel.DomainEntities.Room#isDisabledAccess <em>Disabled Access</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Disabled Access</em>'.
+	 * @see SoftwareModel.DomainEntities.Room#isDisabledAccess()
+	 * @see #getRoom()
+	 * @generated
+	 */
+	EAttribute getRoom_DisabledAccess();
+
+	/**
 	 * Returns the meta object for class '{@link SoftwareModel.DomainEntities.Service <em>Service</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1124,22 +1124,6 @@ public interface DomainEntitiesPackage extends EPackage {
 		EAttribute ROOM_TYPE__SIZE = eINSTANCE.getRoomType_Size();
 
 		/**
-		 * The meta object literal for the '<em><b>View</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ROOM_TYPE__VIEW = eINSTANCE.getRoomType_View();
-
-		/**
-		 * The meta object literal for the '<em><b>Disable Access</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ROOM_TYPE__DISABLE_ACCESS = eINSTANCE.getRoomType_DisableAccess();
-
-		/**
 		 * The meta object literal for the '<em><b>Rate</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1148,36 +1132,20 @@ public interface DomainEntitiesPackage extends EPackage {
 		EAttribute ROOM_TYPE__RATE = eINSTANCE.getRoomType_Rate();
 
 		/**
-		 * The meta object literal for the '<em><b>Smoking</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ROOM_TYPE__SMOKING = eINSTANCE.getRoomType_Smoking();
-
-		/**
-		 * The meta object literal for the '<em><b>Pets Allowed</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ROOM_TYPE__PETS_ALLOWED = eINSTANCE.getRoomType_PetsAllowed();
-
-		/**
-		 * The meta object literal for the '<em><b>Room Type Id</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ROOM_TYPE__ROOM_TYPE_ID = eINSTANCE.getRoomType_RoomTypeId();
-
-		/**
 		 * The meta object literal for the '<em><b>Bedtype</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EAttribute ROOM_TYPE__BEDTYPE = eINSTANCE.getRoomType_Bedtype();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ROOM_TYPE__NAME = eINSTANCE.getRoomType_Name();
 
 		/**
 		 * The meta object literal for the '{@link SoftwareModel.DomainEntities.impl.PaymentDetailsImpl <em>Payment Details</em>}' class.
@@ -1422,6 +1390,38 @@ public interface DomainEntitiesPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute ROOM__AVAILABILITY = eINSTANCE.getRoom_Availability();
+
+		/**
+		 * The meta object literal for the '<em><b>View</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ROOM__VIEW = eINSTANCE.getRoom_View();
+
+		/**
+		 * The meta object literal for the '<em><b>Smoking</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ROOM__SMOKING = eINSTANCE.getRoom_Smoking();
+
+		/**
+		 * The meta object literal for the '<em><b>Pets Allowed</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ROOM__PETS_ALLOWED = eINSTANCE.getRoom_PetsAllowed();
+
+		/**
+		 * The meta object literal for the '<em><b>Disabled Access</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ROOM__DISABLED_ACCESS = eINSTANCE.getRoom_DisabledAccess();
 
 		/**
 		 * The meta object literal for the '{@link SoftwareModel.DomainEntities.impl.ServiceImpl <em>Service</em>}' class.

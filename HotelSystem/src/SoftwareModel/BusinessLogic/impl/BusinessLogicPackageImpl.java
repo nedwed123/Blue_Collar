@@ -332,7 +332,7 @@ public class BusinessLogicPackageImpl extends EPackageImpl implements BusinessLo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getRoomOperations__ModifyRate__int_double() {
+	public EOperation getRoomOperations__ModifyRate__String_double() {
 		return roomOperationsEClass.getEOperations().get(0);
 	}
 
@@ -350,7 +350,7 @@ public class BusinessLogicPackageImpl extends EPackageImpl implements BusinessLo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getRoomOperations__AddRoom__int_Enumerator() {
+	public EOperation getRoomOperations__AddRoom__int_Enumerator_String() {
 		return roomOperationsEClass.getEOperations().get(2);
 	}
 
@@ -503,9 +503,9 @@ public class BusinessLogicPackageImpl extends EPackageImpl implements BusinessLo
 
 		roomOperationsEClass = createEClass(ROOM_OPERATIONS);
 		createEReference(roomOperationsEClass, ROOM_OPERATIONS__ROOMREPOSITORY);
-		createEOperation(roomOperationsEClass, ROOM_OPERATIONS___MODIFY_RATE__INT_DOUBLE);
+		createEOperation(roomOperationsEClass, ROOM_OPERATIONS___MODIFY_RATE__STRING_DOUBLE);
 		createEOperation(roomOperationsEClass, ROOM_OPERATIONS___MAKE_ROOM_AVAILABLE__INT);
-		createEOperation(roomOperationsEClass, ROOM_OPERATIONS___ADD_ROOM__INT_ENUMERATOR);
+		createEOperation(roomOperationsEClass, ROOM_OPERATIONS___ADD_ROOM__INT_ENUMERATOR_STRING);
 		createEOperation(roomOperationsEClass, ROOM_OPERATIONS___REMOVE_ROOM__INT);
 		createEOperation(roomOperationsEClass, ROOM_OPERATIONS___MAKE_ROOM_UNAVAILABLE__INT);
 
@@ -602,16 +602,17 @@ public class BusinessLogicPackageImpl extends EPackageImpl implements BusinessLo
 		initEClass(roomOperationsEClass, RoomOperations.class, "RoomOperations", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getRoomOperations_Roomrepository(), theDataAccessPackage.getRoomRepository(), null, "roomrepository", null, 1, 1, RoomOperations.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-		op = initEOperation(getRoomOperations__ModifyRate__int_double(), null, "modifyRate", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEInt(), "roomTypeId", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		op = initEOperation(getRoomOperations__ModifyRate__String_double(), null, "modifyRate", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theTypesPackage.getString(), "nameofRoomType", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDouble(), "rate", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		op = initEOperation(getRoomOperations__MakeRoomAvailable__int(), null, "makeRoomAvailable", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "roomNumber", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		op = initEOperation(getRoomOperations__AddRoom__int_Enumerator(), null, "addRoom", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		op = initEOperation(getRoomOperations__AddRoom__int_Enumerator_String(), null, "addRoom", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "roomNumber", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEEnumerator(), "availability", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theTypesPackage.getString(), "type", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		op = initEOperation(getRoomOperations__RemoveRoom__int(), null, "removeRoom", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "roomNumber", 1, 1, IS_UNIQUE, !IS_ORDERED);
