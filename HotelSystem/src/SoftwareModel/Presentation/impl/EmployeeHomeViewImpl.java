@@ -6,7 +6,12 @@ import SoftwareModel.Presentation.EmployeeHomeView;
 import SoftwareModel.Presentation.Frame;
 import SoftwareModel.Presentation.PresentationPackage;
 
+import java.io.Console;
 import java.lang.reflect.InvocationTargetException;
+import java.util.Scanner;
+
+import javax.net.ssl.SNIHostName;
+
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
@@ -43,12 +48,33 @@ public class EmployeeHomeViewImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	public void Run(Frame frame) {
+		System.out.print("Welcome to Hotel Management System \n"
+				+ "Please select an option:\n"
+				+ "1.Reserve a Room \n"
+				+ "2.Check in/out \n"
+				+ "3.Room Management\n");
+		Scanner scan=new Scanner(System.in);
+		System.out.print("Option :");
+		int choice=scan.nextInt();
+		switch (choice){
+		case 1:
+			frame.ChangeView(new MakeReservationViewImpl());
+			break;
+		case 2:
+			frame.ChangeView(new RoomBookingViewImpl() );
+			break;
+		case 3:
+			frame.ChangeView(new LoginViewImpl());
+			break;
+		default:
+			frame.ChangeView(null);
+			
+		}
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		//	throw new UnsupportedOperationException();
 	}
 
 	/**

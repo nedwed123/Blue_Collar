@@ -6,6 +6,7 @@ import SoftwareModel.BusinessLogic.BusinessLogicPackage;
 import SoftwareModel.BusinessLogic.RoomOperations;
 
 import SoftwareModel.DataAccess.RoomRepository;
+import SoftwareModel.DataAccess.impl.RoomRepositoryImpl;
 
 import java.lang.reflect.InvocationTargetException;
 
@@ -40,10 +41,9 @@ public class RoomOperationsImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getRoomrepository()
-	 * @generated
 	 * @ordered
 	 */
-	protected RoomRepository roomrepository;
+	protected RoomRepository roomrepository = new RoomRepositoryImpl();
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -3,11 +3,15 @@
 package SoftwareModel.Presentation.impl;
 
 import SoftwareModel.BusinessLogic.Authorizer;
+import SoftwareModel.DataAccess.impl.AuthorizationRepositoryImpl;
 import SoftwareModel.Presentation.Frame;
 import SoftwareModel.Presentation.LoginView;
 import SoftwareModel.Presentation.PresentationPackage;
 
+import java.io.Console;
+import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
+import java.util.Scanner;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -38,7 +42,7 @@ public class LoginViewImpl extends MinimalEObjectImpl.Container implements Login
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getAuthorizer()
-	 * @generated
+
 	 * @ordered
 	 */
 	protected Authorizer authorizer;
@@ -108,12 +112,32 @@ public class LoginViewImpl extends MinimalEObjectImpl.Container implements Login
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	public void Run(Frame frame) {
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Please enter username");
+		String username=scan.nextLine();
+		System.out.println("Please enter password");
+		String password=scan.nextLine();
+		if(username.equals("Admin") && password.equals("pass")){
+			frame.ChangeView(new RoomManagementViewImpl());
+			return;
+		}else{
+			System.out.println("Incorrect username or password");
+			
+			try {
+				Thread.sleep(2000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} 
+			
+			frame.ChangeView(new EmployeeHomeViewImpl());
+			return;
+		}
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		//throw new UnsupportedOperationException();
 	}
 
 	/**
