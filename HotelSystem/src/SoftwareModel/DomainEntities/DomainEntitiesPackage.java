@@ -515,13 +515,22 @@ public interface DomainEntitiesPackage extends EPackage {
 	int ROOM__DISABLED_ACCESS = 5;
 
 	/**
+	 * The feature id for the '<em><b>Roomtype</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM__ROOMTYPE = 6;
+
+	/**
 	 * The number of structural features of the '<em>Room</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_FEATURE_COUNT = 6;
+	int ROOM_FEATURE_COUNT = 7;
 
 	/**
 	 * The number of operations of the '<em>Room</em>' class.
@@ -1020,6 +1029,17 @@ public interface DomainEntitiesPackage extends EPackage {
 	EAttribute getRoom_DisabledAccess();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link SoftwareModel.DomainEntities.Room#getRoomtype <em>Roomtype</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Roomtype</em>'.
+	 * @see SoftwareModel.DomainEntities.Room#getRoomtype()
+	 * @see #getRoom()
+	 * @generated
+	 */
+	EReference getRoom_Roomtype();
+
+	/**
 	 * Returns the meta object for class '{@link SoftwareModel.DomainEntities.Service <em>Service</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1422,6 +1442,14 @@ public interface DomainEntitiesPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute ROOM__DISABLED_ACCESS = eINSTANCE.getRoom_DisabledAccess();
+
+		/**
+		 * The meta object literal for the '<em><b>Roomtype</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ROOM__ROOMTYPE = eINSTANCE.getRoom_Roomtype();
 
 		/**
 		 * The meta object literal for the '{@link SoftwareModel.DomainEntities.impl.ServiceImpl <em>Service</em>}' class.

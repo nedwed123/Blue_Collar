@@ -81,6 +81,8 @@
           lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="disabledAccess" ordered="false"
           lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="roomtype" ordered="false"
+          lowerBound="1" eType="#//DomainEntities/RoomType" containment="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EEnum" name="Availability">
       <eLiterals name="Availible"/>
@@ -268,6 +270,11 @@
       <eOperations name="getBooking" ordered="false" lowerBound="1" eType="#//DomainEntities/RoomBooking">
         <eParameters name="nameOfRoomResponsible" ordered="false" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
       </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="availibleroomfinder"
+          ordered="false" lowerBound="1" eType="#//BusinessLogic/AvailibleRoomFinder"
+          containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="roombookings" ordered="false"
+          lowerBound="1" eType="#//BusinessLogic/RoomBookings" containment="true"/>
     </eClassifiers>
   </eSubpackages>
   <eSubpackages name="Presentation" nsURI="http:///SoftwareModel/Presentation.ecore"

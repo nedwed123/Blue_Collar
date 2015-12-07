@@ -536,6 +536,15 @@ public class DomainEntitiesPackageImpl extends EPackageImpl implements DomainEnt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getRoom_Roomtype() {
+		return (EReference)roomEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getService() {
 		return serviceEClass;
 	}
@@ -657,6 +666,7 @@ public class DomainEntitiesPackageImpl extends EPackageImpl implements DomainEnt
 		createEAttribute(roomEClass, ROOM__SMOKING);
 		createEAttribute(roomEClass, ROOM__PETS_ALLOWED);
 		createEAttribute(roomEClass, ROOM__DISABLED_ACCESS);
+		createEReference(roomEClass, ROOM__ROOMTYPE);
 
 		serviceEClass = createEClass(SERVICE);
 		createEAttribute(serviceEClass, SERVICE__SERVICE_DATE);
@@ -745,6 +755,7 @@ public class DomainEntitiesPackageImpl extends EPackageImpl implements DomainEnt
 		initEAttribute(getRoom_Smoking(), theTypesPackage.getBoolean(), "smoking", null, 1, 1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getRoom_PetsAllowed(), ecorePackage.getEBoolean(), "petsAllowed", null, 1, 1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getRoom_DisabledAccess(), ecorePackage.getEBoolean(), "disabledAccess", null, 1, 1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getRoom_Roomtype(), this.getRoomType(), null, "roomtype", null, 1, 1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(serviceEClass, Service.class, "Service", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getService_ServiceDate(), ecorePackage.getEDate(), "serviceDate", null, 1, 1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);

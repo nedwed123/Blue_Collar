@@ -15,12 +15,71 @@ import org.eclipse.emf.ecore.EObject;
  * A representation of the model object '<em><b>Rooms</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link SoftwareModel.BusinessLogic.Rooms#getAvailibleroomfinder <em>Availibleroomfinder</em>}</li>
+ *   <li>{@link SoftwareModel.BusinessLogic.Rooms#getRoombookings <em>Roombookings</em>}</li>
+ * </ul>
  *
  * @see SoftwareModel.BusinessLogic.BusinessLogicPackage#getRooms()
  * @model
  * @generated
  */
 public interface Rooms extends EObject {
+	/**
+	 * Returns the value of the '<em><b>Availibleroomfinder</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Availibleroomfinder</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Availibleroomfinder</em>' containment reference.
+	 * @see #setAvailibleroomfinder(AvailibleRoomFinder)
+	 * @see SoftwareModel.BusinessLogic.BusinessLogicPackage#getRooms_Availibleroomfinder()
+	 * @model containment="true" required="true" ordered="false"
+	 * @generated
+	 */
+	AvailibleRoomFinder getAvailibleroomfinder();
+
+	/**
+	 * Sets the value of the '{@link SoftwareModel.BusinessLogic.Rooms#getAvailibleroomfinder <em>Availibleroomfinder</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Availibleroomfinder</em>' containment reference.
+	 * @see #getAvailibleroomfinder()
+	 * @generated
+	 */
+	void setAvailibleroomfinder(AvailibleRoomFinder value);
+
+	/**
+	 * Returns the value of the '<em><b>Roombookings</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Roombookings</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Roombookings</em>' containment reference.
+	 * @see #setRoombookings(RoomBookings)
+	 * @see SoftwareModel.BusinessLogic.BusinessLogicPackage#getRooms_Roombookings()
+	 * @model containment="true" required="true" ordered="false"
+	 * @generated
+	 */
+	RoomBookings getRoombookings();
+
+	/**
+	 * Sets the value of the '{@link SoftwareModel.BusinessLogic.Rooms#getRoombookings <em>Roombookings</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Roombookings</em>' containment reference.
+	 * @see #getRoombookings()
+	 * @generated
+	 */
+	void setRoombookings(RoomBookings value);
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

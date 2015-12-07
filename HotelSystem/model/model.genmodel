@@ -91,6 +91,8 @@
         <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute SoftwareModel.ecore#//DomainEntities/Room/smoking"/>
         <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute SoftwareModel.ecore#//DomainEntities/Room/petsAllowed"/>
         <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute SoftwareModel.ecore#//DomainEntities/Room/disabledAccess"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference SoftwareModel.ecore#//DomainEntities/Room/roomtype"/>
       </genClasses>
       <genClasses xsi:type="genmodel:GenClass" ecoreClass="SoftwareModel.ecore#//DomainEntities/Service">
         <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute SoftwareModel.ecore#//DomainEntities/Service/serviceDate"/>
@@ -249,6 +251,10 @@
         </genOperations>
       </genClasses>
       <genClasses xsi:type="genmodel:GenClass" ecoreClass="SoftwareModel.ecore#//BusinessLogic/Rooms">
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference SoftwareModel.ecore#//BusinessLogic/Rooms/availibleroomfinder"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference SoftwareModel.ecore#//BusinessLogic/Rooms/roombookings"/>
         <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="SoftwareModel.ecore#//BusinessLogic/Rooms/checkOut">
           <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="SoftwareModel.ecore#//BusinessLogic/Rooms/checkOut/roomBooking"/>
         </genOperations>

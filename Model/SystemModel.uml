@@ -346,6 +346,36 @@
       <type xmi:type="uml:Class" href="SoftwareModel.uml#_X7UTAJdtEeW9FdtnBhCZ1w"/>
     </ownedEnd>
   </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_OIXkQJzpEeWJusbskP8Asw">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_OIXkQZzpEeWJusbskP8Asw" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_OIXkQpzpEeWJusbskP8Asw" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <memberEnd xmi:type="uml:Property" href="SoftwareModel.uml#_OIXkQ5zpEeWJusbskP8Asw"/>
+    <memberEnd xmi:type="uml:Property" href="#_OIXkRJzpEeWJusbskP8Asw"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_OIXkRJzpEeWJusbskP8Asw" name="rooms" association="_OIXkQJzpEeWJusbskP8Asw">
+      <type xmi:type="uml:Class" href="SoftwareModel.uml#_z-rgIJhqEeWatpqnQATTNw"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_O5h7cJzpEeWJusbskP8Asw">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_O5h7cZzpEeWJusbskP8Asw" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_O5h7cpzpEeWJusbskP8Asw" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <memberEnd xmi:type="uml:Property" href="SoftwareModel.uml#_O5h7c5zpEeWJusbskP8Asw"/>
+    <memberEnd xmi:type="uml:Property" href="#_O5h7dJzpEeWJusbskP8Asw"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_O5h7dJzpEeWJusbskP8Asw" name="rooms" association="_O5h7cJzpEeWJusbskP8Asw">
+      <type xmi:type="uml:Class" href="SoftwareModel.uml#_z-rgIJhqEeWatpqnQATTNw"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_UuQ6MJzpEeWJusbskP8Asw">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_UuQ6MZzpEeWJusbskP8Asw" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_UuQ6MpzpEeWJusbskP8Asw" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <memberEnd xmi:type="uml:Property" href="SoftwareModel.uml#_UuQ6M5zpEeWJusbskP8Asw"/>
+    <memberEnd xmi:type="uml:Property" href="#_UuaEIJzpEeWJusbskP8Asw"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_UuaEIJzpEeWJusbskP8Asw" name="room" association="_UuQ6MJzpEeWJusbskP8Asw">
+      <type xmi:type="uml:Class" href="SoftwareModel.uml#_jC8d8JXcEeWtZbi4EnRFrQ"/>
+    </ownedEnd>
+  </packagedElement>
   <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_iC-xQJdGEeWbutPRr4NuZg">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_iDBNgJdGEeWbutPRr4NuZg" source="http://www.eclipse.org/uml2/2.0.0/UML">
       <references xmi:type="ecore:EPackage" href="pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#_Kv8EIKFXEeS_KNX0nfvIVQ"/>

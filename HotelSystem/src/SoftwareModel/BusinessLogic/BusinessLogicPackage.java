@@ -405,13 +405,31 @@ public interface BusinessLogicPackage extends EPackage {
 	int ROOMS = 5;
 
 	/**
+	 * The feature id for the '<em><b>Availibleroomfinder</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOMS__AVAILIBLEROOMFINDER = 0;
+
+	/**
+	 * The feature id for the '<em><b>Roombookings</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOMS__ROOMBOOKINGS = 1;
+
+	/**
 	 * The number of structural features of the '<em>Rooms</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROOMS_FEATURE_COUNT = 0;
+	int ROOMS_FEATURE_COUNT = 2;
 
 	/**
 	 * The operation id for the '<em>Check Out</em>' operation.
@@ -756,6 +774,28 @@ public interface BusinessLogicPackage extends EPackage {
 	EClass getRooms();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link SoftwareModel.BusinessLogic.Rooms#getAvailibleroomfinder <em>Availibleroomfinder</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Availibleroomfinder</em>'.
+	 * @see SoftwareModel.BusinessLogic.Rooms#getAvailibleroomfinder()
+	 * @see #getRooms()
+	 * @generated
+	 */
+	EReference getRooms_Availibleroomfinder();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link SoftwareModel.BusinessLogic.Rooms#getRoombookings <em>Roombookings</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Roombookings</em>'.
+	 * @see SoftwareModel.BusinessLogic.Rooms#getRoombookings()
+	 * @see #getRooms()
+	 * @generated
+	 */
+	EReference getRooms_Roombookings();
+
+	/**
 	 * Returns the meta object for the '{@link SoftwareModel.BusinessLogic.Rooms#checkOut(SoftwareModel.DomainEntities.RoomBooking) <em>Check Out</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1063,6 +1103,22 @@ public interface BusinessLogicPackage extends EPackage {
 		 * @generated
 		 */
 		EClass ROOMS = eINSTANCE.getRooms();
+
+		/**
+		 * The meta object literal for the '<em><b>Availibleroomfinder</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ROOMS__AVAILIBLEROOMFINDER = eINSTANCE.getRooms_Availibleroomfinder();
+
+		/**
+		 * The meta object literal for the '<em><b>Roombookings</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ROOMS__ROOMBOOKINGS = eINSTANCE.getRooms_Roombookings();
 
 		/**
 		 * The meta object literal for the '<em><b>Check Out</b></em>' operation.

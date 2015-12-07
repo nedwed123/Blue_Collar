@@ -100,6 +100,9 @@
       <ownedAttribute xmi:type="uml:Property" xmi:id="_n60LcJzlEeWJusbskP8Asw" name="disabledAccess">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
       </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_UuQ6M5zpEeWJusbskP8Asw" name="roomtype" type="_uJFr8JXcEeWtZbi4EnRFrQ" aggregation="composite">
+        <association xmi:type="uml:Association" href="SystemModel.uml#_UuQ6MJzpEeWJusbskP8Asw"/>
+      </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_5u21MJXcEeWtZbi4EnRFrQ" name="Service">
       <ownedAttribute xmi:type="uml:Property" xmi:id="_xxF40JdaEeW9FdtnBhCZ1w" name="serviceDate">
@@ -350,6 +353,12 @@
       </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_z-rgIJhqEeWatpqnQATTNw" name="Rooms">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_OIXkQ5zpEeWJusbskP8Asw" name="availibleroomfinder" type="_864EQJhYEeWatpqnQATTNw" aggregation="composite">
+        <association xmi:type="uml:Association" href="SystemModel.uml#_OIXkQJzpEeWJusbskP8Asw"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_O5h7c5zpEeWJusbskP8Asw" name="roombookings" type="_krP4YJdkEeW9FdtnBhCZ1w" aggregation="composite">
+        <association xmi:type="uml:Association" href="SystemModel.uml#_O5h7cJzpEeWJusbskP8Asw"/>
+      </ownedAttribute>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_33LmQJhrEeWatpqnQATTNw" name="checkOut">
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_F8hJQJhsEeWatpqnQATTNw" name="roomBooking" type="_5lCx4JXcEeWtZbi4EnRFrQ"/>
       </ownedOperation>
@@ -387,8 +396,6 @@
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_QhAEQJxUEeWIRtM0UUTKxA" type="_5lCx4JXcEeWtZbi4EnRFrQ" direction="return"/>
       </ownedOperation>
     </packagedElement>
-    <packagedElement xmi:type="uml:Dependency" xmi:id="_SpoxkJhrEeWatpqnQATTNw" client="_z-rgIJhqEeWatpqnQATTNw" supplier="_864EQJhYEeWatpqnQATTNw"/>
-    <packagedElement xmi:type="uml:Dependency" xmi:id="_mxG2IJhrEeWatpqnQATTNw" name="uses" client="_z-rgIJhqEeWatpqnQATTNw" supplier="_krP4YJdkEeW9FdtnBhCZ1w"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Package" xmi:id="_G3kF0JdnEeW9FdtnBhCZ1w" name="Presentation">
     <packagedElement xmi:type="uml:Class" xmi:id="_eeeswJdnEeW9FdtnBhCZ1w" name="CustomerHomeView">

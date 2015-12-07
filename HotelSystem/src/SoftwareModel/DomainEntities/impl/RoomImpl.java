@@ -6,10 +6,13 @@ import SoftwareModel.DomainEntities.Availability;
 import SoftwareModel.DomainEntities.DomainEntitiesPackage;
 import SoftwareModel.DomainEntities.Room;
 
+import SoftwareModel.DomainEntities.RoomType;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
@@ -27,6 +30,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link SoftwareModel.DomainEntities.impl.RoomImpl#isSmoking <em>Smoking</em>}</li>
  *   <li>{@link SoftwareModel.DomainEntities.impl.RoomImpl#isPetsAllowed <em>Pets Allowed</em>}</li>
  *   <li>{@link SoftwareModel.DomainEntities.impl.RoomImpl#isDisabledAccess <em>Disabled Access</em>}</li>
+ *   <li>{@link SoftwareModel.DomainEntities.impl.RoomImpl#getRoomtype <em>Roomtype</em>}</li>
  * </ul>
  *
  * @generated
@@ -151,6 +155,16 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 * @ordered
 	 */
 	protected boolean disabledAccess = DISABLED_ACCESS_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getRoomtype() <em>Roomtype</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRoomtype()
+	 * @generated
+	 * @ordered
+	 */
+	protected RoomType roomtype;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -302,6 +316,63 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public RoomType getRoomtype() {
+		return roomtype;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetRoomtype(RoomType newRoomtype, NotificationChain msgs) {
+		RoomType oldRoomtype = roomtype;
+		roomtype = newRoomtype;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DomainEntitiesPackage.ROOM__ROOMTYPE, oldRoomtype, newRoomtype);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setRoomtype(RoomType newRoomtype) {
+		if (newRoomtype != roomtype) {
+			NotificationChain msgs = null;
+			if (roomtype != null)
+				msgs = ((InternalEObject)roomtype).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DomainEntitiesPackage.ROOM__ROOMTYPE, null, msgs);
+			if (newRoomtype != null)
+				msgs = ((InternalEObject)newRoomtype).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DomainEntitiesPackage.ROOM__ROOMTYPE, null, msgs);
+			msgs = basicSetRoomtype(newRoomtype, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DomainEntitiesPackage.ROOM__ROOMTYPE, newRoomtype, newRoomtype));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case DomainEntitiesPackage.ROOM__ROOMTYPE:
+				return basicSetRoomtype(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -317,6 +388,8 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 				return isPetsAllowed();
 			case DomainEntitiesPackage.ROOM__DISABLED_ACCESS:
 				return isDisabledAccess();
+			case DomainEntitiesPackage.ROOM__ROOMTYPE:
+				return getRoomtype();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -346,6 +419,9 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 				return;
 			case DomainEntitiesPackage.ROOM__DISABLED_ACCESS:
 				setDisabledAccess((Boolean)newValue);
+				return;
+			case DomainEntitiesPackage.ROOM__ROOMTYPE:
+				setRoomtype((RoomType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -377,6 +453,9 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 			case DomainEntitiesPackage.ROOM__DISABLED_ACCESS:
 				setDisabledAccess(DISABLED_ACCESS_EDEFAULT);
 				return;
+			case DomainEntitiesPackage.ROOM__ROOMTYPE:
+				setRoomtype((RoomType)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -401,6 +480,8 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 				return petsAllowed != PETS_ALLOWED_EDEFAULT;
 			case DomainEntitiesPackage.ROOM__DISABLED_ACCESS:
 				return disabledAccess != DISABLED_ACCESS_EDEFAULT;
+			case DomainEntitiesPackage.ROOM__ROOMTYPE:
+				return roomtype != null;
 		}
 		return super.eIsSet(featureID);
 	}

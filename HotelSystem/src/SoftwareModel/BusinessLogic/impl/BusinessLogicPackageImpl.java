@@ -413,6 +413,24 @@ public class BusinessLogicPackageImpl extends EPackageImpl implements BusinessLo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getRooms_Availibleroomfinder() {
+		return (EReference)roomsEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getRooms_Roombookings() {
+		return (EReference)roomsEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EOperation getRooms__CheckOut__RoomBooking() {
 		return roomsEClass.getEOperations().get(0);
 	}
@@ -514,6 +532,8 @@ public class BusinessLogicPackageImpl extends EPackageImpl implements BusinessLo
 		createEOperation(authorizerEClass, AUTHORIZER___AUTHORIZE__STRING);
 
 		roomsEClass = createEClass(ROOMS);
+		createEReference(roomsEClass, ROOMS__AVAILIBLEROOMFINDER);
+		createEReference(roomsEClass, ROOMS__ROOMBOOKINGS);
 		createEOperation(roomsEClass, ROOMS___CHECK_OUT__ROOMBOOKING);
 		createEOperation(roomsEClass, ROOMS___CHECK_IN__ROOMBOOKING);
 		createEOperation(roomsEClass, ROOMS___GET_BOOKING__INT);
@@ -627,6 +647,8 @@ public class BusinessLogicPackageImpl extends EPackageImpl implements BusinessLo
 		addEParameter(op, theTypesPackage.getString(), "password", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(roomsEClass, Rooms.class, "Rooms", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getRooms_Availibleroomfinder(), this.getAvailibleRoomFinder(), null, "availibleroomfinder", null, 1, 1, Rooms.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getRooms_Roombookings(), this.getRoomBookings(), null, "roombookings", null, 1, 1, Rooms.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		op = initEOperation(getRooms__CheckOut__RoomBooking(), null, "checkOut", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, theDomainEntitiesPackage.getRoomBooking(), "roomBooking", 1, 1, IS_UNIQUE, !IS_ORDERED);

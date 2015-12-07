@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link SoftwareModel.DomainEntities.Room#isSmoking <em>Smoking</em>}</li>
  *   <li>{@link SoftwareModel.DomainEntities.Room#isPetsAllowed <em>Pets Allowed</em>}</li>
  *   <li>{@link SoftwareModel.DomainEntities.Room#isDisabledAccess <em>Disabled Access</em>}</li>
+ *   <li>{@link SoftwareModel.DomainEntities.Room#getRoomtype <em>Roomtype</em>}</li>
  * </ul>
  *
  * @see SoftwareModel.DomainEntities.DomainEntitiesPackage#getRoom()
@@ -184,5 +185,31 @@ public interface Room extends EObject {
 	 * @generated
 	 */
 	void setDisabledAccess(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Roomtype</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Roomtype</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Roomtype</em>' containment reference.
+	 * @see #setRoomtype(RoomType)
+	 * @see SoftwareModel.DomainEntities.DomainEntitiesPackage#getRoom_Roomtype()
+	 * @model containment="true" required="true" ordered="false"
+	 * @generated
+	 */
+	RoomType getRoomtype();
+
+	/**
+	 * Sets the value of the '{@link SoftwareModel.DomainEntities.Room#getRoomtype <em>Roomtype</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Roomtype</em>' containment reference.
+	 * @see #getRoomtype()
+	 * @generated
+	 */
+	void setRoomtype(RoomType value);
 
 } // Room
