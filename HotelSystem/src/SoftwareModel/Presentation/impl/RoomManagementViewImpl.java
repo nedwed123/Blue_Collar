@@ -148,6 +148,7 @@ public class RoomManagementViewImpl extends MinimalEObjectImpl.Container impleme
 			default:
 				break;
 			}
+		case 2:
 		
 
 		}
