@@ -196,6 +196,17 @@ public class RoomBookingsImpl extends MinimalEObjectImpl.Container implements Ro
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public RoomBooking findByRoomResponsible(String roomResponsible) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -291,6 +302,8 @@ public class RoomBookingsImpl extends MinimalEObjectImpl.Container implements Ro
 			case BusinessLogicPackage.ROOM_BOOKINGS___FIND_BY_ROOM_NR__INT:
 				findByRoomNr((Integer)arguments.get(0));
 				return null;
+			case BusinessLogicPackage.ROOM_BOOKINGS___FIND_BY_ROOM_RESPONSIBLE__STRING:
+				return findByRoomResponsible((String)arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

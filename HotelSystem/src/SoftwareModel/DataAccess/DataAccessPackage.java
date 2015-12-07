@@ -249,13 +249,22 @@ public interface DataAccessPackage extends EPackage {
 	int ROOM_BOOKINGS_REPOSITORY___GET__INT_STRING = 2;
 
 	/**
+	 * The operation id for the '<em>Get All</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_BOOKINGS_REPOSITORY___GET_ALL__ROOMBOOKING = 3;
+
+	/**
 	 * The number of operations of the '<em>Room Bookings Repository</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_BOOKINGS_REPOSITORY_OPERATION_COUNT = 3;
+	int ROOM_BOOKINGS_REPOSITORY_OPERATION_COUNT = 4;
 
 	/**
 	 * The meta object id for the '{@link SoftwareModel.DataAccess.impl.AuthorizationRepositoryImpl <em>Authorization Repository</em>}' class.
@@ -571,6 +580,16 @@ public interface DataAccessPackage extends EPackage {
 	EOperation getRoomBookingsRepository__Get__int_String();
 
 	/**
+	 * Returns the meta object for the '{@link SoftwareModel.DataAccess.RoomBookingsRepository#getAll(SoftwareModel.DomainEntities.RoomBooking) <em>Get All</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get All</em>' operation.
+	 * @see SoftwareModel.DataAccess.RoomBookingsRepository#getAll(SoftwareModel.DomainEntities.RoomBooking)
+	 * @generated
+	 */
+	EOperation getRoomBookingsRepository__GetAll__RoomBooking();
+
+	/**
 	 * Returns the meta object for class '{@link SoftwareModel.DataAccess.AuthorizationRepository <em>Authorization Repository</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -848,6 +867,14 @@ public interface DataAccessPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation ROOM_BOOKINGS_REPOSITORY___GET__INT_STRING = eINSTANCE.getRoomBookingsRepository__Get__int_String();
+
+		/**
+		 * The meta object literal for the '<em><b>Get All</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ROOM_BOOKINGS_REPOSITORY___GET_ALL__ROOMBOOKING = eINSTANCE.getRoomBookingsRepository__GetAll__RoomBooking();
 
 		/**
 		 * The meta object literal for the '{@link SoftwareModel.DataAccess.impl.AuthorizationRepositoryImpl <em>Authorization Repository</em>}' class.

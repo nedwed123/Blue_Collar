@@ -137,6 +137,17 @@ public class RoomBookingsRepositoryImpl extends MinimalEObjectImpl.Container imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public void getAll(RoomBooking _) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -208,6 +219,9 @@ public class RoomBookingsRepositoryImpl extends MinimalEObjectImpl.Container imp
 				return null;
 			case DataAccessPackage.ROOM_BOOKINGS_REPOSITORY___GET__INT_STRING:
 				get((Integer)arguments.get(0), (String)arguments.get(1));
+				return null;
+			case DataAccessPackage.ROOM_BOOKINGS_REPOSITORY___GET_ALL__ROOMBOOKING:
+				getAll((RoomBooking)arguments.get(0));
 				return null;
 		}
 		return super.eInvoke(operationID, arguments);

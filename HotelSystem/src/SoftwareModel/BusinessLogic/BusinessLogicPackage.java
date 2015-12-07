@@ -194,13 +194,22 @@ public interface BusinessLogicPackage extends EPackage {
 	int ROOM_BOOKINGS___FIND_BY_ROOM_NR__INT = 2;
 
 	/**
+	 * The operation id for the '<em>Find By Room Responsible</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_BOOKINGS___FIND_BY_ROOM_RESPONSIBLE__STRING = 3;
+
+	/**
 	 * The number of operations of the '<em>Room Bookings</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_BOOKINGS_OPERATION_COUNT = 3;
+	int ROOM_BOOKINGS_OPERATION_COUNT = 4;
 
 	/**
 	 * The meta object id for the '{@link SoftwareModel.BusinessLogic.impl.AvailibleRoomFinderImpl <em>Availible Room Finder</em>}' class.
@@ -610,6 +619,16 @@ public interface BusinessLogicPackage extends EPackage {
 	EOperation getRoomBookings__FindByRoomNr__int();
 
 	/**
+	 * Returns the meta object for the '{@link SoftwareModel.BusinessLogic.RoomBookings#findByRoomResponsible(java.lang.String) <em>Find By Room Responsible</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Find By Room Responsible</em>' operation.
+	 * @see SoftwareModel.BusinessLogic.RoomBookings#findByRoomResponsible(java.lang.String)
+	 * @generated
+	 */
+	EOperation getRoomBookings__FindByRoomResponsible__String();
+
+	/**
 	 * Returns the meta object for class '{@link SoftwareModel.BusinessLogic.AvailibleRoomFinder <em>Availible Room Finder</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -967,6 +986,14 @@ public interface BusinessLogicPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation ROOM_BOOKINGS___FIND_BY_ROOM_NR__INT = eINSTANCE.getRoomBookings__FindByRoomNr__int();
+
+		/**
+		 * The meta object literal for the '<em><b>Find By Room Responsible</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ROOM_BOOKINGS___FIND_BY_ROOM_RESPONSIBLE__STRING = eINSTANCE.getRoomBookings__FindByRoomResponsible__String();
 
 		/**
 		 * The meta object literal for the '{@link SoftwareModel.BusinessLogic.impl.AvailibleRoomFinderImpl <em>Availible Room Finder</em>}' class.

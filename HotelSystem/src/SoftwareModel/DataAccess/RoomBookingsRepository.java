@@ -72,4 +72,12 @@ public interface RoomBookingsRepository extends EObject {
 	 */
 	void get(int reservationNumber, String name);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model _Required="true" _Ordered="false"
+	 * @generated
+	 */
+	void getAll(RoomBooking _);
+
 } // RoomBookingsRepository

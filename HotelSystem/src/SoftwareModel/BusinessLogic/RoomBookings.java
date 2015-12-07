@@ -102,4 +102,12 @@ public interface RoomBookings extends EObject {
 	 */
 	void findByRoomNr(int roomNr);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" ordered="false" roomResponsibleDataType="org.eclipse.uml2.types.String" roomResponsibleRequired="true" roomResponsibleOrdered="false"
+	 * @generated
+	 */
+	RoomBooking findByRoomResponsible(String roomResponsible);
+
 } // RoomBookings

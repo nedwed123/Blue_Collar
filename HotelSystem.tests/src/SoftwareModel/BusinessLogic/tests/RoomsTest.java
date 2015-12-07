@@ -4,17 +4,22 @@ package SoftwareModel.BusinessLogic.tests;
 
 import java.util.Date;
 
+import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.util.EcoreEList;
 
 import SoftwareModel.BusinessLogic.BusinessLogicFactory;
 import SoftwareModel.BusinessLogic.Rooms;
 import SoftwareModel.BusinessLogic.impl.AvailibleRoomFinderImpl;
+import SoftwareModel.DataAccess.RoomBookingsRepository;
 import SoftwareModel.DataAccess.RoomRepository;
 import SoftwareModel.DataAccess.impl.RoomRepositoryImpl;
+import SoftwareModel.DomainEntities.Availability;
+import SoftwareModel.DomainEntities.Room;
 import SoftwareModel.DomainEntities.RoomType;
+import SoftwareModel.DomainEntities.impl.RoomImpl;
 import junit.framework.TestCase;
-
+import static org.mockito.Mockito.*;
 import junit.textui.TestRunner;
 
 /**
@@ -150,9 +155,20 @@ public class RoomsTest extends TestCase {
 	 * @see SoftwareModel.BusinessLogic.Rooms#availibleRoomTypes(int, int, java.util.Date, java.util.Date)
 	 */
 	public void testAvailibleRoomTypes__int_int_Date_Date() {
-		RoomRepository newRoomrepository = new RoomRepositoryImpl();
-
-		((AvailibleRoomFinderImpl)fixture).setRoomrepository(newRoomrepository );
+		RoomRepository fakeRepo = mock(RoomRepository.class);
+		RoomBookingsRepository fakeBookings = mock(RoomBookingsRepository.class);
+		
+		((AvailibleRoomFinderImpl)fixture).setRoomrepository(fakeRepo );
+		((AvailibleRoomFinderImpl)fixture).setRoombookingsrepository(fakeBookings);
+		
+		EList<Room> list = new BasicEList<Room>();
+		Room room = new RoomImpl();
+		room.setAvailability(Availability.AVAILIBLE);		
+		
+		list.add(room);
+		when(fakeRepo.getRooms()).thenReturn(list);
+		//when(fakeBookings.()).thenReturn(list );
+		
 		int adults = 1;
 		int children = 1;
 		Date startDate = new Date(1993, 8, 16);

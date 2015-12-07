@@ -141,6 +141,9 @@
           <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="SoftwareModel.ecore#//DataAccess/RoomBookingsRepository/get.1/reservationNumber"/>
           <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="SoftwareModel.ecore#//DataAccess/RoomBookingsRepository/get.1/name"/>
         </genOperations>
+        <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="SoftwareModel.ecore#//DataAccess/RoomBookingsRepository/getAll">
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="SoftwareModel.ecore#//DataAccess/RoomBookingsRepository/getAll/_"/>
+        </genOperations>
       </genClasses>
       <genClasses xsi:type="genmodel:GenClass" ecoreClass="SoftwareModel.ecore#//DataAccess/AuthorizationRepository">
         <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
@@ -204,6 +207,9 @@
         </genOperations>
         <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="SoftwareModel.ecore#//BusinessLogic/RoomBookings/findByRoomNr">
           <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="SoftwareModel.ecore#//BusinessLogic/RoomBookings/findByRoomNr/roomNr"/>
+        </genOperations>
+        <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="SoftwareModel.ecore#//BusinessLogic/RoomBookings/findByRoomResponsible">
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="SoftwareModel.ecore#//BusinessLogic/RoomBookings/findByRoomResponsible/roomResponsible"/>
         </genOperations>
       </genClasses>
       <genClasses xsi:type="genmodel:GenClass" ecoreClass="SoftwareModel.ecore#//BusinessLogic/AvailibleRoomFinder">
