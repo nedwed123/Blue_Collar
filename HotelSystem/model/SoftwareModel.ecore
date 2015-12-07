@@ -201,9 +201,8 @@
       <eOperations name="checkIn" ordered="false" lowerBound="1">
         <eParameters name="roomBooking" ordered="false" lowerBound="1" eType="#//DomainEntities/RoomBooking"/>
       </eOperations>
-      <eOperations name="findByRoomNr" ordered="false" lowerBound="1">
+      <eOperations name="findByRoomNr" ordered="false" upperBound="-1" eType="#//DomainEntities/RoomBooking">
         <eParameters name="roomNr" ordered="false" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//Integer"/>
-        <eParameters name="_" ordered="false" upperBound="-1" eType="#//DomainEntities/RoomBooking"/>
       </eOperations>
       <eOperations name="findByRoomResponsible" ordered="false" lowerBound="1" eType="#//DomainEntities/RoomBooking">
         <eParameters name="roomResponsible" ordered="false" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String"/>

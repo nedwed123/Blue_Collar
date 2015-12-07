@@ -185,7 +185,7 @@ public class RoomBookingsImpl extends MinimalEObjectImpl.Container implements Ro
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void findByRoomNr(int roomNr, EList<RoomBooking> _) {
+	public EList<RoomBooking> findByRoomNr(int roomNr) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -300,9 +300,8 @@ public class RoomBookingsImpl extends MinimalEObjectImpl.Container implements Ro
 			case BusinessLogicPackage.ROOM_BOOKINGS___CHECK_IN__ROOMBOOKING:
 				checkIn((RoomBooking)arguments.get(0));
 				return null;
-			case BusinessLogicPackage.ROOM_BOOKINGS___FIND_BY_ROOM_NR__INT_ELIST:
-				findByRoomNr((Integer)arguments.get(0), (EList<RoomBooking>)arguments.get(1));
-				return null;
+			case BusinessLogicPackage.ROOM_BOOKINGS___FIND_BY_ROOM_NR__INT:
+				return findByRoomNr((Integer)arguments.get(0));
 			case BusinessLogicPackage.ROOM_BOOKINGS___FIND_BY_ROOM_RESPONSIBLE__STRING:
 				return findByRoomResponsible((String)arguments.get(0));
 		}

@@ -207,7 +207,6 @@
         </genOperations>
         <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="SoftwareModel.ecore#//BusinessLogic/RoomBookings/findByRoomNr">
           <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="SoftwareModel.ecore#//BusinessLogic/RoomBookings/findByRoomNr/roomNr"/>
-          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="SoftwareModel.ecore#//BusinessLogic/RoomBookings/findByRoomNr/_"/>
         </genOperations>
         <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="SoftwareModel.ecore#//BusinessLogic/RoomBookings/findByRoomResponsible">
           <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="SoftwareModel.ecore#//BusinessLogic/RoomBookings/findByRoomResponsible/roomResponsible"/>

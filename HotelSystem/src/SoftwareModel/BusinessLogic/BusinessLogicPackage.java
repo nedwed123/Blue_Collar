@@ -191,7 +191,7 @@ public interface BusinessLogicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_BOOKINGS___FIND_BY_ROOM_NR__INT_ELIST = 2;
+	int ROOM_BOOKINGS___FIND_BY_ROOM_NR__INT = 2;
 
 	/**
 	 * The operation id for the '<em>Find By Room Responsible</em>' operation.
@@ -609,14 +609,14 @@ public interface BusinessLogicPackage extends EPackage {
 	EOperation getRoomBookings__CheckIn__RoomBooking();
 
 	/**
-	 * Returns the meta object for the '{@link SoftwareModel.BusinessLogic.RoomBookings#findByRoomNr(int, org.eclipse.emf.common.util.EList) <em>Find By Room Nr</em>}' operation.
+	 * Returns the meta object for the '{@link SoftwareModel.BusinessLogic.RoomBookings#findByRoomNr(int) <em>Find By Room Nr</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Find By Room Nr</em>' operation.
-	 * @see SoftwareModel.BusinessLogic.RoomBookings#findByRoomNr(int, org.eclipse.emf.common.util.EList)
+	 * @see SoftwareModel.BusinessLogic.RoomBookings#findByRoomNr(int)
 	 * @generated
 	 */
-	EOperation getRoomBookings__FindByRoomNr__int_EList();
+	EOperation getRoomBookings__FindByRoomNr__int();
 
 	/**
 	 * Returns the meta object for the '{@link SoftwareModel.BusinessLogic.RoomBookings#findByRoomResponsible(java.lang.String) <em>Find By Room Responsible</em>}' operation.
@@ -985,7 +985,7 @@ public interface BusinessLogicPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation ROOM_BOOKINGS___FIND_BY_ROOM_NR__INT_ELIST = eINSTANCE.getRoomBookings__FindByRoomNr__int_EList();
+		EOperation ROOM_BOOKINGS___FIND_BY_ROOM_NR__INT = eINSTANCE.getRoomBookings__FindByRoomNr__int();
 
 		/**
 		 * The meta object literal for the '<em><b>Find By Room Responsible</b></em>' operation.
