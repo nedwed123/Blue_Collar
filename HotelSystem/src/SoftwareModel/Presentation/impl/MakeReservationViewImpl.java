@@ -5,14 +5,23 @@ package SoftwareModel.Presentation.impl;
 import SoftwareModel.BusinessLogic.Reservations;
 import SoftwareModel.BusinessLogic.Rooms;
 import SoftwareModel.BusinessLogic.impl.ReservationsImpl;
+import SoftwareModel.BusinessLogic.impl.RoomsImpl;
 import SoftwareModel.DomainEntities.PaymentDetails;
 import SoftwareModel.DomainEntities.Reservation;
 import SoftwareModel.DomainEntities.RoomBooking;
+import SoftwareModel.DomainEntities.RoomType;
+import SoftwareModel.DomainEntities.impl.RoomTypeImpl;
 import SoftwareModel.Presentation.Frame;
 import SoftwareModel.Presentation.MakeReservationView;
 import SoftwareModel.Presentation.PresentationPackage;
 
 import java.lang.reflect.InvocationTargetException;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+import java.util.Scanner;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -55,7 +64,7 @@ public class MakeReservationViewImpl extends MinimalEObjectImpl.Container implem
 	 * @generated
 	 * @ordered
 	 */
-	protected Rooms rooms;
+	protected Rooms rooms = new RoomsImpl();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -164,7 +173,45 @@ public class MakeReservationViewImpl extends MinimalEObjectImpl.Container implem
 	public void Run(Frame frame) {
 		
 		// TODO: implement this method
-		System.out.println("Not implemented");
+		
+		System.out.println("Make Reservation:");
+		Date checkInDate = new Date();
+		Date checkOutDate = new Date();
+		Scanner scanner = new Scanner(System.in);
+		
+		try {
+			System.out.println("Enter check in date (format YY-MM-DD): ");		
+			String dateString = scanner.next();
+			DateFormat format = new SimpleDateFormat("yy-MM-dd", Locale.ENGLISH);
+			checkInDate = format.parse(dateString);
+			System.out.println("Enter check out date (format YY-MM-DD): ");
+			dateString = scanner.next();
+			checkOutDate = format.parse(dateString);
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		int numberOfRooms;
+		while(true){
+			System.out.println("Enter number of rooms to reserv:");
+			numberOfRooms = scanner.nextInt();
+			if(numberOfRooms > 9 || numberOfRooms < 1)
+				System.out.println("Please enter a number between 1-9");
+			else
+				break;
+		}
+		int[] numberOfAdultsForRooms = new int[numberOfRooms];
+		int[] numberOfChildrenForRooms = new int[numberOfRooms];
+		for (int i = 0; i < numberOfRooms; i++){
+			System.out.println("Enter number of adults for room " + (i + 1) + ":");
+			numberOfAdultsForRooms[i] = scanner.nextInt();
+			System.out.println("Enter number of children for room " + (i + 1) + ":");
+			numberOfChildrenForRooms[i] = scanner.nextInt();
+		}
+		
+		RoomType roomType = rooms.availibleRoomTypes(numberOfAdultsForRooms[0], numberOfChildrenForRooms[0], checkInDate, checkOutDate);
+		
 		
 		//Recieve this input from user
 		EList<RoomBooking> selectedRooms = null;
@@ -175,7 +222,7 @@ public class MakeReservationViewImpl extends MinimalEObjectImpl.Container implem
 		
 		// Display reservation number?
 
-		throw new UnsupportedOperationException();
+		//throw new UnsupportedOperationException();
 	}
 
 	/**
