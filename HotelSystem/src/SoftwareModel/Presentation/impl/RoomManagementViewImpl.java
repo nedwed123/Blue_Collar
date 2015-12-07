@@ -117,25 +117,25 @@ public class RoomManagementViewImpl extends MinimalEObjectImpl.Container impleme
 			int statusChoice = scan.nextInt();
 			switch (statusChoice) {
 			case 1:
-				roomoperations.addRoom(roomNumber, Availability.AVAILIBLE);
+				roomoperations.addRoom(roomNumber, Availability.AVAILIBLE, "");
 				break;
 			case 2:
-				roomoperations.addRoom(roomNumber, Availability.TO_BE_CLEANED);
+				roomoperations.addRoom(roomNumber, Availability.TO_BE_CLEANED, "");
 				break;
 			case 3:
-				roomoperations.addRoom(roomNumber, Availability.UNDER_MAINTENENCE);
+				roomoperations.addRoom(roomNumber, Availability.UNDER_MAINTENENCE, "");
 				break;
 			case 4:
-				roomoperations.addRoom(roomNumber, Availability.USED);
+				roomoperations.addRoom(roomNumber, Availability.USED, "");
 				break;
 			default:
 				break;
 			}
 		case 2:
 			System.out.println("Please enter room type id");
-			int roomTypeId=scan.nextInt();
+			String roomTypeId=scan.next();
 			System.out.println("Please enter the new rate");
-			int rate=scan.nextInt();
+			double rate=scan.nextDouble();
 			roomoperations.modifyRate(roomTypeId, rate);
 			break;
 		case 3:
