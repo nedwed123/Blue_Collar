@@ -166,6 +166,9 @@
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         </ownedParameter>
       </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_RpdvoJztEeWJusbskP8Asw" name="getAll">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_6_PIgJzuEeWJusbskP8Asw" type="_5lCx4JXcEeWtZbi4EnRFrQ"/>
+      </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_4OdqQJdtEeW9FdtnBhCZ1w" name="AuthorizationRepository">
       <ownedAttribute xmi:type="uml:Property" xmi:id="_dnVXs5usEeWYeq6AFoWyvA" name="databasecontext" type="_RiAtEJhpEeWatpqnQATTNw" association="_dnVXsJusEeWYeq6AFoWyvA"/>
@@ -273,6 +276,12 @@
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_oTNpcJhoEeWatpqnQATTNw" name="roomNr">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
         </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_S-0jkJzuEeWJusbskP8Asw" name="findByRoomResponsible">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_hNUpoJzuEeWJusbskP8Asw" name="roomResponsible">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_quDZAJzuEeWJusbskP8Asw" type="_5lCx4JXcEeWtZbi4EnRFrQ" direction="return"/>
       </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_o0ciYJdkEeW9FdtnBhCZ1w" name="RoomOperations">

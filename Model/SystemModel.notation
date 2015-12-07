@@ -1137,6 +1137,10 @@
               <element xmi:type="uml:Operation" href="SoftwareModel.uml#_J7_0QJd0EeWxL-7mJgccVg"/>
               <layoutConstraint xmi:type="notation:Location" xmi:id="_J9IcsZd0EeWxL-7mJgccVg"/>
             </children>
+            <children xmi:type="notation:Shape" xmi:id="_RqqCcJztEeWJusbskP8Asw" type="3013">
+              <element xmi:type="uml:Operation" href="SoftwareModel.uml#_RpdvoJztEeWJusbskP8Asw"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_RqqCcZztEeWJusbskP8Asw"/>
+            </children>
             <styles xmi:type="notation:TitleStyle" xmi:id="_uTyI6Za0EeW6iMusCgrdvA"/>
             <styles xmi:type="notation:SortingStyle" xmi:id="_uTyI6pa0EeW6iMusCgrdvA"/>
             <styles xmi:type="notation:FilteringStyle" xmi:id="_uTyI65a0EeW6iMusCgrdvA"/>
@@ -1369,6 +1373,10 @@
               <element xmi:type="uml:Operation" href="SoftwareModel.uml#_bywZkJhoEeWatpqnQATTNw"/>
               <layoutConstraint xmi:type="notation:Location" xmi:id="_bzW2gZhoEeWatpqnQATTNw"/>
             </children>
+            <children xmi:type="notation:Shape" xmi:id="_TAA2YJzuEeWJusbskP8Asw" type="3013">
+              <element xmi:type="uml:Operation" href="SoftwareModel.uml#_S-0jkJzuEeWJusbskP8Asw"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_TAA2YZzuEeWJusbskP8Asw"/>
+            </children>
             <styles xmi:type="notation:TitleStyle" xmi:id="_kruZgZdkEeW9FdtnBhCZ1w"/>
             <styles xmi:type="notation:SortingStyle" xmi:id="_kruZgpdkEeW9FdtnBhCZ1w"/>
             <styles xmi:type="notation:FilteringStyle" xmi:id="_kruZg5dkEeW9FdtnBhCZ1w"/>
@@ -1381,7 +1389,7 @@
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_kruZiZdkEeW9FdtnBhCZ1w"/>
           </children>
           <element xmi:type="uml:Class" href="SoftwareModel.uml#_krP4YJdkEeW9FdtnBhCZ1w"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_krtycZdkEeW9FdtnBhCZ1w" x="769" y="41" height="157"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_krtycZdkEeW9FdtnBhCZ1w" x="769" y="23" height="174"/>
         </children>
         <children xmi:type="notation:Shape" xmi:id="_o07qkJdkEeW9FdtnBhCZ1w" type="3010">
           <children xmi:type="notation:DecorationNode" xmi:id="_o07qkpdkEeW9FdtnBhCZ1w" type="5014"/>

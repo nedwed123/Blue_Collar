@@ -4,7 +4,6 @@ package SoftwareModel.Presentation.impl;
 
 import SoftwareModel.BusinessLogic.RoomOperations;
 import SoftwareModel.BusinessLogic.impl.RoomOperationsImpl;
-import SoftwareModel.DomainEntities.Availability;
 import SoftwareModel.Presentation.Frame;
 import SoftwareModel.Presentation.PresentationPackage;
 import SoftwareModel.Presentation.RoomManagementView;
@@ -109,7 +108,7 @@ public class RoomManagementViewImpl extends MinimalEObjectImpl.Container impleme
 				+ "4.Make Room Unavailable \n" + "5.Remove Room \n");
 		Scanner scan = new Scanner(System.in);
 		int choice = scan.nextInt();
-		switch (choice) {
+		/*switch (choice) {
 		case 1:
 			System.out.println("Please enter room number to add");
 			int roomNumber = scan.nextInt();
@@ -157,7 +156,7 @@ public class RoomManagementViewImpl extends MinimalEObjectImpl.Container impleme
 			break;
 		
 
-		}
+		}*/
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		//throw new UnsupportedOperationException();

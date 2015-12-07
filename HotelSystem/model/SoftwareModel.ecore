@@ -130,12 +130,15 @@
       <eOperations name="update" ordered="false" lowerBound="1">
         <eParameters name="roomBooking" ordered="false" lowerBound="1" eType="#//DomainEntities/RoomBooking"/>
       </eOperations>
-      <eOperations name="get" ordered="false" lowerBound="1">
+      <eOperations name="getByRoomResponsible" ordered="false" lowerBound="1" eType="#//DomainEntities/RoomBooking">
         <eParameters name="name" ordered="false" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
       </eOperations>
-      <eOperations name="get" ordered="false" lowerBound="1">
+      <eOperations name="getByReservationNr" ordered="false" lowerBound="1">
         <eParameters name="reservationNumber" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-        <eParameters name="name" ordered="false" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
+        <eParameters name="_" ordered="false" lowerBound="1" eType="#//DomainEntities/RoomBooking"/>
+      </eOperations>
+      <eOperations name="getAll" ordered="false" lowerBound="1">
+        <eParameters name="_" ordered="false" lowerBound="1" eType="#//DomainEntities/RoomBooking"/>
       </eOperations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="databasecontext" ordered="false"
           lowerBound="1" eType="#//DataAccess/DatabaseContext"/>
@@ -200,6 +203,10 @@
       </eOperations>
       <eOperations name="findByRoomNr" ordered="false" lowerBound="1">
         <eParameters name="roomNr" ordered="false" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//Integer"/>
+        <eParameters name="_" ordered="false" upperBound="-1" eType="#//DomainEntities/RoomBooking"/>
+      </eOperations>
+      <eOperations name="findByRoomResponsible" ordered="false" lowerBound="1" eType="#//DomainEntities/RoomBooking">
+        <eParameters name="roomResponsible" ordered="false" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
       </eOperations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="roombookingsrepository"
           ordered="false" lowerBound="1" eType="#//DataAccess/RoomBookingsRepository"
