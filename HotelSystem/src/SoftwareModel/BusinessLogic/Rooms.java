@@ -115,9 +115,9 @@ public interface Rooms extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false" nameOfRoomResponsibleDataType="org.eclipse.uml2.types.String" nameOfRoomResponsibleRequired="true" nameOfRoomResponsibleOrdered="false"
+	 * @model ordered="false" nameOfRoomResponsibleDataType="org.eclipse.uml2.types.String" nameOfRoomResponsibleRequired="true" nameOfRoomResponsibleOrdered="false"
 	 * @generated
 	 */
-	RoomBooking getBooking(String nameOfRoomResponsible);
+	EList<RoomBooking> getBooking(String nameOfRoomResponsible);
 
 } // Rooms

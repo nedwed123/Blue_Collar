@@ -276,15 +276,18 @@
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
         </ownedParameter>
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_hz8S0JzwEeWJusbskP8Asw" type="_5lCx4JXcEeWtZbi4EnRFrQ" direction="return">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_i75ZYJzwEeWJusbskP8Asw"/>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_i75ZYZzwEeWJusbskP8Asw" value="*"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_i75ZYJzwEeWJusbskP8Asw" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_i75ZYZzwEeWJusbskP8Asw" value="1"/>
         </ownedParameter>
       </ownedOperation>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_S-0jkJzuEeWJusbskP8Asw" name="findByRoomResponsible">
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_hNUpoJzuEeWJusbskP8Asw" name="roomResponsible">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         </ownedParameter>
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_quDZAJzuEeWJusbskP8Asw" type="_5lCx4JXcEeWtZbi4EnRFrQ" direction="return"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_quDZAJzuEeWJusbskP8Asw" type="_5lCx4JXcEeWtZbi4EnRFrQ" direction="return">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_O6t4IJzyEeWJusbskP8Asw"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_O6t4IZzyEeWJusbskP8Asw" value="*"/>
+        </ownedParameter>
       </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_o0ciYJdkEeW9FdtnBhCZ1w" name="RoomOperations">
@@ -405,7 +408,10 @@
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_Nxxd4JxUEeWIRtM0UUTKxA" name="nameOfRoomResponsible">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         </ownedParameter>
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_QhAEQJxUEeWIRtM0UUTKxA" type="_5lCx4JXcEeWtZbi4EnRFrQ" direction="return"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_QhAEQJxUEeWIRtM0UUTKxA" type="_5lCx4JXcEeWtZbi4EnRFrQ" direction="return">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_AdbvMJzyEeWJusbskP8Asw"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_AdbvMZzyEeWJusbskP8Asw" value="*"/>
+        </ownedParameter>
       </ownedOperation>
     </packagedElement>
   </packagedElement>

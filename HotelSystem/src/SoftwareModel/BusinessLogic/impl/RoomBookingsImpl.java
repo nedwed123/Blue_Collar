@@ -185,7 +185,7 @@ public class RoomBookingsImpl extends MinimalEObjectImpl.Container implements Ro
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<RoomBooking> findByRoomNr(int roomNr) {
+	public RoomBooking findByRoomNr(int roomNr) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -196,7 +196,7 @@ public class RoomBookingsImpl extends MinimalEObjectImpl.Container implements Ro
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RoomBooking findByRoomResponsible(String roomResponsible) {
+	public EList<RoomBooking> findByRoomResponsible(String roomResponsible) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

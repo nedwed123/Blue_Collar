@@ -98,17 +98,17 @@ public interface RoomBookings extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model ordered="false" roomNrDataType="org.eclipse.uml2.types.Integer" roomNrRequired="true" roomNrOrdered="false"
+	 * @model required="true" ordered="false" roomNrDataType="org.eclipse.uml2.types.Integer" roomNrRequired="true" roomNrOrdered="false"
 	 * @generated
 	 */
-	EList<RoomBooking> findByRoomNr(int roomNr);
+	RoomBooking findByRoomNr(int roomNr);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false" roomResponsibleDataType="org.eclipse.uml2.types.String" roomResponsibleRequired="true" roomResponsibleOrdered="false"
+	 * @model ordered="false" roomResponsibleDataType="org.eclipse.uml2.types.String" roomResponsibleRequired="true" roomResponsibleOrdered="false"
 	 * @generated
 	 */
-	RoomBooking findByRoomResponsible(String roomResponsible);
+	EList<RoomBooking> findByRoomResponsible(String roomResponsible);
 
 } // RoomBookings

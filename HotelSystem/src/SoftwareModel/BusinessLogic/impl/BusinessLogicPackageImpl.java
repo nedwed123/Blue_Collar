@@ -613,10 +613,10 @@ public class BusinessLogicPackageImpl extends EPackageImpl implements BusinessLo
 		op = initEOperation(getRoomBookings__CheckIn__RoomBooking(), null, "checkIn", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, theDomainEntitiesPackage.getRoomBooking(), "roomBooking", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		op = initEOperation(getRoomBookings__FindByRoomNr__int(), theDomainEntitiesPackage.getRoomBooking(), "findByRoomNr", 0, -1, IS_UNIQUE, !IS_ORDERED);
+		op = initEOperation(getRoomBookings__FindByRoomNr__int(), theDomainEntitiesPackage.getRoomBooking(), "findByRoomNr", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, theTypesPackage.getInteger(), "roomNr", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		op = initEOperation(getRoomBookings__FindByRoomResponsible__String(), theDomainEntitiesPackage.getRoomBooking(), "findByRoomResponsible", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		op = initEOperation(getRoomBookings__FindByRoomResponsible__String(), theDomainEntitiesPackage.getRoomBooking(), "findByRoomResponsible", 0, -1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, theTypesPackage.getString(), "roomResponsible", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(availibleRoomFinderEClass, AvailibleRoomFinder.class, "AvailibleRoomFinder", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -678,7 +678,7 @@ public class BusinessLogicPackageImpl extends EPackageImpl implements BusinessLo
 		addEParameter(op, ecorePackage.getEDate(), "startDate", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDate(), "endDate", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		op = initEOperation(getRooms__GetBooking__String(), theDomainEntitiesPackage.getRoomBooking(), "getBooking", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		op = initEOperation(getRooms__GetBooking__String(), theDomainEntitiesPackage.getRoomBooking(), "getBooking", 0, -1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, theTypesPackage.getString(), "nameOfRoomResponsible", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		// Create resource
