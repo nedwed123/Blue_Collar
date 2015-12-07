@@ -15,9 +15,11 @@ import SoftwareModel.DataAccess.RoomBookingsRepository;
 import SoftwareModel.DataAccess.RoomRepository;
 import SoftwareModel.DataAccess.impl.RoomRepositoryImpl;
 import SoftwareModel.DomainEntities.Availability;
+import SoftwareModel.DomainEntities.BedType;
 import SoftwareModel.DomainEntities.Room;
 import SoftwareModel.DomainEntities.RoomType;
 import SoftwareModel.DomainEntities.impl.RoomImpl;
+import SoftwareModel.DomainEntities.impl.RoomTypeImpl;
 import junit.framework.TestCase;
 import static org.mockito.Mockito.*;
 import junit.textui.TestRunner;
@@ -164,7 +166,14 @@ public class RoomsTest extends TestCase {
 		EList<Room> list = new BasicEList<Room>();
 		Room room = new RoomImpl();
 		room.setAvailability(Availability.AVAILIBLE);		
+		RoomTypeImpl roomtype = new RoomTypeImpl();
+		roomtype.setName("Standard");
+		EList<BedType> beds = roomtype.getBeds();
 		
+		beds.add(BedType.KING);
+		beds.add(BedType.KING);
+		
+		room.setRoomtype(roomtype);
 		list.add(room);
 		when(fakeRepo.getRooms()).thenReturn(list);
 		//when(fakeBookings.()).thenReturn(list );
@@ -173,7 +182,7 @@ public class RoomsTest extends TestCase {
 		int children = 1;
 		Date startDate = new Date(1993, 8, 16);
 		Date endDate = new Date(1993, 8, 16);
-		EList<RoomType> roomtype = fixture.availibleRoomTypes(adults, children, startDate, endDate);
+		EList<RoomType> roomtypes = fixture.availibleRoomTypes(adults, children, startDate, endDate);
 		//TODO: Implement
 		
 		

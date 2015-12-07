@@ -21,6 +21,6 @@ public interface IView extends EObject {
 	 * @model frameRequired="true" frameOrdered="false"
 	 * @generated
 	 */
-	void Run(Frame frame);
+	void run(Frame frame);
 
 } // IView

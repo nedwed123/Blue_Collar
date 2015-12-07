@@ -76,13 +76,22 @@ public interface BusinessLogicPackage extends EPackage {
 	int RESERVATIONS__RESERVATIONSREPOSITORY = 0;
 
 	/**
+	 * The feature id for the '<em><b>Roombookings</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESERVATIONS__ROOMBOOKINGS = 1;
+
+	/**
 	 * The number of structural features of the '<em>Reservations</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RESERVATIONS_FEATURE_COUNT = 1;
+	int RESERVATIONS_FEATURE_COUNT = 2;
 
 	/**
 	 * The operation id for the '<em>Update Reservation Details</em>' operation.
@@ -121,13 +130,31 @@ public interface BusinessLogicPackage extends EPackage {
 	int RESERVATIONS___GET_RESERVATION__INT = 3;
 
 	/**
+	 * The operation id for the '<em>Check In All Guests</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESERVATIONS___CHECK_IN_ALL_GUESTS__RESERVATION = 4;
+
+	/**
+	 * The operation id for the '<em>Check Out All Guests</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESERVATIONS___CHECK_OUT_ALL_GUESTS__RESERVATION = 5;
+
+	/**
 	 * The number of operations of the '<em>Reservations</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RESERVATIONS_OPERATION_COUNT = 4;
+	int RESERVATIONS_OPERATION_COUNT = 6;
 
 	/**
 	 * The meta object id for the '{@link SoftwareModel.BusinessLogic.impl.RoomBookingsImpl <em>Room Bookings</em>}' class.
@@ -517,6 +544,17 @@ public interface BusinessLogicPackage extends EPackage {
 	EReference getReservations_Reservationsrepository();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link SoftwareModel.BusinessLogic.Reservations#getRoombookings <em>Roombookings</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Roombookings</em>'.
+	 * @see SoftwareModel.BusinessLogic.Reservations#getRoombookings()
+	 * @see #getReservations()
+	 * @generated
+	 */
+	EReference getReservations_Roombookings();
+
+	/**
 	 * Returns the meta object for the '{@link SoftwareModel.BusinessLogic.Reservations#updateReservationDetails(SoftwareModel.DomainEntities.Reservation) <em>Update Reservation Details</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -555,6 +593,26 @@ public interface BusinessLogicPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getReservations__GetReservation__int();
+
+	/**
+	 * Returns the meta object for the '{@link SoftwareModel.BusinessLogic.Reservations#CheckInAllGuests(SoftwareModel.DomainEntities.Reservation) <em>Check In All Guests</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Check In All Guests</em>' operation.
+	 * @see SoftwareModel.BusinessLogic.Reservations#CheckInAllGuests(SoftwareModel.DomainEntities.Reservation)
+	 * @generated
+	 */
+	EOperation getReservations__CheckInAllGuests__Reservation();
+
+	/**
+	 * Returns the meta object for the '{@link SoftwareModel.BusinessLogic.Reservations#CheckOutAllGuests(SoftwareModel.DomainEntities.Reservation) <em>Check Out All Guests</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Check Out All Guests</em>' operation.
+	 * @see SoftwareModel.BusinessLogic.Reservations#CheckOutAllGuests(SoftwareModel.DomainEntities.Reservation)
+	 * @generated
+	 */
+	EOperation getReservations__CheckOutAllGuests__Reservation();
 
 	/**
 	 * Returns the meta object for class '{@link SoftwareModel.BusinessLogic.RoomBookings <em>Room Bookings</em>}'.
@@ -906,6 +964,14 @@ public interface BusinessLogicPackage extends EPackage {
 		EReference RESERVATIONS__RESERVATIONSREPOSITORY = eINSTANCE.getReservations_Reservationsrepository();
 
 		/**
+		 * The meta object literal for the '<em><b>Roombookings</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference RESERVATIONS__ROOMBOOKINGS = eINSTANCE.getReservations_Roombookings();
+
+		/**
 		 * The meta object literal for the '<em><b>Update Reservation Details</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -936,6 +1002,22 @@ public interface BusinessLogicPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation RESERVATIONS___GET_RESERVATION__INT = eINSTANCE.getReservations__GetReservation__int();
+
+		/**
+		 * The meta object literal for the '<em><b>Check In All Guests</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation RESERVATIONS___CHECK_IN_ALL_GUESTS__RESERVATION = eINSTANCE.getReservations__CheckInAllGuests__Reservation();
+
+		/**
+		 * The meta object literal for the '<em><b>Check Out All Guests</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation RESERVATIONS___CHECK_OUT_ALL_GUESTS__RESERVATION = eINSTANCE.getReservations__CheckOutAllGuests__Reservation();
 
 		/**
 		 * The meta object literal for the '{@link SoftwareModel.BusinessLogic.impl.RoomBookingsImpl <em>Room Bookings</em>}' class.

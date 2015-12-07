@@ -91,10 +91,10 @@ public interface Rooms extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model roomBookingRequired="true" roomBookingOrdered="false"
+	 * @model dataType="org.eclipse.uml2.types.Integer" required="true" ordered="false" roomBookingRequired="true" roomBookingOrdered="false"
 	 * @generated
 	 */
-	void checkIn(RoomBooking roomBooking);
+	int checkIn(RoomBooking roomBooking);
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -43,8 +43,9 @@ public class EmployeeHomeViewImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated
 	 */
-	public void Run(Frame frame) {
+	public void run(Frame frame) {
 		System.out.print("Welcome to Hotel Management System \n"
 				+ "Please select an option:\n"
 				+ "1.Reserve a Room \n"
@@ -55,21 +56,18 @@ public class EmployeeHomeViewImpl extends MinimalEObjectImpl.Container implement
 		int choice=scan.nextInt();
 		switch (choice){
 		case 1:
-			frame.ChangeView(new MakeReservationViewImpl());
+			frame.changeView(new MakeReservationViewImpl());
 			break;
 		case 2:
-			frame.ChangeView(new RoomBookingViewImpl() );
+			frame.changeView(new RoomBookingViewImpl() );
 			break;
 		case 3:
-			frame.ChangeView(new LoginViewImpl());
+			frame.changeView(new LoginViewImpl());
 			break;
 		default:
-			frame.ChangeView(null);
+			frame.exit();
 			
 		}
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		//	throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -81,7 +79,7 @@ public class EmployeeHomeViewImpl extends MinimalEObjectImpl.Container implement
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
 			case PresentationPackage.EMPLOYEE_HOME_VIEW___RUN__FRAME:
-				Run((Frame)arguments.get(0));
+				run((Frame)arguments.get(0));
 				return null;
 		}
 		return super.eInvoke(operationID, arguments);

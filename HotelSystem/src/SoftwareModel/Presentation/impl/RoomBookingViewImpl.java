@@ -106,7 +106,7 @@ public class RoomBookingViewImpl extends MinimalEObjectImpl.Container implements
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PresentationPackage.ROOM_BOOKING_VIEW__ROOMS, newRooms, newRooms));
 	}
-	
+
 	private boolean isInt(String input){
 	    return input.matches("\\d+");
 	}
@@ -115,23 +115,21 @@ public class RoomBookingViewImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 */
-	public void Run(Frame frame) {
+	public void run(Frame frame) {
 		System.out.println("Input room nr or name of room responsible guest");
 
 		Scanner in = new Scanner(System.in);
 		String input = in.next();
 		
-		RoomBooking roombooking;
+		RoomBooking roombooking = null;
 		// could be inside getBooking?
 		if(isInt(input)){
 			roombooking = rooms.getBooking(Integer.parseInt(input));
-		}else{
-			roombooking = rooms.getBooking(input);
 		}
 		
 		if(roombooking == null){
 			System.out.println("Unable to find roombooking");
-			frame.ChangeView(new EmployeeHomeViewImpl());
+			frame.changeView(new EmployeeHomeViewImpl());
 		}
 		
 		// Display room booking
@@ -139,6 +137,7 @@ public class RoomBookingViewImpl extends MinimalEObjectImpl.Container implements
 		System.out.println("What do you want to do with the room booking?"
 				+ "1: Check in guests"
 				+ "2: Check out guests");
+		
 		
 		//TODO: input switch
 		
@@ -229,7 +228,7 @@ public class RoomBookingViewImpl extends MinimalEObjectImpl.Container implements
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
 			case PresentationPackage.ROOM_BOOKING_VIEW___RUN__FRAME:
-				Run((Frame)arguments.get(0));
+				run((Frame)arguments.get(0));
 				return null;
 		}
 		return super.eInvoke(operationID, arguments);

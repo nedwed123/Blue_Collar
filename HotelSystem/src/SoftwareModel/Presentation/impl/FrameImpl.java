@@ -41,6 +41,9 @@ public class FrameImpl extends MinimalEObjectImpl.Container implements Frame {
 	 * @ordered
 	 */
 	protected IView currentView;
+	
+	private IView previousView;
+	private boolean running = true;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -101,24 +104,41 @@ public class FrameImpl extends MinimalEObjectImpl.Container implements Frame {
 
 	/**
 	 * <!-- begin-user-doc -->
-	 * Runs the inputed view
 	 * <!-- end-user-doc -->
 	 */
-	public void ChangeView(IView view) {
+	public void changeView(IView view) {
+		previousView = currentView;
 		setCurrentView(view);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
-	 * Runs the inputed view
 	 * <!-- end-user-doc -->
 	 */
-	public void Start(IView View) {
+	public void start(IView View) {
+		IView previousView;
 		setCurrentView(View);
-		while(currentView != null)
+		while(running)
 		{
-			currentView.Run(this);
+			currentView.run(this);
 		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 */
+	public void exit() {
+		running = false;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void goBack() {
+		setCurrentView(previousView);
 	}
 
 	/**
@@ -189,10 +209,16 @@ public class FrameImpl extends MinimalEObjectImpl.Container implements Frame {
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
 			case PresentationPackage.FRAME___CHANGE_VIEW__IVIEW:
-				ChangeView((IView)arguments.get(0));
+				changeView((IView)arguments.get(0));
 				return null;
 			case PresentationPackage.FRAME___START__IVIEW:
-				Start((IView)arguments.get(0));
+				start((IView)arguments.get(0));
+				return null;
+			case PresentationPackage.FRAME___EXIT:
+				exit();
+				return null;
+			case PresentationPackage.FRAME___GO_BACK:
+				goBack();
 				return null;
 		}
 		return super.eInvoke(operationID, arguments);

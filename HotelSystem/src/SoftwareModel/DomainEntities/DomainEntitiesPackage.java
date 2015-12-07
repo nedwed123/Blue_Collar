@@ -104,13 +104,22 @@ public interface DomainEntitiesPackage extends EPackage {
 	int ROOM_TYPE__NAME = 3;
 
 	/**
+	 * The feature id for the '<em><b>Beds</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_TYPE__BEDS = 4;
+
+	/**
 	 * The number of structural features of the '<em>Room Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_TYPE_FEATURE_COUNT = 4;
+	int ROOM_TYPE_FEATURE_COUNT = 5;
 
 	/**
 	 * The number of operations of the '<em>Room Type</em>' class.
@@ -672,6 +681,17 @@ public interface DomainEntitiesPackage extends EPackage {
 	EAttribute getRoomType_Name();
 
 	/**
+	 * Returns the meta object for the attribute list '{@link SoftwareModel.DomainEntities.RoomType#getBeds <em>Beds</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute list '<em>Beds</em>'.
+	 * @see SoftwareModel.DomainEntities.RoomType#getBeds()
+	 * @see #getRoomType()
+	 * @generated
+	 */
+	EAttribute getRoomType_Beds();
+
+	/**
 	 * Returns the meta object for class '{@link SoftwareModel.DomainEntities.PaymentDetails <em>Payment Details</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1166,6 +1186,14 @@ public interface DomainEntitiesPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute ROOM_TYPE__NAME = eINSTANCE.getRoomType_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Beds</b></em>' attribute list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ROOM_TYPE__BEDS = eINSTANCE.getRoomType_Beds();
 
 		/**
 		 * The meta object literal for the '{@link SoftwareModel.DomainEntities.impl.PaymentDetailsImpl <em>Payment Details</em>}' class.

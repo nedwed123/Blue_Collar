@@ -7,7 +7,7 @@ public class Client {
 
 	public static void main(String[] args) {
 		FrameImpl frame = new FrameImpl();
-		frame.Start(new CustomerHomeViewImpl());
+		frame.start(new CustomerHomeViewImpl());
 	}
 
 }

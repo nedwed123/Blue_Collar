@@ -31,6 +31,7 @@ import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
  *   <li>{@link SoftwareModel.DomainEntities.impl.RoomTypeImpl#getRate <em>Rate</em>}</li>
  *   <li>{@link SoftwareModel.DomainEntities.impl.RoomTypeImpl#getBedtype <em>Bedtype</em>}</li>
  *   <li>{@link SoftwareModel.DomainEntities.impl.RoomTypeImpl#getName <em>Name</em>}</li>
+ *   <li>{@link SoftwareModel.DomainEntities.impl.RoomTypeImpl#getBeds <em>Beds</em>}</li>
  * </ul>
  *
  * @generated
@@ -105,6 +106,16 @@ public class RoomTypeImpl extends MinimalEObjectImpl.Container implements RoomTy
 	 * @ordered
 	 */
 	protected String name = NAME_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getBeds() <em>Beds</em>}' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBeds()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<BedType> beds;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -205,6 +216,18 @@ public class RoomTypeImpl extends MinimalEObjectImpl.Container implements RoomTy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<BedType> getBeds() {
+		if (beds == null) {
+			beds = new EDataTypeUniqueEList<BedType>(BedType.class, this, DomainEntitiesPackage.ROOM_TYPE__BEDS);
+		}
+		return beds;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -216,6 +239,8 @@ public class RoomTypeImpl extends MinimalEObjectImpl.Container implements RoomTy
 				return getBedtype();
 			case DomainEntitiesPackage.ROOM_TYPE__NAME:
 				return getName();
+			case DomainEntitiesPackage.ROOM_TYPE__BEDS:
+				return getBeds();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -242,6 +267,10 @@ public class RoomTypeImpl extends MinimalEObjectImpl.Container implements RoomTy
 			case DomainEntitiesPackage.ROOM_TYPE__NAME:
 				setName((String)newValue);
 				return;
+			case DomainEntitiesPackage.ROOM_TYPE__BEDS:
+				getBeds().clear();
+				getBeds().addAll((Collection<? extends BedType>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -266,6 +295,9 @@ public class RoomTypeImpl extends MinimalEObjectImpl.Container implements RoomTy
 			case DomainEntitiesPackage.ROOM_TYPE__NAME:
 				setName(NAME_EDEFAULT);
 				return;
+			case DomainEntitiesPackage.ROOM_TYPE__BEDS:
+				getBeds().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -286,6 +318,8 @@ public class RoomTypeImpl extends MinimalEObjectImpl.Container implements RoomTy
 				return bedtype != null && !bedtype.isEmpty();
 			case DomainEntitiesPackage.ROOM_TYPE__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case DomainEntitiesPackage.ROOM_TYPE__BEDS:
+				return beds != null && !beds.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -308,6 +342,8 @@ public class RoomTypeImpl extends MinimalEObjectImpl.Container implements RoomTy
 		result.append(bedtype);
 		result.append(", name: ");
 		result.append(name);
+		result.append(", beds: ");
+		result.append(beds);
 		result.append(')');
 		return result.toString();
 	}

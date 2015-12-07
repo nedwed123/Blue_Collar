@@ -168,7 +168,7 @@ public class MakeReservationViewImpl extends MinimalEObjectImpl.Container implem
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 */
-	public void Run(Frame frame) {
+	public void run(Frame frame) {
 		
 		// TODO: implement this method
 		
@@ -320,7 +320,7 @@ public class MakeReservationViewImpl extends MinimalEObjectImpl.Container implem
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
 			case PresentationPackage.MAKE_RESERVATION_VIEW___RUN__FRAME:
-				Run((Frame)arguments.get(0));
+				run((Frame)arguments.get(0));
 				return null;
 		}
 		return super.eInvoke(operationID, arguments);

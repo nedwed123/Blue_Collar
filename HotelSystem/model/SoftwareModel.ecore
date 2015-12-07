@@ -12,10 +12,14 @@
           lowerBound="1" upperBound="-1" eType="#//DomainEntities/BedType"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false"
           lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="beds" ordered="false"
+          lowerBound="1" upperBound="-1" eType="#//DomainEntities/BedType"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EEnum" name="BedType">
       <eLiterals name="King"/>
       <eLiterals name="Queen" value="1"/>
+      <eLiterals name="Kid" value="2"/>
+      <eLiterals name="Single" value="3"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="PaymentDetails">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false"
@@ -190,15 +194,23 @@
       <eOperations name="getReservation" ordered="false" lowerBound="1" eType="#//DomainEntities/Reservation">
         <eParameters name="reservationNumber" ordered="false" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//Integer"/>
       </eOperations>
+      <eOperations name="CheckInAllGuests" ordered="false" lowerBound="1">
+        <eParameters name="reservation" ordered="false" lowerBound="1" eType="#//DomainEntities/Reservation"/>
+      </eOperations>
+      <eOperations name="CheckOutAllGuests" ordered="false" lowerBound="1">
+        <eParameters name="reservation" ordered="false" lowerBound="1" eType="#//DomainEntities/Reservation"/>
+      </eOperations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="reservationsrepository"
           ordered="false" lowerBound="1" eType="#//DataAccess/ReservationsRepository"
           containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="roombookings" ordered="false"
+          lowerBound="1" eType="#//BusinessLogic/RoomBookings" containment="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="RoomBookings">
       <eOperations name="checkOut" ordered="false" lowerBound="1">
         <eParameters name="roomBooking" ordered="false" lowerBound="1" eType="#//DomainEntities/RoomBooking"/>
       </eOperations>
-      <eOperations name="checkIn" ordered="false" lowerBound="1">
+      <eOperations name="checkIn" ordered="false" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//Integer">
         <eParameters name="roomBooking" ordered="false" lowerBound="1" eType="#//DomainEntities/RoomBooking"/>
       </eOperations>
       <eOperations name="findByRoomNr" ordered="false" lowerBound="1" eType="#//DomainEntities/RoomBooking">
@@ -261,7 +273,7 @@
       <eOperations name="checkOut" ordered="false" lowerBound="1">
         <eParameters name="roomBooking" ordered="false" lowerBound="1" eType="#//DomainEntities/RoomBooking"/>
       </eOperations>
-      <eOperations name="checkIn" ordered="false" lowerBound="1">
+      <eOperations name="checkIn" ordered="false" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//Integer">
         <eParameters name="roomBooking" ordered="false" lowerBound="1" eType="#//DomainEntities/RoomBooking"/>
       </eOperations>
       <eOperations name="getBooking" ordered="false" lowerBound="1" eType="#//DomainEntities/RoomBooking">
@@ -287,17 +299,19 @@
       nsPrefix="SoftwareModel.Presentation">
     <eClassifiers xsi:type="ecore:EClass" name="CustomerHomeView" eSuperTypes="#//Presentation/IView"/>
     <eClassifiers xsi:type="ecore:EClass" name="IView" abstract="true" interface="true">
-      <eOperations name="Run" ordered="false" lowerBound="1">
+      <eOperations name="run" ordered="false" lowerBound="1">
         <eParameters name="frame" ordered="false" lowerBound="1" eType="#//Presentation/Frame"/>
       </eOperations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Frame">
-      <eOperations name="ChangeView" ordered="false" lowerBound="1">
+      <eOperations name="changeView" ordered="false" lowerBound="1">
         <eParameters name="view" ordered="false" lowerBound="1" eType="#//Presentation/IView"/>
       </eOperations>
-      <eOperations name="Start" ordered="false" lowerBound="1">
+      <eOperations name="start" ordered="false" lowerBound="1">
         <eParameters name="View" ordered="false" lowerBound="1" eType="#//Presentation/IView"/>
       </eOperations>
+      <eOperations name="exit" ordered="false" lowerBound="1"/>
+      <eOperations name="goBack" ordered="false" lowerBound="1"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="currentView" ordered="false"
           lowerBound="1" eType="#//Presentation/IView"/>
     </eClassifiers>

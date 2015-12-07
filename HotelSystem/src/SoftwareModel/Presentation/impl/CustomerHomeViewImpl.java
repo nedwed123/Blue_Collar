@@ -47,7 +47,7 @@ public class CustomerHomeViewImpl extends MinimalEObjectImpl.Container implement
 	 * Welcomes customer and asks for input
 	 * <!-- end-user-doc -->
 	 */
-	public void Run(Frame frame) {
+	public void run(Frame frame) {
 		System.out.println("-- Welcome customer --\n"
 				+ "1: Make Reservation\n"
 				+ "2: View Reservation\n"
@@ -58,15 +58,17 @@ public class CustomerHomeViewImpl extends MinimalEObjectImpl.Container implement
 		
 		switch (input) {
 			case 1:
-				frame.ChangeView(new MakeReservationViewImpl());
+				frame.changeView(new MakeReservationViewImpl());
 				break;
 			case 2:
-				frame.ChangeView(new ReservationViewImpl());
+				frame.changeView(new ReservationViewImpl());
 				break;
 			default:
-				frame.ChangeView(null);
+				frame.changeView(null);
 		}
+
 	}
+
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -77,7 +79,7 @@ public class CustomerHomeViewImpl extends MinimalEObjectImpl.Container implement
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
 			case PresentationPackage.CUSTOMER_HOME_VIEW___RUN__FRAME:
-				Run((Frame)arguments.get(0));
+				run((Frame)arguments.get(0));
 				return null;
 		}
 		return super.eInvoke(operationID, arguments);

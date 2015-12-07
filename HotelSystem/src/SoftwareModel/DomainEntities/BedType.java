@@ -36,7 +36,23 @@ public enum BedType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	QUEEN(1, "Queen", "Queen");
+	QUEEN(1, "Queen", "Queen"), /**
+	 * The '<em><b>Kid</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #KID_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	KID(2, "Kid", "Kid"), /**
+	 * The '<em><b>Single</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #SINGLE_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	SINGLE(3, "Single", "Single");
 
 	/**
 	 * The '<em><b>King</b></em>' literal value.
@@ -69,6 +85,36 @@ public enum BedType implements Enumerator {
 	public static final int QUEEN_VALUE = 1;
 
 	/**
+	 * The '<em><b>Kid</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>Kid</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #KID
+	 * @model name="Kid"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int KID_VALUE = 2;
+
+	/**
+	 * The '<em><b>Single</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>Single</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #SINGLE
+	 * @model name="Single"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int SINGLE_VALUE = 3;
+
+	/**
 	 * An array of all the '<em><b>Bed Type</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -78,6 +124,8 @@ public enum BedType implements Enumerator {
 		new BedType[] {
 			KING,
 			QUEEN,
+			KID,
+			SINGLE,
 		};
 
 	/**
@@ -136,6 +184,8 @@ public enum BedType implements Enumerator {
 		switch (value) {
 			case KING_VALUE: return KING;
 			case QUEEN_VALUE: return QUEEN;
+			case KID_VALUE: return KID;
+			case SINGLE_VALUE: return SINGLE;
 		}
 		return null;
 	}

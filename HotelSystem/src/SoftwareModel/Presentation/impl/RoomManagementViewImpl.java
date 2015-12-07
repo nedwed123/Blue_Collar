@@ -101,9 +101,10 @@ public class RoomManagementViewImpl extends MinimalEObjectImpl.Container impleme
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> 
+	 * <!-- end-user-doc -->
 	 */
-	public void Run(Frame frame) {
+	public void run(Frame frame) {
 		System.out.print("Available operations: \n" + "1.Add Room \n" + "2.Modify Rate \n" + "3.Make Room Available \n"
 				+ "4.Make Room Unavailable \n" + "5.Remove Room \n");
 		Scanner scan = new Scanner(System.in);
@@ -237,7 +238,7 @@ public class RoomManagementViewImpl extends MinimalEObjectImpl.Container impleme
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
 			case PresentationPackage.ROOM_MANAGEMENT_VIEW___RUN__FRAME:
-				Run((Frame)arguments.get(0));
+				run((Frame)arguments.get(0));
 				return null;
 		}
 		return super.eInvoke(operationID, arguments);

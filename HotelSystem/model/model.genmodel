@@ -37,6 +37,8 @@
       <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="SoftwareModel.ecore#//DomainEntities/BedType">
         <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="SoftwareModel.ecore#//DomainEntities/BedType/King"/>
         <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="SoftwareModel.ecore#//DomainEntities/BedType/Queen"/>
+        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="SoftwareModel.ecore#//DomainEntities/BedType/Kid"/>
+        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="SoftwareModel.ecore#//DomainEntities/BedType/Single"/>
       </genEnums>
       <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="SoftwareModel.ecore#//DomainEntities/Availability">
         <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="SoftwareModel.ecore#//DomainEntities/Availability/Availible"/>
@@ -49,6 +51,7 @@
         <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute SoftwareModel.ecore#//DomainEntities/RoomType/rate"/>
         <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute SoftwareModel.ecore#//DomainEntities/RoomType/bedtype"/>
         <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute SoftwareModel.ecore#//DomainEntities/RoomType/name"/>
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute SoftwareModel.ecore#//DomainEntities/RoomType/beds"/>
       </genClasses>
       <genClasses xsi:type="genmodel:GenClass" ecoreClass="SoftwareModel.ecore#//DomainEntities/PaymentDetails">
         <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute SoftwareModel.ecore#//DomainEntities/PaymentDetails/name"/>
@@ -179,6 +182,8 @@
       <genClasses xsi:type="genmodel:GenClass" ecoreClass="SoftwareModel.ecore#//BusinessLogic/Reservations">
         <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
             propertySortChoices="true" ecoreFeature="ecore:EReference SoftwareModel.ecore#//BusinessLogic/Reservations/reservationsrepository"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference SoftwareModel.ecore#//BusinessLogic/Reservations/roombookings"/>
         <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="SoftwareModel.ecore#//BusinessLogic/Reservations/updateReservationDetails">
           <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="SoftwareModel.ecore#//BusinessLogic/Reservations/updateReservationDetails/reservation"/>
         </genOperations>
@@ -192,6 +197,12 @@
         </genOperations>
         <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="SoftwareModel.ecore#//BusinessLogic/Reservations/getReservation">
           <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="SoftwareModel.ecore#//BusinessLogic/Reservations/getReservation/reservationNumber"/>
+        </genOperations>
+        <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="SoftwareModel.ecore#//BusinessLogic/Reservations/CheckInAllGuests">
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="SoftwareModel.ecore#//BusinessLogic/Reservations/CheckInAllGuests/reservation"/>
+        </genOperations>
+        <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="SoftwareModel.ecore#//BusinessLogic/Reservations/CheckOutAllGuests">
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="SoftwareModel.ecore#//BusinessLogic/Reservations/CheckOutAllGuests/reservation"/>
         </genOperations>
       </genClasses>
       <genClasses xsi:type="genmodel:GenClass" ecoreClass="SoftwareModel.ecore#//BusinessLogic/RoomBookings">
@@ -285,19 +296,21 @@
         disposableProviderFactory="true" ecorePackage="SoftwareModel.ecore#//Presentation">
       <genClasses xsi:type="genmodel:GenClass" ecoreClass="SoftwareModel.ecore#//Presentation/CustomerHomeView"/>
       <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="SoftwareModel.ecore#//Presentation/IView">
-        <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="SoftwareModel.ecore#//Presentation/IView/Run">
-          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="SoftwareModel.ecore#//Presentation/IView/Run/frame"/>
+        <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="SoftwareModel.ecore#//Presentation/IView/run">
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="SoftwareModel.ecore#//Presentation/IView/run/frame"/>
         </genOperations>
       </genClasses>
       <genClasses xsi:type="genmodel:GenClass" ecoreClass="SoftwareModel.ecore#//Presentation/Frame">
         <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
             propertySortChoices="true" ecoreFeature="ecore:EReference SoftwareModel.ecore#//Presentation/Frame/currentView"/>
-        <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="SoftwareModel.ecore#//Presentation/Frame/ChangeView">
-          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="SoftwareModel.ecore#//Presentation/Frame/ChangeView/view"/>
+        <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="SoftwareModel.ecore#//Presentation/Frame/changeView">
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="SoftwareModel.ecore#//Presentation/Frame/changeView/view"/>
         </genOperations>
-        <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="SoftwareModel.ecore#//Presentation/Frame/Start">
-          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="SoftwareModel.ecore#//Presentation/Frame/Start/View"/>
+        <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="SoftwareModel.ecore#//Presentation/Frame/start">
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="SoftwareModel.ecore#//Presentation/Frame/start/View"/>
         </genOperations>
+        <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="SoftwareModel.ecore#//Presentation/Frame/exit"/>
+        <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="SoftwareModel.ecore#//Presentation/Frame/goBack"/>
       </genClasses>
       <genClasses xsi:type="genmodel:GenClass" ecoreClass="SoftwareModel.ecore#//Presentation/RoomBookingView">
         <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"

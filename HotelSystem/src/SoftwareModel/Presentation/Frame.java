@@ -53,7 +53,7 @@ public interface Frame extends EObject {
 	 * @model viewRequired="true" viewOrdered="false"
 	 * @generated
 	 */
-	void ChangeView(IView view);
+	void changeView(IView view);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -61,6 +61,22 @@ public interface Frame extends EObject {
 	 * @model ViewRequired="true" ViewOrdered="false"
 	 * @generated
 	 */
-	void Start(IView View);
+	void start(IView View);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	void exit();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	void goBack();
 
 } // Frame

@@ -179,7 +179,7 @@ public class RoomsImpl extends MinimalEObjectImpl.Container implements Rooms {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void checkIn(RoomBooking roomBooking) {
+	public int checkIn(RoomBooking roomBooking) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -314,8 +314,7 @@ public class RoomsImpl extends MinimalEObjectImpl.Container implements Rooms {
 				checkOut((RoomBooking)arguments.get(0));
 				return null;
 			case BusinessLogicPackage.ROOMS___CHECK_IN__ROOMBOOKING:
-				checkIn((RoomBooking)arguments.get(0));
-				return null;
+				return checkIn((RoomBooking)arguments.get(0));
 			case BusinessLogicPackage.ROOMS___GET_BOOKING__INT:
 				return getBooking((Integer)arguments.get(0));
 			case BusinessLogicPackage.ROOMS___AVAILIBLE_ROOM_TYPES__INT_INT_DATE_DATE:

@@ -177,13 +177,31 @@ public interface PresentationPackage extends EPackage {
 	int FRAME___START__IVIEW = 1;
 
 	/**
+	 * The operation id for the '<em>Exit</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FRAME___EXIT = 2;
+
+	/**
+	 * The operation id for the '<em>Go Back</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FRAME___GO_BACK = 3;
+
+	/**
 	 * The number of operations of the '<em>Frame</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FRAME_OPERATION_COUNT = 2;
+	int FRAME_OPERATION_COUNT = 4;
 
 	/**
 	 * The meta object id for the '{@link SoftwareModel.Presentation.impl.RoomBookingViewImpl <em>Room Booking View</em>}' class.
@@ -484,24 +502,44 @@ public interface PresentationPackage extends EPackage {
 	EReference getFrame_CurrentView();
 
 	/**
-	 * Returns the meta object for the '{@link SoftwareModel.Presentation.Frame#ChangeView(SoftwareModel.Presentation.IView) <em>Change View</em>}' operation.
+	 * Returns the meta object for the '{@link SoftwareModel.Presentation.Frame#changeView(SoftwareModel.Presentation.IView) <em>Change View</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Change View</em>' operation.
-	 * @see SoftwareModel.Presentation.Frame#ChangeView(SoftwareModel.Presentation.IView)
+	 * @see SoftwareModel.Presentation.Frame#changeView(SoftwareModel.Presentation.IView)
 	 * @generated
 	 */
 	EOperation getFrame__ChangeView__IView();
 
 	/**
-	 * Returns the meta object for the '{@link SoftwareModel.Presentation.Frame#Start(SoftwareModel.Presentation.IView) <em>Start</em>}' operation.
+	 * Returns the meta object for the '{@link SoftwareModel.Presentation.Frame#start(SoftwareModel.Presentation.IView) <em>Start</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Start</em>' operation.
-	 * @see SoftwareModel.Presentation.Frame#Start(SoftwareModel.Presentation.IView)
+	 * @see SoftwareModel.Presentation.Frame#start(SoftwareModel.Presentation.IView)
 	 * @generated
 	 */
 	EOperation getFrame__Start__IView();
+
+	/**
+	 * Returns the meta object for the '{@link SoftwareModel.Presentation.Frame#exit() <em>Exit</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Exit</em>' operation.
+	 * @see SoftwareModel.Presentation.Frame#exit()
+	 * @generated
+	 */
+	EOperation getFrame__Exit();
+
+	/**
+	 * Returns the meta object for the '{@link SoftwareModel.Presentation.Frame#goBack() <em>Go Back</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Go Back</em>' operation.
+	 * @see SoftwareModel.Presentation.Frame#goBack()
+	 * @generated
+	 */
+	EOperation getFrame__GoBack();
 
 	/**
 	 * Returns the meta object for class '{@link SoftwareModel.Presentation.CustomerHomeView <em>Customer Home View</em>}'.
@@ -524,11 +562,11 @@ public interface PresentationPackage extends EPackage {
 	EClass getIView();
 
 	/**
-	 * Returns the meta object for the '{@link SoftwareModel.Presentation.IView#Run(SoftwareModel.Presentation.Frame) <em>Run</em>}' operation.
+	 * Returns the meta object for the '{@link SoftwareModel.Presentation.IView#run(SoftwareModel.Presentation.Frame) <em>Run</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Run</em>' operation.
-	 * @see SoftwareModel.Presentation.IView#Run(SoftwareModel.Presentation.Frame)
+	 * @see SoftwareModel.Presentation.IView#run(SoftwareModel.Presentation.Frame)
 	 * @generated
 	 */
 	EOperation getIView__Run__Frame();
@@ -715,6 +753,22 @@ public interface PresentationPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation FRAME___START__IVIEW = eINSTANCE.getFrame__Start__IView();
+
+		/**
+		 * The meta object literal for the '<em><b>Exit</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation FRAME___EXIT = eINSTANCE.getFrame__Exit();
+
+		/**
+		 * The meta object literal for the '<em><b>Go Back</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation FRAME___GO_BACK = eINSTANCE.getFrame__GoBack();
 
 		/**
 		 * The meta object literal for the '{@link SoftwareModel.Presentation.impl.CustomerHomeViewImpl <em>Customer Home View</em>}' class.

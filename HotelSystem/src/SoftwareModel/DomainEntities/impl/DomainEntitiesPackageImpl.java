@@ -239,6 +239,15 @@ public class DomainEntitiesPackageImpl extends EPackageImpl implements DomainEnt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getRoomType_Beds() {
+		return (EAttribute)roomTypeEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getPaymentDetails() {
 		return paymentDetailsEClass;
 	}
@@ -627,6 +636,7 @@ public class DomainEntitiesPackageImpl extends EPackageImpl implements DomainEnt
 		createEAttribute(roomTypeEClass, ROOM_TYPE__RATE);
 		createEAttribute(roomTypeEClass, ROOM_TYPE__BEDTYPE);
 		createEAttribute(roomTypeEClass, ROOM_TYPE__NAME);
+		createEAttribute(roomTypeEClass, ROOM_TYPE__BEDS);
 
 		paymentDetailsEClass = createEClass(PAYMENT_DETAILS);
 		createEAttribute(paymentDetailsEClass, PAYMENT_DETAILS__NAME);
@@ -716,6 +726,7 @@ public class DomainEntitiesPackageImpl extends EPackageImpl implements DomainEnt
 		initEAttribute(getRoomType_Rate(), ecorePackage.getEDouble(), "rate", null, 1, 1, RoomType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getRoomType_Bedtype(), this.getBedType(), "bedtype", null, 1, -1, RoomType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getRoomType_Name(), theTypesPackage.getString(), "name", null, 1, 1, RoomType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getRoomType_Beds(), this.getBedType(), "beds", null, 1, -1, RoomType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(paymentDetailsEClass, PaymentDetails.class, "PaymentDetails", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getPaymentDetails_Name(), theTypesPackage.getString(), "name", null, 1, 1, PaymentDetails.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -766,6 +777,8 @@ public class DomainEntitiesPackageImpl extends EPackageImpl implements DomainEnt
 		initEEnum(bedTypeEEnum, BedType.class, "BedType");
 		addEEnumLiteral(bedTypeEEnum, BedType.KING);
 		addEEnumLiteral(bedTypeEEnum, BedType.QUEEN);
+		addEEnumLiteral(bedTypeEEnum, BedType.KID);
+		addEEnumLiteral(bedTypeEEnum, BedType.SINGLE);
 
 		initEEnum(availabilityEEnum, Availability.class, "Availability");
 		addEEnumLiteral(availabilityEEnum, Availability.AVAILIBLE);

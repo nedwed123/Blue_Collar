@@ -22,6 +22,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link SoftwareModel.BusinessLogic.Reservations#getReservationsrepository <em>Reservationsrepository</em>}</li>
+ *   <li>{@link SoftwareModel.BusinessLogic.Reservations#getRoombookings <em>Roombookings</em>}</li>
  * </ul>
  *
  * @see SoftwareModel.BusinessLogic.BusinessLogicPackage#getReservations()
@@ -56,6 +57,32 @@ public interface Reservations extends EObject {
 	void setReservationsrepository(ReservationsRepository value);
 
 	/**
+	 * Returns the value of the '<em><b>Roombookings</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Roombookings</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Roombookings</em>' containment reference.
+	 * @see #setRoombookings(RoomBookings)
+	 * @see SoftwareModel.BusinessLogic.BusinessLogicPackage#getReservations_Roombookings()
+	 * @model containment="true" required="true" ordered="false"
+	 * @generated
+	 */
+	RoomBookings getRoombookings();
+
+	/**
+	 * Sets the value of the '{@link SoftwareModel.BusinessLogic.Reservations#getRoombookings <em>Roombookings</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Roombookings</em>' containment reference.
+	 * @see #getRoombookings()
+	 * @generated
+	 */
+	void setRoombookings(RoomBookings value);
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model reservationRequired="true" reservationOrdered="false"
@@ -86,5 +113,21 @@ public interface Reservations extends EObject {
 	 * @generated
 	 */
 	Reservation getReservation(int reservationNumber);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model reservationRequired="true" reservationOrdered="false"
+	 * @generated
+	 */
+	void CheckInAllGuests(Reservation reservation);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model reservationRequired="true" reservationOrdered="false"
+	 * @generated
+	 */
+	void CheckOutAllGuests(Reservation reservation);
 
 } // Reservations

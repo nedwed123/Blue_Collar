@@ -111,6 +111,17 @@ public class ReservationViewImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void run(Frame frame) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 */
 	public void Run(Frame frame) {
 		System.out.println("Please input reservation number:\n");
@@ -133,16 +144,18 @@ public class ReservationViewImpl extends MinimalEObjectImpl.Container implements
 			}
 			
 			System.out.println("What do u want to do with the reservation?:"
-					+ "1: xxx\n"
+					+ "1: Check in all rooms\n"
 					+ "2: cancel\n"
 					+ "3: nothing\n");
+			in.nextInt();
+			
 		}
 		else
 		{
 			System.out.println("Unable to find reservation");
 		}
 		
-		frame.ChangeView(new ReservationViewImpl());
+		frame.changeView(new ReservationViewImpl());
 	}
 
 	/**
@@ -226,7 +239,7 @@ public class ReservationViewImpl extends MinimalEObjectImpl.Container implements
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
 			case PresentationPackage.RESERVATION_VIEW___RUN__FRAME:
-				Run((Frame)arguments.get(0));
+				run((Frame)arguments.get(0));
 				return null;
 		}
 		return super.eInvoke(operationID, arguments);

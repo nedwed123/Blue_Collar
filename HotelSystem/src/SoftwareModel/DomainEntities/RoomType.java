@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link SoftwareModel.DomainEntities.RoomType#getRate <em>Rate</em>}</li>
  *   <li>{@link SoftwareModel.DomainEntities.RoomType#getBedtype <em>Bedtype</em>}</li>
  *   <li>{@link SoftwareModel.DomainEntities.RoomType#getName <em>Name</em>}</li>
+ *   <li>{@link SoftwareModel.DomainEntities.RoomType#getBeds <em>Beds</em>}</li>
  * </ul>
  *
  * @see SoftwareModel.DomainEntities.DomainEntitiesPackage#getRoomType()
@@ -121,5 +122,23 @@ public interface RoomType extends EObject {
 	 * @generated
 	 */
 	void setName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Beds</b></em>' attribute list.
+	 * The list contents are of type {@link SoftwareModel.DomainEntities.BedType}.
+	 * The literals are from the enumeration {@link SoftwareModel.DomainEntities.BedType}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Beds</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Beds</em>' attribute list.
+	 * @see SoftwareModel.DomainEntities.BedType
+	 * @see SoftwareModel.DomainEntities.DomainEntitiesPackage#getRoomType_Beds()
+	 * @model required="true" ordered="false"
+	 * @generated
+	 */
+	EList<BedType> getBeds();
 
 } // RoomType

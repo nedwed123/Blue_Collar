@@ -109,14 +109,14 @@ public class LoginViewImpl extends MinimalEObjectImpl.Container implements Login
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 */
-	public void Run(Frame frame) {
+	public void run(Frame frame) {
 		Scanner scan = new Scanner(System.in);
 		System.out.println("Please enter username");
 		String username=scan.nextLine();
 		System.out.println("Please enter password");
 		String password=scan.nextLine();
 		if(username.equals("Admin") && password.equals("pass")){
-			frame.ChangeView(new RoomManagementViewImpl());
+			frame.changeView(new RoomManagementViewImpl());
 			return;
 		}else{
 			System.out.println("Incorrect username or password");
@@ -126,9 +126,9 @@ public class LoginViewImpl extends MinimalEObjectImpl.Container implements Login
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-			} 
+			}
 			
-			frame.ChangeView(new EmployeeHomeViewImpl());
+			frame.goBack();
 			return;
 		}
 		// TODO: implement this method
@@ -217,7 +217,7 @@ public class LoginViewImpl extends MinimalEObjectImpl.Container implements Login
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
 			case PresentationPackage.LOGIN_VIEW___RUN__FRAME:
-				Run((Frame)arguments.get(0));
+				run((Frame)arguments.get(0));
 				return null;
 		}
 		return super.eInvoke(operationID, arguments);

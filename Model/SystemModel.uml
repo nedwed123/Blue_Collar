@@ -376,6 +376,28 @@
       <type xmi:type="uml:Class" href="SoftwareModel.uml#_jC8d8JXcEeWtZbi4EnRFrQ"/>
     </ownedEnd>
   </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_wkkRsJz0EeWJusbskP8Asw">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_wkkRsZz0EeWJusbskP8Asw" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_wkkRspz0EeWJusbskP8Asw" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <memberEnd xmi:type="uml:Property" href="SoftwareModel.uml#_wkkRs5z0EeWJusbskP8Asw"/>
+    <memberEnd xmi:type="uml:Property" href="#_wkuCsJz0EeWJusbskP8Asw"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_wkuCsJz0EeWJusbskP8Asw" name="roomtype" association="_wkkRsJz0EeWJusbskP8Asw">
+      <type xmi:type="uml:Class" href="SoftwareModel.uml#_uJFr8JXcEeWtZbi4EnRFrQ"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_-UK1QJz0EeWJusbskP8Asw" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_-UT_MJz0EeWJusbskP8Asw" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_AFedAJ0EEeWJusbskP8Asw">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_AFedAZ0EEeWJusbskP8Asw" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_AFedAp0EEeWJusbskP8Asw" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <memberEnd xmi:type="uml:Property" href="SoftwareModel.uml#_AFedA50EEeWJusbskP8Asw"/>
+    <memberEnd xmi:type="uml:Property" href="#_AFedBJ0EEeWJusbskP8Asw"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_AFedBJ0EEeWJusbskP8Asw" name="reservations" association="_AFedAJ0EEeWJusbskP8Asw">
+      <type xmi:type="uml:Class" href="SoftwareModel.uml#_W_QpgJdkEeW9FdtnBhCZ1w"/>
+    </ownedEnd>
+  </packagedElement>
   <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_iC-xQJdGEeWbutPRr4NuZg">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_iDBNgJdGEeWbutPRr4NuZg" source="http://www.eclipse.org/uml2/2.0.0/UML">
       <references xmi:type="ecore:EPackage" href="pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#_Kv8EIKFXEeS_KNX0nfvIVQ"/>

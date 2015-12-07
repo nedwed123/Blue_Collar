@@ -179,6 +179,15 @@ public class BusinessLogicPackageImpl extends EPackageImpl implements BusinessLo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getReservations_Roombookings() {
+		return (EReference)reservationsEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EOperation getReservations__UpdateReservationDetails__Reservation() {
 		return reservationsEClass.getEOperations().get(0);
 	}
@@ -208,6 +217,24 @@ public class BusinessLogicPackageImpl extends EPackageImpl implements BusinessLo
 	 */
 	public EOperation getReservations__GetReservation__int() {
 		return reservationsEClass.getEOperations().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getReservations__CheckInAllGuests__Reservation() {
+		return reservationsEClass.getEOperations().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getReservations__CheckOutAllGuests__Reservation() {
+		return reservationsEClass.getEOperations().get(5);
 	}
 
 	/**
@@ -510,10 +537,13 @@ public class BusinessLogicPackageImpl extends EPackageImpl implements BusinessLo
 		// Create classes and their features
 		reservationsEClass = createEClass(RESERVATIONS);
 		createEReference(reservationsEClass, RESERVATIONS__RESERVATIONSREPOSITORY);
+		createEReference(reservationsEClass, RESERVATIONS__ROOMBOOKINGS);
 		createEOperation(reservationsEClass, RESERVATIONS___UPDATE_RESERVATION_DETAILS__RESERVATION);
 		createEOperation(reservationsEClass, RESERVATIONS___MAKE__ELIST_PAYMENTDETAILS_BOOLEAN);
 		createEOperation(reservationsEClass, RESERVATIONS___CANCEL__RESERVATION);
 		createEOperation(reservationsEClass, RESERVATIONS___GET_RESERVATION__INT);
+		createEOperation(reservationsEClass, RESERVATIONS___CHECK_IN_ALL_GUESTS__RESERVATION);
+		createEOperation(reservationsEClass, RESERVATIONS___CHECK_OUT_ALL_GUESTS__RESERVATION);
 
 		roomBookingsEClass = createEClass(ROOM_BOOKINGS);
 		createEReference(roomBookingsEClass, ROOM_BOOKINGS__ROOMBOOKINGSREPOSITORY);
@@ -588,6 +618,7 @@ public class BusinessLogicPackageImpl extends EPackageImpl implements BusinessLo
 		// Initialize classes, features, and operations; add parameters
 		initEClass(reservationsEClass, Reservations.class, "Reservations", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getReservations_Reservationsrepository(), theDataAccessPackage.getReservationsRepository(), null, "reservationsrepository", null, 1, 1, Reservations.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getReservations_Roombookings(), this.getRoomBookings(), null, "roombookings", null, 1, 1, Reservations.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		EOperation op = initEOperation(getReservations__UpdateReservationDetails__Reservation(), null, "updateReservationDetails", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, theDomainEntitiesPackage.getReservation(), "reservation", 1, 1, IS_UNIQUE, !IS_ORDERED);
@@ -603,6 +634,12 @@ public class BusinessLogicPackageImpl extends EPackageImpl implements BusinessLo
 		op = initEOperation(getReservations__GetReservation__int(), theDomainEntitiesPackage.getReservation(), "getReservation", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, theTypesPackage.getInteger(), "reservationNumber", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
+		op = initEOperation(getReservations__CheckInAllGuests__Reservation(), null, "CheckInAllGuests", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theDomainEntitiesPackage.getReservation(), "reservation", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		op = initEOperation(getReservations__CheckOutAllGuests__Reservation(), null, "CheckOutAllGuests", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theDomainEntitiesPackage.getReservation(), "reservation", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
 		initEClass(roomBookingsEClass, RoomBookings.class, "RoomBookings", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getRoomBookings_Roombookingsrepository(), theDataAccessPackage.getRoomBookingsRepository(), null, "roombookingsrepository", null, 1, 1, RoomBookings.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getRoomBookings_Availibleroomfinder(), this.getAvailibleRoomFinder(), null, "availibleroomfinder", null, 1, 1, RoomBookings.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -610,7 +647,7 @@ public class BusinessLogicPackageImpl extends EPackageImpl implements BusinessLo
 		op = initEOperation(getRoomBookings__CheckOut__RoomBooking(), null, "checkOut", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, theDomainEntitiesPackage.getRoomBooking(), "roomBooking", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		op = initEOperation(getRoomBookings__CheckIn__RoomBooking(), null, "checkIn", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		op = initEOperation(getRoomBookings__CheckIn__RoomBooking(), theTypesPackage.getInteger(), "checkIn", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, theDomainEntitiesPackage.getRoomBooking(), "roomBooking", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		op = initEOperation(getRoomBookings__FindByRoomNr__int(), theDomainEntitiesPackage.getRoomBooking(), "findByRoomNr", 1, 1, IS_UNIQUE, !IS_ORDERED);
@@ -666,7 +703,7 @@ public class BusinessLogicPackageImpl extends EPackageImpl implements BusinessLo
 		op = initEOperation(getRooms__CheckOut__RoomBooking(), null, "checkOut", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, theDomainEntitiesPackage.getRoomBooking(), "roomBooking", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		op = initEOperation(getRooms__CheckIn__RoomBooking(), null, "checkIn", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		op = initEOperation(getRooms__CheckIn__RoomBooking(), theTypesPackage.getInteger(), "checkIn", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, theDomainEntitiesPackage.getRoomBooking(), "roomBooking", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		op = initEOperation(getRooms__GetBooking__int(), theDomainEntitiesPackage.getRoomBooking(), "getBooking", 1, 1, IS_UNIQUE, !IS_ORDERED);

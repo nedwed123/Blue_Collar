@@ -174,7 +174,7 @@ public class RoomBookingsImpl extends MinimalEObjectImpl.Container implements Ro
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void checkIn(RoomBooking roomBooking) {
+	public int checkIn(RoomBooking roomBooking) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -298,8 +298,7 @@ public class RoomBookingsImpl extends MinimalEObjectImpl.Container implements Ro
 				checkOut((RoomBooking)arguments.get(0));
 				return null;
 			case BusinessLogicPackage.ROOM_BOOKINGS___CHECK_IN__ROOMBOOKING:
-				checkIn((RoomBooking)arguments.get(0));
-				return null;
+				return checkIn((RoomBooking)arguments.get(0));
 			case BusinessLogicPackage.ROOM_BOOKINGS___FIND_BY_ROOM_NR__INT:
 				return findByRoomNr((Integer)arguments.get(0));
 			case BusinessLogicPackage.ROOM_BOOKINGS___FIND_BY_ROOM_RESPONSIBLE__STRING:

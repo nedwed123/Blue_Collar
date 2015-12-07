@@ -248,6 +248,24 @@ public class PresentationPackageImpl extends EPackageImpl implements Presentatio
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getFrame__Exit() {
+		return frameEClass.getEOperations().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getFrame__GoBack() {
+		return frameEClass.getEOperations().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getRoomBookingView() {
 		return roomBookingViewEClass;
 	}
@@ -388,6 +406,8 @@ public class PresentationPackageImpl extends EPackageImpl implements Presentatio
 		createEReference(frameEClass, FRAME__CURRENT_VIEW);
 		createEOperation(frameEClass, FRAME___CHANGE_VIEW__IVIEW);
 		createEOperation(frameEClass, FRAME___START__IVIEW);
+		createEOperation(frameEClass, FRAME___EXIT);
+		createEOperation(frameEClass, FRAME___GO_BACK);
 
 		roomBookingViewEClass = createEClass(ROOM_BOOKING_VIEW);
 		createEReference(roomBookingViewEClass, ROOM_BOOKING_VIEW__ROOMS);
@@ -452,17 +472,21 @@ public class PresentationPackageImpl extends EPackageImpl implements Presentatio
 
 		initEClass(iViewEClass, IView.class, "IView", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		EOperation op = initEOperation(getIView__Run__Frame(), null, "Run", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		EOperation op = initEOperation(getIView__Run__Frame(), null, "run", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, this.getFrame(), "frame", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(frameEClass, Frame.class, "Frame", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getFrame_CurrentView(), this.getIView(), null, "currentView", null, 1, 1, Frame.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-		op = initEOperation(getFrame__ChangeView__IView(), null, "ChangeView", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		op = initEOperation(getFrame__ChangeView__IView(), null, "changeView", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, this.getIView(), "view", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		op = initEOperation(getFrame__Start__IView(), null, "Start", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		op = initEOperation(getFrame__Start__IView(), null, "start", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, this.getIView(), "View", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		initEOperation(getFrame__Exit(), null, "exit", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		initEOperation(getFrame__GoBack(), null, "goBack", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(roomBookingViewEClass, RoomBookingView.class, "RoomBookingView", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getRoomBookingView_Rooms(), theBusinessLogicPackage.getRooms(), null, "rooms", null, 1, 1, RoomBookingView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
