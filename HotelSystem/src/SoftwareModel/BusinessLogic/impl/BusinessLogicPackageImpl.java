@@ -590,13 +590,13 @@ public class BusinessLogicPackageImpl extends EPackageImpl implements BusinessLo
 		initEReference(getAvailibleRoomFinder_Roomrepository(), theDataAccessPackage.getRoomRepository(), null, "roomrepository", null, 1, 1, AvailibleRoomFinder.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getAvailibleRoomFinder_Roombookingsrepository(), theDataAccessPackage.getRoomBookingsRepository(), null, "roombookingsrepository", null, 1, 1, AvailibleRoomFinder.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-		op = initEOperation(getAvailibleRoomFinder__AvailableRoomTypes__int_int_Date_Date(), theDomainEntitiesPackage.getRoomType(), "availableRoomTypes", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		op = initEOperation(getAvailibleRoomFinder__AvailableRoomTypes__int_int_Date_Date(), theDomainEntitiesPackage.getRoomType(), "availableRoomTypes", 0, -1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "adults", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "children", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDate(), "startDate", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDate(), "endDate", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		op = initEOperation(getAvailibleRoomFinder__AvailibleRoom__RoomBooking(), null, "availibleRoom", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		op = initEOperation(getAvailibleRoomFinder__AvailibleRoom__RoomBooking(), theDomainEntitiesPackage.getRoomType(), "availibleRoom", 0, -1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, theDomainEntitiesPackage.getRoomBooking(), "roomBooking", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(roomOperationsEClass, RoomOperations.class, "RoomOperations", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

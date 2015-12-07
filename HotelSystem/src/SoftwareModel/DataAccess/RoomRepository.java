@@ -4,6 +4,7 @@ package SoftwareModel.DataAccess;
 
 import SoftwareModel.DomainEntities.Room;
 import SoftwareModel.DomainEntities.RoomType;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -100,9 +101,9 @@ public interface RoomRepository extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation" required="true" ordered="false"
+	 * @model kind="operation" ordered="false"
 	 * @generated
 	 */
-	Room getRooms();
+	EList<Room> getRooms();
 
 } // RoomRepository

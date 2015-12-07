@@ -556,7 +556,7 @@ public class DataAccessPackageImpl extends EPackageImpl implements DataAccessPac
 		op = initEOperation(getRoomRepository__AddRoom__Room(), null, "addRoom", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, theDomainEntitiesPackage.getRoom(), "room", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		initEOperation(getRoomRepository__GetRooms(), theDomainEntitiesPackage.getRoom(), "getRooms", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		initEOperation(getRoomRepository__GetRooms(), theDomainEntitiesPackage.getRoom(), "getRooms", 0, -1, IS_UNIQUE, !IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

@@ -10,6 +10,7 @@ import SoftwareModel.DomainEntities.RoomType;
 
 import java.util.Date;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -85,17 +86,17 @@ public interface AvailibleRoomFinder extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false" adultsRequired="true" adultsOrdered="false" childrenRequired="true" childrenOrdered="false" startDateRequired="true" startDateOrdered="false" endDateRequired="true" endDateOrdered="false"
+	 * @model ordered="false" adultsRequired="true" adultsOrdered="false" childrenRequired="true" childrenOrdered="false" startDateRequired="true" startDateOrdered="false" endDateRequired="true" endDateOrdered="false"
 	 * @generated
 	 */
-	RoomType availableRoomTypes(int adults, int children, Date startDate, Date endDate);
+	EList<RoomType> availableRoomTypes(int adults, int children, Date startDate, Date endDate);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model roomBookingRequired="true" roomBookingOrdered="false"
+	 * @model ordered="false" roomBookingRequired="true" roomBookingOrdered="false"
 	 * @generated
 	 */
-	void availibleRoom(RoomBooking roomBooking);
+	EList<RoomType> availibleRoom(RoomBooking roomBooking);
 
 } // AvailibleRoomFinder

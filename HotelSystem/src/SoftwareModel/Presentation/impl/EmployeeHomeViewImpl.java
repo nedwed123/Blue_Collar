@@ -5,13 +5,8 @@ package SoftwareModel.Presentation.impl;
 import SoftwareModel.Presentation.EmployeeHomeView;
 import SoftwareModel.Presentation.Frame;
 import SoftwareModel.Presentation.PresentationPackage;
-
-import java.io.Console;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Scanner;
-
-import javax.net.ssl.SNIHostName;
-
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;

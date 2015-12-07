@@ -3,13 +3,9 @@
 package SoftwareModel.Presentation.impl;
 
 import SoftwareModel.BusinessLogic.Authorizer;
-import SoftwareModel.DataAccess.impl.AuthorizationRepositoryImpl;
 import SoftwareModel.Presentation.Frame;
 import SoftwareModel.Presentation.LoginView;
 import SoftwareModel.Presentation.PresentationPackage;
-
-import java.io.Console;
-import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Scanner;
 

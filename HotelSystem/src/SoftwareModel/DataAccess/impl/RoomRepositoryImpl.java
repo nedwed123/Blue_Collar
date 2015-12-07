@@ -178,7 +178,7 @@ public class RoomRepositoryImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Room getRooms() {
+	public EList<Room> getRooms() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

@@ -197,7 +197,10 @@
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_lvpOAJf7EeWmDIVFfg4USw" name="room" type="_jC8d8JXcEeWtZbi4EnRFrQ"/>
       </ownedOperation>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_YOwFIJhZEeWatpqnQATTNw" name="getRooms">
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_j6bCEJhZEeWatpqnQATTNw" name="rooms" type="_jC8d8JXcEeWtZbi4EnRFrQ" direction="return"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_j6bCEJhZEeWatpqnQATTNw" name="rooms" type="_jC8d8JXcEeWtZbi4EnRFrQ" direction="return">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_bof_4JzSEeWJusbskP8Asw"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_bof_4ZzSEeWJusbskP8Asw" value="*"/>
+        </ownedParameter>
       </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_RiAtEJhpEeWatpqnQATTNw" name="DatabaseContext">
@@ -330,10 +333,17 @@
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_8em9oJgZEeWtBYA9pVjaKA" name="endDate">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
         </ownedParameter>
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_1SGeMJgaEeWtBYA9pVjaKA" type="_uJFr8JXcEeWtZbi4EnRFrQ" direction="return"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_1SGeMJgaEeWtBYA9pVjaKA" type="_uJFr8JXcEeWtZbi4EnRFrQ" direction="return">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_zo1B0JzREeWJusbskP8Asw"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_zpIj0JzREeWJusbskP8Asw" value="*"/>
+        </ownedParameter>
       </ownedOperation>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_co-tYJhcEeWatpqnQATTNw" name="availibleRoom">
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_uDT2QJhcEeWatpqnQATTNw" name="roomBooking" type="_5lCx4JXcEeWtZbi4EnRFrQ"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_PM4MsJzSEeWJusbskP8Asw" type="_uJFr8JXcEeWtZbi4EnRFrQ" direction="return">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_UXi6wJzSEeWJusbskP8Asw"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_UXi6wZzSEeWJusbskP8Asw" value="*"/>
+        </ownedParameter>
       </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_z-rgIJhqEeWatpqnQATTNw" name="Rooms">

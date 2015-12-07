@@ -5,12 +5,10 @@ package SoftwareModel.Presentation.impl;
 import SoftwareModel.BusinessLogic.Reservations;
 import SoftwareModel.BusinessLogic.Rooms;
 import SoftwareModel.BusinessLogic.impl.ReservationsImpl;
-import SoftwareModel.BusinessLogic.impl.RoomsImpl;
 import SoftwareModel.DomainEntities.PaymentDetails;
 import SoftwareModel.DomainEntities.Reservation;
 import SoftwareModel.DomainEntities.RoomBooking;
 import SoftwareModel.DomainEntities.RoomType;
-import SoftwareModel.DomainEntities.impl.RoomTypeImpl;
 import SoftwareModel.Presentation.Frame;
 import SoftwareModel.Presentation.MakeReservationView;
 import SoftwareModel.Presentation.PresentationPackage;
@@ -64,7 +62,7 @@ public class MakeReservationViewImpl extends MinimalEObjectImpl.Container implem
 	 * @generated
 	 * @ordered
 	 */
-	protected Rooms rooms = new RoomsImpl();
+	protected Rooms rooms;
 
 	/**
 	 * <!-- begin-user-doc -->

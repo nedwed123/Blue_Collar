@@ -166,7 +166,7 @@ public class AvailibleRoomFinderImpl extends MinimalEObjectImpl.Container implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RoomType availableRoomTypes(int adults, int children, Date startDate, Date endDate) {
+	public EList<RoomType> availableRoomTypes(int adults, int children, Date startDate, Date endDate) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -177,7 +177,7 @@ public class AvailibleRoomFinderImpl extends MinimalEObjectImpl.Container implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void availibleRoom(RoomBooking roomBooking) {
+	public EList<RoomType> availibleRoom(RoomBooking roomBooking) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -277,8 +277,7 @@ public class AvailibleRoomFinderImpl extends MinimalEObjectImpl.Container implem
 			case BusinessLogicPackage.AVAILIBLE_ROOM_FINDER___AVAILABLE_ROOM_TYPES__INT_INT_DATE_DATE:
 				return availableRoomTypes((Integer)arguments.get(0), (Integer)arguments.get(1), (Date)arguments.get(2), (Date)arguments.get(3));
 			case BusinessLogicPackage.AVAILIBLE_ROOM_FINDER___AVAILIBLE_ROOM__ROOMBOOKING:
-				availibleRoom((RoomBooking)arguments.get(0));
-				return null;
+				return availibleRoom((RoomBooking)arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

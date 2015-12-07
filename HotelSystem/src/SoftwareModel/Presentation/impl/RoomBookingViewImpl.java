@@ -5,7 +5,6 @@ package SoftwareModel.Presentation.impl;
 import SoftwareModel.BusinessLogic.Rooms;
 import SoftwareModel.BusinessLogic.impl.RoomsImpl;
 import SoftwareModel.DomainEntities.RoomBooking;
-import SoftwareModel.DomainEntities.impl.RoomBookingImpl;
 import SoftwareModel.Presentation.Frame;
 import SoftwareModel.Presentation.PresentationPackage;
 import SoftwareModel.Presentation.RoomBookingView;
