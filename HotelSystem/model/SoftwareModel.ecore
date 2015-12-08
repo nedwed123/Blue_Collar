@@ -58,6 +58,8 @@
           lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="roomtype" ordered="false"
           lowerBound="1" eType="#//DomainEntities/RoomType"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="room" ordered="false"
+          lowerBound="1" eType="#//DomainEntities/Room"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="RoomResponsible">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="firstName" ordered="false"
@@ -71,7 +73,6 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="email" ordered="false"
           lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Bill"/>
     <eClassifiers xsi:type="ecore:EClass" name="Room">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="number" ordered="false"
           lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
@@ -94,6 +95,7 @@
       <eLiterals name="UnderMaintenence" value="2"/>
       <eLiterals name="ToBeCleaned" value="3"/>
     </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Bill"/>
     <eClassifiers xsi:type="ecore:EClass" name="Service">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="serviceDate" ordered="false"
           lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>

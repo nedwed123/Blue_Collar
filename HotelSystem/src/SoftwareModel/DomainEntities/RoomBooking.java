@@ -22,6 +22,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link SoftwareModel.DomainEntities.RoomBooking#getCheckOutDate <em>Check Out Date</em>}</li>
  *   <li>{@link SoftwareModel.DomainEntities.RoomBooking#getCheckInDate <em>Check In Date</em>}</li>
  *   <li>{@link SoftwareModel.DomainEntities.RoomBooking#getRoomtype <em>Roomtype</em>}</li>
+ *   <li>{@link SoftwareModel.DomainEntities.RoomBooking#getRoom <em>Room</em>}</li>
  * </ul>
  *
  * @see SoftwareModel.DomainEntities.DomainEntitiesPackage#getRoomBooking()
@@ -210,5 +211,31 @@ public interface RoomBooking extends EObject {
 	 * @generated
 	 */
 	void setRoomtype(RoomType value);
+
+	/**
+	 * Returns the value of the '<em><b>Room</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Room</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Room</em>' reference.
+	 * @see #setRoom(Room)
+	 * @see SoftwareModel.DomainEntities.DomainEntitiesPackage#getRoomBooking_Room()
+	 * @model required="true" ordered="false"
+	 * @generated
+	 */
+	Room getRoom();
+
+	/**
+	 * Sets the value of the '{@link SoftwareModel.DomainEntities.RoomBooking#getRoom <em>Room</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Room</em>' reference.
+	 * @see #getRoom()
+	 * @generated
+	 */
+	void setRoom(Room value);
 
 } // RoomBooking

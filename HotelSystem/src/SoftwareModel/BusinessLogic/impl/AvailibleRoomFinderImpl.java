@@ -7,7 +7,8 @@ import SoftwareModel.BusinessLogic.BusinessLogicPackage;
 
 import SoftwareModel.DataAccess.RoomBookingsRepository;
 import SoftwareModel.DataAccess.RoomRepository;
-
+import SoftwareModel.DataAccess.impl.RoomBookingsRepositoryImpl;
+import SoftwareModel.DataAccess.impl.RoomRepositoryImpl;
 import SoftwareModel.DomainEntities.RoomBooking;
 import SoftwareModel.DomainEntities.RoomType;
 
@@ -46,20 +47,18 @@ public class AvailibleRoomFinderImpl extends MinimalEObjectImpl.Container implem
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getRoomrepository()
-	 * @generated
 	 * @ordered
 	 */
-	protected RoomRepository roomrepository;
+	protected RoomRepository roomrepository = new RoomRepositoryImpl();
 
 	/**
 	 * The cached value of the '{@link #getRoombookingsrepository() <em>Roombookingsrepository</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getRoombookingsrepository()
-	 * @generated
 	 * @ordered
 	 */
-	protected RoomBookingsRepository roombookingsrepository;
+	protected RoomBookingsRepository roombookingsrepository = new RoomBookingsRepositoryImpl();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -68,6 +67,16 @@ public class AvailibleRoomFinderImpl extends MinimalEObjectImpl.Container implem
 	 */
 	public AvailibleRoomFinderImpl() {
 		super();
+	}
+	
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 */
+	public AvailibleRoomFinderImpl(RoomBookingsRepository roomBookings,RoomRepository rooms) {
+		super();
+		roombookingsrepository = roomBookings;
+		roomrepository = rooms;
 	}
 
 	/**

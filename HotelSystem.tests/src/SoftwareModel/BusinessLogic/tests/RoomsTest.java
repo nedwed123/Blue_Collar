@@ -2,10 +2,20 @@
  */
 package SoftwareModel.BusinessLogic.tests;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.Date;
 
+import org.eclipse.emf.common.notify.Adapter;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.util.TreeIterator;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EOperation;
+import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.util.EcoreEList;
 
 import SoftwareModel.BusinessLogic.BusinessLogicFactory;
@@ -18,7 +28,9 @@ import SoftwareModel.DomainEntities.Availability;
 import SoftwareModel.DomainEntities.BedType;
 import SoftwareModel.DomainEntities.Room;
 import SoftwareModel.DomainEntities.RoomBooking;
+import SoftwareModel.DomainEntities.RoomResponsible;
 import SoftwareModel.DomainEntities.RoomType;
+import SoftwareModel.DomainEntities.impl.RoomBookingImpl;
 import SoftwareModel.DomainEntities.impl.RoomImpl;
 import SoftwareModel.DomainEntities.impl.RoomTypeImpl;
 import junit.framework.TestCase;
@@ -43,13 +55,9 @@ import junit.textui.TestRunner;
  */
 public class RoomsTest extends TestCase {
 
-	/**
-	 * The fixture for this Rooms test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected Rooms fixture = null;
+	RoomRepository fakeRepo;
+	RoomBookingsRepository fakeBookings;
+	AvailibleRoomFinderImpl roomFinder;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -61,36 +69,6 @@ public class RoomsTest extends TestCase {
 	}
 
 	/**
-	 * Constructs a new Rooms test case with the given name.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public RoomsTest(String name) {
-		super(name);
-	}
-
-	/**
-	 * Sets the fixture for this Rooms test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void setFixture(Rooms fixture) {
-		this.fixture = fixture;
-	}
-
-	/**
-	 * Returns the fixture for this Rooms test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected Rooms getFixture() {
-		return fixture;
-	}
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see junit.framework.TestCase#setUp()
@@ -98,7 +76,9 @@ public class RoomsTest extends TestCase {
 	 */
 	@Override
 	protected void setUp() throws Exception {
-		setFixture(BusinessLogicFactory.eINSTANCE.createRooms());
+		fakeRepo = mock(RoomRepository.class);
+		fakeBookings = mock(RoomBookingsRepository.class);
+		roomFinder = new AvailibleRoomFinderImpl(fakeBookings,fakeRepo);
 	}
 
 	/**
@@ -109,60 +89,13 @@ public class RoomsTest extends TestCase {
 	 */
 	@Override
 	protected void tearDown() throws Exception {
-		setFixture(null);
+		roomFinder = null;
 	}
-
-	/**
-	 * Tests the '{@link SoftwareModel.BusinessLogic.Rooms#checkOut(SoftwareModel.DomainEntities.RoomBooking) <em>Check Out</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see SoftwareModel.BusinessLogic.Rooms#checkOut(SoftwareModel.DomainEntities.RoomBooking)
-	 * @generated
-	 */
-	public void testCheckOut__RoomBooking() {
-		// TODO: implement this operation test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link SoftwareModel.BusinessLogic.Rooms#checkIn(SoftwareModel.DomainEntities.RoomBooking) <em>Check In</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see SoftwareModel.BusinessLogic.Rooms#checkIn(SoftwareModel.DomainEntities.RoomBooking)
-	 * @generated
-	 */
-	public void testCheckIn__RoomBooking() {
-		// TODO: implement this operation test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link SoftwareModel.BusinessLogic.Rooms#getBooking(int) <em>Get Booking</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see SoftwareModel.BusinessLogic.Rooms#getBooking(int)
-	 * @generated
-	 */
-	public void testGetBooking__int() {
-		// TODO: implement this operation test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link SoftwareModel.BusinessLogic.Rooms#availibleRoomTypes(int, int, java.util.Date, java.util.Date) <em>Availible Room Types</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see SoftwareModel.BusinessLogic.Rooms#availibleRoomTypes(int, int, java.util.Date, java.util.Date)
-	 */
-	public void testAvailibleRoomTypes__int_int_Date_Date() {
+	
+	public void testAvailibleRoomTypesOnlyReturnsDistinctRoomTypes() {
 		RoomRepository fakeRepo = mock(RoomRepository.class);
 		RoomBookingsRepository fakeBookings = mock(RoomBookingsRepository.class);
-		
-		((AvailibleRoomFinderImpl)fixture).setRoomrepository(fakeRepo );
-		((AvailibleRoomFinderImpl)fixture).setRoombookingsrepository(fakeBookings);
+		AvailibleRoomFinderImpl roomFinder = new AvailibleRoomFinderImpl(fakeBookings,fakeRepo);
 		
 		EList<Room> rooms = new BasicEList<Room>();
 		EList<BedType> beds = new BasicEList<BedType>();
@@ -182,22 +115,48 @@ public class RoomsTest extends TestCase {
 		int children = 1;
 		Date startDate = new Date(1993, 8, 16);
 		Date endDate = new Date(1993, 8, 18);
-		EList<RoomType> roomtypes = fixture.availibleRoomTypes(adults, children, startDate, endDate);
+		EList<RoomType> roomtypes = roomFinder.availableRoomTypes(adults, children, startDate, endDate);
 		
 		assertEquals(1, roomtypes.size());
 	}
+	
+	public void testAvailibleRoomTypesDoesNotReturnedBookedRoomTypes() {
+		RoomRepository fakeRepo = mock(RoomRepository.class);
+		RoomBookingsRepository fakeBookings = mock(RoomBookingsRepository.class);
+		AvailibleRoomFinderImpl roomFinder = new AvailibleRoomFinderImpl(fakeBookings,fakeRepo);
+		
+		EList<Room> rooms = new BasicEList<Room>();
+		EList<BedType> beds = new BasicEList<BedType>();
+		beds.add(BedType.SINGLE);
+		beds.add(BedType.KID);
+		RoomTypeImpl singleWithKid = new RoomTypeImpl("SingleParentWithKid",beds);
 
-	/**
-	 * Tests the '{@link SoftwareModel.BusinessLogic.Rooms#getBooking(java.lang.String) <em>Get Booking</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see SoftwareModel.BusinessLogic.Rooms#getBooking(java.lang.String)
-	 * @generated
-	 */
-	public void testGetBooking__String() {
-		// TODO: implement this operation test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
+		rooms.add(new RoomImpl(1,singleWithKid,Availability.AVAILIBLE));
+		rooms.add(new RoomImpl(2,singleWithKid,Availability.AVAILIBLE));
+
+		EList<RoomBooking> bookings = new BasicEList<RoomBooking>();
+		
+		Date startDate = new Date(1993, 8, 16);
+		Date endDate = new Date(1993, 8, 18);
+		
+		RoomBooking booking1 = new RoomBookingImpl();
+		booking1.setRoomtype(singleWithKid);
+		booking1.setAdults(1);
+		booking1.setChildren(1);
+		booking1.setCheckInDate(startDate);
+		booking1.setCheckOutDate(endDate);
+		//Add the booking twice, booking both rooms
+		bookings.add(booking1);
+		bookings.add(booking1);
+		
+		when(fakeRepo.getRooms()).thenReturn(rooms);
+		when(fakeBookings.getAll()).thenReturn(bookings);
+		
+		int adults = 1;
+		int children = 1;
+		EList<RoomType> roomtypes = roomFinder.availableRoomTypes(adults, children, startDate, endDate);
+		
+		assertEquals(0, roomtypes.size());
 	}
 
 } //RoomsTest

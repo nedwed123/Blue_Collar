@@ -78,6 +78,8 @@
         <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute SoftwareModel.ecore#//DomainEntities/RoomBooking/checkInDate"/>
         <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
             propertySortChoices="true" ecoreFeature="ecore:EReference SoftwareModel.ecore#//DomainEntities/RoomBooking/roomtype"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference SoftwareModel.ecore#//DomainEntities/RoomBooking/room"/>
       </genClasses>
       <genClasses xsi:type="genmodel:GenClass" ecoreClass="SoftwareModel.ecore#//DomainEntities/RoomResponsible">
         <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute SoftwareModel.ecore#//DomainEntities/RoomResponsible/firstName"/>
@@ -86,7 +88,6 @@
         <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute SoftwareModel.ecore#//DomainEntities/RoomResponsible/phoneNumber"/>
         <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute SoftwareModel.ecore#//DomainEntities/RoomResponsible/email"/>
       </genClasses>
-      <genClasses xsi:type="genmodel:GenClass" ecoreClass="SoftwareModel.ecore#//DomainEntities/Bill"/>
       <genClasses xsi:type="genmodel:GenClass" ecoreClass="SoftwareModel.ecore#//DomainEntities/Room">
         <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute SoftwareModel.ecore#//DomainEntities/Room/number"/>
         <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute SoftwareModel.ecore#//DomainEntities/Room/availability"/>
@@ -97,6 +98,7 @@
         <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
             createChild="true" ecoreFeature="ecore:EReference SoftwareModel.ecore#//DomainEntities/Room/roomtype"/>
       </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="SoftwareModel.ecore#//DomainEntities/Bill"/>
       <genClasses xsi:type="genmodel:GenClass" ecoreClass="SoftwareModel.ecore#//DomainEntities/Service">
         <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute SoftwareModel.ecore#//DomainEntities/Service/serviceDate"/>
         <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute SoftwareModel.ecore#//DomainEntities/Service/description"/>

@@ -88,12 +88,12 @@ public class DomainEntitiesAdapterFactory extends AdapterFactoryImpl {
 				return createRoomResponsibleAdapter();
 			}
 			@Override
-			public Adapter caseBill(Bill object) {
-				return createBillAdapter();
-			}
-			@Override
 			public Adapter caseRoom(Room object) {
 				return createRoomAdapter();
+			}
+			@Override
+			public Adapter caseBill(Bill object) {
+				return createBillAdapter();
 			}
 			@Override
 			public Adapter caseService(Service object) {

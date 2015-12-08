@@ -341,13 +341,22 @@ public interface DomainEntitiesPackage extends EPackage {
 	int ROOM_BOOKING__ROOMTYPE = 6;
 
 	/**
+	 * The feature id for the '<em><b>Room</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_BOOKING__ROOM = 7;
+
+	/**
 	 * The number of structural features of the '<em>Room Booking</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_BOOKING_FEATURE_COUNT = 7;
+	int ROOM_BOOKING_FEATURE_COUNT = 8;
 
 	/**
 	 * The number of operations of the '<em>Room Booking</em>' class.
@@ -439,25 +448,7 @@ public interface DomainEntitiesPackage extends EPackage {
 	 * @see SoftwareModel.DomainEntities.impl.DomainEntitiesPackageImpl#getBill()
 	 * @generated
 	 */
-	int BILL = 5;
-
-	/**
-	 * The number of structural features of the '<em>Bill</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BILL_FEATURE_COUNT = 0;
-
-	/**
-	 * The number of operations of the '<em>Bill</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BILL_OPERATION_COUNT = 0;
+	int BILL = 6;
 
 	/**
 	 * The meta object id for the '{@link SoftwareModel.DomainEntities.impl.RoomImpl <em>Room</em>}' class.
@@ -467,7 +458,7 @@ public interface DomainEntitiesPackage extends EPackage {
 	 * @see SoftwareModel.DomainEntities.impl.DomainEntitiesPackageImpl#getRoom()
 	 * @generated
 	 */
-	int ROOM = 6;
+	int ROOM = 5;
 
 	/**
 	 * The feature id for the '<em><b>Number</b></em>' attribute.
@@ -549,6 +540,24 @@ public interface DomainEntitiesPackage extends EPackage {
 	 * @ordered
 	 */
 	int ROOM_OPERATION_COUNT = 0;
+
+	/**
+	 * The number of structural features of the '<em>Bill</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BILL_FEATURE_COUNT = 0;
+
+	/**
+	 * The number of operations of the '<em>Bill</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BILL_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link SoftwareModel.DomainEntities.impl.ServiceImpl <em>Service</em>}' class.
@@ -896,6 +905,17 @@ public interface DomainEntitiesPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getRoomBooking_Roomtype();
+
+	/**
+	 * Returns the meta object for the reference '{@link SoftwareModel.DomainEntities.RoomBooking#getRoom <em>Room</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Room</em>'.
+	 * @see SoftwareModel.DomainEntities.RoomBooking#getRoom()
+	 * @see #getRoomBooking()
+	 * @generated
+	 */
+	EReference getRoomBooking_Room();
 
 	/**
 	 * Returns the meta object for class '{@link SoftwareModel.DomainEntities.RoomResponsible <em>Room Responsible</em>}'.
@@ -1352,6 +1372,14 @@ public interface DomainEntitiesPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ROOM_BOOKING__ROOMTYPE = eINSTANCE.getRoomBooking_Roomtype();
+
+		/**
+		 * The meta object literal for the '<em><b>Room</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ROOM_BOOKING__ROOM = eINSTANCE.getRoomBooking_Room();
 
 		/**
 		 * The meta object literal for the '{@link SoftwareModel.DomainEntities.impl.RoomResponsibleImpl <em>Room Responsible</em>}' class.

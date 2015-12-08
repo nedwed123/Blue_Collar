@@ -419,6 +419,15 @@ public class DomainEntitiesPackageImpl extends EPackageImpl implements DomainEnt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getRoomBooking_Room() {
+		return (EReference)roomBookingEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getRoomResponsible() {
 		return roomResponsibleEClass;
 	}
@@ -659,6 +668,7 @@ public class DomainEntitiesPackageImpl extends EPackageImpl implements DomainEnt
 		createEAttribute(roomBookingEClass, ROOM_BOOKING__CHECK_OUT_DATE);
 		createEAttribute(roomBookingEClass, ROOM_BOOKING__CHECK_IN_DATE);
 		createEReference(roomBookingEClass, ROOM_BOOKING__ROOMTYPE);
+		createEReference(roomBookingEClass, ROOM_BOOKING__ROOM);
 
 		roomResponsibleEClass = createEClass(ROOM_RESPONSIBLE);
 		createEAttribute(roomResponsibleEClass, ROOM_RESPONSIBLE__FIRST_NAME);
@@ -666,8 +676,6 @@ public class DomainEntitiesPackageImpl extends EPackageImpl implements DomainEnt
 		createEAttribute(roomResponsibleEClass, ROOM_RESPONSIBLE__ADDRESS);
 		createEAttribute(roomResponsibleEClass, ROOM_RESPONSIBLE__PHONE_NUMBER);
 		createEAttribute(roomResponsibleEClass, ROOM_RESPONSIBLE__EMAIL);
-
-		billEClass = createEClass(BILL);
 
 		roomEClass = createEClass(ROOM);
 		createEAttribute(roomEClass, ROOM__NUMBER);
@@ -677,6 +685,8 @@ public class DomainEntitiesPackageImpl extends EPackageImpl implements DomainEnt
 		createEAttribute(roomEClass, ROOM__PETS_ALLOWED);
 		createEAttribute(roomEClass, ROOM__DISABLED_ACCESS);
 		createEReference(roomEClass, ROOM__ROOMTYPE);
+
+		billEClass = createEClass(BILL);
 
 		serviceEClass = createEClass(SERVICE);
 		createEAttribute(serviceEClass, SERVICE__SERVICE_DATE);
@@ -749,6 +759,7 @@ public class DomainEntitiesPackageImpl extends EPackageImpl implements DomainEnt
 		initEAttribute(getRoomBooking_CheckOutDate(), ecorePackage.getEDate(), "checkOutDate", null, 1, 1, RoomBooking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getRoomBooking_CheckInDate(), ecorePackage.getEDate(), "checkInDate", null, 1, 1, RoomBooking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getRoomBooking_Roomtype(), this.getRoomType(), null, "roomtype", null, 1, 1, RoomBooking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getRoomBooking_Room(), this.getRoom(), null, "room", null, 1, 1, RoomBooking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(roomResponsibleEClass, RoomResponsible.class, "RoomResponsible", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getRoomResponsible_FirstName(), theTypesPackage.getString(), "firstName", null, 1, 1, RoomResponsible.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -756,8 +767,6 @@ public class DomainEntitiesPackageImpl extends EPackageImpl implements DomainEnt
 		initEAttribute(getRoomResponsible_Address(), theTypesPackage.getString(), "address", null, 1, 1, RoomResponsible.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getRoomResponsible_PhoneNumber(), ecorePackage.getEInt(), "phoneNumber", null, 1, 1, RoomResponsible.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getRoomResponsible_Email(), theTypesPackage.getString(), "email", null, 1, 1, RoomResponsible.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-
-		initEClass(billEClass, Bill.class, "Bill", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(roomEClass, Room.class, "Room", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getRoom_Number(), ecorePackage.getEInt(), "number", null, 1, 1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -767,6 +776,8 @@ public class DomainEntitiesPackageImpl extends EPackageImpl implements DomainEnt
 		initEAttribute(getRoom_PetsAllowed(), ecorePackage.getEBoolean(), "petsAllowed", null, 1, 1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getRoom_DisabledAccess(), ecorePackage.getEBoolean(), "disabledAccess", null, 1, 1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getRoom_Roomtype(), this.getRoomType(), null, "roomtype", null, 1, 1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+		initEClass(billEClass, Bill.class, "Bill", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(serviceEClass, Service.class, "Service", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getService_ServiceDate(), ecorePackage.getEDate(), "serviceDate", null, 1, 1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);

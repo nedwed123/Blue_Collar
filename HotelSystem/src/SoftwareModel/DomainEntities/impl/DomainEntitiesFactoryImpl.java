@@ -62,8 +62,8 @@ public class DomainEntitiesFactoryImpl extends EFactoryImpl implements DomainEnt
 			case DomainEntitiesPackage.RESERVATION: return createReservation();
 			case DomainEntitiesPackage.ROOM_BOOKING: return createRoomBooking();
 			case DomainEntitiesPackage.ROOM_RESPONSIBLE: return createRoomResponsible();
-			case DomainEntitiesPackage.BILL: return createBill();
 			case DomainEntitiesPackage.ROOM: return createRoom();
+			case DomainEntitiesPackage.BILL: return createBill();
 			case DomainEntitiesPackage.SERVICE: return createService();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");

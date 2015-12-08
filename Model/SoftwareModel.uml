@@ -69,6 +69,9 @@
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
       </ownedAttribute>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_HrbVYphcEeWatpqnQATTNw" name="roomtype" type="_uJFr8JXcEeWtZbi4EnRFrQ" association="_HrauUJhcEeWatpqnQATTNw"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_irl8YJ3IEeWKN50OvsQqBA" name="room" type="_jC8d8JXcEeWtZbi4EnRFrQ">
+        <association xmi:type="uml:Association" href="SystemModel.uml#_iri5EJ3IEeWKN50OvsQqBA"/>
+      </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_50LaEJXcEeWtZbi4EnRFrQ" name="Bill"/>
     <packagedElement xmi:type="uml:Class" xmi:id="_LU3-EJb4EeW6iMusCgrdvA" name="RoomResponsible">
@@ -499,16 +502,6 @@
     </packagedElement>
   </packagedElement>
   <packagedElement xmi:type="uml:Package" xmi:id="_xThV4Jh0EeWatpqnQATTNw" name="ClassDiagramEdges">
-    <packagedElement xmi:type="uml:Association" xmi:id="_DZoxEJXgEeWtZbi4EnRFrQ" name="is assigned" memberEnd="_DZpYIZXgEeWtZbi4EnRFrQ _DZp_MJXgEeWtZbi4EnRFrQ">
-      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_DZoxEZXgEeWtZbi4EnRFrQ" source="org.eclipse.papyrus">
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_DZpYIJXgEeWtZbi4EnRFrQ" key="nature" value="UML_Nature"/>
-      </eAnnotations>
-      <ownedEnd xmi:type="uml:Property" xmi:id="_DZp_MJXgEeWtZbi4EnRFrQ" name="room" type="_jC8d8JXcEeWtZbi4EnRFrQ" association="_DZoxEJXgEeWtZbi4EnRFrQ">
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_IyaMkJXgEeWtZbi4EnRFrQ"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_IybasJXgEeWtZbi4EnRFrQ" value="*"/>
-      </ownedEnd>
-      <ownedEnd xmi:type="uml:Property" xmi:id="_DZpYIZXgEeWtZbi4EnRFrQ" name="roombooking" type="_5lCx4JXcEeWtZbi4EnRFrQ" association="_DZoxEJXgEeWtZbi4EnRFrQ"/>
-    </packagedElement>
     <packagedElement xmi:type="uml:Association" xmi:id="_6d2FUJXgEeWtZbi4EnRFrQ" name="services" memberEnd="_6d2FU5XgEeWtZbi4EnRFrQ _6d3TcJXgEeWtZbi4EnRFrQ">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_6d2FUZXgEeWtZbi4EnRFrQ" source="org.eclipse.papyrus">
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_6d2FUpXgEeWtZbi4EnRFrQ" key="nature" value="UML_Nature"/>

@@ -96,15 +96,15 @@ public class DomainEntitiesSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case DomainEntitiesPackage.BILL: {
-				Bill bill = (Bill)theEObject;
-				T result = caseBill(bill);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case DomainEntitiesPackage.ROOM: {
 				Room room = (Room)theEObject;
 				T result = caseRoom(room);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case DomainEntitiesPackage.BILL: {
+				Bill bill = (Bill)theEObject;
+				T result = caseBill(bill);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}

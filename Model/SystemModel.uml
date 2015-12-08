@@ -398,6 +398,16 @@
       <type xmi:type="uml:Class" href="SoftwareModel.uml#_W_QpgJdkEeW9FdtnBhCZ1w"/>
     </ownedEnd>
   </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_iri5EJ3IEeWKN50OvsQqBA">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_irkuQJ3IEeWKN50OvsQqBA" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_irkuQZ3IEeWKN50OvsQqBA" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <memberEnd xmi:type="uml:Property" href="SoftwareModel.uml#_irl8YJ3IEeWKN50OvsQqBA"/>
+    <memberEnd xmi:type="uml:Property" href="#_irnxkJ3IEeWKN50OvsQqBA"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_irnxkJ3IEeWKN50OvsQqBA" name="roombooking" association="_iri5EJ3IEeWKN50OvsQqBA">
+      <type xmi:type="uml:Class" href="SoftwareModel.uml#_5lCx4JXcEeWtZbi4EnRFrQ"/>
+    </ownedEnd>
+  </packagedElement>
   <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_iC-xQJdGEeWbutPRr4NuZg">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_iDBNgJdGEeWbutPRr4NuZg" source="http://www.eclipse.org/uml2/2.0.0/UML">
       <references xmi:type="ecore:EPackage" href="pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#_Kv8EIKFXEeS_KNX0nfvIVQ"/>

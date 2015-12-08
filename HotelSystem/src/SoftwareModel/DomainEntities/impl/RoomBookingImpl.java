@@ -3,6 +3,7 @@
 package SoftwareModel.DomainEntities.impl;
 
 import SoftwareModel.DomainEntities.DomainEntitiesPackage;
+import SoftwareModel.DomainEntities.Room;
 import SoftwareModel.DomainEntities.RoomBooking;
 import SoftwareModel.DomainEntities.RoomResponsible;
 import SoftwareModel.DomainEntities.RoomType;
@@ -32,6 +33,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link SoftwareModel.DomainEntities.impl.RoomBookingImpl#getCheckOutDate <em>Check Out Date</em>}</li>
  *   <li>{@link SoftwareModel.DomainEntities.impl.RoomBookingImpl#getCheckInDate <em>Check In Date</em>}</li>
  *   <li>{@link SoftwareModel.DomainEntities.impl.RoomBookingImpl#getRoomtype <em>Roomtype</em>}</li>
+ *   <li>{@link SoftwareModel.DomainEntities.impl.RoomBookingImpl#getRoom <em>Room</em>}</li>
  * </ul>
  *
  * @generated
@@ -156,6 +158,16 @@ public class RoomBookingImpl extends MinimalEObjectImpl.Container implements Roo
 	 * @ordered
 	 */
 	protected RoomType roomtype;
+
+	/**
+	 * The cached value of the '{@link #getRoom() <em>Room</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRoom()
+	 * @generated
+	 * @ordered
+	 */
+	protected Room room;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -362,6 +374,44 @@ public class RoomBookingImpl extends MinimalEObjectImpl.Container implements Roo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Room getRoom() {
+		if (room != null && room.eIsProxy()) {
+			InternalEObject oldRoom = (InternalEObject)room;
+			room = (Room)eResolveProxy(oldRoom);
+			if (room != oldRoom) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DomainEntitiesPackage.ROOM_BOOKING__ROOM, oldRoom, room));
+			}
+		}
+		return room;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Room basicGetRoom() {
+		return room;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setRoom(Room newRoom) {
+		Room oldRoom = room;
+		room = newRoom;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DomainEntitiesPackage.ROOM_BOOKING__ROOM, oldRoom, room));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -381,6 +431,9 @@ public class RoomBookingImpl extends MinimalEObjectImpl.Container implements Roo
 			case DomainEntitiesPackage.ROOM_BOOKING__ROOMTYPE:
 				if (resolve) return getRoomtype();
 				return basicGetRoomtype();
+			case DomainEntitiesPackage.ROOM_BOOKING__ROOM:
+				if (resolve) return getRoom();
+				return basicGetRoom();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -413,6 +466,9 @@ public class RoomBookingImpl extends MinimalEObjectImpl.Container implements Roo
 				return;
 			case DomainEntitiesPackage.ROOM_BOOKING__ROOMTYPE:
 				setRoomtype((RoomType)newValue);
+				return;
+			case DomainEntitiesPackage.ROOM_BOOKING__ROOM:
+				setRoom((Room)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -447,6 +503,9 @@ public class RoomBookingImpl extends MinimalEObjectImpl.Container implements Roo
 			case DomainEntitiesPackage.ROOM_BOOKING__ROOMTYPE:
 				setRoomtype((RoomType)null);
 				return;
+			case DomainEntitiesPackage.ROOM_BOOKING__ROOM:
+				setRoom((Room)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -473,6 +532,8 @@ public class RoomBookingImpl extends MinimalEObjectImpl.Container implements Roo
 				return CHECK_IN_DATE_EDEFAULT == null ? checkInDate != null : !CHECK_IN_DATE_EDEFAULT.equals(checkInDate);
 			case DomainEntitiesPackage.ROOM_BOOKING__ROOMTYPE:
 				return roomtype != null;
+			case DomainEntitiesPackage.ROOM_BOOKING__ROOM:
+				return room != null;
 		}
 		return super.eIsSet(featureID);
 	}
