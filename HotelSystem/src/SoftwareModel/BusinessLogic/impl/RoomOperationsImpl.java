@@ -7,6 +7,9 @@ import SoftwareModel.BusinessLogic.RoomOperations;
 
 import SoftwareModel.DataAccess.RoomRepository;
 import SoftwareModel.DataAccess.impl.RoomRepositoryImpl;
+import SoftwareModel.DomainEntities.Availability;
+import SoftwareModel.DomainEntities.RoomType;
+import SoftwareModel.DomainEntities.impl.RoomImpl;
 
 import java.lang.reflect.InvocationTargetException;
 
@@ -132,12 +135,10 @@ public class RoomOperationsImpl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
 	 */
-	public void addRoom(int roomNumber, Enumerator availability, String type) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+	public void addRoom(int roomNumber, Availability availability, String type) {
+		RoomType roomType = roomrepository.getRoomType(type);
+		roomrepository.addRoom(new RoomImpl(roomNumber,roomType,availability));
 	}
 
 	/**
@@ -248,8 +249,8 @@ public class RoomOperationsImpl extends MinimalEObjectImpl.Container implements 
 			case BusinessLogicPackage.ROOM_OPERATIONS___MAKE_ROOM_AVAILABLE__INT:
 				makeRoomAvailable((Integer)arguments.get(0));
 				return null;
-			case BusinessLogicPackage.ROOM_OPERATIONS___ADD_ROOM__INT_ENUMERATOR_STRING:
-				addRoom((Integer)arguments.get(0), (Enumerator)arguments.get(1), (String)arguments.get(2));
+			case BusinessLogicPackage.ROOM_OPERATIONS___ADD_ROOM__INT_AVAILABILITY_STRING:
+				addRoom((Integer)arguments.get(0), (Availability)arguments.get(1), (String)arguments.get(2));
 				return null;
 			case BusinessLogicPackage.ROOM_OPERATIONS___REMOVE_ROOM__INT:
 				removeRoom((Integer)arguments.get(0));

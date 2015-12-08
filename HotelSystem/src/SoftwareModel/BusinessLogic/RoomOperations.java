@@ -4,8 +4,7 @@ package SoftwareModel.BusinessLogic;
 
 import SoftwareModel.DataAccess.RoomRepository;
 
-import org.eclipse.emf.common.util.Enumerator;
-
+import SoftwareModel.DomainEntities.Availability;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -73,7 +72,7 @@ public interface RoomOperations extends EObject {
 	 * @model roomNumberRequired="true" roomNumberOrdered="false" availabilityRequired="true" availabilityOrdered="false" typeDataType="org.eclipse.uml2.types.String" typeRequired="true" typeOrdered="false"
 	 * @generated
 	 */
-	void addRoom(int roomNumber, Enumerator availability, String type);
+	void addRoom(int roomNumber, Availability availability, String type);
 
 	/**
 	 * <!-- begin-user-doc -->

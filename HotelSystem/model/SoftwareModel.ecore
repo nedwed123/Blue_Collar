@@ -141,9 +141,7 @@
         <eParameters name="reservationNumber" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
         <eParameters name="_" ordered="false" lowerBound="1" eType="#//DomainEntities/RoomBooking"/>
       </eOperations>
-      <eOperations name="getAll" ordered="false" lowerBound="1">
-        <eParameters name="_" ordered="false" lowerBound="1" eType="#//DomainEntities/RoomBooking"/>
-      </eOperations>
+      <eOperations name="getAll" ordered="false" upperBound="-1" eType="#//DomainEntities/RoomBooking"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="databasecontext" ordered="false"
           lowerBound="1" eType="#//DataAccess/DatabaseContext"/>
     </eClassifiers>
@@ -162,7 +160,7 @@
       <eOperations name="getRoom" ordered="false" lowerBound="1">
         <eParameters name="roomNumber" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
       </eOperations>
-      <eOperations name="getRoomType" ordered="false" lowerBound="1">
+      <eOperations name="getRoomType" ordered="false" lowerBound="1" eType="#//DomainEntities/RoomType">
         <eParameters name="name" ordered="false" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
       </eOperations>
       <eOperations name="removeRoom" ordered="false" lowerBound="1">
@@ -250,7 +248,7 @@
       </eOperations>
       <eOperations name="addRoom" ordered="false" lowerBound="1">
         <eParameters name="roomNumber" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-        <eParameters name="availability" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEnumerator"/>
+        <eParameters name="availability" ordered="false" lowerBound="1" eType="#//DomainEntities/Availability"/>
         <eParameters name="type" ordered="false" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
       </eOperations>
       <eOperations name="removeRoom" ordered="false" lowerBound="1">

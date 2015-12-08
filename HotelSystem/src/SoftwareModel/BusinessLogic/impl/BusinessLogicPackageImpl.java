@@ -386,7 +386,7 @@ public class BusinessLogicPackageImpl extends EPackageImpl implements BusinessLo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getRoomOperations__AddRoom__int_Enumerator_String() {
+	public EOperation getRoomOperations__AddRoom__int_Availability_String() {
 		return roomOperationsEClass.getEOperations().get(2);
 	}
 
@@ -563,7 +563,7 @@ public class BusinessLogicPackageImpl extends EPackageImpl implements BusinessLo
 		createEReference(roomOperationsEClass, ROOM_OPERATIONS__ROOMREPOSITORY);
 		createEOperation(roomOperationsEClass, ROOM_OPERATIONS___MODIFY_RATE__STRING_DOUBLE);
 		createEOperation(roomOperationsEClass, ROOM_OPERATIONS___MAKE_ROOM_AVAILABLE__INT);
-		createEOperation(roomOperationsEClass, ROOM_OPERATIONS___ADD_ROOM__INT_ENUMERATOR_STRING);
+		createEOperation(roomOperationsEClass, ROOM_OPERATIONS___ADD_ROOM__INT_AVAILABILITY_STRING);
 		createEOperation(roomOperationsEClass, ROOM_OPERATIONS___REMOVE_ROOM__INT);
 		createEOperation(roomOperationsEClass, ROOM_OPERATIONS___MAKE_ROOM_UNAVAILABLE__INT);
 
@@ -679,9 +679,9 @@ public class BusinessLogicPackageImpl extends EPackageImpl implements BusinessLo
 		op = initEOperation(getRoomOperations__MakeRoomAvailable__int(), null, "makeRoomAvailable", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "roomNumber", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		op = initEOperation(getRoomOperations__AddRoom__int_Enumerator_String(), null, "addRoom", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		op = initEOperation(getRoomOperations__AddRoom__int_Availability_String(), null, "addRoom", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "roomNumber", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEEnumerator(), "availability", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theDomainEntitiesPackage.getAvailability(), "availability", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, theTypesPackage.getString(), "type", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		op = initEOperation(getRoomOperations__RemoveRoom__int(), null, "removeRoom", 1, 1, IS_UNIQUE, !IS_ORDERED);

@@ -166,6 +166,14 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 */
 	protected RoomType roomtype;
 
+	
+	public RoomImpl(int roomNr,RoomType type,Availability availability){
+		super();
+		number = roomNr;
+		roomtype = type;
+		this.availability = availability;
+	}
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

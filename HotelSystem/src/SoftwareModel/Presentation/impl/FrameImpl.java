@@ -138,7 +138,9 @@ public class FrameImpl extends MinimalEObjectImpl.Container implements Frame {
 	 * @generated
 	 */
 	public void goBack() {
-		setCurrentView(previousView);
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**

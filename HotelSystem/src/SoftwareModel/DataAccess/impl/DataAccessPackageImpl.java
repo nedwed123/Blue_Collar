@@ -297,7 +297,7 @@ public class DataAccessPackageImpl extends EPackageImpl implements DataAccessPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getRoomBookingsRepository__GetAll__RoomBooking() {
+	public EOperation getRoomBookingsRepository__GetAll() {
 		return roomBookingsRepositoryEClass.getEOperations().get(3);
 	}
 
@@ -455,7 +455,7 @@ public class DataAccessPackageImpl extends EPackageImpl implements DataAccessPac
 		createEOperation(roomBookingsRepositoryEClass, ROOM_BOOKINGS_REPOSITORY___UPDATE__ROOMBOOKING);
 		createEOperation(roomBookingsRepositoryEClass, ROOM_BOOKINGS_REPOSITORY___GET_BY_ROOM_RESPONSIBLE__STRING);
 		createEOperation(roomBookingsRepositoryEClass, ROOM_BOOKINGS_REPOSITORY___GET_BY_RESERVATION_NR__INT_ROOMBOOKING);
-		createEOperation(roomBookingsRepositoryEClass, ROOM_BOOKINGS_REPOSITORY___GET_ALL__ROOMBOOKING);
+		createEOperation(roomBookingsRepositoryEClass, ROOM_BOOKINGS_REPOSITORY___GET_ALL);
 
 		authorizationRepositoryEClass = createEClass(AUTHORIZATION_REPOSITORY);
 		createEReference(authorizationRepositoryEClass, AUTHORIZATION_REPOSITORY__DATABASECONTEXT);
@@ -540,8 +540,7 @@ public class DataAccessPackageImpl extends EPackageImpl implements DataAccessPac
 		addEParameter(op, ecorePackage.getEInt(), "reservationNumber", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, theDomainEntitiesPackage.getRoomBooking(), "_", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		op = initEOperation(getRoomBookingsRepository__GetAll__RoomBooking(), null, "getAll", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, theDomainEntitiesPackage.getRoomBooking(), "_", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		initEOperation(getRoomBookingsRepository__GetAll(), theDomainEntitiesPackage.getRoomBooking(), "getAll", 0, -1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(authorizationRepositoryEClass, AuthorizationRepository.class, "AuthorizationRepository", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getAuthorizationRepository_Databasecontext(), this.getDatabaseContext(), null, "databasecontext", null, 1, 1, AuthorizationRepository.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -560,7 +559,7 @@ public class DataAccessPackageImpl extends EPackageImpl implements DataAccessPac
 		op = initEOperation(getRoomRepository__GetRoom__int(), null, "getRoom", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "roomNumber", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		op = initEOperation(getRoomRepository__GetRoomType__String(), null, "getRoomType", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		op = initEOperation(getRoomRepository__GetRoomType__String(), theDomainEntitiesPackage.getRoomType(), "getRoomType", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, theTypesPackage.getString(), "name", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		op = initEOperation(getRoomRepository__RemoveRoom__Room(), null, "removeRoom", 1, 1, IS_UNIQUE, !IS_ORDERED);

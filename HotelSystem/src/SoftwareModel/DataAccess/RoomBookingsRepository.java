@@ -3,6 +3,7 @@
 package SoftwareModel.DataAccess;
 
 import SoftwareModel.DomainEntities.RoomBooking;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -75,9 +76,9 @@ public interface RoomBookingsRepository extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model _Required="true" _Ordered="false"
+	 * @model kind="operation" ordered="false"
 	 * @generated
 	 */
-	void getAll(RoomBooking _);
+	EList<RoomBooking> getAll();
 
 } // RoomBookingsRepository

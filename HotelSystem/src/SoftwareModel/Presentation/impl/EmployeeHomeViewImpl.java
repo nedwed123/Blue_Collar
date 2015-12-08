@@ -7,6 +7,7 @@ import SoftwareModel.Presentation.Frame;
 import SoftwareModel.Presentation.PresentationPackage;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Scanner;
+
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
@@ -43,7 +44,6 @@ public class EmployeeHomeViewImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	public void run(Frame frame) {
 		System.out.print("Welcome to Hotel Management System \n"

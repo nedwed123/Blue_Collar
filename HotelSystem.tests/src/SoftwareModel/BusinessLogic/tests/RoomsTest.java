@@ -17,6 +17,7 @@ import SoftwareModel.DataAccess.impl.RoomRepositoryImpl;
 import SoftwareModel.DomainEntities.Availability;
 import SoftwareModel.DomainEntities.BedType;
 import SoftwareModel.DomainEntities.Room;
+import SoftwareModel.DomainEntities.RoomBooking;
 import SoftwareModel.DomainEntities.RoomType;
 import SoftwareModel.DomainEntities.impl.RoomImpl;
 import SoftwareModel.DomainEntities.impl.RoomTypeImpl;
@@ -163,30 +164,27 @@ public class RoomsTest extends TestCase {
 		((AvailibleRoomFinderImpl)fixture).setRoomrepository(fakeRepo );
 		((AvailibleRoomFinderImpl)fixture).setRoombookingsrepository(fakeBookings);
 		
-		EList<Room> list = new BasicEList<Room>();
-		Room room = new RoomImpl();
-		room.setAvailability(Availability.AVAILIBLE);		
-		RoomTypeImpl roomtype = new RoomTypeImpl();
-		roomtype.setName("Standard");
-		EList<BedType> beds = roomtype.getBeds();
+		EList<Room> rooms = new BasicEList<Room>();
+		EList<BedType> beds = new BasicEList<BedType>();
+		beds.add(BedType.SINGLE);
+		beds.add(BedType.KID);
+		RoomTypeImpl singleWithKid = new RoomTypeImpl("SingleParentWithKid",beds);
+
+		rooms.add(new RoomImpl(1,singleWithKid,Availability.AVAILIBLE));
+		rooms.add(new RoomImpl(2,singleWithKid,Availability.AVAILIBLE));
+
+		EList<RoomBooking> bookings = new BasicEList<RoomBooking>();
 		
-		beds.add(BedType.KING);
-		beds.add(BedType.KING);
-		
-		room.setRoomtype(roomtype);
-		list.add(room);
-		when(fakeRepo.getRooms()).thenReturn(list);
-		//when(fakeBookings.()).thenReturn(list );
+		when(fakeRepo.getRooms()).thenReturn(rooms);
+		when(fakeBookings.getAll()).thenReturn(bookings);
 		
 		int adults = 1;
 		int children = 1;
 		Date startDate = new Date(1993, 8, 16);
-		Date endDate = new Date(1993, 8, 16);
+		Date endDate = new Date(1993, 8, 18);
 		EList<RoomType> roomtypes = fixture.availibleRoomTypes(adults, children, startDate, endDate);
-		//TODO: Implement
 		
-		
-		fail();
+		assertEquals(1, roomtypes.size());
 	}
 
 	/**

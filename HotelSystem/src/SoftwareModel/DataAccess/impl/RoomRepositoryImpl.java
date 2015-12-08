@@ -145,7 +145,7 @@ public class RoomRepositoryImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void getRoomType(String name) {
+	public RoomType getRoomType(String name) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -262,8 +262,7 @@ public class RoomRepositoryImpl extends MinimalEObjectImpl.Container implements 
 				getRoom((Integer)arguments.get(0));
 				return null;
 			case DataAccessPackage.ROOM_REPOSITORY___GET_ROOM_TYPE__STRING:
-				getRoomType((String)arguments.get(0));
-				return null;
+				return getRoomType((String)arguments.get(0));
 			case DataAccessPackage.ROOM_REPOSITORY___REMOVE_ROOM__ROOM:
 				removeRoom((Room)arguments.get(0));
 				return null;

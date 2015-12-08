@@ -39,11 +39,8 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- * <li>
- * {@link SoftwareModel.Presentation.impl.MakeReservationViewImpl#getReservations
- * <em>Reservations</em>}</li>
- * <li>{@link SoftwareModel.Presentation.impl.MakeReservationViewImpl#getRooms
- * <em>Rooms</em>}</li>
+ *   <li>{@link SoftwareModel.Presentation.impl.MakeReservationViewImpl#getReservations <em>Reservations</em>}</li>
+ *   <li>{@link SoftwareModel.Presentation.impl.MakeReservationViewImpl#getRooms <em>Rooms</em>}</li>
  * </ul>
  *
  * @generated
@@ -62,14 +59,12 @@ public class MakeReservationViewImpl extends MinimalEObjectImpl.Container implem
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @see #getRooms()
-	 * @generated
 	 * @ordered
 	 */
 	protected Rooms rooms = new RoomsImpl();
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public MakeReservationViewImpl() {
@@ -78,7 +73,6 @@ public class MakeReservationViewImpl extends MinimalEObjectImpl.Container implem
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -88,7 +82,6 @@ public class MakeReservationViewImpl extends MinimalEObjectImpl.Container implem
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public Reservations getReservations() {
@@ -97,58 +90,47 @@ public class MakeReservationViewImpl extends MinimalEObjectImpl.Container implem
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public NotificationChain basicSetReservations(Reservations newReservations, NotificationChain msgs) {
 		Reservations oldReservations = reservations;
 		reservations = newReservations;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-					PresentationPackage.MAKE_RESERVATION_VIEW__RESERVATIONS, oldReservations, newReservations);
-			if (msgs == null)
-				msgs = notification;
-			else
-				msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PresentationPackage.MAKE_RESERVATION_VIEW__RESERVATIONS, oldReservations, newReservations);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public void setReservations(Reservations newReservations) {
 		if (newReservations != reservations) {
 			NotificationChain msgs = null;
 			if (reservations != null)
-				msgs = ((InternalEObject) reservations).eInverseRemove(this,
-						EOPPOSITE_FEATURE_BASE - PresentationPackage.MAKE_RESERVATION_VIEW__RESERVATIONS, null, msgs);
+				msgs = ((InternalEObject)reservations).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PresentationPackage.MAKE_RESERVATION_VIEW__RESERVATIONS, null, msgs);
 			if (newReservations != null)
-				msgs = ((InternalEObject) newReservations).eInverseAdd(this,
-						EOPPOSITE_FEATURE_BASE - PresentationPackage.MAKE_RESERVATION_VIEW__RESERVATIONS, null, msgs);
+				msgs = ((InternalEObject)newReservations).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PresentationPackage.MAKE_RESERVATION_VIEW__RESERVATIONS, null, msgs);
 			msgs = basicSetReservations(newReservations, msgs);
-			if (msgs != null)
-				msgs.dispatch();
-		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					PresentationPackage.MAKE_RESERVATION_VIEW__RESERVATIONS, newReservations, newReservations));
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PresentationPackage.MAKE_RESERVATION_VIEW__RESERVATIONS, newReservations, newReservations));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public Rooms getRooms() {
 		if (rooms != null && rooms.eIsProxy()) {
-			InternalEObject oldRooms = (InternalEObject) rooms;
-			rooms = (Rooms) eResolveProxy(oldRooms);
+			InternalEObject oldRooms = (InternalEObject)rooms;
+			rooms = (Rooms)eResolveProxy(oldRooms);
 			if (rooms != oldRooms) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							PresentationPackage.MAKE_RESERVATION_VIEW__ROOMS, oldRooms, rooms));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PresentationPackage.MAKE_RESERVATION_VIEW__ROOMS, oldRooms, rooms));
 			}
 		}
 		return rooms;
@@ -156,7 +138,6 @@ public class MakeReservationViewImpl extends MinimalEObjectImpl.Container implem
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public Rooms basicGetRooms() {
@@ -165,15 +146,13 @@ public class MakeReservationViewImpl extends MinimalEObjectImpl.Container implem
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public void setRooms(Rooms newRooms) {
 		Rooms oldRooms = rooms;
 		rooms = newRooms;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PresentationPackage.MAKE_RESERVATION_VIEW__ROOMS,
-					oldRooms, rooms));
+			eNotify(new ENotificationImpl(this, Notification.SET, PresentationPackage.MAKE_RESERVATION_VIEW__ROOMS, oldRooms, rooms));
 	}
 
 	/**
@@ -257,99 +236,92 @@ public class MakeReservationViewImpl extends MinimalEObjectImpl.Container implem
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case PresentationPackage.MAKE_RESERVATION_VIEW__RESERVATIONS:
-			return basicSetReservations(null, msgs);
+			case PresentationPackage.MAKE_RESERVATION_VIEW__RESERVATIONS:
+				return basicSetReservations(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case PresentationPackage.MAKE_RESERVATION_VIEW__RESERVATIONS:
-			return getReservations();
-		case PresentationPackage.MAKE_RESERVATION_VIEW__ROOMS:
-			if (resolve)
-				return getRooms();
-			return basicGetRooms();
+			case PresentationPackage.MAKE_RESERVATION_VIEW__RESERVATIONS:
+				return getReservations();
+			case PresentationPackage.MAKE_RESERVATION_VIEW__ROOMS:
+				if (resolve) return getRooms();
+				return basicGetRooms();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case PresentationPackage.MAKE_RESERVATION_VIEW__RESERVATIONS:
-			setReservations((Reservations) newValue);
-			return;
-		case PresentationPackage.MAKE_RESERVATION_VIEW__ROOMS:
-			setRooms((Rooms) newValue);
-			return;
+			case PresentationPackage.MAKE_RESERVATION_VIEW__RESERVATIONS:
+				setReservations((Reservations)newValue);
+				return;
+			case PresentationPackage.MAKE_RESERVATION_VIEW__ROOMS:
+				setRooms((Rooms)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case PresentationPackage.MAKE_RESERVATION_VIEW__RESERVATIONS:
-			setReservations((Reservations) null);
-			return;
-		case PresentationPackage.MAKE_RESERVATION_VIEW__ROOMS:
-			setRooms((Rooms) null);
-			return;
+			case PresentationPackage.MAKE_RESERVATION_VIEW__RESERVATIONS:
+				setReservations((Reservations)null);
+				return;
+			case PresentationPackage.MAKE_RESERVATION_VIEW__ROOMS:
+				setRooms((Rooms)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case PresentationPackage.MAKE_RESERVATION_VIEW__RESERVATIONS:
-			return reservations != null;
-		case PresentationPackage.MAKE_RESERVATION_VIEW__ROOMS:
-			return rooms != null;
+			case PresentationPackage.MAKE_RESERVATION_VIEW__RESERVATIONS:
+				return reservations != null;
+			case PresentationPackage.MAKE_RESERVATION_VIEW__ROOMS:
+				return rooms != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-		case PresentationPackage.MAKE_RESERVATION_VIEW___RUN__FRAME:
-			run((Frame) arguments.get(0));
-			return null;
+			case PresentationPackage.MAKE_RESERVATION_VIEW___RUN__FRAME:
+				run((Frame)arguments.get(0));
+				return null;
 		}
 		return super.eInvoke(operationID, arguments);
 	}

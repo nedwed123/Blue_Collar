@@ -111,12 +111,39 @@ public class ReservationViewImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	public void run(Frame frame) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		System.out.println("Please input reservation number:\n");
+		Scanner in = new Scanner(System.in);
+		int input = in.nextInt();
+		Reservation res = reservations.getReservation(input);
+		if(res != null)
+		{
+			System.out.println("Reservation:");
+			
+			//TODO: Display customer details?
+			
+			EList<RoomBooking> roombookings = res.getRoombooking();
+			
+			int i = 0;
+			for (RoomBooking roomBooking : roombookings) {
+				System.out.println("-- Room " + i + " --------------");
+				//TODO: display room booking information
+				System.out.println("\t room info...");
+			}
+			
+			System.out.println("What do u want to do with the reservation?:"
+					+ "1: Check in all guests\n"
+					+ "2: Check out all guests\n"
+					+ "2: cancel\n"
+					+ "3: nothing\n");
+		}
+		else
+		{
+			System.out.println("Unable to find reservation");
+		}
+		
+		frame.goBack();
 	}
 
 	/**

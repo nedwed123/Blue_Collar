@@ -255,7 +255,7 @@ public interface DataAccessPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_BOOKINGS_REPOSITORY___GET_ALL__ROOMBOOKING = 3;
+	int ROOM_BOOKINGS_REPOSITORY___GET_ALL = 3;
 
 	/**
 	 * The number of operations of the '<em>Room Bookings Repository</em>' class.
@@ -580,14 +580,14 @@ public interface DataAccessPackage extends EPackage {
 	EOperation getRoomBookingsRepository__GetByReservationNr__int_RoomBooking();
 
 	/**
-	 * Returns the meta object for the '{@link SoftwareModel.DataAccess.RoomBookingsRepository#getAll(SoftwareModel.DomainEntities.RoomBooking) <em>Get All</em>}' operation.
+	 * Returns the meta object for the '{@link SoftwareModel.DataAccess.RoomBookingsRepository#getAll() <em>Get All</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Get All</em>' operation.
-	 * @see SoftwareModel.DataAccess.RoomBookingsRepository#getAll(SoftwareModel.DomainEntities.RoomBooking)
+	 * @see SoftwareModel.DataAccess.RoomBookingsRepository#getAll()
 	 * @generated
 	 */
-	EOperation getRoomBookingsRepository__GetAll__RoomBooking();
+	EOperation getRoomBookingsRepository__GetAll();
 
 	/**
 	 * Returns the meta object for class '{@link SoftwareModel.DataAccess.AuthorizationRepository <em>Authorization Repository</em>}'.
@@ -874,7 +874,7 @@ public interface DataAccessPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation ROOM_BOOKINGS_REPOSITORY___GET_ALL__ROOMBOOKING = eINSTANCE.getRoomBookingsRepository__GetAll__RoomBooking();
+		EOperation ROOM_BOOKINGS_REPOSITORY___GET_ALL = eINSTANCE.getRoomBookingsRepository__GetAll();
 
 		/**
 		 * The meta object literal for the '{@link SoftwareModel.DataAccess.impl.AuthorizationRepositoryImpl <em>Authorization Repository</em>}' class.

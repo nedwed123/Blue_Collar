@@ -137,7 +137,7 @@ public class RoomBookingsRepositoryImpl extends MinimalEObjectImpl.Container imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void getAll(RoomBooking _) {
+	public EList<RoomBooking> getAll() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -219,9 +219,8 @@ public class RoomBookingsRepositoryImpl extends MinimalEObjectImpl.Container imp
 			case DataAccessPackage.ROOM_BOOKINGS_REPOSITORY___GET_BY_RESERVATION_NR__INT_ROOMBOOKING:
 				getByReservationNr((Integer)arguments.get(0), (RoomBooking)arguments.get(1));
 				return null;
-			case DataAccessPackage.ROOM_BOOKINGS_REPOSITORY___GET_ALL__ROOMBOOKING:
-				getAll((RoomBooking)arguments.get(0));
-				return null;
+			case DataAccessPackage.ROOM_BOOKINGS_REPOSITORY___GET_ALL:
+				return getAll();
 		}
 		return super.eInvoke(operationID, arguments);
 	}

@@ -173,7 +173,10 @@
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_WdqXEJzwEeWJusbskP8Asw" type="_5lCx4JXcEeWtZbi4EnRFrQ"/>
       </ownedOperation>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_RpdvoJztEeWJusbskP8Asw" name="getAll">
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_6_PIgJzuEeWJusbskP8Asw" type="_5lCx4JXcEeWtZbi4EnRFrQ"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_6_PIgJzuEeWJusbskP8Asw" type="_5lCx4JXcEeWtZbi4EnRFrQ" direction="return">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ycoYwJ2zEeWKN50OvsQqBA"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ycsqMJ2zEeWKN50OvsQqBA" value="*"/>
+        </ownedParameter>
       </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_4OdqQJdtEeW9FdtnBhCZ1w" name="AuthorizationRepository">
@@ -201,6 +204,7 @@
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_60FGkJf6EeWmDIVFfg4USw" name="name">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_UoQpsJ22EeWKN50OvsQqBA" type="_uJFr8JXcEeWtZbi4EnRFrQ" direction="return"/>
       </ownedOperation>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_evVq4Jd1EeW_4PdgZcIXdQ" name="removeRoom">
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_fHrbgJf7EeWmDIVFfg4USw" name="room" type="_jC8d8JXcEeWtZbi4EnRFrQ"/>
@@ -328,9 +332,7 @@
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_INaCsJf8EeWmDIVFfg4USw" name="roomNumber">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
         </ownedParameter>
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_K6CBAJf8EeWmDIVFfg4USw" name="availability">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EEnumerator"/>
-        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_K6CBAJf8EeWmDIVFfg4USw" name="availability" type="_uXjB4JhREeWatpqnQATTNw"/>
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_ro8NkJzmEeWJusbskP8Asw" name="type">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         </ownedParameter>

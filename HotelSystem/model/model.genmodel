@@ -144,9 +144,7 @@
           <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="SoftwareModel.ecore#//DataAccess/RoomBookingsRepository/getByReservationNr/reservationNumber"/>
           <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="SoftwareModel.ecore#//DataAccess/RoomBookingsRepository/getByReservationNr/_"/>
         </genOperations>
-        <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="SoftwareModel.ecore#//DataAccess/RoomBookingsRepository/getAll">
-          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="SoftwareModel.ecore#//DataAccess/RoomBookingsRepository/getAll/_"/>
-        </genOperations>
+        <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="SoftwareModel.ecore#//DataAccess/RoomBookingsRepository/getAll"/>
       </genClasses>
       <genClasses xsi:type="genmodel:GenClass" ecoreClass="SoftwareModel.ecore#//DataAccess/AuthorizationRepository">
         <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"

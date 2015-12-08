@@ -125,6 +125,16 @@ public class RoomTypeImpl extends MinimalEObjectImpl.Container implements RoomTy
 	public RoomTypeImpl() {
 		super();
 	}
+	
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 */
+	public RoomTypeImpl(String name,EList<BedType> beds) {
+		super();
+		this.name = name;
+		this.beds = beds;
+	}
 
 	/**
 	 * <!-- begin-user-doc -->
