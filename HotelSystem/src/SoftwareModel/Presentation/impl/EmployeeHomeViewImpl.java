@@ -5,6 +5,7 @@ package SoftwareModel.Presentation.impl;
 import SoftwareModel.Presentation.EmployeeHomeView;
 import SoftwareModel.Presentation.Frame;
 import SoftwareModel.Presentation.PresentationPackage;
+
 import java.lang.reflect.InvocationTargetException;
 import java.util.Scanner;
 
@@ -46,29 +47,25 @@ public class EmployeeHomeViewImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 */
 	public void run(Frame frame) {
-		System.out.print("Welcome to Hotel Management System \n"
-				+ "Please select an option:\n"
-				+ "1.Reserve a Room \n"
-				+ "2.Check in/out \n"
-				+ "3.Room Management\n");
-		Scanner scan=new Scanner(System.in);
-		System.out.print("Option :");
-		int choice=scan.nextInt();
-		switch (choice){
-		case 1:
-			frame.changeView(new MakeReservationViewImpl());
-			break;
-		case 2:
-			frame.changeView(new RoomBookingViewImpl() );
-			break;
-		case 3:
-			frame.changeView(new LoginViewImpl());
-			break;
-		default:
-			frame.exit();
-			
-		}
-	}
+		frame.displayMenu("Welcome to Hotel Management System", 
+				new Frame.MenuItem[] {
+						new Frame.MenuItem(
+							"Reserve a room",
+							() -> frame.changeView(new MakeReservationViewImpl())
+						),
+						new Frame.MenuItem(
+								"Check in/out ",
+								() -> frame.changeView(new RoomBookingViewImpl())
+							),
+						new Frame.MenuItem(
+								"Room Management",
+								() -> frame.changeView(new LoginViewImpl())
+							),
+						new Frame.MenuItem(
+								"Exit",
+								() -> frame.exit()
+							),
+				});	}
 
 	/**
 	 * <!-- begin-user-doc -->
