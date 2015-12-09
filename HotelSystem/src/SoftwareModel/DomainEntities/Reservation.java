@@ -176,4 +176,12 @@ public interface Reservation extends EObject {
 	 */
 	void setPaymentdetails(PaymentDetails value);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	void cancel();
+
 } // Reservation

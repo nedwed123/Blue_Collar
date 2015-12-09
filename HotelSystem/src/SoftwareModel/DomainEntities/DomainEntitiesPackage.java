@@ -5,6 +5,7 @@ package SoftwareModel.DomainEntities;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -259,13 +260,22 @@ public interface DomainEntitiesPackage extends EPackage {
 	int RESERVATION_FEATURE_COUNT = 6;
 
 	/**
+	 * The operation id for the '<em>Cancel</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESERVATION___CANCEL = 0;
+
+	/**
 	 * The number of operations of the '<em>Reservation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RESERVATION_OPERATION_COUNT = 0;
+	int RESERVATION_OPERATION_COUNT = 1;
 
 	/**
 	 * The meta object id for the '{@link SoftwareModel.DomainEntities.impl.RoomBookingImpl <em>Room Booking</em>}' class.
@@ -359,13 +369,31 @@ public interface DomainEntitiesPackage extends EPackage {
 	int ROOM_BOOKING_FEATURE_COUNT = 8;
 
 	/**
+	 * The operation id for the '<em>Check In</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_BOOKING___CHECK_IN = 0;
+
+	/**
+	 * The operation id for the '<em>Check Out</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_BOOKING___CHECK_OUT = 1;
+
+	/**
 	 * The number of operations of the '<em>Room Booking</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_BOOKING_OPERATION_COUNT = 0;
+	int ROOM_BOOKING_OPERATION_COUNT = 2;
 
 	/**
 	 * The meta object id for the '{@link SoftwareModel.DomainEntities.impl.RoomResponsibleImpl <em>Room Responsible</em>}' class.
@@ -615,6 +643,52 @@ public interface DomainEntitiesPackage extends EPackage {
 	int SERVICE_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link SoftwareModel.DomainEntities.impl.CancelationPolicyImpl <em>Cancelation Policy</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see SoftwareModel.DomainEntities.impl.CancelationPolicyImpl
+	 * @see SoftwareModel.DomainEntities.impl.DomainEntitiesPackageImpl#getCancelationPolicy()
+	 * @generated
+	 */
+	int CANCELATION_POLICY = 8;
+
+	/**
+	 * The feature id for the '<em><b>Min Days Before Cancelation By Customer</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CANCELATION_POLICY__MIN_DAYS_BEFORE_CANCELATION_BY_CUSTOMER = 0;
+
+	/**
+	 * The number of structural features of the '<em>Cancelation Policy</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CANCELATION_POLICY_FEATURE_COUNT = 1;
+
+	/**
+	 * The operation id for the '<em>Can Be Cancelled</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CANCELATION_POLICY___CAN_BE_CANCELLED__BOOLEAN_RESERVATION = 0;
+
+	/**
+	 * The number of operations of the '<em>Cancelation Policy</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CANCELATION_POLICY_OPERATION_COUNT = 1;
+
+	/**
 	 * The meta object id for the '{@link SoftwareModel.DomainEntities.BedType <em>Bed Type</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -622,7 +696,7 @@ public interface DomainEntitiesPackage extends EPackage {
 	 * @see SoftwareModel.DomainEntities.impl.DomainEntitiesPackageImpl#getBedType()
 	 * @generated
 	 */
-	int BED_TYPE = 8;
+	int BED_TYPE = 9;
 
 	/**
 	 * The meta object id for the '{@link SoftwareModel.DomainEntities.Availability <em>Availability</em>}' enum.
@@ -632,7 +706,7 @@ public interface DomainEntitiesPackage extends EPackage {
 	 * @see SoftwareModel.DomainEntities.impl.DomainEntitiesPackageImpl#getAvailability()
 	 * @generated
 	 */
-	int AVAILABILITY = 9;
+	int AVAILABILITY = 10;
 
 
 	/**
@@ -820,6 +894,16 @@ public interface DomainEntitiesPackage extends EPackage {
 	EReference getReservation_Paymentdetails();
 
 	/**
+	 * Returns the meta object for the '{@link SoftwareModel.DomainEntities.Reservation#cancel() <em>Cancel</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Cancel</em>' operation.
+	 * @see SoftwareModel.DomainEntities.Reservation#cancel()
+	 * @generated
+	 */
+	EOperation getReservation__Cancel();
+
+	/**
 	 * Returns the meta object for class '{@link SoftwareModel.DomainEntities.RoomBooking <em>Room Booking</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -916,6 +1000,26 @@ public interface DomainEntitiesPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getRoomBooking_Room();
+
+	/**
+	 * Returns the meta object for the '{@link SoftwareModel.DomainEntities.RoomBooking#checkIn() <em>Check In</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Check In</em>' operation.
+	 * @see SoftwareModel.DomainEntities.RoomBooking#checkIn()
+	 * @generated
+	 */
+	EOperation getRoomBooking__CheckIn();
+
+	/**
+	 * Returns the meta object for the '{@link SoftwareModel.DomainEntities.RoomBooking#checkOut() <em>Check Out</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Check Out</em>' operation.
+	 * @see SoftwareModel.DomainEntities.RoomBooking#checkOut()
+	 * @generated
+	 */
+	EOperation getRoomBooking__CheckOut();
 
 	/**
 	 * Returns the meta object for class '{@link SoftwareModel.DomainEntities.RoomResponsible <em>Room Responsible</em>}'.
@@ -1123,6 +1227,37 @@ public interface DomainEntitiesPackage extends EPackage {
 	EAttribute getService_Price();
 
 	/**
+	 * Returns the meta object for class '{@link SoftwareModel.DomainEntities.CancelationPolicy <em>Cancelation Policy</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Cancelation Policy</em>'.
+	 * @see SoftwareModel.DomainEntities.CancelationPolicy
+	 * @generated
+	 */
+	EClass getCancelationPolicy();
+
+	/**
+	 * Returns the meta object for the attribute '{@link SoftwareModel.DomainEntities.CancelationPolicy#getMinDaysBeforeCancelationByCustomer <em>Min Days Before Cancelation By Customer</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Min Days Before Cancelation By Customer</em>'.
+	 * @see SoftwareModel.DomainEntities.CancelationPolicy#getMinDaysBeforeCancelationByCustomer()
+	 * @see #getCancelationPolicy()
+	 * @generated
+	 */
+	EAttribute getCancelationPolicy_MinDaysBeforeCancelationByCustomer();
+
+	/**
+	 * Returns the meta object for the '{@link SoftwareModel.DomainEntities.CancelationPolicy#canBeCancelled(boolean, SoftwareModel.DomainEntities.Reservation) <em>Can Be Cancelled</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Can Be Cancelled</em>' operation.
+	 * @see SoftwareModel.DomainEntities.CancelationPolicy#canBeCancelled(boolean, SoftwareModel.DomainEntities.Reservation)
+	 * @generated
+	 */
+	EOperation getCancelationPolicy__CanBeCancelled__boolean_Reservation();
+
+	/**
 	 * Returns the meta object for enum '{@link SoftwareModel.DomainEntities.BedType <em>Bed Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1308,6 +1443,14 @@ public interface DomainEntitiesPackage extends EPackage {
 		EReference RESERVATION__PAYMENTDETAILS = eINSTANCE.getReservation_Paymentdetails();
 
 		/**
+		 * The meta object literal for the '<em><b>Cancel</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation RESERVATION___CANCEL = eINSTANCE.getReservation__Cancel();
+
+		/**
 		 * The meta object literal for the '{@link SoftwareModel.DomainEntities.impl.RoomBookingImpl <em>Room Booking</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1380,6 +1523,22 @@ public interface DomainEntitiesPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ROOM_BOOKING__ROOM = eINSTANCE.getRoomBooking_Room();
+
+		/**
+		 * The meta object literal for the '<em><b>Check In</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ROOM_BOOKING___CHECK_IN = eINSTANCE.getRoomBooking__CheckIn();
+
+		/**
+		 * The meta object literal for the '<em><b>Check Out</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ROOM_BOOKING___CHECK_OUT = eINSTANCE.getRoomBooking__CheckOut();
 
 		/**
 		 * The meta object literal for the '{@link SoftwareModel.DomainEntities.impl.RoomResponsibleImpl <em>Room Responsible</em>}' class.
@@ -1540,6 +1699,32 @@ public interface DomainEntitiesPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute SERVICE__PRICE = eINSTANCE.getService_Price();
+
+		/**
+		 * The meta object literal for the '{@link SoftwareModel.DomainEntities.impl.CancelationPolicyImpl <em>Cancelation Policy</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see SoftwareModel.DomainEntities.impl.CancelationPolicyImpl
+		 * @see SoftwareModel.DomainEntities.impl.DomainEntitiesPackageImpl#getCancelationPolicy()
+		 * @generated
+		 */
+		EClass CANCELATION_POLICY = eINSTANCE.getCancelationPolicy();
+
+		/**
+		 * The meta object literal for the '<em><b>Min Days Before Cancelation By Customer</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CANCELATION_POLICY__MIN_DAYS_BEFORE_CANCELATION_BY_CUSTOMER = eINSTANCE.getCancelationPolicy_MinDaysBeforeCancelationByCustomer();
+
+		/**
+		 * The meta object literal for the '<em><b>Can Be Cancelled</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation CANCELATION_POLICY___CAN_BE_CANCELLED__BOOLEAN_RESERVATION = eINSTANCE.getCancelationPolicy__CanBeCancelled__boolean_Reservation();
 
 		/**
 		 * The meta object literal for the '{@link SoftwareModel.DomainEntities.BedType <em>Bed Type</em>}' enum.

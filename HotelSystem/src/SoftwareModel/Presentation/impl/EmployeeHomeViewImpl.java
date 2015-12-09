@@ -7,8 +7,6 @@ import SoftwareModel.Presentation.Frame;
 import SoftwareModel.Presentation.PresentationPackage;
 
 import java.lang.reflect.InvocationTargetException;
-import java.util.Scanner;
-
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
@@ -51,19 +49,39 @@ public class EmployeeHomeViewImpl extends MinimalEObjectImpl.Container implement
 				new Frame.MenuItem[] {
 						new Frame.MenuItem(
 							"Reserve a room",
-							() -> frame.changeView(new MakeReservationViewImpl())
+							new Runnable() {
+								@Override
+								public void run() {
+									frame.changeView(new MakeReservationViewImpl());
+								}
+							}
 						),
 						new Frame.MenuItem(
 								"Check in/out ",
-								() -> frame.changeView(new RoomBookingViewImpl())
+								new Runnable() {
+									@Override
+									public void run() {
+										frame.changeView(new RoomBookingViewImpl());
+									}
+								}
 							),
 						new Frame.MenuItem(
 								"Room Management",
-								() -> frame.changeView(new LoginViewImpl())
+								new Runnable() {
+									@Override
+									public void run() {
+										frame.changeView(new LoginViewImpl());
+									}
+								}
 							),
 						new Frame.MenuItem(
 								"Exit",
-								() -> frame.exit()
+								new Runnable() {
+									@Override
+									public void run() {
+										frame.exit();
+									}
+								}
 							),
 				});	}
 

@@ -7,6 +7,7 @@ import SoftwareModel.DomainEntities.PaymentDetails;
 import SoftwareModel.DomainEntities.Reservation;
 import SoftwareModel.DomainEntities.RoomBooking;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 import java.util.Date;
 
@@ -299,6 +300,17 @@ public class ReservationImpl extends MinimalEObjectImpl.Container implements Res
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public void cancel() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -403,6 +415,21 @@ public class ReservationImpl extends MinimalEObjectImpl.Container implements Res
 				return paymentdetails != null;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case DomainEntitiesPackage.RESERVATION___CANCEL:
+				cancel();
+				return null;
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

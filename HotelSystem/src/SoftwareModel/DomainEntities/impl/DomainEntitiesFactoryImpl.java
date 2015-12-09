@@ -65,6 +65,7 @@ public class DomainEntitiesFactoryImpl extends EFactoryImpl implements DomainEnt
 			case DomainEntitiesPackage.ROOM: return createRoom();
 			case DomainEntitiesPackage.BILL: return createBill();
 			case DomainEntitiesPackage.SERVICE: return createService();
+			case DomainEntitiesPackage.CANCELATION_POLICY: return createCancelationPolicy();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -182,6 +183,16 @@ public class DomainEntitiesFactoryImpl extends EFactoryImpl implements DomainEnt
 	public Service createService() {
 		ServiceImpl service = new ServiceImpl();
 		return service;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CancelationPolicy createCancelationPolicy() {
+		CancelationPolicyImpl cancelationPolicy = new CancelationPolicyImpl();
+		return cancelationPolicy;
 	}
 
 	/**

@@ -94,6 +94,15 @@ public interface DomainEntitiesFactory extends EFactory {
 	Service createService();
 
 	/**
+	 * Returns a new object of class '<em>Cancelation Policy</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Cancelation Policy</em>'.
+	 * @generated
+	 */
+	CancelationPolicy createCancelationPolicy();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

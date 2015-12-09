@@ -8,10 +8,12 @@ import SoftwareModel.DomainEntities.RoomBooking;
 import SoftwareModel.DomainEntities.RoomResponsible;
 import SoftwareModel.DomainEntities.RoomType;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.Date;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
@@ -412,6 +414,28 @@ public class RoomBookingImpl extends MinimalEObjectImpl.Container implements Roo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public void checkIn() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void checkOut() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -536,6 +560,24 @@ public class RoomBookingImpl extends MinimalEObjectImpl.Container implements Roo
 				return room != null;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case DomainEntitiesPackage.ROOM_BOOKING___CHECK_IN:
+				checkIn();
+				return null;
+			case DomainEntitiesPackage.ROOM_BOOKING___CHECK_OUT:
+				checkOut();
+				return null;
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

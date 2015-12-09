@@ -129,7 +129,6 @@ public class RoomBookingsRepositoryImpl extends MinimalEObjectImpl.Container imp
 	public RoomBooking getByReservationNr(int reservationNumber) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
-		
 		throw new UnsupportedOperationException();
 	}
 
@@ -152,8 +151,6 @@ public class RoomBookingsRepositoryImpl extends MinimalEObjectImpl.Container imp
 	public RoomBooking getByRoomNr(int roomNr) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
-		EList<RoomBooking> bookings = databasecontext.getRoomBookings();
-		
 		throw new UnsupportedOperationException();
 	}
 

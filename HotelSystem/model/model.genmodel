@@ -67,6 +67,7 @@
         <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute SoftwareModel.ecore#//DomainEntities/Reservation/discountCode"/>
         <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
             propertySortChoices="true" ecoreFeature="ecore:EReference SoftwareModel.ecore#//DomainEntities/Reservation/paymentdetails"/>
+        <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="SoftwareModel.ecore#//DomainEntities/Reservation/cancel"/>
       </genClasses>
       <genClasses xsi:type="genmodel:GenClass" ecoreClass="SoftwareModel.ecore#//DomainEntities/RoomBooking">
         <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute SoftwareModel.ecore#//DomainEntities/RoomBooking/IsCheckedIn"/>
@@ -80,6 +81,8 @@
             propertySortChoices="true" ecoreFeature="ecore:EReference SoftwareModel.ecore#//DomainEntities/RoomBooking/roomtype"/>
         <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
             propertySortChoices="true" ecoreFeature="ecore:EReference SoftwareModel.ecore#//DomainEntities/RoomBooking/room"/>
+        <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="SoftwareModel.ecore#//DomainEntities/RoomBooking/checkIn"/>
+        <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="SoftwareModel.ecore#//DomainEntities/RoomBooking/checkOut"/>
       </genClasses>
       <genClasses xsi:type="genmodel:GenClass" ecoreClass="SoftwareModel.ecore#//DomainEntities/RoomResponsible">
         <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute SoftwareModel.ecore#//DomainEntities/RoomResponsible/firstName"/>
@@ -103,6 +106,13 @@
         <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute SoftwareModel.ecore#//DomainEntities/Service/serviceDate"/>
         <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute SoftwareModel.ecore#//DomainEntities/Service/description"/>
         <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute SoftwareModel.ecore#//DomainEntities/Service/price"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="SoftwareModel.ecore#//DomainEntities/CancelationPolicy">
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute SoftwareModel.ecore#//DomainEntities/CancelationPolicy/MinDaysBeforeCancelationByCustomer"/>
+        <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="SoftwareModel.ecore#//DomainEntities/CancelationPolicy/canBeCancelled">
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="SoftwareModel.ecore#//DomainEntities/CancelationPolicy/canBeCancelled/isCustomer"/>
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="SoftwareModel.ecore#//DomainEntities/CancelationPolicy/canBeCancelled/reservation"/>
+        </genOperations>
       </genClasses>
     </nestedGenPackages>
     <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="DataAccess" basePackage="SoftwareModel"

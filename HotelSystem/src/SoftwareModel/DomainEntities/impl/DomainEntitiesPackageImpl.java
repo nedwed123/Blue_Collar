@@ -13,6 +13,7 @@ import SoftwareModel.DataAccess.impl.DataAccessPackageImpl;
 import SoftwareModel.DomainEntities.Availability;
 import SoftwareModel.DomainEntities.BedType;
 import SoftwareModel.DomainEntities.Bill;
+import SoftwareModel.DomainEntities.CancelationPolicy;
 import SoftwareModel.DomainEntities.DomainEntitiesFactory;
 import SoftwareModel.DomainEntities.DomainEntitiesPackage;
 import SoftwareModel.DomainEntities.PaymentDetails;
@@ -30,6 +31,7 @@ import SoftwareModel.Presentation.impl.PresentationPackageImpl;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -99,6 +101,13 @@ public class DomainEntitiesPackageImpl extends EPackageImpl implements DomainEnt
 	 * @generated
 	 */
 	private EClass serviceEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass cancelationPolicyEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -347,6 +356,15 @@ public class DomainEntitiesPackageImpl extends EPackageImpl implements DomainEnt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getReservation__Cancel() {
+		return reservationEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getRoomBooking() {
 		return roomBookingEClass;
 	}
@@ -421,6 +439,24 @@ public class DomainEntitiesPackageImpl extends EPackageImpl implements DomainEnt
 	 */
 	public EReference getRoomBooking_Room() {
 		return (EReference)roomBookingEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getRoomBooking__CheckIn() {
+		return roomBookingEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getRoomBooking__CheckOut() {
+		return roomBookingEClass.getEOperations().get(1);
 	}
 
 	/**
@@ -599,6 +635,33 @@ public class DomainEntitiesPackageImpl extends EPackageImpl implements DomainEnt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getCancelationPolicy() {
+		return cancelationPolicyEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getCancelationPolicy_MinDaysBeforeCancelationByCustomer() {
+		return (EAttribute)cancelationPolicyEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getCancelationPolicy__CanBeCancelled__boolean_Reservation() {
+		return cancelationPolicyEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getBedType() {
 		return bedTypeEEnum;
 	}
@@ -659,6 +722,7 @@ public class DomainEntitiesPackageImpl extends EPackageImpl implements DomainEnt
 		createEAttribute(reservationEClass, RESERVATION__RESERVATION_ID);
 		createEAttribute(reservationEClass, RESERVATION__DISCOUNT_CODE);
 		createEReference(reservationEClass, RESERVATION__PAYMENTDETAILS);
+		createEOperation(reservationEClass, RESERVATION___CANCEL);
 
 		roomBookingEClass = createEClass(ROOM_BOOKING);
 		createEAttribute(roomBookingEClass, ROOM_BOOKING__IS_CHECKED_IN);
@@ -669,6 +733,8 @@ public class DomainEntitiesPackageImpl extends EPackageImpl implements DomainEnt
 		createEAttribute(roomBookingEClass, ROOM_BOOKING__CHECK_IN_DATE);
 		createEReference(roomBookingEClass, ROOM_BOOKING__ROOMTYPE);
 		createEReference(roomBookingEClass, ROOM_BOOKING__ROOM);
+		createEOperation(roomBookingEClass, ROOM_BOOKING___CHECK_IN);
+		createEOperation(roomBookingEClass, ROOM_BOOKING___CHECK_OUT);
 
 		roomResponsibleEClass = createEClass(ROOM_RESPONSIBLE);
 		createEAttribute(roomResponsibleEClass, ROOM_RESPONSIBLE__FIRST_NAME);
@@ -692,6 +758,10 @@ public class DomainEntitiesPackageImpl extends EPackageImpl implements DomainEnt
 		createEAttribute(serviceEClass, SERVICE__SERVICE_DATE);
 		createEAttribute(serviceEClass, SERVICE__DESCRIPTION);
 		createEAttribute(serviceEClass, SERVICE__PRICE);
+
+		cancelationPolicyEClass = createEClass(CANCELATION_POLICY);
+		createEAttribute(cancelationPolicyEClass, CANCELATION_POLICY__MIN_DAYS_BEFORE_CANCELATION_BY_CUSTOMER);
+		createEOperation(cancelationPolicyEClass, CANCELATION_POLICY___CAN_BE_CANCELLED__BOOLEAN_RESERVATION);
 
 		// Create enums
 		bedTypeEEnum = createEEnum(BED_TYPE);
@@ -751,6 +821,8 @@ public class DomainEntitiesPackageImpl extends EPackageImpl implements DomainEnt
 		initEAttribute(getReservation_DiscountCode(), theTypesPackage.getString(), "discountCode", null, 1, 1, Reservation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getReservation_Paymentdetails(), this.getPaymentDetails(), null, "paymentdetails", null, 1, 1, Reservation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
+		initEOperation(getReservation__Cancel(), null, "cancel", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
 		initEClass(roomBookingEClass, RoomBooking.class, "RoomBooking", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getRoomBooking_IsCheckedIn(), theTypesPackage.getBoolean(), "IsCheckedIn", null, 1, 1, RoomBooking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getRoomBooking_Roomresponsible(), this.getRoomResponsible(), null, "roomresponsible", null, 1, 1, RoomBooking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -760,6 +832,10 @@ public class DomainEntitiesPackageImpl extends EPackageImpl implements DomainEnt
 		initEAttribute(getRoomBooking_CheckInDate(), ecorePackage.getEDate(), "checkInDate", null, 1, 1, RoomBooking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getRoomBooking_Roomtype(), this.getRoomType(), null, "roomtype", null, 1, 1, RoomBooking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getRoomBooking_Room(), this.getRoom(), null, "room", null, 1, 1, RoomBooking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+		initEOperation(getRoomBooking__CheckIn(), null, "checkIn", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		initEOperation(getRoomBooking__CheckOut(), null, "checkOut", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(roomResponsibleEClass, RoomResponsible.class, "RoomResponsible", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getRoomResponsible_FirstName(), theTypesPackage.getString(), "firstName", null, 1, 1, RoomResponsible.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -783,6 +859,13 @@ public class DomainEntitiesPackageImpl extends EPackageImpl implements DomainEnt
 		initEAttribute(getService_ServiceDate(), ecorePackage.getEDate(), "serviceDate", null, 1, 1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getService_Description(), theTypesPackage.getString(), "description", null, 1, 1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getService_Price(), ecorePackage.getEInt(), "price", null, 1, 1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+		initEClass(cancelationPolicyEClass, CancelationPolicy.class, "CancelationPolicy", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getCancelationPolicy_MinDaysBeforeCancelationByCustomer(), ecorePackage.getEInt(), "MinDaysBeforeCancelationByCustomer", null, 1, 1, CancelationPolicy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+		EOperation op = initEOperation(getCancelationPolicy__CanBeCancelled__boolean_Reservation(), theTypesPackage.getBoolean(), "canBeCancelled", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theTypesPackage.getBoolean(), "isCustomer", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, this.getReservation(), "reservation", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(bedTypeEEnum, BedType.class, "BedType");

@@ -238,4 +238,20 @@ public interface RoomBooking extends EObject {
 	 */
 	void setRoom(Room value);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	void checkIn();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	void checkOut();
+
 } // RoomBooking

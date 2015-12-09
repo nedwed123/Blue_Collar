@@ -30,6 +30,7 @@
           lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Reservation">
+      <eOperations name="cancel" ordered="false" lowerBound="1"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="roombooking" ordered="false"
           lowerBound="1" upperBound="-1" eType="#//DomainEntities/RoomBooking"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="preliminaryCheckIn" ordered="false"
@@ -44,6 +45,8 @@
           lowerBound="1" eType="#//DomainEntities/PaymentDetails"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="RoomBooking">
+      <eOperations name="checkIn" ordered="false" lowerBound="1"/>
+      <eOperations name="checkOut" ordered="false" lowerBound="1"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="IsCheckedIn" ordered="false"
           lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//Boolean"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="roomresponsible" ordered="false"
@@ -103,6 +106,14 @@
           lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="price" ordered="false"
           lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="CancelationPolicy">
+      <eOperations name="canBeCancelled" ordered="false" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//Boolean">
+        <eParameters name="isCustomer" ordered="false" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//Boolean"/>
+        <eParameters name="reservation" ordered="false" lowerBound="1" eType="#//DomainEntities/Reservation"/>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="MinDaysBeforeCancelationByCustomer"
+          ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     </eClassifiers>
   </eSubpackages>
   <eSubpackages name="DataAccess" nsURI="http:///SoftwareModel/DataAccess.ecore" nsPrefix="SoftwareModel.DataAccess">
