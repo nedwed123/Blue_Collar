@@ -44,19 +44,21 @@ public class RoomsImpl extends MinimalEObjectImpl.Container implements Rooms {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getAvailibleroomfinder()
-	 * @generated
+	
 	 * @ordered
 	 */
-	protected AvailibleRoomFinder availibleroomfinder;
+	protected AvailibleRoomFinder availibleroomfinder = new AvailibleRoomFinderImpl();
 	/**
 	 * The cached value of the '{@link #getRoombookings() <em>Roombookings</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getRoombookings()
-	 * @generated
+
 	 * @ordered
 	 */
-	protected RoomBookings roombookings;
+	protected RoomBookings roombookings = new RoomBookingsImpl();
+
+
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -185,15 +187,12 @@ public class RoomsImpl extends MinimalEObjectImpl.Container implements Rooms {
 		throw new UnsupportedOperationException();
 	}
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public RoomBooking getBooking(int roomNr) {
+		
+		return roombookings.findByRoomNr(roomNr);
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		//throw new UnsupportedOperationException();
 	}
 
 	/**

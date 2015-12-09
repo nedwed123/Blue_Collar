@@ -7,7 +7,7 @@ import SoftwareModel.BusinessLogic.BusinessLogicPackage;
 import SoftwareModel.BusinessLogic.RoomBookings;
 
 import SoftwareModel.DataAccess.RoomBookingsRepository;
-
+import SoftwareModel.DataAccess.impl.RoomBookingsRepositoryImpl;
 import SoftwareModel.DomainEntities.RoomBooking;
 
 import java.lang.reflect.InvocationTargetException;
@@ -43,20 +43,21 @@ public class RoomBookingsImpl extends MinimalEObjectImpl.Container implements Ro
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getRoombookingsrepository()
-	 * @generated
+	
 	 * @ordered
 	 */
-	protected RoomBookingsRepository roombookingsrepository;
+	protected RoomBookingsRepository roombookingsrepository = new RoomBookingsRepositoryImpl();
 
 	/**
 	 * The cached value of the '{@link #getAvailibleroomfinder() <em>Availibleroomfinder</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getAvailibleroomfinder()
-	 * @generated
+	
 	 * @ordered
 	 */
-	protected AvailibleRoomFinder availibleroomfinder;
+	protected AvailibleRoomFinder availibleroomfinder = new AvailibleRoomFinderImpl();
+
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -180,15 +181,11 @@ public class RoomBookingsImpl extends MinimalEObjectImpl.Container implements Ro
 		throw new UnsupportedOperationException();
 	}
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public RoomBooking findByRoomNr(int roomNr) {
+		return roombookingsrepository.getByRoomNr(roomNr);//roombookingsrepository.ge;
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		//throw new UnsupportedOperationException();
 	}
 
 	/**
