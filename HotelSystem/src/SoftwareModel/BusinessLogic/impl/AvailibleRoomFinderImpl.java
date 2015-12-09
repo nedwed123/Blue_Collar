@@ -9,16 +9,19 @@ import SoftwareModel.DataAccess.RoomBookingsRepository;
 import SoftwareModel.DataAccess.RoomRepository;
 import SoftwareModel.DataAccess.impl.RoomBookingsRepositoryImpl;
 import SoftwareModel.DataAccess.impl.RoomRepositoryImpl;
+import SoftwareModel.DomainEntities.Room;
 import SoftwareModel.DomainEntities.RoomBooking;
 import SoftwareModel.DomainEntities.RoomType;
 
 import java.lang.reflect.InvocationTargetException;
 
 import java.util.Date;
+import java.util.Iterator;
 
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
@@ -178,7 +181,35 @@ public class AvailibleRoomFinderImpl extends MinimalEObjectImpl.Container implem
 	public EList<RoomType> availableRoomTypes(int adults, int children, Date startDate, Date endDate) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		
+		EList<RoomBooking> roomBookings = roombookingsrepository.getAll();
+		EList<Room> rooms = roomrepository.getRooms();
+		EList<RoomBooking> collidingRoomBookings = new BasicEList<RoomBooking>();
+		EList<RoomType> roomTypes = new BasicEList<RoomType>();
+
+		for (int i = 0; i < roomBookings.size(); i++) {
+			if (!(endDate.before(roomBookings.get(i).getCheckInDate())
+					|| startDate.after(roomBookings.get(i).getCheckOutDate()))) {
+				collidingRoomBookings.add(roomBookings.get(i));
+			}
+		}
+		
+		for(int i = 0; i < rooms.size(); i++)
+			roomTypes.add(rooms.get(i).getRoomtype());
+		
+		
+		
+		for (int i = 0; i < collidingRoomBookings.size(); i++){
+			for (Iterator<RoomType> iterator = roomTypes.iterator(); iterator.hasNext();) {
+			    RoomType roomType = iterator.next();
+			    if (roomType.equals(collidingRoomBookings.get(i).getRoomtype())) {
+			        // Remove the current element from the iterator and the list.
+			        iterator.remove();
+			    }
+			}
+		}
+		
+		return roomTypes;
 	}
 
 	/**
