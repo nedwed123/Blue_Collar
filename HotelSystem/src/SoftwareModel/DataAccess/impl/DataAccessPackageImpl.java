@@ -288,7 +288,7 @@ public class DataAccessPackageImpl extends EPackageImpl implements DataAccessPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getRoomBookingsRepository__GetByReservationNr__int_RoomBooking() {
+	public EOperation getRoomBookingsRepository__GetByReservationNr__int() {
 		return roomBookingsRepositoryEClass.getEOperations().get(2);
 	}
 
@@ -299,6 +299,15 @@ public class DataAccessPackageImpl extends EPackageImpl implements DataAccessPac
 	 */
 	public EOperation getRoomBookingsRepository__GetAll() {
 		return roomBookingsRepositoryEClass.getEOperations().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getRoomBookingsRepository__GetByRoomNr__int() {
+		return roomBookingsRepositoryEClass.getEOperations().get(4);
 	}
 
 	/**
@@ -463,8 +472,9 @@ public class DataAccessPackageImpl extends EPackageImpl implements DataAccessPac
 		createEReference(roomBookingsRepositoryEClass, ROOM_BOOKINGS_REPOSITORY__DATABASECONTEXT);
 		createEOperation(roomBookingsRepositoryEClass, ROOM_BOOKINGS_REPOSITORY___UPDATE__ROOMBOOKING);
 		createEOperation(roomBookingsRepositoryEClass, ROOM_BOOKINGS_REPOSITORY___GET_BY_ROOM_RESPONSIBLE__STRING);
-		createEOperation(roomBookingsRepositoryEClass, ROOM_BOOKINGS_REPOSITORY___GET_BY_RESERVATION_NR__INT_ROOMBOOKING);
+		createEOperation(roomBookingsRepositoryEClass, ROOM_BOOKINGS_REPOSITORY___GET_BY_RESERVATION_NR__INT);
 		createEOperation(roomBookingsRepositoryEClass, ROOM_BOOKINGS_REPOSITORY___GET_ALL);
+		createEOperation(roomBookingsRepositoryEClass, ROOM_BOOKINGS_REPOSITORY___GET_BY_ROOM_NR__INT);
 
 		authorizationRepositoryEClass = createEClass(AUTHORIZATION_REPOSITORY);
 		createEReference(authorizationRepositoryEClass, AUTHORIZATION_REPOSITORY__DATABASECONTEXT);
@@ -546,11 +556,13 @@ public class DataAccessPackageImpl extends EPackageImpl implements DataAccessPac
 		op = initEOperation(getRoomBookingsRepository__GetByRoomResponsible__String(), theDomainEntitiesPackage.getRoomBooking(), "getByRoomResponsible", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, theTypesPackage.getString(), "name", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		op = initEOperation(getRoomBookingsRepository__GetByReservationNr__int_RoomBooking(), null, "getByReservationNr", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		op = initEOperation(getRoomBookingsRepository__GetByReservationNr__int(), theDomainEntitiesPackage.getRoomBooking(), "getByReservationNr", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "reservationNumber", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, theDomainEntitiesPackage.getRoomBooking(), "_", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEOperation(getRoomBookingsRepository__GetAll(), theDomainEntitiesPackage.getRoomBooking(), "getAll", 0, -1, IS_UNIQUE, !IS_ORDERED);
+
+		op = initEOperation(getRoomBookingsRepository__GetByRoomNr__int(), theDomainEntitiesPackage.getRoomBooking(), "getByRoomNr", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theTypesPackage.getInteger(), "roomNr", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(authorizationRepositoryEClass, AuthorizationRepository.class, "AuthorizationRepository", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getAuthorizationRepository_Databasecontext(), this.getDatabaseContext(), null, "databasecontext", null, 1, 1, AuthorizationRepository.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);

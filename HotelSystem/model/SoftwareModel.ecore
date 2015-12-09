@@ -139,11 +139,13 @@
       <eOperations name="getByRoomResponsible" ordered="false" lowerBound="1" eType="#//DomainEntities/RoomBooking">
         <eParameters name="name" ordered="false" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
       </eOperations>
-      <eOperations name="getByReservationNr" ordered="false" lowerBound="1">
+      <eOperations name="getByReservationNr" ordered="false" lowerBound="1" eType="#//DomainEntities/RoomBooking">
         <eParameters name="reservationNumber" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-        <eParameters name="_" ordered="false" lowerBound="1" eType="#//DomainEntities/RoomBooking"/>
       </eOperations>
       <eOperations name="getAll" ordered="false" upperBound="-1" eType="#//DomainEntities/RoomBooking"/>
+      <eOperations name="getByRoomNr" ordered="false" lowerBound="1" eType="#//DomainEntities/RoomBooking">
+        <eParameters name="roomNr" ordered="false" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//Integer"/>
+      </eOperations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="databasecontext" ordered="false"
           lowerBound="1" eType="#//DataAccess/DatabaseContext"/>
     </eClassifiers>

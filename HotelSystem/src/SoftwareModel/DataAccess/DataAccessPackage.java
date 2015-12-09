@@ -246,7 +246,7 @@ public interface DataAccessPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_BOOKINGS_REPOSITORY___GET_BY_RESERVATION_NR__INT_ROOMBOOKING = 2;
+	int ROOM_BOOKINGS_REPOSITORY___GET_BY_RESERVATION_NR__INT = 2;
 
 	/**
 	 * The operation id for the '<em>Get All</em>' operation.
@@ -258,13 +258,22 @@ public interface DataAccessPackage extends EPackage {
 	int ROOM_BOOKINGS_REPOSITORY___GET_ALL = 3;
 
 	/**
+	 * The operation id for the '<em>Get By Room Nr</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_BOOKINGS_REPOSITORY___GET_BY_ROOM_NR__INT = 4;
+
+	/**
 	 * The number of operations of the '<em>Room Bookings Repository</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_BOOKINGS_REPOSITORY_OPERATION_COUNT = 4;
+	int ROOM_BOOKINGS_REPOSITORY_OPERATION_COUNT = 5;
 
 	/**
 	 * The meta object id for the '{@link SoftwareModel.DataAccess.impl.AuthorizationRepositoryImpl <em>Authorization Repository</em>}' class.
@@ -579,14 +588,14 @@ public interface DataAccessPackage extends EPackage {
 	EOperation getRoomBookingsRepository__GetByRoomResponsible__String();
 
 	/**
-	 * Returns the meta object for the '{@link SoftwareModel.DataAccess.RoomBookingsRepository#getByReservationNr(int, SoftwareModel.DomainEntities.RoomBooking) <em>Get By Reservation Nr</em>}' operation.
+	 * Returns the meta object for the '{@link SoftwareModel.DataAccess.RoomBookingsRepository#getByReservationNr(int) <em>Get By Reservation Nr</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Get By Reservation Nr</em>' operation.
-	 * @see SoftwareModel.DataAccess.RoomBookingsRepository#getByReservationNr(int, SoftwareModel.DomainEntities.RoomBooking)
+	 * @see SoftwareModel.DataAccess.RoomBookingsRepository#getByReservationNr(int)
 	 * @generated
 	 */
-	EOperation getRoomBookingsRepository__GetByReservationNr__int_RoomBooking();
+	EOperation getRoomBookingsRepository__GetByReservationNr__int();
 
 	/**
 	 * Returns the meta object for the '{@link SoftwareModel.DataAccess.RoomBookingsRepository#getAll() <em>Get All</em>}' operation.
@@ -597,6 +606,16 @@ public interface DataAccessPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getRoomBookingsRepository__GetAll();
+
+	/**
+	 * Returns the meta object for the '{@link SoftwareModel.DataAccess.RoomBookingsRepository#getByRoomNr(int) <em>Get By Room Nr</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get By Room Nr</em>' operation.
+	 * @see SoftwareModel.DataAccess.RoomBookingsRepository#getByRoomNr(int)
+	 * @generated
+	 */
+	EOperation getRoomBookingsRepository__GetByRoomNr__int();
 
 	/**
 	 * Returns the meta object for class '{@link SoftwareModel.DataAccess.AuthorizationRepository <em>Authorization Repository</em>}'.
@@ -885,7 +904,7 @@ public interface DataAccessPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation ROOM_BOOKINGS_REPOSITORY___GET_BY_RESERVATION_NR__INT_ROOMBOOKING = eINSTANCE.getRoomBookingsRepository__GetByReservationNr__int_RoomBooking();
+		EOperation ROOM_BOOKINGS_REPOSITORY___GET_BY_RESERVATION_NR__INT = eINSTANCE.getRoomBookingsRepository__GetByReservationNr__int();
 
 		/**
 		 * The meta object literal for the '<em><b>Get All</b></em>' operation.
@@ -894,6 +913,14 @@ public interface DataAccessPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation ROOM_BOOKINGS_REPOSITORY___GET_ALL = eINSTANCE.getRoomBookingsRepository__GetAll();
+
+		/**
+		 * The meta object literal for the '<em><b>Get By Room Nr</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ROOM_BOOKINGS_REPOSITORY___GET_BY_ROOM_NR__INT = eINSTANCE.getRoomBookingsRepository__GetByRoomNr__int();
 
 		/**
 		 * The meta object literal for the '{@link SoftwareModel.DataAccess.impl.AuthorizationRepositoryImpl <em>Authorization Repository</em>}' class.

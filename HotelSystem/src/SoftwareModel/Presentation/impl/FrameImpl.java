@@ -5,13 +5,8 @@ package SoftwareModel.Presentation.impl;
 import SoftwareModel.Presentation.Frame;
 import SoftwareModel.Presentation.IView;
 import SoftwareModel.Presentation.PresentationPackage;
-
-import java.awt.Desktop.Action;
 import java.lang.reflect.InvocationTargetException;
-import java.util.List;
 import java.util.Scanner;
-import java.util.function.Function;
-
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.EList;

@@ -126,9 +126,10 @@ public class RoomBookingsRepositoryImpl extends MinimalEObjectImpl.Container imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void getByReservationNr(int reservationNumber, RoomBooking _) {
+	public RoomBooking getByReservationNr(int reservationNumber) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
+		
 		throw new UnsupportedOperationException();
 	}
 
@@ -140,6 +141,19 @@ public class RoomBookingsRepositoryImpl extends MinimalEObjectImpl.Container imp
 	public EList<RoomBooking> getAll() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RoomBooking getByRoomNr(int roomNr) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		EList<RoomBooking> bookings = databasecontext.getRoomBookings();
+		
 		throw new UnsupportedOperationException();
 	}
 
@@ -216,11 +230,12 @@ public class RoomBookingsRepositoryImpl extends MinimalEObjectImpl.Container imp
 				return null;
 			case DataAccessPackage.ROOM_BOOKINGS_REPOSITORY___GET_BY_ROOM_RESPONSIBLE__STRING:
 				return getByRoomResponsible((String)arguments.get(0));
-			case DataAccessPackage.ROOM_BOOKINGS_REPOSITORY___GET_BY_RESERVATION_NR__INT_ROOMBOOKING:
-				getByReservationNr((Integer)arguments.get(0), (RoomBooking)arguments.get(1));
-				return null;
+			case DataAccessPackage.ROOM_BOOKINGS_REPOSITORY___GET_BY_RESERVATION_NR__INT:
+				return getByReservationNr((Integer)arguments.get(0));
 			case DataAccessPackage.ROOM_BOOKINGS_REPOSITORY___GET_ALL:
 				return getAll();
+			case DataAccessPackage.ROOM_BOOKINGS_REPOSITORY___GET_BY_ROOM_NR__INT:
+				return getByRoomNr((Integer)arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

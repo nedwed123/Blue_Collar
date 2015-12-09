@@ -68,10 +68,10 @@ public interface RoomBookingsRepository extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model reservationNumberRequired="true" reservationNumberOrdered="false" _Required="true" _Ordered="false"
+	 * @model required="true" ordered="false" reservationNumberRequired="true" reservationNumberOrdered="false"
 	 * @generated
 	 */
-	void getByReservationNr(int reservationNumber, RoomBooking _);
+	RoomBooking getByReservationNr(int reservationNumber);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -80,5 +80,13 @@ public interface RoomBookingsRepository extends EObject {
 	 * @generated
 	 */
 	EList<RoomBooking> getAll();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" ordered="false" roomNrDataType="org.eclipse.uml2.types.Integer" roomNrRequired="true" roomNrOrdered="false"
+	 * @generated
+	 */
+	RoomBooking getByRoomNr(int roomNr);
 
 } // RoomBookingsRepository

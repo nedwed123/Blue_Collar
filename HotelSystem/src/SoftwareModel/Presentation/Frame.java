@@ -2,8 +2,6 @@
  */
 package SoftwareModel.Presentation;
 
-import java.util.Scanner;
-
 import org.eclipse.emf.ecore.EObject;
 
 
