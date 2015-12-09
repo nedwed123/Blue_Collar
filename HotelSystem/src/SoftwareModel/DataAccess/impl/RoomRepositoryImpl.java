@@ -189,6 +189,17 @@ public class RoomRepositoryImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public void addRoomType(RoomType roomType) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -271,6 +282,9 @@ public class RoomRepositoryImpl extends MinimalEObjectImpl.Container implements 
 				return null;
 			case DataAccessPackage.ROOM_REPOSITORY___GET_ROOMS:
 				return getRooms();
+			case DataAccessPackage.ROOM_REPOSITORY___ADD_ROOM_TYPE__ROOMTYPE:
+				addRoomType((RoomType)arguments.get(0));
+				return null;
 		}
 		return super.eInvoke(operationID, arguments);
 	}

@@ -1205,6 +1205,9 @@
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ggxml5dlEeW9FdtnBhCZ1w"/>
           </children>
           <children xmi:type="notation:BasicCompartment" xmi:id="_ggxmmJdlEeW9FdtnBhCZ1w" type="7012">
+            <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_GSsqYJ5bEeWx058QcmDTuA" source="PapyrusCSSForceValue">
+              <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_GSsqYZ5bEeWx058QcmDTuA" key="collapsed" value="true"/>
+            </eAnnotations>
             <children xmi:type="notation:Shape" xmi:id="_UCH6QJd1EeW_4PdgZcIXdQ" type="3013">
               <element xmi:type="uml:Operation" href="SoftwareModel.uml#_UAKLYJd1EeW_4PdgZcIXdQ"/>
               <layoutConstraint xmi:type="notation:Location" xmi:id="_UCH6QZd1EeW_4PdgZcIXdQ"/>
@@ -1232,6 +1235,10 @@
             <children xmi:type="notation:Shape" xmi:id="_YPbakJhZEeWatpqnQATTNw" type="3013">
               <element xmi:type="uml:Operation" href="SoftwareModel.uml#_YOwFIJhZEeWatpqnQATTNw"/>
               <layoutConstraint xmi:type="notation:Location" xmi:id="_YPbakZhZEeWatpqnQATTNw"/>
+            </children>
+            <children xmi:type="notation:Shape" xmi:id="_CQEicJ5bEeWx058QcmDTuA" type="3013">
+              <element xmi:type="uml:Operation" href="SoftwareModel.uml#_CNBOcJ5bEeWx058QcmDTuA"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_CQEicZ5bEeWx058QcmDTuA"/>
             </children>
             <styles xmi:type="notation:TitleStyle" xmi:id="_ggxmmZdlEeW9FdtnBhCZ1w"/>
             <styles xmi:type="notation:SortingStyle" xmi:id="_ggxmmpdlEeW9FdtnBhCZ1w"/>
@@ -1438,6 +1445,10 @@
             <children xmi:type="notation:Shape" xmi:id="_uQdIwJgMEeWU5YK8QYdiFQ" type="3013">
               <element xmi:type="uml:Operation" href="SoftwareModel.uml#_uPe4YJgMEeWU5YK8QYdiFQ"/>
               <layoutConstraint xmi:type="notation:Location" xmi:id="_uQdIwZgMEeWU5YK8QYdiFQ"/>
+            </children>
+            <children xmi:type="notation:Shape" xmi:id="_VZg4gJ5bEeWx058QcmDTuA" type="3013">
+              <element xmi:type="uml:Operation" href="SoftwareModel.uml#_VXh7gJ5bEeWx058QcmDTuA"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_VZg4gZ5bEeWx058QcmDTuA"/>
             </children>
             <styles xmi:type="notation:TitleStyle" xmi:id="_o07qm5dkEeW9FdtnBhCZ1w"/>
             <styles xmi:type="notation:SortingStyle" xmi:id="_o07qnJdkEeW9FdtnBhCZ1w"/>

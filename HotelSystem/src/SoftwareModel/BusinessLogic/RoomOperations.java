@@ -5,6 +5,8 @@ package SoftwareModel.BusinessLogic;
 import SoftwareModel.DataAccess.RoomRepository;
 
 import SoftwareModel.DomainEntities.Availability;
+import SoftwareModel.DomainEntities.BedType;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -89,5 +91,13 @@ public interface RoomOperations extends EObject {
 	 * @generated
 	 */
 	void makeRoomUnavailable(int roomNumber);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model sizeRequired="true" sizeOrdered="false" rateRequired="true" rateOrdered="false" nameRequired="true" nameOrdered="false" bedsRequired="true" bedsMany="true" bedsOrdered="false"
+	 * @generated
+	 */
+	void addRoomType(double size, double rate, String name, EList<BedType> beds);
 
 } // RoomOperations

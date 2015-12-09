@@ -414,6 +414,15 @@ public class DataAccessPackageImpl extends EPackageImpl implements DataAccessPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getRoomRepository__AddRoomType__RoomType() {
+		return roomRepositoryEClass.getEOperations().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public DataAccessFactory getDataAccessFactory() {
 		return (DataAccessFactory)getEFactoryInstance();
 	}
@@ -470,6 +479,7 @@ public class DataAccessPackageImpl extends EPackageImpl implements DataAccessPac
 		createEOperation(roomRepositoryEClass, ROOM_REPOSITORY___REMOVE_ROOM__ROOM);
 		createEOperation(roomRepositoryEClass, ROOM_REPOSITORY___ADD_ROOM__ROOM);
 		createEOperation(roomRepositoryEClass, ROOM_REPOSITORY___GET_ROOMS);
+		createEOperation(roomRepositoryEClass, ROOM_REPOSITORY___ADD_ROOM_TYPE__ROOMTYPE);
 	}
 
 	/**
@@ -569,6 +579,9 @@ public class DataAccessPackageImpl extends EPackageImpl implements DataAccessPac
 		addEParameter(op, theDomainEntitiesPackage.getRoom(), "room", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEOperation(getRoomRepository__GetRooms(), theDomainEntitiesPackage.getRoom(), "getRooms", 0, -1, IS_UNIQUE, !IS_ORDERED);
+
+		op = initEOperation(getRoomRepository__AddRoomType__RoomType(), null, "addRoomType", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theDomainEntitiesPackage.getRoomType(), "roomType", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

@@ -8,6 +8,7 @@ import SoftwareModel.BusinessLogic.RoomOperations;
 import SoftwareModel.DataAccess.RoomRepository;
 import SoftwareModel.DataAccess.impl.RoomRepositoryImpl;
 import SoftwareModel.DomainEntities.Availability;
+import SoftwareModel.DomainEntities.BedType;
 import SoftwareModel.DomainEntities.RoomType;
 import SoftwareModel.DomainEntities.impl.RoomImpl;
 
@@ -166,6 +167,17 @@ public class RoomOperationsImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public void addRoomType(double size, double rate, String name, EList<BedType> beds) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -239,6 +251,7 @@ public class RoomOperationsImpl extends MinimalEObjectImpl.Container implements 
 	 * @generated
 	 */
 	@Override
+	@SuppressWarnings("unchecked")
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
 			case BusinessLogicPackage.ROOM_OPERATIONS___MODIFY_RATE__STRING_DOUBLE:
@@ -255,6 +268,9 @@ public class RoomOperationsImpl extends MinimalEObjectImpl.Container implements 
 				return null;
 			case BusinessLogicPackage.ROOM_OPERATIONS___MAKE_ROOM_UNAVAILABLE__INT:
 				makeRoomUnavailable((Integer)arguments.get(0));
+				return null;
+			case BusinessLogicPackage.ROOM_OPERATIONS___ADD_ROOM_TYPE__DOUBLE_DOUBLE_STRING_ELIST:
+				addRoomType((Double)arguments.get(0), (Double)arguments.get(1), (String)arguments.get(2), (EList<BedType>)arguments.get(3));
 				return null;
 		}
 		return super.eInvoke(operationID, arguments);

@@ -106,4 +106,12 @@ public interface RoomRepository extends EObject {
 	 */
 	EList<Room> getRooms();
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model roomTypeRequired="true" roomTypeOrdered="false"
+	 * @generated
+	 */
+	void addRoomType(RoomType roomType);
+
 } // RoomRepository

@@ -404,13 +404,22 @@ public interface DataAccessPackage extends EPackage {
 	int ROOM_REPOSITORY___GET_ROOMS = 6;
 
 	/**
+	 * The operation id for the '<em>Add Room Type</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_REPOSITORY___ADD_ROOM_TYPE__ROOMTYPE = 7;
+
+	/**
 	 * The number of operations of the '<em>Room Repository</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_REPOSITORY_OPERATION_COUNT = 7;
+	int ROOM_REPOSITORY_OPERATION_COUNT = 8;
 
 
 	/**
@@ -712,6 +721,16 @@ public interface DataAccessPackage extends EPackage {
 	EOperation getRoomRepository__GetRooms();
 
 	/**
+	 * Returns the meta object for the '{@link SoftwareModel.DataAccess.RoomRepository#addRoomType(SoftwareModel.DomainEntities.RoomType) <em>Add Room Type</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Add Room Type</em>' operation.
+	 * @see SoftwareModel.DataAccess.RoomRepository#addRoomType(SoftwareModel.DomainEntities.RoomType)
+	 * @generated
+	 */
+	EOperation getRoomRepository__AddRoomType__RoomType();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -975,6 +994,14 @@ public interface DataAccessPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation ROOM_REPOSITORY___GET_ROOMS = eINSTANCE.getRoomRepository__GetRooms();
+
+		/**
+		 * The meta object literal for the '<em><b>Add Room Type</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ROOM_REPOSITORY___ADD_ROOM_TYPE__ROOMTYPE = eINSTANCE.getRoomRepository__AddRoomType__RoomType();
 
 	}
 

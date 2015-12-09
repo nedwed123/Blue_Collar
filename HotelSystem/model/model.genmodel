@@ -175,6 +175,9 @@
           <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="SoftwareModel.ecore#//DataAccess/RoomRepository/addRoom/room"/>
         </genOperations>
         <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="SoftwareModel.ecore#//DataAccess/RoomRepository/getRooms"/>
+        <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="SoftwareModel.ecore#//DataAccess/RoomRepository/addRoomType">
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="SoftwareModel.ecore#//DataAccess/RoomRepository/addRoomType/roomType"/>
+        </genOperations>
       </genClasses>
     </nestedGenPackages>
     <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="BusinessLogic" basePackage="SoftwareModel"
@@ -258,6 +261,12 @@
         </genOperations>
         <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="SoftwareModel.ecore#//BusinessLogic/RoomOperations/makeRoomUnavailable">
           <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="SoftwareModel.ecore#//BusinessLogic/RoomOperations/makeRoomUnavailable/roomNumber"/>
+        </genOperations>
+        <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="SoftwareModel.ecore#//BusinessLogic/RoomOperations/addRoomType">
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="SoftwareModel.ecore#//BusinessLogic/RoomOperations/addRoomType/size"/>
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="SoftwareModel.ecore#//BusinessLogic/RoomOperations/addRoomType/rate"/>
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="SoftwareModel.ecore#//BusinessLogic/RoomOperations/addRoomType/name"/>
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="SoftwareModel.ecore#//BusinessLogic/RoomOperations/addRoomType/beds"/>
         </genOperations>
       </genClasses>
       <genClasses xsi:type="genmodel:GenClass" ecoreClass="SoftwareModel.ecore#//BusinessLogic/Authorizer">

@@ -221,6 +221,9 @@
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_bof_4ZzSEeWJusbskP8Asw" value="*"/>
         </ownedParameter>
       </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_CNBOcJ5bEeWx058QcmDTuA" name="addRoomType">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_N3J6UJ5bEeWx058QcmDTuA" name="roomType" type="_uJFr8JXcEeWtZbi4EnRFrQ"/>
+      </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_RiAtEJhpEeWatpqnQATTNw" name="DatabaseContext">
       <ownedAttribute xmi:type="uml:Property" xmi:id="_3BiCkJhpEeWatpqnQATTNw" name="rooms" type="_jC8d8JXcEeWtZbi4EnRFrQ">
@@ -348,6 +351,21 @@
       <ownedOperation xmi:type="uml:Operation" xmi:id="_uPe4YJgMEeWU5YK8QYdiFQ" name="makeRoomUnavailable">
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_y0KkgJgMEeWU5YK8QYdiFQ" name="roomNumber">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_VXh7gJ5bEeWx058QcmDTuA" name="addRoomType">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_c9sboJ5bEeWx058QcmDTuA" name="size">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_eqRSMJ5bEeWx058QcmDTuA" name="rate">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_jIIkoJ5bEeWx058QcmDTuA" name="name">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_q3DYIJ5bEeWx058QcmDTuA" name="beds" type="_Apr8gJhSEeWatpqnQATTNw">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_9OIdIJ5bEeWx058QcmDTuA" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_9OPK0J5bEeWx058QcmDTuA" value="*"/>
         </ownedParameter>
       </ownedOperation>
     </packagedElement>

@@ -413,6 +413,15 @@ public class BusinessLogicPackageImpl extends EPackageImpl implements BusinessLo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getRoomOperations__AddRoomType__double_double_String_EList() {
+		return roomOperationsEClass.getEOperations().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getAuthorizer() {
 		return authorizerEClass;
 	}
@@ -566,6 +575,7 @@ public class BusinessLogicPackageImpl extends EPackageImpl implements BusinessLo
 		createEOperation(roomOperationsEClass, ROOM_OPERATIONS___ADD_ROOM__INT_AVAILABILITY_STRING);
 		createEOperation(roomOperationsEClass, ROOM_OPERATIONS___REMOVE_ROOM__INT);
 		createEOperation(roomOperationsEClass, ROOM_OPERATIONS___MAKE_ROOM_UNAVAILABLE__INT);
+		createEOperation(roomOperationsEClass, ROOM_OPERATIONS___ADD_ROOM_TYPE__DOUBLE_DOUBLE_STRING_ELIST);
 
 		authorizerEClass = createEClass(AUTHORIZER);
 		createEReference(authorizerEClass, AUTHORIZER__MANAGERREPOSITORY);
@@ -689,6 +699,12 @@ public class BusinessLogicPackageImpl extends EPackageImpl implements BusinessLo
 
 		op = initEOperation(getRoomOperations__MakeRoomUnavailable__int(), null, "makeRoomUnavailable", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "roomNumber", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		op = initEOperation(getRoomOperations__AddRoomType__double_double_String_EList(), null, "addRoomType", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDouble(), "size", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDouble(), "rate", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "name", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theDomainEntitiesPackage.getBedType(), "beds", 1, -1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(authorizerEClass, Authorizer.class, "Authorizer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getAuthorizer_Managerrepository(), theDataAccessPackage.getAuthorizationRepository(), null, "managerrepository", null, 1, 1, Authorizer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);

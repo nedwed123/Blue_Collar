@@ -376,13 +376,22 @@ public interface BusinessLogicPackage extends EPackage {
 	int ROOM_OPERATIONS___MAKE_ROOM_UNAVAILABLE__INT = 4;
 
 	/**
+	 * The operation id for the '<em>Add Room Type</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_OPERATIONS___ADD_ROOM_TYPE__DOUBLE_DOUBLE_STRING_ELIST = 5;
+
+	/**
 	 * The number of operations of the '<em>Room Operations</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_OPERATIONS_OPERATION_COUNT = 5;
+	int ROOM_OPERATIONS_OPERATION_COUNT = 6;
 
 	/**
 	 * The meta object id for the '{@link SoftwareModel.BusinessLogic.impl.AuthorizerImpl <em>Authorizer</em>}' class.
@@ -810,6 +819,16 @@ public interface BusinessLogicPackage extends EPackage {
 	EOperation getRoomOperations__MakeRoomUnavailable__int();
 
 	/**
+	 * Returns the meta object for the '{@link SoftwareModel.BusinessLogic.RoomOperations#addRoomType(double, double, java.lang.String, org.eclipse.emf.common.util.EList) <em>Add Room Type</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Add Room Type</em>' operation.
+	 * @see SoftwareModel.BusinessLogic.RoomOperations#addRoomType(double, double, java.lang.String, org.eclipse.emf.common.util.EList)
+	 * @generated
+	 */
+	EOperation getRoomOperations__AddRoomType__double_double_String_EList();
+
+	/**
 	 * Returns the meta object for class '{@link SoftwareModel.BusinessLogic.Authorizer <em>Authorizer</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1176,6 +1195,14 @@ public interface BusinessLogicPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation ROOM_OPERATIONS___MAKE_ROOM_UNAVAILABLE__INT = eINSTANCE.getRoomOperations__MakeRoomUnavailable__int();
+
+		/**
+		 * The meta object literal for the '<em><b>Add Room Type</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ROOM_OPERATIONS___ADD_ROOM_TYPE__DOUBLE_DOUBLE_STRING_ELIST = eINSTANCE.getRoomOperations__AddRoomType__double_double_String_EList();
 
 		/**
 		 * The meta object literal for the '{@link SoftwareModel.BusinessLogic.impl.AuthorizerImpl <em>Authorizer</em>}' class.
