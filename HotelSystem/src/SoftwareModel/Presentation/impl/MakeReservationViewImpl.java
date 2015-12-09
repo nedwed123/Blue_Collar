@@ -186,7 +186,7 @@ public class MakeReservationViewImpl extends MinimalEObjectImpl.Container implem
 
 		// TODO: implement this method
 
-				System.out.println("Make Reservation:");
+				System.out.println("Make Reservation\n---------------------");
 
 				System.out.println("Enter check in date (format YY-MM-DD): ");
 				Date checkInDate = getDate(new Date());

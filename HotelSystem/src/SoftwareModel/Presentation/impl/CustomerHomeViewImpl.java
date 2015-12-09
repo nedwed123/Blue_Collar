@@ -48,24 +48,23 @@ public class CustomerHomeViewImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 */
 	public void run(Frame frame) {
-		System.out.println("-- Welcome customer --\n"
-				+ "1: Make Reservation\n"
-				+ "2: View Reservation\n"
-				+ "3: Exit\n");
 
-		Scanner in = new Scanner(System.in);
-		int input = in.nextInt();
-		
-		switch (input) {
-			case 1:
-				frame.changeView(new MakeReservationViewImpl());
-				break;
-			case 2:
-				frame.changeView(new ReservationViewImpl());
-				break;
-			default:
-				frame.changeView(null);
-		}
+		frame.displayMenu("-- Welcome customer --", 
+				new Frame.MenuItem[] {
+						new Frame.MenuItem(
+							"Reserve a room",
+							() -> frame.changeView(new MakeReservationViewImpl())
+						),
+						new Frame.MenuItem(
+								"View Reservation",
+								() -> frame.changeView(new ReservationViewImpl())
+							),
+
+						new Frame.MenuItem(
+								"Exit",
+								() -> frame.exit()
+							),
+				});
 
 	}
 
