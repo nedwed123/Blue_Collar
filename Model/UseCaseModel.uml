@@ -11,7 +11,6 @@
     <packagedElement xmi:type="uml:UseCase" xmi:id="_C4sw4I0REeWtmqu6lmHsTA" name="Close Bill"/>
     <packagedElement xmi:type="uml:UseCase" xmi:id="_Lgt8UI0hEeWtmqu6lmHsTA" name="Set Room Status Clean"/>
     <packagedElement xmi:type="uml:UseCase" xmi:id="_RH6o0I02EeWtmqu6lmHsTA" name="Make Reservation"/>
-    <packagedElement xmi:type="uml:UseCase" xmi:id="_67b4MI04EeWtmqu6lmHsTA" name="Login"/>
     <packagedElement xmi:type="uml:UseCase" xmi:id="_yzttsI05EeWtmqu6lmHsTA" name="Add Rooms"/>
     <packagedElement xmi:type="uml:UseCase" xmi:id="_1wBt0I05EeWtmqu6lmHsTA" name="Remove Rooms"/>
     <packagedElement xmi:type="uml:UseCase" xmi:id="_5Ykh0I05EeWtmqu6lmHsTA" name="Modify Room"/>
@@ -74,13 +73,6 @@
     </eAnnotations>
     <ownedEnd xmi:type="uml:Property" xmi:id="_t-ncco04EeWtmqu6lmHsTA" name="set_room_status_clean" type="_Lgt8UI0hEeWtmqu6lmHsTA" association="_t-m1YI04EeWtmqu6lmHsTA"/>
     <ownedEnd xmi:type="uml:Property" xmi:id="_t-ncc404EeWtmqu6lmHsTA" name="cleaner" type="_wNpMsI0gEeWtmqu6lmHsTA" association="_t-m1YI04EeWtmqu6lmHsTA"/>
-  </packagedElement>
-  <packagedElement xmi:type="uml:Association" xmi:id="_82B8oI04EeWtmqu6lmHsTA" memberEnd="_82Cjso04EeWtmqu6lmHsTA _82Cjs404EeWtmqu6lmHsTA">
-    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_82CjsI04EeWtmqu6lmHsTA" source="org.eclipse.papyrus">
-      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_82CjsY04EeWtmqu6lmHsTA" key="nature" value="UML_Nature"/>
-    </eAnnotations>
-    <ownedEnd xmi:type="uml:Property" xmi:id="_82Cjso04EeWtmqu6lmHsTA" name="login" type="_67b4MI04EeWtmqu6lmHsTA" association="_82B8oI04EeWtmqu6lmHsTA"/>
-    <ownedEnd xmi:type="uml:Property" xmi:id="_82Cjs404EeWtmqu6lmHsTA" name="authorised_employee" type="_L4HRMI04EeWtmqu6lmHsTA" association="_82B8oI04EeWtmqu6lmHsTA"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Association" xmi:id="_idRqwI05EeWtmqu6lmHsTA" memberEnd="_idSR0o05EeWtmqu6lmHsTA _idSR0405EeWtmqu6lmHsTA">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_idSR0I05EeWtmqu6lmHsTA" source="org.eclipse.papyrus">
