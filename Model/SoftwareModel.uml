@@ -173,13 +173,19 @@
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_VNv1UJd0EeWxL-7mJgccVg" name="reservationNumber">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
         </ownedParameter>
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_WdqXEJzwEeWJusbskP8Asw" type="_5lCx4JXcEeWtZbi4EnRFrQ"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_WdqXEJzwEeWJusbskP8Asw" type="_5lCx4JXcEeWtZbi4EnRFrQ" direction="return"/>
       </ownedOperation>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_RpdvoJztEeWJusbskP8Asw" name="getAll">
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_6_PIgJzuEeWJusbskP8Asw" type="_5lCx4JXcEeWtZbi4EnRFrQ" direction="return">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ycoYwJ2zEeWKN50OvsQqBA"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ycsqMJ2zEeWKN50OvsQqBA" value="*"/>
         </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_P6JWsJ5kEeW_2PH8PYOB5w" name="getByRoomNr">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_pXzc0J5kEeW_2PH8PYOB5w" name="roomNr">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_wA8UAJ5kEeW_2PH8PYOB5w" type="_5lCx4JXcEeWtZbi4EnRFrQ" direction="return"/>
       </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_4OdqQJdtEeW9FdtnBhCZ1w" name="AuthorizationRepository">
