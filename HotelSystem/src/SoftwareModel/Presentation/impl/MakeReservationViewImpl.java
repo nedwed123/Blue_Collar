@@ -162,76 +162,76 @@ public class MakeReservationViewImpl extends MinimalEObjectImpl.Container implem
 
 		DateFormat format = new SimpleDateFormat("yy-MM-dd", Locale.ENGLISH);
 
-		// TODO: implement this method
-
 		Date checkInDate = new Date();
 		Date checkOutDate = new Date();
 		Scanner scanner = new Scanner(System.in);
+		boolean isDateOk = false;
+		do{
+			
+			try {
 
-		try {
-			while (true) {
 				String dateString = scanner.next();
 				Date date = format.parse(dateString);
 				if (date.after(startDate))
 					return date;
 				System.out.println("Please enter a later date than " + format.format(startDate));
-			}
-		} catch (ParseException e) {
-			e.printStackTrace();
-		}
 
-		return null;
+			} catch (ParseException e) {
+				System.out.println("Please enter a date in the correct format (format YY-MM-DD):");
+			}
+		} while (true);
 	}
 
 	public void run(Frame frame) {
 
 		// TODO: implement this method
 
-		System.out.println("Make Reservation:");
+				System.out.println("Make Reservation:");
 
-		System.out.println("Enter check in date (format YY-MM-DD): ");
-		Date checkInDate = getDate(new Date());
+				System.out.println("Enter check in date (format YY-MM-DD): ");
+				Date checkInDate = getDate(new Date());
 
-		System.out.println("Enter check out date (format YY-MM-DD): ");
-		Date checkOutDate = getDate(checkInDate);
+				System.out.println("Enter check out date (format YY-MM-DD): ");
+				Date checkOutDate = getDate(checkInDate);
 
-		Scanner scanner = new Scanner(System.in);
-		int numberOfRooms;
-		while (true) {
-			System.out.println("Enter number of rooms to reserv:");
-			numberOfRooms = scanner.nextInt();
-			if (numberOfRooms > 9 || numberOfRooms < 1)
-				System.out.println("Please enter a number between 1-9");
-			else
-				break;
-		}
-		int[] numberOfAdultsForRooms = new int[numberOfRooms];
-		int[] numberOfChildrenForRooms = new int[numberOfRooms];
-		for (int i = 0; i < numberOfRooms; i++) {
-			System.out.println("Enter number of adults for room " + (i + 1) + ":");
-			numberOfAdultsForRooms[i] = scanner.nextInt();
-			System.out.println("Enter number of children for room " + (i + 1) + ":");
-			numberOfChildrenForRooms[i] = scanner.nextInt();
-		}
+				Scanner scanner = new Scanner(System.in);
+				int numberOfRooms;
+				while (true) {
+					System.out.println("Enter number of rooms to reserv:");
+					numberOfRooms = scanner.nextInt();
+					if (numberOfRooms > 9 || numberOfRooms < 1)
+						System.out.println("Please enter a number between 1-9");
+					else
+						break;
+				}
+				int[] numberOfAdultsForRooms = new int[numberOfRooms];
+				int[] numberOfChildrenForRooms = new int[numberOfRooms];
+				for (int i = 0; i < numberOfRooms; i++) {
+					System.out.println("Enter number of adults for room " + (i + 1) + ":");
+					numberOfAdultsForRooms[i] = scanner.nextInt();
+					System.out.println("Enter number of children for room " + (i + 1) + ":");
+					numberOfChildrenForRooms[i] = scanner.nextInt();
+				}
 
-		EList<RoomType> roomTypes = getRooms().availibleRoomTypes(numberOfAdultsForRooms[0], numberOfChildrenForRooms[0],
-				checkInDate, checkOutDate);
+				EList<RoomType> roomTypes = getRooms().availibleRoomTypes(numberOfAdultsForRooms[0],
+						numberOfChildrenForRooms[0], checkInDate, checkOutDate);
 
-		if (roomTypes.size() < 1) {
-			System.out.println("No rooms available.");
-			// Add return to previous view
-		}
+				if (roomTypes.size() < 1) {
+					System.out.println("No rooms available.");
+					frame.goBack();
+					return;
+				}
 
-		// Recieve this input from user
-		EList<RoomBooking> selectedRooms = null;
-		PaymentDetails paymentDetails = null;
-		boolean payNow = false;
+				// Recieve this input from user
+				EList<RoomBooking> selectedRooms = null;
+				PaymentDetails paymentDetails = null;
+				boolean payNow = false;
 
-		Reservation reservation = reservations.make(selectedRooms, paymentDetails, payNow);
+				Reservation reservation = reservations.make(selectedRooms, paymentDetails, payNow);
 
-		// Display reservation number?
+				// Display reservation number?
 
-		// throw new UnsupportedOperationException();
+				// throw new UnsupportedOperationException();
 	}
 
 	/**
