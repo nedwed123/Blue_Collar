@@ -3,12 +3,9 @@
   <packagedElement xmi:type="uml:Package" xmi:id="_WJPp8I0QEeWtmqu6lmHsTA" name="hotelManagement:System">
     <packagedElement xmi:type="uml:UseCase" xmi:id="_m_yJQI0QEeWtmqu6lmHsTA" name="Modify Rate"/>
     <packagedElement xmi:type="uml:UseCase" xmi:id="_wdkSUI0QEeWtmqu6lmHsTA" name="Check-in Guest"/>
-    <packagedElement xmi:type="uml:UseCase" xmi:id="_4u-u4I0QEeWtmqu6lmHsTA" name="Check-out Guest">
-      <include xmi:type="uml:Include" xmi:id="_HSWB8I0iEeWtmqu6lmHsTA" addition="_C4sw4I0REeWtmqu6lmHsTA"/>
-    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_4u-u4I0QEeWtmqu6lmHsTA" name="Check-out Guest"/>
     <packagedElement xmi:type="uml:UseCase" xmi:id="_8laN4I0QEeWtmqu6lmHsTA" name="Cancel Reservation" visibility="package"/>
     <packagedElement xmi:type="uml:UseCase" xmi:id="__Ux-MI0QEeWtmqu6lmHsTA" name="Modify Reservation"/>
-    <packagedElement xmi:type="uml:UseCase" xmi:id="_C4sw4I0REeWtmqu6lmHsTA" name="Close Bill"/>
     <packagedElement xmi:type="uml:UseCase" xmi:id="_Lgt8UI0hEeWtmqu6lmHsTA" name="Set Room Status Clean"/>
     <packagedElement xmi:type="uml:UseCase" xmi:id="_RH6o0I02EeWtmqu6lmHsTA" name="Make Reservation"/>
     <packagedElement xmi:type="uml:UseCase" xmi:id="_yzttsI05EeWtmqu6lmHsTA" name="Add Rooms"/>
