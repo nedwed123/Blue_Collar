@@ -6,7 +6,11 @@ import SoftwareModel.Presentation.Frame;
 import SoftwareModel.Presentation.IView;
 import SoftwareModel.Presentation.PresentationPackage;
 
+import java.awt.Desktop.Action;
 import java.lang.reflect.InvocationTargetException;
+import java.util.List;
+import java.util.Scanner;
+import java.util.function.Function;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -123,7 +127,27 @@ public class FrameImpl extends MinimalEObjectImpl.Container implements Frame {
 			currentView.run(this);
 		}
 	}
-
+	
+	public void displayMenu(String caption,MenuItem[] menu){
+		System.out.println(caption);
+		int i = 1;
+		for (MenuItem menuItem : menu) {
+			System.out.println("[" + i + "] " + menuItem.caption);
+			i++;
+		}
+		int choice = 0;
+		while(true){
+			Scanner scan=new Scanner(System.in);
+			System.out.print("Option :");
+			choice=scan.nextInt();
+			if(choice < 0 || choice > menu.length)
+				System.out.println("Impossible choice");
+			else
+				break;
+		}
+		menu[choice-1].f.run();
+	}
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

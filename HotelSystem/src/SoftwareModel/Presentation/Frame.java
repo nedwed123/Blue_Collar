@@ -2,7 +2,10 @@
  */
 package SoftwareModel.Presentation;
 
+import java.util.Scanner;
+
 import org.eclipse.emf.ecore.EObject;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -62,6 +65,17 @@ public interface Frame extends EObject {
 	 * @generated
 	 */
 	void start(IView View);
+	
+	public class MenuItem{
+		public String caption;
+		public Runnable f;
+		public MenuItem(String caption, Runnable callback){
+			f = callback;
+			this.caption = caption;
+		}
+	}
+	
+	public void displayMenu(String caption,MenuItem[] menu);
 
 	/**
 	 * <!-- begin-user-doc -->
