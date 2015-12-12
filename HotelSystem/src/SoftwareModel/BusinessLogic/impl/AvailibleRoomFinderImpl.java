@@ -176,7 +176,6 @@ public class AvailibleRoomFinderImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	public EList<RoomType> availableRoomTypes(int adults, int children, Date startDate, Date endDate) {
 		// TODO: implement this method
