@@ -93,10 +93,10 @@ public interface Reservations extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false" selectedRoomsRequired="true" selectedRoomsMany="true" selectedRoomsOrdered="false" paymentDetailsRequired="true" paymentDetailsOrdered="false" payNowRequired="true" payNowOrdered="false"
+	 * @model required="true" ordered="false" selectedRoomsRequired="true" selectedRoomsMany="true" selectedRoomsOrdered="false" paymentDetailsRequired="true" paymentDetailsOrdered="false" payNowRequired="true" payNowOrdered="false" discountCodeDataType="org.eclipse.uml2.types.String" discountCodeRequired="true" discountCodeOrdered="false" madeByCustomerRequired="true" madeByCustomerOrdered="false"
 	 * @generated
 	 */
-	Reservation make(EList<RoomBooking> selectedRooms, PaymentDetails paymentDetails, boolean payNow);
+	Reservation make(EList<RoomBooking> selectedRooms, PaymentDetails paymentDetails, boolean payNow, String discountCode, boolean madeByCustomer);
 
 	/**
 	 * <!-- begin-user-doc -->

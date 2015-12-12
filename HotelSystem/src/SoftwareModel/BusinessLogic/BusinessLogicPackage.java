@@ -109,7 +109,7 @@ public interface BusinessLogicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESERVATIONS___MAKE__ELIST_PAYMENTDETAILS_BOOLEAN = 1;
+	int RESERVATIONS___MAKE__ELIST_PAYMENTDETAILS_BOOLEAN_STRING_BOOLEAN = 1;
 
 	/**
 	 * The operation id for the '<em>Cancel</em>' operation.
@@ -574,14 +574,14 @@ public interface BusinessLogicPackage extends EPackage {
 	EOperation getReservations__UpdateReservationDetails__Reservation();
 
 	/**
-	 * Returns the meta object for the '{@link SoftwareModel.BusinessLogic.Reservations#make(org.eclipse.emf.common.util.EList, SoftwareModel.DomainEntities.PaymentDetails, boolean) <em>Make</em>}' operation.
+	 * Returns the meta object for the '{@link SoftwareModel.BusinessLogic.Reservations#make(org.eclipse.emf.common.util.EList, SoftwareModel.DomainEntities.PaymentDetails, boolean, java.lang.String, boolean) <em>Make</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Make</em>' operation.
-	 * @see SoftwareModel.BusinessLogic.Reservations#make(org.eclipse.emf.common.util.EList, SoftwareModel.DomainEntities.PaymentDetails, boolean)
+	 * @see SoftwareModel.BusinessLogic.Reservations#make(org.eclipse.emf.common.util.EList, SoftwareModel.DomainEntities.PaymentDetails, boolean, java.lang.String, boolean)
 	 * @generated
 	 */
-	EOperation getReservations__Make__EList_PaymentDetails_boolean();
+	EOperation getReservations__Make__EList_PaymentDetails_boolean_String_boolean();
 
 	/**
 	 * Returns the meta object for the '{@link SoftwareModel.BusinessLogic.Reservations#cancel(SoftwareModel.DomainEntities.Reservation) <em>Cancel</em>}' operation.
@@ -1004,7 +1004,7 @@ public interface BusinessLogicPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation RESERVATIONS___MAKE__ELIST_PAYMENTDETAILS_BOOLEAN = eINSTANCE.getReservations__Make__EList_PaymentDetails_boolean();
+		EOperation RESERVATIONS___MAKE__ELIST_PAYMENTDETAILS_BOOLEAN_STRING_BOOLEAN = eINSTANCE.getReservations__Make__EList_PaymentDetails_boolean_String_boolean();
 
 		/**
 		 * The meta object literal for the '<em><b>Cancel</b></em>' operation.

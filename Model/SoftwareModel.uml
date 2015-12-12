@@ -294,6 +294,12 @@
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_d-nDMJgSEeWYQbOYnriDZw" name="payNow">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
         </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_8JyqQKDXEeWykapRac3G2Q" name="discountCode">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_GomygKDYEeWykapRac3G2Q" name="madeByCustomer">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+        </ownedParameter>
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_cn5VoJgXEeWtBYA9pVjaKA" type="_i-whgJXcEeWtZbi4EnRFrQ" direction="return"/>
       </ownedOperation>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_SDSKkJgbEeWtBYA9pVjaKA" name="cancel">

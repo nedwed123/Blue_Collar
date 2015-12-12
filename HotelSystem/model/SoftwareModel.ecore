@@ -203,6 +203,8 @@
             eType="#//DomainEntities/RoomBooking"/>
         <eParameters name="paymentDetails" ordered="false" lowerBound="1" eType="#//DomainEntities/PaymentDetails"/>
         <eParameters name="payNow" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+        <eParameters name="discountCode" ordered="false" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
+        <eParameters name="madeByCustomer" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
       </eOperations>
       <eOperations name="cancel" ordered="false" lowerBound="1">
         <eParameters name="reservation" ordered="false" lowerBound="1" eType="#//DomainEntities/Reservation"/>

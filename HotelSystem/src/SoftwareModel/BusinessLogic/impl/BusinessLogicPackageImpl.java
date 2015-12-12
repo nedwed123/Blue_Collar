@@ -197,7 +197,7 @@ public class BusinessLogicPackageImpl extends EPackageImpl implements BusinessLo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getReservations__Make__EList_PaymentDetails_boolean() {
+	public EOperation getReservations__Make__EList_PaymentDetails_boolean_String_boolean() {
 		return reservationsEClass.getEOperations().get(1);
 	}
 
@@ -548,7 +548,7 @@ public class BusinessLogicPackageImpl extends EPackageImpl implements BusinessLo
 		createEReference(reservationsEClass, RESERVATIONS__RESERVATIONSREPOSITORY);
 		createEReference(reservationsEClass, RESERVATIONS__ROOMBOOKINGS);
 		createEOperation(reservationsEClass, RESERVATIONS___UPDATE_RESERVATION_DETAILS__RESERVATION);
-		createEOperation(reservationsEClass, RESERVATIONS___MAKE__ELIST_PAYMENTDETAILS_BOOLEAN);
+		createEOperation(reservationsEClass, RESERVATIONS___MAKE__ELIST_PAYMENTDETAILS_BOOLEAN_STRING_BOOLEAN);
 		createEOperation(reservationsEClass, RESERVATIONS___CANCEL__RESERVATION);
 		createEOperation(reservationsEClass, RESERVATIONS___GET_RESERVATION__INT);
 		createEOperation(reservationsEClass, RESERVATIONS___CHECK_IN_ALL_GUESTS__RESERVATION);
@@ -633,10 +633,12 @@ public class BusinessLogicPackageImpl extends EPackageImpl implements BusinessLo
 		EOperation op = initEOperation(getReservations__UpdateReservationDetails__Reservation(), null, "updateReservationDetails", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, theDomainEntitiesPackage.getReservation(), "reservation", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		op = initEOperation(getReservations__Make__EList_PaymentDetails_boolean(), theDomainEntitiesPackage.getReservation(), "make", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		op = initEOperation(getReservations__Make__EList_PaymentDetails_boolean_String_boolean(), theDomainEntitiesPackage.getReservation(), "make", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, theDomainEntitiesPackage.getRoomBooking(), "selectedRooms", 1, -1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, theDomainEntitiesPackage.getPaymentDetails(), "paymentDetails", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEBoolean(), "payNow", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theTypesPackage.getString(), "discountCode", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEBoolean(), "madeByCustomer", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		op = initEOperation(getReservations__Cancel__Reservation(), null, "cancel", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, theDomainEntitiesPackage.getReservation(), "reservation", 1, 1, IS_UNIQUE, !IS_ORDERED);

@@ -227,7 +227,7 @@ public class MakeReservationViewImpl extends MinimalEObjectImpl.Container implem
 				PaymentDetails paymentDetails = null;
 				boolean payNow = false;
 
-				Reservation reservation = reservations.make(selectedRooms, paymentDetails, payNow);
+				Reservation reservation = reservations.make(selectedRooms, paymentDetails, payNow,"",false);
 
 				// Display reservation number?
 

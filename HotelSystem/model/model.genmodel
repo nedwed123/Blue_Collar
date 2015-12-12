@@ -206,6 +206,8 @@
           <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="SoftwareModel.ecore#//BusinessLogic/Reservations/make/selectedRooms"/>
           <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="SoftwareModel.ecore#//BusinessLogic/Reservations/make/paymentDetails"/>
           <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="SoftwareModel.ecore#//BusinessLogic/Reservations/make/payNow"/>
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="SoftwareModel.ecore#//BusinessLogic/Reservations/make/discountCode"/>
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="SoftwareModel.ecore#//BusinessLogic/Reservations/make/madeByCustomer"/>
         </genOperations>
         <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="SoftwareModel.ecore#//BusinessLogic/Reservations/cancel">
           <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="SoftwareModel.ecore#//BusinessLogic/Reservations/cancel/reservation"/>

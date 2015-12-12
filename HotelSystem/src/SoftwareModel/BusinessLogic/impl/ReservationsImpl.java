@@ -176,7 +176,7 @@ public class ReservationsImpl extends MinimalEObjectImpl.Container implements Re
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Reservation make(EList<RoomBooking> selectedRooms, PaymentDetails paymentDetails, boolean payNow) {
+	public Reservation make(EList<RoomBooking> selectedRooms, PaymentDetails paymentDetails, boolean payNow, String discountCode, boolean madeByCustomer) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -320,8 +320,8 @@ public class ReservationsImpl extends MinimalEObjectImpl.Container implements Re
 			case BusinessLogicPackage.RESERVATIONS___UPDATE_RESERVATION_DETAILS__RESERVATION:
 				updateReservationDetails((Reservation)arguments.get(0));
 				return null;
-			case BusinessLogicPackage.RESERVATIONS___MAKE__ELIST_PAYMENTDETAILS_BOOLEAN:
-				return make((EList<RoomBooking>)arguments.get(0), (PaymentDetails)arguments.get(1), (Boolean)arguments.get(2));
+			case BusinessLogicPackage.RESERVATIONS___MAKE__ELIST_PAYMENTDETAILS_BOOLEAN_STRING_BOOLEAN:
+				return make((EList<RoomBooking>)arguments.get(0), (PaymentDetails)arguments.get(1), (Boolean)arguments.get(2), (String)arguments.get(3), (Boolean)arguments.get(4));
 			case BusinessLogicPackage.RESERVATIONS___CANCEL__RESERVATION:
 				cancel((Reservation)arguments.get(0));
 				return null;
