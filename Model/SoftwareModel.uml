@@ -50,7 +50,11 @@
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
       </ownedAttribute>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_9e9J8JdhEeW9FdtnBhCZ1w" name="paymentdetails" type="_v3-yMJdGEeWbutPRr4NuZg" association="_9e7UwJdhEeW9FdtnBhCZ1w"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_hoDz0KDeEeWykapRac3G2Q" name="cancelationpolicy" type="_X8x2wKDdEeWykapRac3G2Q">
+        <association xmi:type="uml:Association" href="SystemModel.uml#_hoBXkKDeEeWykapRac3G2Q"/>
+      </ownedAttribute>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_KmpUYJ5yEeWd_eE2VwsQIw" name="cancel"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_o0DV4KDdEeWykapRac3G2Q" name="cancel"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_5lCx4JXcEeWtZbi4EnRFrQ" name="RoomBooking">
       <ownedAttribute xmi:type="uml:Property" xmi:id="_EzdVkJaiEeW6iMusCgrdvA" name="IsCheckedIn">
@@ -75,6 +79,8 @@
       </ownedAttribute>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_tY9nUJ5zEeWd_eE2VwsQIw" name="checkIn"/>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_w7aaYJ5zEeWd_eE2VwsQIw" name="checkOut"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_cETs0KDdEeWykapRac3G2Q" name="checkIn"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_gL4mMKDdEeWykapRac3G2Q" name="checkOut"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_50LaEJXcEeWtZbi4EnRFrQ" name="Bill"/>
     <packagedElement xmi:type="uml:Class" xmi:id="_LU3-EJb4EeW6iMusCgrdvA" name="RoomResponsible">
@@ -153,6 +159,11 @@
       </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Dependency" xmi:id="_UuXLQJ5yEeWd_eE2VwsQIw" client="_i-whgJXcEeWtZbi4EnRFrQ" supplier="_RGJucJ5yEeWd_eE2VwsQIw"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_X8x2wKDdEeWykapRac3G2Q" name="CustomerCancelationPolicy">
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_ukKTUKDdEeWykapRac3G2Q" name="canBeCancelledByCustomer">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_x_6BcKDdEeWykapRac3G2Q" name="reservation" type="_i-whgJXcEeWtZbi4EnRFrQ"/>
+      </ownedOperation>
+    </packagedElement>
   </packagedElement>
   <packagedElement xmi:type="uml:Package" xmi:id="_Hg_sEJdhEeW9FdtnBhCZ1w" name="DataAccess">
     <packagedElement xmi:type="uml:Class" xmi:id="_xLOQEJa0EeW6iMusCgrdvA" name="ReservationsRepository">
@@ -265,6 +276,11 @@
       <ownedAttribute xmi:type="uml:Property" xmi:id="_PggS4JhqEeWatpqnQATTNw" name="roomBookings" type="_5lCx4JXcEeWtZbi4EnRFrQ">
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_TPFdcJhqEeWatpqnQATTNw"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_TPGrkJhqEeWatpqnQATTNw" value="*"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_ViMG0KDhEeWykapRac3G2Q" name="passwords">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_W_OskKDhEeWykapRac3G2Q" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_W_QhwKDhEeWykapRac3G2Q" value="*"/>
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Dependency" xmi:id="_48QsAJutEeWYeq6AFoWyvA" client="_ggSeYJdlEeW9FdtnBhCZ1w" supplier="_uJFr8JXcEeWtZbi4EnRFrQ"/>

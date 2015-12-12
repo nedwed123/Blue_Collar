@@ -486,6 +486,16 @@
       <type xmi:type="uml:Class" href="SoftwareModel.uml#_5lCx4JXcEeWtZbi4EnRFrQ"/>
     </ownedEnd>
   </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_hoBXkKDeEeWykapRac3G2Q" name="{reservation.checkInDate - current date >= 7}">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_hoClsKDeEeWykapRac3G2Q" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_hoClsaDeEeWykapRac3G2Q" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <memberEnd xmi:type="uml:Property" href="SoftwareModel.uml#_hoDz0KDeEeWykapRac3G2Q"/>
+    <memberEnd xmi:type="uml:Property" href="#_hoDz0aDeEeWykapRac3G2Q"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_hoDz0aDeEeWykapRac3G2Q" name="reservation" association="_hoBXkKDeEeWykapRac3G2Q">
+      <type xmi:type="uml:Class" href="SoftwareModel.uml#_i-whgJXcEeWtZbi4EnRFrQ"/>
+    </ownedEnd>
+  </packagedElement>
   <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_iC-xQJdGEeWbutPRr4NuZg">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_iDBNgJdGEeWbutPRr4NuZg" source="http://www.eclipse.org/uml2/2.0.0/UML">
       <references xmi:type="ecore:EPackage" href="pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#_Kv8EIKFXEeS_KNX0nfvIVQ"/>
