@@ -667,7 +667,7 @@
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_7u7EsZjrEeWshPrMD0A9Hg" x="42" y="114" width="16" height="217"/>
           </children>
           <element xmi:type="uml:Lifeline" href="SystemModel.uml#_6rB-wJjrEeWshPrMD0A9Hg"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_6rDM4ZjrEeWshPrMD0A9Hg" x="128" y="10" width="100" height="396"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_6rDM4ZjrEeWshPrMD0A9Hg" x="128" y="10" width="100" height="397"/>
         </children>
         <children xmi:type="notation:Shape" xmi:id="_7LckMJjrEeWshPrMD0A9Hg" type="3001">
           <children xmi:type="notation:DecorationNode" xmi:id="_7LckMpjrEeWshPrMD0A9Hg" type="5002"/>
@@ -684,7 +684,7 @@
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_TtMbsZjsEeWshPrMD0A9Hg" x="42" y="225" width="16" height="107"/>
           </children>
           <element xmi:type="uml:Lifeline" href="SystemModel.uml#_7Lb9IJjrEeWshPrMD0A9Hg"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_7LckMZjrEeWshPrMD0A9Hg" x="970" y="10" width="100" height="396"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_7LckMZjrEeWshPrMD0A9Hg" x="1082" y="10" width="100" height="397"/>
         </children>
         <children xmi:type="notation:Shape" xmi:id="_vmLZ4J6AEeWWf5QwD0rSsw" type="3001">
           <children xmi:type="notation:DecorationNode" xmi:id="_vmMA8J6AEeWWf5QwD0rSsw" type="5002"/>
@@ -697,12 +697,12 @@
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_1r9sYZ6AEeWWf5QwD0rSsw" x="42" y="258" height="50"/>
           </children>
           <element xmi:type="uml:Lifeline" href="SystemModel.uml#_vmKLwJ6AEeWWf5QwD0rSsw"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_vmLZ4Z6AEeWWf5QwD0rSsw" x="1414" y="8" width="100" height="398"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_vmLZ4Z6AEeWWf5QwD0rSsw" x="1449" y="8" width="100" height="399"/>
         </children>
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_wWpk5JjrEeWshPrMD0A9Hg"/>
       </children>
       <element xmi:type="uml:Interaction" href="SystemModel.uml#_vKG5QJjrEeWshPrMD0A9Hg"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_wWpk5ZjrEeWshPrMD0A9Hg" x="19" width="1539" height="457"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_wWpk5ZjrEeWshPrMD0A9Hg" x="19" width="1573" height="457"/>
     </children>
     <styles xmi:type="notation:StringValueStyle" xmi:id="_wWpk5pjrEeWshPrMD0A9Hg" name="diagram_compatibility_version" stringValue="1.1.0"/>
     <styles xmi:type="notation:DiagramStyle" xmi:id="_wWpk55jrEeWshPrMD0A9Hg"/>
