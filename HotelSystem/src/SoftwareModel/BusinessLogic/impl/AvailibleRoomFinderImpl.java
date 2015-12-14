@@ -17,6 +17,7 @@ import java.lang.reflect.InvocationTargetException;
 
 import java.util.Date;
 import java.util.Iterator;
+import java.util.LinkedHashSet;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -208,7 +209,8 @@ public class AvailibleRoomFinderImpl extends MinimalEObjectImpl.Container implem
 			}
 		}
 		
-		return roomTypes;
+		return new BasicEList<RoomType>(new LinkedHashSet<RoomType>(roomTypes));
+	
 	}
 
 	/**
