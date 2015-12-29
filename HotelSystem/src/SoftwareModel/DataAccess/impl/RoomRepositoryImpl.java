@@ -5,20 +5,16 @@ package SoftwareModel.DataAccess.impl;
 import SoftwareModel.DataAccess.DataAccessPackage;
 import SoftwareModel.DataAccess.DatabaseContext;
 import SoftwareModel.DataAccess.RoomRepository;
-
 import SoftwareModel.DomainEntities.Room;
 import SoftwareModel.DomainEntities.RoomType;
-
-import java.lang.reflect.InvocationTargetException;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import java.lang.reflect.InvocationTargetException;
 
 /**
  * <!-- begin-user-doc -->
@@ -106,27 +102,15 @@ public class RoomRepositoryImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 */
 	public void updateRoom(Room room) {
-		EList<Room> rooms = databasecontext.getRooms();
-		for (int i = 0; i < rooms.size(); i++) {
-			Room room2 = rooms.get(i);
-			if(room.getNumber() == room2.getNumber()){
-				rooms.set(i, room2);
-				return;
-			}
-		}
-		
-		throw new UnsupportedOperationException("Room did not exist in database");
+		databasecontext.getRooms().set(databasecontext.getRooms().indexOf(room),room);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	public void updateRoomType(RoomType roomType) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		databasecontext.getRoomTypes().set(databasecontext.getRoomTypes().indexOf(roomType),roomType);
 	}
 
 	/**
@@ -143,56 +127,45 @@ public class RoomRepositoryImpl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	public RoomType getRoomType(String name) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		for (RoomType type : databasecontext.getRoomTypes()){
+			if(type.getName() == name)
+				return type;
+		}
+		return null;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	public void removeRoom(Room room) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		databasecontext.getRooms().remove(room);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	public void addRoom(Room room) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		databasecontext.getRooms().add(room);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	public EList<Room> getRooms() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return databasecontext.getRooms();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	public void addRoomType(RoomType roomType) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		databasecontext.getRoomTypes().add(roomType);
 	}
 
 	/**

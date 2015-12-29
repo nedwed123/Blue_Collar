@@ -6,23 +6,18 @@ import SoftwareModel.BusinessLogic.AvailibleRoomFinder;
 import SoftwareModel.BusinessLogic.BusinessLogicPackage;
 import SoftwareModel.BusinessLogic.RoomBookings;
 import SoftwareModel.BusinessLogic.Rooms;
-
 import SoftwareModel.DomainEntities.RoomBooking;
 import SoftwareModel.DomainEntities.RoomType;
-
-import java.lang.reflect.InvocationTargetException;
-
-import java.util.Date;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import java.lang.reflect.InvocationTargetException;
+import java.util.Date;
 
 /**
  * <!-- begin-user-doc -->
@@ -198,12 +193,9 @@ public class RoomsImpl extends MinimalEObjectImpl.Container implements Rooms {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	public EList<RoomType> availibleRoomTypes(int adults, int children, Date startDate, Date endDate) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return availibleroomfinder.availableRoomTypes(adults,children,startDate,endDate);
 	}
 
 	/**
