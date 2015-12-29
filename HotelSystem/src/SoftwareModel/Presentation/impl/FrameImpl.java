@@ -113,7 +113,6 @@ public class FrameImpl extends MinimalEObjectImpl.Container implements Frame {
 	 * <!-- end-user-doc -->
 	 */
 	public void start(IView View) {
-		IView previousView;
 		setCurrentView(View);
 		while(running)
 		{

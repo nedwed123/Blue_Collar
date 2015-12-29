@@ -5,18 +5,15 @@ package SoftwareModel.DataAccess.impl;
 import SoftwareModel.DataAccess.DataAccessPackage;
 import SoftwareModel.DataAccess.DatabaseContext;
 import SoftwareModel.DataAccess.ReservationsRepository;
-
 import SoftwareModel.DomainEntities.Reservation;
-import java.lang.reflect.InvocationTargetException;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import java.lang.reflect.InvocationTargetException;
 
 /**
  * <!-- begin-user-doc -->
@@ -101,12 +98,9 @@ public class ReservationsRepositoryImpl extends MinimalEObjectImpl.Container imp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	public void update(Reservation reservation) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		databasecontext.getReservations().set(databasecontext.getReservations().indexOf(reservation),reservation);
 	}
 
 	/**
@@ -129,23 +123,19 @@ public class ReservationsRepositoryImpl extends MinimalEObjectImpl.Container imp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	public Reservation addNew(Reservation reservation) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		databasecontext.getReservations().add(reservation);
+		//TODO: is this really needed?
+		return reservation;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	public void remove(int reservationNumber) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		databasecontext.getReservations().remove(this.get(reservationNumber));
 	}
 
 	/**
