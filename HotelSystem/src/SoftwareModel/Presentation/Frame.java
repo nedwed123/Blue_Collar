@@ -4,6 +4,8 @@ package SoftwareModel.Presentation;
 
 import org.eclipse.emf.ecore.EObject;
 
+import java.util.List;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -63,17 +65,43 @@ public interface Frame extends EObject {
 	 * @generated
 	 */
 	void start(IView View);
-	
+
 	public class MenuItem{
 		public String caption;
-		public Runnable f;
+		private Runnable f;
+		public IView nextView;
 		public MenuItem(String caption, Runnable callback){
 			f = callback;
 			this.caption = caption;
 		}
+		public MenuItem(String caption, IView nextView){
+			this.nextView = nextView;
+			this.caption = caption;
+		}
+		public void Run(Frame frame){
+			if(nextView != null)
+				frame.changeView(nextView);
+			else
+				f.run();
+		}
+
+		public String toString(){
+			return caption;
+		}
 	}
+
+	class Nothing implements Runnable{
+		@Override
+		public void run() {
+
+		}
+	}
+
+	public Object displaySelectionMenu(String caption,Object[] choices);
 	
 	public void displayMenu(String caption,MenuItem[] menu);
+
+	public void displayMenu(String caption,List<MenuItem> menu);
 
 	/**
 	 * <!-- begin-user-doc -->

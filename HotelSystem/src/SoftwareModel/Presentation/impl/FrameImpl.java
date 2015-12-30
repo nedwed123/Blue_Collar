@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import java.lang.reflect.InvocationTargetException;
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -119,12 +120,13 @@ public class FrameImpl extends MinimalEObjectImpl.Container implements Frame {
 			currentView.run(this);
 		}
 	}
-	
-	public void displayMenu(String caption,MenuItem[] menu){
+
+	@Override
+	public Object displaySelectionMenu(String caption,Object[] choices) {
 		System.out.println(caption);
 		int i = 1;
-		for (MenuItem menuItem : menu) {
-			System.out.println("[" + i + "] " + menuItem.caption);
+		for (Object menuItem : choices) {
+			System.out.println("[" + i + "] " + menuItem.toString());
 			i++;
 		}
 		int choice = 0;
@@ -132,14 +134,23 @@ public class FrameImpl extends MinimalEObjectImpl.Container implements Frame {
 			Scanner scan=new Scanner(System.in);
 			System.out.print("Option :");
 			choice=scan.nextInt();
-			if(choice < 0 || choice > menu.length)
+			if(choice < 0 || choice > choices.length)
 				System.out.println("Impossible choice");
 			else
-				break;
+				return choices[choice-1];
 		}
-		menu[choice-1].f.run();
 	}
-	
+
+	public void displayMenu(String caption,MenuItem[] menu){
+		MenuItem item = (MenuItem)displaySelectionMenu(caption,menu);
+		item.Run(this);
+	}
+
+	@Override
+	public void displayMenu(String caption, List<MenuItem> menu) {
+		displayMenu(caption,menu.toArray(new MenuItem[menu.size()]));
+	}
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

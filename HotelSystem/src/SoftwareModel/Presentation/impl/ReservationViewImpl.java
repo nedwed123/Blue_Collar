@@ -9,19 +9,16 @@ import SoftwareModel.DomainEntities.RoomBooking;
 import SoftwareModel.Presentation.Frame;
 import SoftwareModel.Presentation.PresentationPackage;
 import SoftwareModel.Presentation.ReservationView;
-
-import java.lang.reflect.InvocationTargetException;
-import java.util.Scanner;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import java.lang.reflect.InvocationTargetException;
+import java.util.Scanner;
 
 /**
  * <!-- begin-user-doc -->
@@ -131,12 +128,35 @@ public class ReservationViewImpl extends MinimalEObjectImpl.Container implements
 				//TODO: display room booking information
 				System.out.println("\t room info...");
 			}
-			
-			System.out.println("What do u want to do with the reservation?:"
-					+ "1: Check in all guests\n"
-					+ "2: Check out all guests\n"
-					+ "2: cancel\n"
-					+ "3: nothing\n");
+
+			frame.displayMenu("What do u want to do with the reservation?:",
+					new Frame.MenuItem[]{
+							new Frame.MenuItem("Check in all guests",
+									new Runnable() {
+										@Override
+										public void run() {
+											reservations.CheckInAllGuests(res);
+										}
+									}
+							),
+							new Frame.MenuItem("Check out all guests",
+									new Runnable() {
+										@Override
+										public void run() {
+											reservations.CheckOutAllGuests(res);
+										}
+									}
+							),
+							new Frame.MenuItem("cancel reservation",
+									new Runnable() {
+										@Override
+										public void run() {
+											reservations.cancel(res);
+										}
+									}
+							),
+							new Frame.MenuItem("Nothing",new Frame.Nothing())
+					});
 		}
 		else
 		{

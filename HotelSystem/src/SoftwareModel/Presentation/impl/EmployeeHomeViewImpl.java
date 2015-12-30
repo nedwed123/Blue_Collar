@@ -5,13 +5,11 @@ package SoftwareModel.Presentation.impl;
 import SoftwareModel.Presentation.EmployeeHomeView;
 import SoftwareModel.Presentation.Frame;
 import SoftwareModel.Presentation.PresentationPackage;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import java.lang.reflect.InvocationTargetException;
-import org.eclipse.emf.common.util.EList;
-
-import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -40,6 +38,7 @@ public class EmployeeHomeViewImpl extends MinimalEObjectImpl.Container implement
 		return PresentationPackage.Literals.EMPLOYEE_HOME_VIEW;
 	}
 
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -47,35 +46,11 @@ public class EmployeeHomeViewImpl extends MinimalEObjectImpl.Container implement
 	public void run(Frame frame) {
 		frame.displayMenu("Welcome to Hotel Management System", 
 				new Frame.MenuItem[] {
-						new Frame.MenuItem(
-							"Reserve a room",
-							new Runnable() {
-								@Override
-								public void run() {
-									frame.changeView(new MakeReservationViewImpl());
-								}
-							}
-						),
-						new Frame.MenuItem(
-								"Check in/out ",
-								new Runnable() {
-									@Override
-									public void run() {
-										frame.changeView(new RoomBookingViewImpl());
-									}
-								}
-							),
-						new Frame.MenuItem(
-								"Room Management",
-								new Runnable() {
-									@Override
-									public void run() {
-										frame.changeView(new LoginViewImpl());
-									}
-								}
-							),
-						new Frame.MenuItem(
-								"Exit",
+						new Frame.MenuItem("Create a reservation", new MakeReservationViewImpl()),
+						new Frame.MenuItem("View/Edit reservation ",new ReservationViewImpl()),
+						new Frame.MenuItem("View/Edit room booking ",new RoomBookingViewImpl()),
+						new Frame.MenuItem("Room Management",new LoginViewImpl()),
+						new Frame.MenuItem("Exit",
 								new Runnable() {
 									@Override
 									public void run() {
@@ -83,7 +58,8 @@ public class EmployeeHomeViewImpl extends MinimalEObjectImpl.Container implement
 									}
 								}
 							),
-				});	}
+				});
+	}
 
 	/**
 	 * <!-- begin-user-doc -->
