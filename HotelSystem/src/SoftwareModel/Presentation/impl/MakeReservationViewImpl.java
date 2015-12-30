@@ -192,8 +192,6 @@ public class MakeReservationViewImpl extends MinimalEObjectImpl.Container implem
 
 	public void run(Frame frame) {
 
-		// TODO: implement this method
-
 		System.out.println("Make Reservation\n---------------------");
 
 		System.out.println("Enter check in date (format YY-MM-DD): ");
@@ -210,7 +208,6 @@ public class MakeReservationViewImpl extends MinimalEObjectImpl.Container implem
 		}while(numberOfRooms > 9 || numberOfRooms < 1);
 
 		EList<RoomBooking> roomInterests = new BasicEList<>();
-
 		for (int i = 0; i < numberOfRooms; i++) {
 			roomInterests.add(new RoomBookingImpl());
 		}
@@ -240,17 +237,14 @@ public class MakeReservationViewImpl extends MinimalEObjectImpl.Container implem
 			roomInterest.setRoomtype(selectedRoomType);
 		}
 
-
 		// Recieve this input from user
-		EList<RoomBooking> selectedRooms = null;
 		PaymentDetails paymentDetails = null;
 		boolean payNow = false;
 
-		Reservation reservation = reservations.make(selectedRooms, paymentDetails, payNow,"",false);
+		Reservation reservation = reservations.make(roomInterests, paymentDetails, payNow,"",false);
 
-		// Display reservation number?
-
-		// throw new UnsupportedOperationException();
+		System.out.println("Reservation successful");
+		System.out.println("Reservation nr is: " + reservation.getReservationId());
 	}
 
 	/**
