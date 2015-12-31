@@ -172,6 +172,30 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 		number = roomNr;
 		roomtype = type;
 		this.availability = availability;
+		if(roomNr>0 && roomNr<50){
+			this.view="City View";
+		}
+		if(roomNr>49 && roomNr<101){
+			this.view="Sea View";
+		}
+		if (roomNr > 10 && roomNr < 20) {
+			this.disabledAccess = true;
+		}
+		if (roomNr > 25 && roomNr < 30) {
+			this.petsAllowed = true;
+		}
+		if (roomNr > 29 && roomNr < 35) {
+			this.petsAllowed = true;
+			this.smoking = true;
+			this.view = "City View";
+		}
+		if (roomNr > 34 && roomNr < 40) {
+			this.disabledAccess = true;
+			this.petsAllowed = true;
+			this.smoking = true;
+
+		}
+
 	}
 	
 	/**
