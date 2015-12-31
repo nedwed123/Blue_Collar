@@ -103,7 +103,7 @@ public class AuthorizationRepositoryImpl extends MinimalEObjectImpl.Container im
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getPasswords() {
+	public EList<String> getPasswords() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

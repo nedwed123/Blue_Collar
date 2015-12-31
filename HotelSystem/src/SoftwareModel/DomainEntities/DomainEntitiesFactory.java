@@ -85,6 +85,15 @@ public interface DomainEntitiesFactory extends EFactory {
 	Room createRoom();
 
 	/**
+	 * Returns a new object of class '<em>Customer Cancelation Policy</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Customer Cancelation Policy</em>'.
+	 * @generated
+	 */
+	CustomerCancelationPolicy createCustomerCancelationPolicy();
+
+	/**
 	 * Returns a new object of class '<em>Service</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

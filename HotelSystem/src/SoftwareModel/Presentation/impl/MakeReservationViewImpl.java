@@ -158,11 +158,7 @@ public class MakeReservationViewImpl extends MinimalEObjectImpl.Container implem
 	private Date getDate(Date startDate) {
 
 		DateFormat format = new SimpleDateFormat("yy-MM-dd", Locale.ENGLISH);
-
-		Date checkInDate = new Date();
-		Date checkOutDate = new Date();
 		Scanner scanner = new Scanner(System.in);
-		boolean isDateOk = false;
 		do{
 			
 			try {
@@ -177,17 +173,6 @@ public class MakeReservationViewImpl extends MinimalEObjectImpl.Container implem
 				System.out.println("Please enter a date in the correct format (format YY-MM-DD):");
 			}
 		} while (true);
-	}
-
-	class Guests{
-		int Adults;
-		int Children;
-
-		public Guests(int adults, int children) {
-			Adults = adults;
-			Children = children;
-		}
-
 	}
 
 	public void run(Frame frame) {
@@ -207,7 +192,7 @@ public class MakeReservationViewImpl extends MinimalEObjectImpl.Container implem
 			numberOfRooms = scanner.nextInt();
 		}while(numberOfRooms > 9 || numberOfRooms < 1);
 
-		EList<RoomBooking> roomInterests = new BasicEList<>();
+		EList<RoomBooking> roomInterests = new BasicEList<RoomBooking>();
 		for (int i = 0; i < numberOfRooms; i++) {
 			roomInterests.add(new RoomBookingImpl());
 		}

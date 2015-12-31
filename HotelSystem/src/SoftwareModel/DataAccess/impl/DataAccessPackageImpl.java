@@ -22,6 +22,7 @@ import SoftwareModel.Presentation.PresentationPackage;
 
 import SoftwareModel.Presentation.impl.PresentationPackageImpl;
 
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
@@ -252,6 +253,15 @@ public class DataAccessPackageImpl extends EPackageImpl implements DataAccessPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getDatabaseContext_Passwords() {
+		return (EAttribute)databaseContextEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getRoomBookingsRepository() {
 		return roomBookingsRepositoryEClass;
 	}
@@ -467,6 +477,7 @@ public class DataAccessPackageImpl extends EPackageImpl implements DataAccessPac
 		createEReference(databaseContextEClass, DATABASE_CONTEXT__ROOM_TYPES);
 		createEReference(databaseContextEClass, DATABASE_CONTEXT__RESERVATIONS);
 		createEReference(databaseContextEClass, DATABASE_CONTEXT__ROOM_BOOKINGS);
+		createEAttribute(databaseContextEClass, DATABASE_CONTEXT__PASSWORDS);
 
 		roomBookingsRepositoryEClass = createEClass(ROOM_BOOKINGS_REPOSITORY);
 		createEReference(roomBookingsRepositoryEClass, ROOM_BOOKINGS_REPOSITORY__DATABASECONTEXT);
@@ -546,6 +557,7 @@ public class DataAccessPackageImpl extends EPackageImpl implements DataAccessPac
 		initEReference(getDatabaseContext_RoomTypes(), theDomainEntitiesPackage.getRoomType(), null, "roomTypes", null, 0, -1, DatabaseContext.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getDatabaseContext_Reservations(), theDomainEntitiesPackage.getReservation(), null, "reservations", null, 0, -1, DatabaseContext.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getDatabaseContext_RoomBookings(), theDomainEntitiesPackage.getRoomBooking(), null, "roomBookings", null, 0, -1, DatabaseContext.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getDatabaseContext_Passwords(), theTypesPackage.getString(), "passwords", null, 1, -1, DatabaseContext.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(roomBookingsRepositoryEClass, RoomBookingsRepository.class, "RoomBookingsRepository", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getRoomBookingsRepository_Databasecontext(), this.getDatabaseContext(), null, "databasecontext", null, 1, 1, RoomBookingsRepository.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -567,7 +579,7 @@ public class DataAccessPackageImpl extends EPackageImpl implements DataAccessPac
 		initEClass(authorizationRepositoryEClass, AuthorizationRepository.class, "AuthorizationRepository", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getAuthorizationRepository_Databasecontext(), this.getDatabaseContext(), null, "databasecontext", null, 1, 1, AuthorizationRepository.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-		initEOperation(getAuthorizationRepository__GetPasswords(), theTypesPackage.getString(), "getPasswords", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		initEOperation(getAuthorizationRepository__GetPasswords(), theTypesPackage.getString(), "getPasswords", 0, -1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(roomRepositoryEClass, RoomRepository.class, "RoomRepository", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getRoomRepository_Databasecontext(), this.getDatabaseContext(), null, "databasecontext", null, 1, 1, RoomRepository.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -578,7 +590,7 @@ public class DataAccessPackageImpl extends EPackageImpl implements DataAccessPac
 		op = initEOperation(getRoomRepository__UpdateRoomType__RoomType(), null, "updateRoomType", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, theDomainEntitiesPackage.getRoomType(), "roomType", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		op = initEOperation(getRoomRepository__GetRoom__int(), null, "getRoom", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		op = initEOperation(getRoomRepository__GetRoom__int(), theDomainEntitiesPackage.getRoom(), "getRoom", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "roomNumber", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		op = initEOperation(getRoomRepository__GetRoomType__String(), theDomainEntitiesPackage.getRoomType(), "getRoomType", 1, 1, IS_UNIQUE, !IS_ORDERED);

@@ -94,9 +94,9 @@ public interface AvailibleRoomFinder extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model ordered="false" roomBookingRequired="true" roomBookingOrdered="false"
+	 * @model dataType="org.eclipse.uml2.types.Integer" required="true" ordered="false" roomBookingRequired="true" roomBookingOrdered="false"
 	 * @generated
 	 */
-	EList<RoomType> availibleRoom(RoomBooking roomBooking);
+	int availibleRoom(RoomBooking roomBooking);
 
 } // AvailibleRoomFinder

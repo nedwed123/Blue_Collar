@@ -222,6 +222,8 @@
       <ownedOperation xmi:type="uml:Operation" xmi:id="_zf9QQJjMEeWshPrMD0A9Hg" name="getPasswords">
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_3vfLwJjMEeWshPrMD0A9Hg" direction="return">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_V7RFQK9zEeWV7Ycq3VkKgw"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_V7ThgK9zEeWV7Ycq3VkKgw" value="*"/>
         </ownedParameter>
       </ownedOperation>
     </packagedElement>
@@ -237,6 +239,7 @@
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_EDNvoJf7EeWmDIVFfg4USw" name="roomNumber">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
         </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_blNJQK9zEeWV7Ycq3VkKgw" type="_jC8d8JXcEeWtZbi4EnRFrQ" direction="return"/>
       </ownedOperation>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_ah7PQJd1EeW_4PdgZcIXdQ" name="getRoomType">
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_60FGkJf6EeWmDIVFfg4USw" name="name">
@@ -449,9 +452,10 @@
       </ownedOperation>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_co-tYJhcEeWatpqnQATTNw" name="availibleRoom">
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_uDT2QJhcEeWatpqnQATTNw" name="roomBooking" type="_5lCx4JXcEeWtZbi4EnRFrQ"/>
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_PM4MsJzSEeWJusbskP8Asw" type="_uJFr8JXcEeWtZbi4EnRFrQ" direction="return">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_UXi6wJzSEeWJusbskP8Asw"/>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_UXi6wZzSEeWJusbskP8Asw" value="*"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_PM4MsJzSEeWJusbskP8Asw" name="roomNr" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_UXi6wJzSEeWJusbskP8Asw" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_UXi6wZzSEeWJusbskP8Asw" value="1"/>
         </ownedParameter>
       </ownedOperation>
     </packagedElement>

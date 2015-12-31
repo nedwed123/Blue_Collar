@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**
@@ -32,6 +33,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  *   <li>{@link SoftwareModel.DataAccess.impl.DatabaseContextImpl#getRoomTypes <em>Room Types</em>}</li>
  *   <li>{@link SoftwareModel.DataAccess.impl.DatabaseContextImpl#getReservations <em>Reservations</em>}</li>
  *   <li>{@link SoftwareModel.DataAccess.impl.DatabaseContextImpl#getRoomBookings <em>Room Bookings</em>}</li>
+ *   <li>{@link SoftwareModel.DataAccess.impl.DatabaseContextImpl#getPasswords <em>Passwords</em>}</li>
  * </ul>
  *
  * @generated
@@ -76,6 +78,16 @@ public class DatabaseContextImpl extends MinimalEObjectImpl.Container implements
 	 * @ordered
 	 */
 	protected EList<RoomBooking> roomBookings;
+
+	/**
+	 * The cached value of the '{@link #getPasswords() <em>Passwords</em>}' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPasswords()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<String> passwords;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -149,6 +161,18 @@ public class DatabaseContextImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<String> getPasswords() {
+		if (passwords == null) {
+			passwords = new EDataTypeUniqueEList<String>(String.class, this, DataAccessPackage.DATABASE_CONTEXT__PASSWORDS);
+		}
+		return passwords;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -160,6 +184,8 @@ public class DatabaseContextImpl extends MinimalEObjectImpl.Container implements
 				return getReservations();
 			case DataAccessPackage.DATABASE_CONTEXT__ROOM_BOOKINGS:
 				return getRoomBookings();
+			case DataAccessPackage.DATABASE_CONTEXT__PASSWORDS:
+				return getPasswords();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -189,6 +215,10 @@ public class DatabaseContextImpl extends MinimalEObjectImpl.Container implements
 				getRoomBookings().clear();
 				getRoomBookings().addAll((Collection<? extends RoomBooking>)newValue);
 				return;
+			case DataAccessPackage.DATABASE_CONTEXT__PASSWORDS:
+				getPasswords().clear();
+				getPasswords().addAll((Collection<? extends String>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -213,6 +243,9 @@ public class DatabaseContextImpl extends MinimalEObjectImpl.Container implements
 			case DataAccessPackage.DATABASE_CONTEXT__ROOM_BOOKINGS:
 				getRoomBookings().clear();
 				return;
+			case DataAccessPackage.DATABASE_CONTEXT__PASSWORDS:
+				getPasswords().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -233,8 +266,26 @@ public class DatabaseContextImpl extends MinimalEObjectImpl.Container implements
 				return reservations != null && !reservations.isEmpty();
 			case DataAccessPackage.DATABASE_CONTEXT__ROOM_BOOKINGS:
 				return roomBookings != null && !roomBookings.isEmpty();
+			case DataAccessPackage.DATABASE_CONTEXT__PASSWORDS:
+				return passwords != null && !passwords.isEmpty();
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (passwords: ");
+		result.append(passwords);
+		result.append(')');
+		return result.toString();
 	}
 
 	public static DatabaseContext instance = null;

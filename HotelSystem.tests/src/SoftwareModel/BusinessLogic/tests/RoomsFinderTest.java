@@ -2,24 +2,22 @@
  */
 package SoftwareModel.BusinessLogic.tests;
 
-import java.util.Date;
-
-import org.eclipse.emf.common.util.BasicEList;
-import org.eclipse.emf.common.util.EList;
 import SoftwareModel.BusinessLogic.impl.AvailibleRoomFinderImpl;
 import SoftwareModel.DataAccess.RoomBookingsRepository;
 import SoftwareModel.DataAccess.RoomRepository;
-import SoftwareModel.DomainEntities.Availability;
-import SoftwareModel.DomainEntities.BedType;
-import SoftwareModel.DomainEntities.Room;
-import SoftwareModel.DomainEntities.RoomBooking;
-import SoftwareModel.DomainEntities.RoomType;
+import SoftwareModel.DataAccess.impl.DatabaseContextImpl;
+import SoftwareModel.DomainEntities.*;
 import SoftwareModel.DomainEntities.impl.RoomBookingImpl;
 import SoftwareModel.DomainEntities.impl.RoomImpl;
 import SoftwareModel.DomainEntities.impl.RoomTypeImpl;
 import junit.framework.TestCase;
-import static org.mockito.Mockito.*;
 import junit.textui.TestRunner;
+import org.eclipse.emf.common.util.BasicEList;
+import org.eclipse.emf.common.util.EList;
+
+import java.util.Date;
+
+import static org.mockito.Mockito.mock;
 
 public class RoomsFinderTest extends TestCase {
 
@@ -44,11 +42,9 @@ public class RoomsFinderTest extends TestCase {
 	}
 	
 	public void testAvailibleRoomTypesOnlyReturnsDistinctRoomTypes() {
-		RoomRepository fakeRepo = mock(RoomRepository.class);
-		RoomBookingsRepository fakeBookings = mock(RoomBookingsRepository.class);
-		AvailibleRoomFinderImpl roomFinder = new AvailibleRoomFinderImpl(fakeBookings,fakeRepo);
-		
-		EList<Room> rooms = new BasicEList<Room>();
+		AvailibleRoomFinderImpl roomFinder = new AvailibleRoomFinderImpl();
+		EList<Room> rooms = DatabaseContextImpl.GetDatabaseContext().getRooms();
+
 		EList<BedType> beds = new BasicEList<BedType>();
 		beds.add(BedType.SINGLE);
 		beds.add(BedType.KID);
@@ -56,11 +52,6 @@ public class RoomsFinderTest extends TestCase {
 
 		rooms.add(new RoomImpl(1,singleWithKid,Availability.AVAILIBLE));
 		rooms.add(new RoomImpl(2,singleWithKid,Availability.AVAILIBLE));
-
-		EList<RoomBooking> bookings = new BasicEList<RoomBooking>();
-		
-		when(fakeRepo.getRooms()).thenReturn(rooms);
-		when(fakeBookings.getAll()).thenReturn(bookings);
 		
 		int adults = 1;
 		int children = 1;
@@ -72,11 +63,11 @@ public class RoomsFinderTest extends TestCase {
 	}
 	
 	public void testAvailibleRoomTypesDoesNotReturnedBookedRoomTypes() {
-		RoomRepository fakeRepo = mock(RoomRepository.class);
-		RoomBookingsRepository fakeBookings = mock(RoomBookingsRepository.class);
-		AvailibleRoomFinderImpl roomFinder = new AvailibleRoomFinderImpl(fakeBookings,fakeRepo);
+		AvailibleRoomFinderImpl roomFinder = new AvailibleRoomFinderImpl();
 		
-		EList<Room> rooms = new BasicEList<Room>();
+		EList<Room> rooms = DatabaseContextImpl.GetDatabaseContext().getRooms();
+		EList<RoomBooking> bookings = DatabaseContextImpl.GetDatabaseContext().getRoomBookings();
+
 		EList<BedType> beds = new BasicEList<BedType>();
 		beds.add(BedType.SINGLE);
 		beds.add(BedType.KID);
@@ -85,7 +76,6 @@ public class RoomsFinderTest extends TestCase {
 		rooms.add(new RoomImpl(1,singleWithKid,Availability.AVAILIBLE));
 		rooms.add(new RoomImpl(2,singleWithKid,Availability.AVAILIBLE));
 
-		EList<RoomBooking> bookings = new BasicEList<RoomBooking>();
 		
 		Date startDate = new Date(1993, 8, 16);
 		Date endDate = new Date(1993, 8, 18);
@@ -99,15 +89,45 @@ public class RoomsFinderTest extends TestCase {
 		//Add the booking twice, booking both rooms
 		bookings.add(booking1);
 		bookings.add(booking1);
-		
-		when(fakeRepo.getRooms()).thenReturn(rooms);
-		when(fakeBookings.getAll()).thenReturn(bookings);
-		
+
 		int adults = 1;
 		int children = 1;
 		EList<RoomType> roomtypes = roomFinder.availableRoomTypes(adults, children, startDate, endDate);
 		
 		assertEquals(0, roomtypes.size());
+	}
+	
+	
+	public void testAvailibleRoomDoesNotReturnUsedRooms() {
+		AvailibleRoomFinderImpl roomFinder = new AvailibleRoomFinderImpl();
+
+		EList<Room> rooms = DatabaseContextImpl.GetDatabaseContext().getRooms();
+		EList<RoomBooking> bookings = DatabaseContextImpl.GetDatabaseContext().getRoomBookings();
+
+		EList<BedType> beds = new BasicEList<BedType>();
+		RoomTypeImpl singleWithKid = new RoomTypeImpl("SingleParentWithKid",beds);
+
+		RoomImpl room1 = new RoomImpl(1, singleWithKid, Availability.AVAILIBLE);
+		RoomImpl room2 = new RoomImpl(2, singleWithKid, Availability.AVAILIBLE);
+		rooms.add(room1);
+		rooms.add(room2);
+		
+		Date startDate = new Date(1993, 8, 16);
+		Date endDate = new Date(1993, 8, 18);
+
+		//Create a booking for room 1
+		RoomBooking booking = new RoomBookingImpl();
+		booking.setCheckInDate(startDate);
+		booking.setCheckOutDate(endDate);
+		booking.setRoomtype(singleWithKid);
+		booking.setRoom(room1);
+		booking.setIsCheckedIn(true);
+		bookings.add(booking);
+
+		//Try make the same booking, should return room 2
+		int roomNr = roomFinder.availibleRoom(booking);
+		
+		assertEquals(2, roomNr);
 	}
 
 }

@@ -2,6 +2,7 @@
  */
 package SoftwareModel.DomainEntities.impl;
 
+import SoftwareModel.DomainEntities.CustomerCancelationPolicy;
 import SoftwareModel.DomainEntities.DomainEntitiesPackage;
 import SoftwareModel.DomainEntities.PaymentDetails;
 import SoftwareModel.DomainEntities.Reservation;
@@ -37,6 +38,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  *   <li>{@link SoftwareModel.DomainEntities.impl.ReservationImpl#getReservationId <em>Reservation Id</em>}</li>
  *   <li>{@link SoftwareModel.DomainEntities.impl.ReservationImpl#getDiscountCode <em>Discount Code</em>}</li>
  *   <li>{@link SoftwareModel.DomainEntities.impl.ReservationImpl#getPaymentdetails <em>Paymentdetails</em>}</li>
+ *   <li>{@link SoftwareModel.DomainEntities.impl.ReservationImpl#getCancelationpolicy <em>Cancelationpolicy</em>}</li>
  * </ul>
  *
  * @generated
@@ -141,6 +143,16 @@ public class ReservationImpl extends MinimalEObjectImpl.Container implements Res
 	 * @ordered
 	 */
 	protected PaymentDetails paymentdetails;
+
+	/**
+	 * The cached value of the '{@link #getCancelationpolicy() <em>Cancelationpolicy</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCancelationpolicy()
+	 * @generated
+	 * @ordered
+	 */
+	protected CustomerCancelationPolicy cancelationpolicy;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -300,6 +312,44 @@ public class ReservationImpl extends MinimalEObjectImpl.Container implements Res
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public CustomerCancelationPolicy getCancelationpolicy() {
+		if (cancelationpolicy != null && cancelationpolicy.eIsProxy()) {
+			InternalEObject oldCancelationpolicy = (InternalEObject)cancelationpolicy;
+			cancelationpolicy = (CustomerCancelationPolicy)eResolveProxy(oldCancelationpolicy);
+			if (cancelationpolicy != oldCancelationpolicy) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DomainEntitiesPackage.RESERVATION__CANCELATIONPOLICY, oldCancelationpolicy, cancelationpolicy));
+			}
+		}
+		return cancelationpolicy;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CustomerCancelationPolicy basicGetCancelationpolicy() {
+		return cancelationpolicy;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setCancelationpolicy(CustomerCancelationPolicy newCancelationpolicy) {
+		CustomerCancelationPolicy oldCancelationpolicy = cancelationpolicy;
+		cancelationpolicy = newCancelationpolicy;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DomainEntitiesPackage.RESERVATION__CANCELATIONPOLICY, oldCancelationpolicy, cancelationpolicy));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public void cancel() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -327,6 +377,9 @@ public class ReservationImpl extends MinimalEObjectImpl.Container implements Res
 			case DomainEntitiesPackage.RESERVATION__PAYMENTDETAILS:
 				if (resolve) return getPaymentdetails();
 				return basicGetPaymentdetails();
+			case DomainEntitiesPackage.RESERVATION__CANCELATIONPOLICY:
+				if (resolve) return getCancelationpolicy();
+				return basicGetCancelationpolicy();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -359,6 +412,9 @@ public class ReservationImpl extends MinimalEObjectImpl.Container implements Res
 			case DomainEntitiesPackage.RESERVATION__PAYMENTDETAILS:
 				setPaymentdetails((PaymentDetails)newValue);
 				return;
+			case DomainEntitiesPackage.RESERVATION__CANCELATIONPOLICY:
+				setCancelationpolicy((CustomerCancelationPolicy)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -389,6 +445,9 @@ public class ReservationImpl extends MinimalEObjectImpl.Container implements Res
 			case DomainEntitiesPackage.RESERVATION__PAYMENTDETAILS:
 				setPaymentdetails((PaymentDetails)null);
 				return;
+			case DomainEntitiesPackage.RESERVATION__CANCELATIONPOLICY:
+				setCancelationpolicy((CustomerCancelationPolicy)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -413,6 +472,8 @@ public class ReservationImpl extends MinimalEObjectImpl.Container implements Res
 				return DISCOUNT_CODE_EDEFAULT == null ? discountCode != null : !DISCOUNT_CODE_EDEFAULT.equals(discountCode);
 			case DomainEntitiesPackage.RESERVATION__PAYMENTDETAILS:
 				return paymentdetails != null;
+			case DomainEntitiesPackage.RESERVATION__CANCELATIONPOLICY:
+				return cancelationpolicy != null;
 		}
 		return super.eIsSet(featureID);
 	}

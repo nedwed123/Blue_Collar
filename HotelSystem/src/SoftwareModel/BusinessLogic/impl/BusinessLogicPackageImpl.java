@@ -678,7 +678,7 @@ public class BusinessLogicPackageImpl extends EPackageImpl implements BusinessLo
 		addEParameter(op, ecorePackage.getEDate(), "startDate", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDate(), "endDate", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		op = initEOperation(getAvailibleRoomFinder__AvailibleRoom__RoomBooking(), theDomainEntitiesPackage.getRoomType(), "availibleRoom", 0, -1, IS_UNIQUE, !IS_ORDERED);
+		op = initEOperation(getAvailibleRoomFinder__AvailibleRoom__RoomBooking(), theTypesPackage.getInteger(), "availibleRoom", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, theDomainEntitiesPackage.getRoomBooking(), "roomBooking", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(roomOperationsEClass, RoomOperations.class, "RoomOperations", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

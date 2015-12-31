@@ -43,6 +43,8 @@
           lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="paymentdetails" ordered="false"
           lowerBound="1" eType="#//DomainEntities/PaymentDetails"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="cancelationpolicy" ordered="false"
+          lowerBound="1" eType="#//DomainEntities/CustomerCancelationPolicy"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="RoomBooking">
       <eOperations name="checkIn" ordered="false" lowerBound="1"/>
@@ -98,6 +100,11 @@
       <eLiterals name="UnderMaintenence" value="2"/>
       <eLiterals name="ToBeCleaned" value="3"/>
     </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="CustomerCancelationPolicy">
+      <eOperations name="canBeCancelledByCustomer" ordered="false" lowerBound="1">
+        <eParameters name="reservation" ordered="false" lowerBound="1" eType="#//DomainEntities/Reservation"/>
+      </eOperations>
+    </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Bill"/>
     <eClassifiers xsi:type="ecore:EClass" name="Service">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="serviceDate" ordered="false"
@@ -142,6 +149,8 @@
           upperBound="-1" eType="#//DomainEntities/Reservation"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="roomBookings" ordered="false"
           upperBound="-1" eType="#//DomainEntities/RoomBooking"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="passwords" ordered="false"
+          lowerBound="1" upperBound="-1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="RoomBookingsRepository">
       <eOperations name="update" ordered="false" lowerBound="1">
@@ -161,7 +170,7 @@
           lowerBound="1" eType="#//DataAccess/DatabaseContext"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="AuthorizationRepository">
-      <eOperations name="getPasswords" ordered="false" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
+      <eOperations name="getPasswords" ordered="false" upperBound="-1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="databasecontext" ordered="false"
           lowerBound="1" eType="#//DataAccess/DatabaseContext"/>
     </eClassifiers>
@@ -172,7 +181,7 @@
       <eOperations name="updateRoomType" ordered="false" lowerBound="1">
         <eParameters name="roomType" ordered="false" lowerBound="1" eType="#//DomainEntities/RoomType"/>
       </eOperations>
-      <eOperations name="getRoom" ordered="false" lowerBound="1">
+      <eOperations name="getRoom" ordered="false" lowerBound="1" eType="#//DomainEntities/Room">
         <eParameters name="roomNumber" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
       </eOperations>
       <eOperations name="getRoomType" ordered="false" lowerBound="1" eType="#//DomainEntities/RoomType">
@@ -250,7 +259,7 @@
         <eParameters name="startDate" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
         <eParameters name="endDate" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
       </eOperations>
-      <eOperations name="availibleRoom" ordered="false" upperBound="-1" eType="#//DomainEntities/RoomType">
+      <eOperations name="availibleRoom" ordered="false" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//Integer">
         <eParameters name="roomBooking" ordered="false" lowerBound="1" eType="#//DomainEntities/RoomBooking"/>
       </eOperations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="roomrepository" ordered="false"

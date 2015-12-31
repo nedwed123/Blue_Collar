@@ -135,7 +135,7 @@ public class RoomBookingViewImpl extends MinimalEObjectImpl.Container implements
 
 		final RoomBooking finalRoombooking = roombooking;
 
-		List<Frame.MenuItem> menuItems = new ArrayList<>();
+		List<Frame.MenuItem> menuItems = new ArrayList<Frame.MenuItem>();
 
 		if(roombooking.isIsCheckedIn()) {
 			menuItems.add(new Frame.MenuItem("Check out",
