@@ -97,6 +97,12 @@ public interface Frame extends EObject {
 		}
 	}
 
+	public int input(String description);
+
+	public String inputTextFor(String description);
+
+	public Double inputDoubleFor(String description);
+
 	public Object displaySelectionMenu(String caption,Object[] choices);
 	
 	public void displayMenu(String caption,MenuItem[] menu);

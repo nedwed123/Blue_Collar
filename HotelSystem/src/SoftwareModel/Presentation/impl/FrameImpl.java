@@ -42,6 +42,7 @@ public class FrameImpl extends MinimalEObjectImpl.Container implements Frame {
 	
 	private IView previousView;
 	private boolean running = true;
+	Scanner scanner = new Scanner(System.in);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -121,7 +122,6 @@ public class FrameImpl extends MinimalEObjectImpl.Container implements Frame {
 		}
 	}
 
-	@Override
 	public Object displaySelectionMenu(String caption,Object[] choices) {
 		System.out.println(caption);
 		int i = 1;
@@ -146,9 +146,29 @@ public class FrameImpl extends MinimalEObjectImpl.Container implements Frame {
 		item.Run(this);
 	}
 
-	@Override
 	public void displayMenu(String caption, List<MenuItem> menu) {
 		displayMenu(caption,menu.toArray(new MenuItem[menu.size()]));
+	}
+
+	private void AskFor(String description){
+		System.out.println("Please enter " + description + ":");
+	}
+
+	public int input(String description){
+		AskFor(description);
+		return scanner.nextInt();
+	}
+
+	@Override
+	public String inputTextFor(String description) {
+		AskFor(description);
+		return scanner.next();
+	}
+
+	@Override
+	public Double inputDoubleFor(String description) {
+		AskFor(description);
+		return scanner.nextDouble();
 	}
 
 	/**

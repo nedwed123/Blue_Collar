@@ -8,18 +8,15 @@ import SoftwareModel.DomainEntities.Availability;
 import SoftwareModel.Presentation.Frame;
 import SoftwareModel.Presentation.PresentationPackage;
 import SoftwareModel.Presentation.RoomManagementView;
-import java.lang.reflect.InvocationTargetException;
-import java.util.Scanner;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import java.lang.reflect.InvocationTargetException;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object '
@@ -106,59 +103,55 @@ public class RoomManagementViewImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 */
 	public void run(Frame frame) {
-		System.out.print("Available operations: \n" + "1.Add Room \n" + "2.Modify Rate \n" + "3.Make Room Available \n"
-				+ "4.Make Room Unavailable \n" + "5.Remove Room \n");
-		Scanner scan = new Scanner(System.in);
-		int choice = scan.nextInt();
-		switch (choice) {
-		case 1:
-			System.out.println("Please enter room number to add");
-			int roomNumber = scan.nextInt();
-			System.out.println("Please choose Availability \n" + "1.Available \n" + "2.To Be Cleaned \n"
-					+ "3.Under Maintenence \n" + "4.Occupied");
-			int statusChoice = scan.nextInt();
-			switch (statusChoice) {
-			case 1:
-				roomoperations.addRoom(roomNumber, Availability.AVAILIBLE, "");
-				break;
-			case 2:
-				roomoperations.addRoom(roomNumber, Availability.TO_BE_CLEANED, "");
-				break;
-			case 3:
-				roomoperations.addRoom(roomNumber, Availability.UNDER_MAINTENENCE, "");
-				break;
-			case 4:
-				roomoperations.addRoom(roomNumber, Availability.USED, "");
-				break;
-			default:
-				break;
-			}
-		case 2:
-			System.out.println("Please enter room type id");
-			String roomTypeId=scan.next();
-			System.out.println("Please enter the new rate");
-			double rate=scan.nextDouble();
-			roomoperations.modifyRate(roomTypeId, rate);
-			break;
-		case 3:
-			System.out.println("Please enter room number to make available");
-			int roomNumberAv=scan.nextInt();
-			roomoperations.makeRoomAvailable(roomNumberAv);
-			break;
-		case 4:
-			System.out.println("Please enter room number to make unavailable");
-			int roomNumUnav=scan.nextInt();
-			roomoperations.makeRoomUnavailable(roomNumUnav);
-			break;
-		case 5:
-			System.out.println("Please enter room number to remove");
-			int roomNumberR=scan.nextInt();
-			roomoperations.removeRoom(roomNumberR);
-		default:
-			break;
-		
+		frame.displayMenu("Available operations:",
+				new Frame.MenuItem[]{
+						new Frame.MenuItem("Add Room ",
+								new Runnable() {
+									@Override
+									public void run() {
+										int roomNumber = frame.input("room number to add");
+										Availability availability = (Availability)frame.displaySelectionMenu("Please choose Availability",
+												new Availability[] {Availability.AVAILIBLE,Availability.TO_BE_CLEANED,Availability.UNDER_MAINTENENCE,Availability.USED});
+										roomoperations.addRoom(roomNumber, availability, "");
+									}
+								}
+						),
+						new Frame.MenuItem("Modify Rate",
+								new Runnable() {
+									@Override
+									public void run() {
+										String roomTypeId = frame.inputTextFor("room type id");
+										double rate = frame.inputDoubleFor("the new rate");
+										roomoperations.modifyRate(roomTypeId, rate);
+									}
+								}
+						),
+						new Frame.MenuItem("Make room Availible",
+								new Runnable() {
+									@Override
+									public void run() {
+										roomoperations.makeRoomAvailable(frame.input("room number to make available"));
+									}
+								}
+						),
+						new Frame.MenuItem("Make room Unavailible",
+								new Runnable() {
+									@Override
+									public void run() {
+										roomoperations.makeRoomUnavailable(frame.input("room number to make unavailable"));
+									}
+								}
+						),
+						new Frame.MenuItem("Remove room",
+								new Runnable() {
+									@Override
+									public void run() {
+										roomoperations.removeRoom(frame.input("room number to remove"));
+									}
+								}
+						)
+				});
 
-		}
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		//throw new UnsupportedOperationException();

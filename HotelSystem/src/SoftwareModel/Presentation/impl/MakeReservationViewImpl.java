@@ -185,11 +185,9 @@ public class MakeReservationViewImpl extends MinimalEObjectImpl.Container implem
 		System.out.println("Enter check out date (format YY-MM-DD): ");
 		Date checkOutDate = getDate(checkInDate);
 
-		Scanner scanner = new Scanner(System.in);
 		int numberOfRooms;
 		do{
-			System.out.println("Enter number of rooms to reserve (1-9):");
-			numberOfRooms = scanner.nextInt();
+			numberOfRooms = frame.input("number of rooms to reserve (1-9)");
 		}while(numberOfRooms > 9 || numberOfRooms < 1);
 
 		EList<RoomBooking> roomInterests = new BasicEList<RoomBooking>();
@@ -199,10 +197,8 @@ public class MakeReservationViewImpl extends MinimalEObjectImpl.Container implem
 
 		int room = 1;
 		for (RoomBooking roomInterest : roomInterests) {
-			System.out.println("Enter number of adults for room " + room + ":");
-			roomInterest.setAdults(scanner.nextInt());
-			System.out.println("Enter number of children for room " + room + ":");
-			roomInterest.setChildren(scanner.nextInt());
+			roomInterest.setAdults(frame.input("number of adults for room " + room));
+			roomInterest.setChildren(frame.input("number of children for room " + room));
 			room++;
 		}
 
