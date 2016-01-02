@@ -92,6 +92,10 @@ public class DomainEntitiesAdapterFactory extends AdapterFactoryImpl {
 				return createRoomAdapter();
 			}
 			@Override
+			public Adapter caseCustomerCancelationPolicy(CustomerCancelationPolicy object) {
+				return createCustomerCancelationPolicyAdapter();
+			}
+			@Override
 			public Adapter caseBill(Bill object) {
 				return createBillAdapter();
 			}
@@ -218,6 +222,20 @@ public class DomainEntitiesAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createRoomAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link SoftwareModel.DomainEntities.CustomerCancelationPolicy <em>Customer Cancelation Policy</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see SoftwareModel.DomainEntities.CustomerCancelationPolicy
+	 * @generated
+	 */
+	public Adapter createCustomerCancelationPolicyAdapter() {
 		return null;
 	}
 

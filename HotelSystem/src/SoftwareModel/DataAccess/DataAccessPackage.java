@@ -2,6 +2,7 @@
  */
 package SoftwareModel.DataAccess;
 
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
@@ -176,13 +177,22 @@ public interface DataAccessPackage extends EPackage {
 	int DATABASE_CONTEXT__ROOM_BOOKINGS = 3;
 
 	/**
+	 * The feature id for the '<em><b>Passwords</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATABASE_CONTEXT__PASSWORDS = 4;
+
+	/**
 	 * The number of structural features of the '<em>Database Context</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATABASE_CONTEXT_FEATURE_COUNT = 4;
+	int DATABASE_CONTEXT_FEATURE_COUNT = 5;
 
 	/**
 	 * The number of operations of the '<em>Database Context</em>' class.
@@ -547,6 +557,17 @@ public interface DataAccessPackage extends EPackage {
 	EReference getDatabaseContext_RoomBookings();
 
 	/**
+	 * Returns the meta object for the attribute list '{@link SoftwareModel.DataAccess.DatabaseContext#getPasswords <em>Passwords</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute list '<em>Passwords</em>'.
+	 * @see SoftwareModel.DataAccess.DatabaseContext#getPasswords()
+	 * @see #getDatabaseContext()
+	 * @generated
+	 */
+	EAttribute getDatabaseContext_Passwords();
+
+	/**
 	 * Returns the meta object for class '{@link SoftwareModel.DataAccess.RoomBookingsRepository <em>Room Bookings Repository</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -863,6 +884,14 @@ public interface DataAccessPackage extends EPackage {
 		 * @generated
 		 */
 		EReference DATABASE_CONTEXT__ROOM_BOOKINGS = eINSTANCE.getDatabaseContext_RoomBookings();
+
+		/**
+		 * The meta object literal for the '<em><b>Passwords</b></em>' attribute list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DATABASE_CONTEXT__PASSWORDS = eINSTANCE.getDatabaseContext_Passwords();
 
 		/**
 		 * The meta object literal for the '{@link SoftwareModel.DataAccess.impl.RoomBookingsRepositoryImpl <em>Room Bookings Repository</em>}' class.

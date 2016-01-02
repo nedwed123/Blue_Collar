@@ -218,7 +218,7 @@ public class AvailibleRoomFinderImpl extends MinimalEObjectImpl.Container implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<RoomType> availibleRoom(RoomBooking roomBooking) {
+	public int availibleRoom(RoomBooking roomBooking) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

@@ -63,6 +63,7 @@ public class DomainEntitiesFactoryImpl extends EFactoryImpl implements DomainEnt
 			case DomainEntitiesPackage.ROOM_BOOKING: return createRoomBooking();
 			case DomainEntitiesPackage.ROOM_RESPONSIBLE: return createRoomResponsible();
 			case DomainEntitiesPackage.ROOM: return createRoom();
+			case DomainEntitiesPackage.CUSTOMER_CANCELATION_POLICY: return createCustomerCancelationPolicy();
 			case DomainEntitiesPackage.BILL: return createBill();
 			case DomainEntitiesPackage.SERVICE: return createService();
 			case DomainEntitiesPackage.CANCELATION_POLICY: return createCancelationPolicy();
@@ -173,6 +174,16 @@ public class DomainEntitiesFactoryImpl extends EFactoryImpl implements DomainEnt
 	public Room createRoom() {
 		RoomImpl room = new RoomImpl();
 		return room;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CustomerCancelationPolicy createCustomerCancelationPolicy() {
+		CustomerCancelationPolicyImpl customerCancelationPolicy = new CustomerCancelationPolicyImpl();
+		return customerCancelationPolicy;
 	}
 
 	/**

@@ -5,13 +5,11 @@ package SoftwareModel.Presentation.impl;
 import SoftwareModel.Presentation.CustomerHomeView;
 import SoftwareModel.Presentation.Frame;
 import SoftwareModel.Presentation.PresentationPackage;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import java.lang.reflect.InvocationTargetException;
-import org.eclipse.emf.common.util.EList;
-
-import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -49,25 +47,8 @@ public class CustomerHomeViewImpl extends MinimalEObjectImpl.Container implement
 
 		frame.displayMenu("-- Welcome customer --", 
 				new Frame.MenuItem[] {
-						new Frame.MenuItem(
-							"Reserve a room",
-							new Runnable() {
-								@Override
-								public void run() {
-									frame.changeView(new MakeReservationViewImpl());
-								}
-							}
-						),
-						new Frame.MenuItem(
-								"View Reservation",
-								new Runnable() {
-									@Override
-									public void run() {
-										frame.changeView(new ReservationViewImpl());
-									}
-								}
-							),
-
+						new Frame.MenuItem("Reserve a room",new MakeReservationViewImpl()),
+						new Frame.MenuItem("View Reservation",new ReservationViewImpl()),
 						new Frame.MenuItem(
 								"Exit",
 								new Runnable() {

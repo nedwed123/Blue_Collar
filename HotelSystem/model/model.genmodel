@@ -67,6 +67,8 @@
         <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute SoftwareModel.ecore#//DomainEntities/Reservation/discountCode"/>
         <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
             propertySortChoices="true" ecoreFeature="ecore:EReference SoftwareModel.ecore#//DomainEntities/Reservation/paymentdetails"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference SoftwareModel.ecore#//DomainEntities/Reservation/cancelationpolicy"/>
         <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="SoftwareModel.ecore#//DomainEntities/Reservation/cancel"/>
       </genClasses>
       <genClasses xsi:type="genmodel:GenClass" ecoreClass="SoftwareModel.ecore#//DomainEntities/RoomBooking">
@@ -100,6 +102,11 @@
         <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute SoftwareModel.ecore#//DomainEntities/Room/disabledAccess"/>
         <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
             createChild="true" ecoreFeature="ecore:EReference SoftwareModel.ecore#//DomainEntities/Room/roomtype"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="SoftwareModel.ecore#//DomainEntities/CustomerCancelationPolicy">
+        <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="SoftwareModel.ecore#//DomainEntities/CustomerCancelationPolicy/canBeCancelledByCustomer">
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="SoftwareModel.ecore#//DomainEntities/CustomerCancelationPolicy/canBeCancelledByCustomer/reservation"/>
+        </genOperations>
       </genClasses>
       <genClasses xsi:type="genmodel:GenClass" ecoreClass="SoftwareModel.ecore#//DomainEntities/Bill"/>
       <genClasses xsi:type="genmodel:GenClass" ecoreClass="SoftwareModel.ecore#//DomainEntities/Service">
@@ -142,6 +149,7 @@
             propertySortChoices="true" ecoreFeature="ecore:EReference SoftwareModel.ecore#//DataAccess/DatabaseContext/reservations"/>
         <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
             propertySortChoices="true" ecoreFeature="ecore:EReference SoftwareModel.ecore#//DataAccess/DatabaseContext/roomBookings"/>
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute SoftwareModel.ecore#//DataAccess/DatabaseContext/passwords"/>
       </genClasses>
       <genClasses xsi:type="genmodel:GenClass" ecoreClass="SoftwareModel.ecore#//DataAccess/RoomBookingsRepository">
         <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"

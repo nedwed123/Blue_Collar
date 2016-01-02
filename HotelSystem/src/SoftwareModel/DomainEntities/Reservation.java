@@ -23,6 +23,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link SoftwareModel.DomainEntities.Reservation#getReservationId <em>Reservation Id</em>}</li>
  *   <li>{@link SoftwareModel.DomainEntities.Reservation#getDiscountCode <em>Discount Code</em>}</li>
  *   <li>{@link SoftwareModel.DomainEntities.Reservation#getPaymentdetails <em>Paymentdetails</em>}</li>
+ *   <li>{@link SoftwareModel.DomainEntities.Reservation#getCancelationpolicy <em>Cancelationpolicy</em>}</li>
  * </ul>
  *
  * @see SoftwareModel.DomainEntities.DomainEntitiesPackage#getReservation()
@@ -175,6 +176,32 @@ public interface Reservation extends EObject {
 	 * @generated
 	 */
 	void setPaymentdetails(PaymentDetails value);
+
+	/**
+	 * Returns the value of the '<em><b>Cancelationpolicy</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Cancelationpolicy</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Cancelationpolicy</em>' reference.
+	 * @see #setCancelationpolicy(CustomerCancelationPolicy)
+	 * @see SoftwareModel.DomainEntities.DomainEntitiesPackage#getReservation_Cancelationpolicy()
+	 * @model required="true" ordered="false"
+	 * @generated
+	 */
+	CustomerCancelationPolicy getCancelationpolicy();
+
+	/**
+	 * Sets the value of the '{@link SoftwareModel.DomainEntities.Reservation#getCancelationpolicy <em>Cancelationpolicy</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Cancelationpolicy</em>' reference.
+	 * @see #getCancelationpolicy()
+	 * @generated
+	 */
+	void setCancelationpolicy(CustomerCancelationPolicy value);
 
 	/**
 	 * <!-- begin-user-doc -->

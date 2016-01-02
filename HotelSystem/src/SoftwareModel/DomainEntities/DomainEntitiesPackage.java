@@ -251,13 +251,22 @@ public interface DomainEntitiesPackage extends EPackage {
 	int RESERVATION__PAYMENTDETAILS = 5;
 
 	/**
+	 * The feature id for the '<em><b>Cancelationpolicy</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESERVATION__CANCELATIONPOLICY = 6;
+
+	/**
 	 * The number of structural features of the '<em>Reservation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RESERVATION_FEATURE_COUNT = 6;
+	int RESERVATION_FEATURE_COUNT = 7;
 
 	/**
 	 * The operation id for the '<em>Cancel</em>' operation.
@@ -476,7 +485,7 @@ public interface DomainEntitiesPackage extends EPackage {
 	 * @see SoftwareModel.DomainEntities.impl.DomainEntitiesPackageImpl#getBill()
 	 * @generated
 	 */
-	int BILL = 6;
+	int BILL = 7;
 
 	/**
 	 * The meta object id for the '{@link SoftwareModel.DomainEntities.impl.RoomImpl <em>Room</em>}' class.
@@ -570,6 +579,43 @@ public interface DomainEntitiesPackage extends EPackage {
 	int ROOM_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link SoftwareModel.DomainEntities.impl.CustomerCancelationPolicyImpl <em>Customer Cancelation Policy</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see SoftwareModel.DomainEntities.impl.CustomerCancelationPolicyImpl
+	 * @see SoftwareModel.DomainEntities.impl.DomainEntitiesPackageImpl#getCustomerCancelationPolicy()
+	 * @generated
+	 */
+	int CUSTOMER_CANCELATION_POLICY = 6;
+
+	/**
+	 * The number of structural features of the '<em>Customer Cancelation Policy</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CUSTOMER_CANCELATION_POLICY_FEATURE_COUNT = 0;
+
+	/**
+	 * The operation id for the '<em>Can Be Cancelled By Customer</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CUSTOMER_CANCELATION_POLICY___CAN_BE_CANCELLED_BY_CUSTOMER__RESERVATION = 0;
+
+	/**
+	 * The number of operations of the '<em>Customer Cancelation Policy</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CUSTOMER_CANCELATION_POLICY_OPERATION_COUNT = 1;
+
+	/**
 	 * The number of structural features of the '<em>Bill</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -595,7 +641,7 @@ public interface DomainEntitiesPackage extends EPackage {
 	 * @see SoftwareModel.DomainEntities.impl.DomainEntitiesPackageImpl#getService()
 	 * @generated
 	 */
-	int SERVICE = 7;
+	int SERVICE = 8;
 
 	/**
 	 * The feature id for the '<em><b>Service Date</b></em>' attribute.
@@ -650,7 +696,7 @@ public interface DomainEntitiesPackage extends EPackage {
 	 * @see SoftwareModel.DomainEntities.impl.DomainEntitiesPackageImpl#getCancelationPolicy()
 	 * @generated
 	 */
-	int CANCELATION_POLICY = 8;
+	int CANCELATION_POLICY = 9;
 
 	/**
 	 * The feature id for the '<em><b>Min Days Before Cancelation By Customer</b></em>' attribute.
@@ -696,7 +742,7 @@ public interface DomainEntitiesPackage extends EPackage {
 	 * @see SoftwareModel.DomainEntities.impl.DomainEntitiesPackageImpl#getBedType()
 	 * @generated
 	 */
-	int BED_TYPE = 9;
+	int BED_TYPE = 10;
 
 	/**
 	 * The meta object id for the '{@link SoftwareModel.DomainEntities.Availability <em>Availability</em>}' enum.
@@ -706,7 +752,7 @@ public interface DomainEntitiesPackage extends EPackage {
 	 * @see SoftwareModel.DomainEntities.impl.DomainEntitiesPackageImpl#getAvailability()
 	 * @generated
 	 */
-	int AVAILABILITY = 10;
+	int AVAILABILITY = 11;
 
 
 	/**
@@ -892,6 +938,17 @@ public interface DomainEntitiesPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getReservation_Paymentdetails();
+
+	/**
+	 * Returns the meta object for the reference '{@link SoftwareModel.DomainEntities.Reservation#getCancelationpolicy <em>Cancelationpolicy</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Cancelationpolicy</em>'.
+	 * @see SoftwareModel.DomainEntities.Reservation#getCancelationpolicy()
+	 * @see #getReservation()
+	 * @generated
+	 */
+	EReference getReservation_Cancelationpolicy();
 
 	/**
 	 * Returns the meta object for the '{@link SoftwareModel.DomainEntities.Reservation#cancel() <em>Cancel</em>}' operation.
@@ -1184,6 +1241,26 @@ public interface DomainEntitiesPackage extends EPackage {
 	EReference getRoom_Roomtype();
 
 	/**
+	 * Returns the meta object for class '{@link SoftwareModel.DomainEntities.CustomerCancelationPolicy <em>Customer Cancelation Policy</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Customer Cancelation Policy</em>'.
+	 * @see SoftwareModel.DomainEntities.CustomerCancelationPolicy
+	 * @generated
+	 */
+	EClass getCustomerCancelationPolicy();
+
+	/**
+	 * Returns the meta object for the '{@link SoftwareModel.DomainEntities.CustomerCancelationPolicy#canBeCancelledByCustomer(SoftwareModel.DomainEntities.Reservation) <em>Can Be Cancelled By Customer</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Can Be Cancelled By Customer</em>' operation.
+	 * @see SoftwareModel.DomainEntities.CustomerCancelationPolicy#canBeCancelledByCustomer(SoftwareModel.DomainEntities.Reservation)
+	 * @generated
+	 */
+	EOperation getCustomerCancelationPolicy__CanBeCancelledByCustomer__Reservation();
+
+	/**
 	 * Returns the meta object for class '{@link SoftwareModel.DomainEntities.Service <em>Service</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1443,6 +1520,14 @@ public interface DomainEntitiesPackage extends EPackage {
 		EReference RESERVATION__PAYMENTDETAILS = eINSTANCE.getReservation_Paymentdetails();
 
 		/**
+		 * The meta object literal for the '<em><b>Cancelationpolicy</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference RESERVATION__CANCELATIONPOLICY = eINSTANCE.getReservation_Cancelationpolicy();
+
+		/**
 		 * The meta object literal for the '<em><b>Cancel</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1665,6 +1750,24 @@ public interface DomainEntitiesPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ROOM__ROOMTYPE = eINSTANCE.getRoom_Roomtype();
+
+		/**
+		 * The meta object literal for the '{@link SoftwareModel.DomainEntities.impl.CustomerCancelationPolicyImpl <em>Customer Cancelation Policy</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see SoftwareModel.DomainEntities.impl.CustomerCancelationPolicyImpl
+		 * @see SoftwareModel.DomainEntities.impl.DomainEntitiesPackageImpl#getCustomerCancelationPolicy()
+		 * @generated
+		 */
+		EClass CUSTOMER_CANCELATION_POLICY = eINSTANCE.getCustomerCancelationPolicy();
+
+		/**
+		 * The meta object literal for the '<em><b>Can Be Cancelled By Customer</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation CUSTOMER_CANCELATION_POLICY___CAN_BE_CANCELLED_BY_CUSTOMER__RESERVATION = eINSTANCE.getCustomerCancelationPolicy__CanBeCancelledByCustomer__Reservation();
 
 		/**
 		 * The meta object literal for the '{@link SoftwareModel.DomainEntities.impl.ServiceImpl <em>Service</em>}' class.

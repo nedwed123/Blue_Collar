@@ -1449,7 +1449,7 @@
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ggxmoZdlEeW9FdtnBhCZ1w"/>
           </children>
           <element xmi:type="uml:Class" href="SoftwareModel.uml#_ggSeYJdlEeW9FdtnBhCZ1w"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ggw_gZdlEeW9FdtnBhCZ1w" x="894" y="70" width="258" height="204"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ggw_gZdlEeW9FdtnBhCZ1w" x="894" y="70" width="299" height="204"/>
         </children>
         <children xmi:type="notation:Shape" xmi:id="_Ril74JhpEeWatpqnQATTNw" type="3010">
           <children xmi:type="notation:DecorationNode" xmi:id="_Rimi8ZhpEeWatpqnQATTNw" type="5014"/>

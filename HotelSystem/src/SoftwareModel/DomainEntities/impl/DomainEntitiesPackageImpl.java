@@ -14,6 +14,7 @@ import SoftwareModel.DomainEntities.Availability;
 import SoftwareModel.DomainEntities.BedType;
 import SoftwareModel.DomainEntities.Bill;
 import SoftwareModel.DomainEntities.CancelationPolicy;
+import SoftwareModel.DomainEntities.CustomerCancelationPolicy;
 import SoftwareModel.DomainEntities.DomainEntitiesFactory;
 import SoftwareModel.DomainEntities.DomainEntitiesPackage;
 import SoftwareModel.DomainEntities.PaymentDetails;
@@ -94,6 +95,13 @@ public class DomainEntitiesPackageImpl extends EPackageImpl implements DomainEnt
 	 * @generated
 	 */
 	private EClass roomEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass customerCancelationPolicyEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -356,6 +364,15 @@ public class DomainEntitiesPackageImpl extends EPackageImpl implements DomainEnt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getReservation_Cancelationpolicy() {
+		return (EReference)reservationEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EOperation getReservation__Cancel() {
 		return reservationEClass.getEOperations().get(0);
 	}
@@ -599,6 +616,24 @@ public class DomainEntitiesPackageImpl extends EPackageImpl implements DomainEnt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getCustomerCancelationPolicy() {
+		return customerCancelationPolicyEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getCustomerCancelationPolicy__CanBeCancelledByCustomer__Reservation() {
+		return customerCancelationPolicyEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getService() {
 		return serviceEClass;
 	}
@@ -722,6 +757,7 @@ public class DomainEntitiesPackageImpl extends EPackageImpl implements DomainEnt
 		createEAttribute(reservationEClass, RESERVATION__RESERVATION_ID);
 		createEAttribute(reservationEClass, RESERVATION__DISCOUNT_CODE);
 		createEReference(reservationEClass, RESERVATION__PAYMENTDETAILS);
+		createEReference(reservationEClass, RESERVATION__CANCELATIONPOLICY);
 		createEOperation(reservationEClass, RESERVATION___CANCEL);
 
 		roomBookingEClass = createEClass(ROOM_BOOKING);
@@ -751,6 +787,9 @@ public class DomainEntitiesPackageImpl extends EPackageImpl implements DomainEnt
 		createEAttribute(roomEClass, ROOM__PETS_ALLOWED);
 		createEAttribute(roomEClass, ROOM__DISABLED_ACCESS);
 		createEReference(roomEClass, ROOM__ROOMTYPE);
+
+		customerCancelationPolicyEClass = createEClass(CUSTOMER_CANCELATION_POLICY);
+		createEOperation(customerCancelationPolicyEClass, CUSTOMER_CANCELATION_POLICY___CAN_BE_CANCELLED_BY_CUSTOMER__RESERVATION);
 
 		billEClass = createEClass(BILL);
 
@@ -820,6 +859,7 @@ public class DomainEntitiesPackageImpl extends EPackageImpl implements DomainEnt
 		initEAttribute(getReservation_ReservationId(), ecorePackage.getEInt(), "reservationId", null, 1, 1, Reservation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getReservation_DiscountCode(), theTypesPackage.getString(), "discountCode", null, 1, 1, Reservation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getReservation_Paymentdetails(), this.getPaymentDetails(), null, "paymentdetails", null, 1, 1, Reservation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getReservation_Cancelationpolicy(), this.getCustomerCancelationPolicy(), null, "cancelationpolicy", null, 1, 1, Reservation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEOperation(getReservation__Cancel(), null, "cancel", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
@@ -853,6 +893,11 @@ public class DomainEntitiesPackageImpl extends EPackageImpl implements DomainEnt
 		initEAttribute(getRoom_DisabledAccess(), ecorePackage.getEBoolean(), "disabledAccess", null, 1, 1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getRoom_Roomtype(), this.getRoomType(), null, "roomtype", null, 1, 1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
+		initEClass(customerCancelationPolicyEClass, CustomerCancelationPolicy.class, "CustomerCancelationPolicy", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		EOperation op = initEOperation(getCustomerCancelationPolicy__CanBeCancelledByCustomer__Reservation(), null, "canBeCancelledByCustomer", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, this.getReservation(), "reservation", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
 		initEClass(billEClass, Bill.class, "Bill", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(serviceEClass, Service.class, "Service", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -863,7 +908,7 @@ public class DomainEntitiesPackageImpl extends EPackageImpl implements DomainEnt
 		initEClass(cancelationPolicyEClass, CancelationPolicy.class, "CancelationPolicy", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getCancelationPolicy_MinDaysBeforeCancelationByCustomer(), ecorePackage.getEInt(), "MinDaysBeforeCancelationByCustomer", null, 1, 1, CancelationPolicy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-		EOperation op = initEOperation(getCancelationPolicy__CanBeCancelled__boolean_Reservation(), theTypesPackage.getBoolean(), "canBeCancelled", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		op = initEOperation(getCancelationPolicy__CanBeCancelled__boolean_Reservation(), theTypesPackage.getBoolean(), "canBeCancelled", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, theTypesPackage.getBoolean(), "isCustomer", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, this.getReservation(), "reservation", 1, 1, IS_UNIQUE, !IS_ORDERED);
 

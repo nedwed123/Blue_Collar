@@ -8,19 +8,18 @@ import SoftwareModel.DomainEntities.RoomBooking;
 import SoftwareModel.Presentation.Frame;
 import SoftwareModel.Presentation.PresentationPackage;
 import SoftwareModel.Presentation.RoomBookingView;
-
-import java.lang.reflect.InvocationTargetException;
-import java.util.Scanner;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import java.lang.reflect.InvocationTargetException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 
 /**
  * <!-- begin-user-doc -->
@@ -134,17 +133,32 @@ public class RoomBookingViewImpl extends MinimalEObjectImpl.Container implements
 		
 		// Display room booking
 
-		System.out.println("What do you want to do with the room booking?"
-				+ "1: Check in guests"
-				+ "2: Check out guests");
-		
-		
-		//TODO: input switch
-		
-		//rooms.checkIn(roomBooking);
-		//rooms.checkOut(roomBooking);
-		
-		throw new UnsupportedOperationException();
+		final RoomBooking finalRoombooking = roombooking;
+
+		List<Frame.MenuItem> menuItems = new ArrayList<Frame.MenuItem>();
+
+		if(roombooking.isIsCheckedIn()) {
+			menuItems.add(new Frame.MenuItem("Check out",
+					new Runnable() {
+						@Override
+						public void run() {
+							rooms.checkOut(finalRoombooking);
+						}
+					}
+			));
+		}else{
+			menuItems.add(new Frame.MenuItem("Check in",
+					new Runnable() {
+						@Override
+						public void run() {
+							int roomNr = rooms.checkIn(finalRoombooking);
+							System.out.println(finalRoombooking.getRoomresponsible().getFirstName() + " have been assigned room nr: " + roomNr);
+						}
+					}
+			));
+		}
+		menuItems.add(new Frame.MenuItem("Nothing", new Frame.Nothing()));
+		frame.displayMenu("What do u want to do with the room booking?:",menuItems);
 	}
 
 	/**

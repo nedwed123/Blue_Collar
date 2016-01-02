@@ -24,6 +24,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link SoftwareModel.DataAccess.DatabaseContext#getRoomTypes <em>Room Types</em>}</li>
  *   <li>{@link SoftwareModel.DataAccess.DatabaseContext#getReservations <em>Reservations</em>}</li>
  *   <li>{@link SoftwareModel.DataAccess.DatabaseContext#getRoomBookings <em>Room Bookings</em>}</li>
+ *   <li>{@link SoftwareModel.DataAccess.DatabaseContext#getPasswords <em>Passwords</em>}</li>
  * </ul>
  *
  * @see SoftwareModel.DataAccess.DataAccessPackage#getDatabaseContext()
@@ -94,6 +95,22 @@ public interface DatabaseContext extends EObject {
 	 * @generated
 	 */
 	EList<RoomBooking> getRoomBookings();
+
+	/**
+	 * Returns the value of the '<em><b>Passwords</b></em>' attribute list.
+	 * The list contents are of type {@link java.lang.String}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Passwords</em>' attribute list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Passwords</em>' attribute list.
+	 * @see SoftwareModel.DataAccess.DataAccessPackage#getDatabaseContext_Passwords()
+	 * @model dataType="org.eclipse.uml2.types.String" required="true" ordered="false"
+	 * @generated
+	 */
+	EList<String> getPasswords();
 
 
 } // DatabaseContext

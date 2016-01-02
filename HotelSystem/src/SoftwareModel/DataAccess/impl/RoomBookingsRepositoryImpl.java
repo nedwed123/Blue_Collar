@@ -5,19 +5,17 @@ package SoftwareModel.DataAccess.impl;
 import SoftwareModel.DataAccess.DataAccessPackage;
 import SoftwareModel.DataAccess.DatabaseContext;
 import SoftwareModel.DataAccess.RoomBookingsRepository;
-
+import SoftwareModel.DomainEntities.Reservation;
 import SoftwareModel.DomainEntities.RoomBooking;
-
-import java.lang.reflect.InvocationTargetException;
+import SoftwareModel.DomainEntities.RoomResponsible;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import java.lang.reflect.InvocationTargetException;
 
 /**
  * <!-- begin-user-doc -->
@@ -102,45 +100,43 @@ public class RoomBookingsRepositoryImpl extends MinimalEObjectImpl.Container imp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	public void update(RoomBooking roomBooking) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		databasecontext.getRoomBookings().set(databasecontext.getRoomBookings().indexOf(roomBooking),roomBooking);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	public RoomBooking getByRoomResponsible(String name) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		for (RoomBooking booking : databasecontext.getRoomBookings()){
+			RoomResponsible roomresponsible = booking.getRoomresponsible();
+			if(roomresponsible.getFirstName() + roomresponsible.getLastName() == name)
+				return booking;
+		}
+		return null;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	public RoomBooking getByReservationNr(int reservationNumber) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		for (Reservation reservation : databasecontext.getReservations()){
+			if(reservation.getReservationId() == reservationNumber)
+				//TODO: Change to return list
+				return reservation.getRoombooking().get(0);
+		}
+		return null;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	public EList<RoomBooking> getAll() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return databasecontext.getRoomBookings();
 	}
 
 	/**
@@ -148,12 +144,11 @@ public class RoomBookingsRepositoryImpl extends MinimalEObjectImpl.Container imp
 	 * <!-- end-user-doc -->
 	 */
 	public RoomBooking getByRoomNr(int roomNr) {
-		// TODO: implement this method
+		// TODO: implement this method, check get by room responsible
 		// Ensure that you remove @generated or mark it @generated NOT
 		EList<RoomBooking> bookings = databasecontext.getRoomBookings();
 		if (bookings.size() < 1) {
 			System.out.println("Cannot find booking.");
-			
 		}
 		throw new UnsupportedOperationException();
 	}

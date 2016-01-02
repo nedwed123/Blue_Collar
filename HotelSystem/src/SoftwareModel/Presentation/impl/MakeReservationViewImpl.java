@@ -10,27 +10,24 @@ import SoftwareModel.DomainEntities.PaymentDetails;
 import SoftwareModel.DomainEntities.Reservation;
 import SoftwareModel.DomainEntities.RoomBooking;
 import SoftwareModel.DomainEntities.RoomType;
+import SoftwareModel.DomainEntities.impl.RoomBookingImpl;
 import SoftwareModel.Presentation.Frame;
 import SoftwareModel.Presentation.MakeReservationView;
 import SoftwareModel.Presentation.PresentationPackage;
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.BasicEList;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import java.lang.reflect.InvocationTargetException;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Locale;
-import java.util.Scanner;
-
-import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
-import org.eclipse.emf.common.util.EList;
-
-import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import java.util.*;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object '
@@ -161,11 +158,7 @@ public class MakeReservationViewImpl extends MinimalEObjectImpl.Container implem
 	private Date getDate(Date startDate) {
 
 		DateFormat format = new SimpleDateFormat("yy-MM-dd", Locale.ENGLISH);
-
-		Date checkInDate = new Date();
-		Date checkOutDate = new Date();
 		Scanner scanner = new Scanner(System.in);
-		boolean isDateOk = false;
 		do{
 			
 			try {
@@ -184,54 +177,55 @@ public class MakeReservationViewImpl extends MinimalEObjectImpl.Container implem
 
 	public void run(Frame frame) {
 
-		// TODO: implement this method
+		System.out.println("Make Reservation\n---------------------");
 
-				System.out.println("Make Reservation\n---------------------");
+		System.out.println("Enter check in date (format YY-MM-DD): ");
+		Date checkInDate = getDate(new Date());
 
-				System.out.println("Enter check in date (format YY-MM-DD): ");
-				Date checkInDate = getDate(new Date());
+		System.out.println("Enter check out date (format YY-MM-DD): ");
+		Date checkOutDate = getDate(checkInDate);
 
-				System.out.println("Enter check out date (format YY-MM-DD): ");
-				Date checkOutDate = getDate(checkInDate);
+		int numberOfRooms;
+		do{
+			numberOfRooms = frame.input("number of rooms to reserve (1-9)");
+		}while(numberOfRooms > 9 || numberOfRooms < 1);
 
-				Scanner scanner = new Scanner(System.in);
-				int numberOfRooms;
-				while (true) {
-					System.out.println("Enter number of rooms to reserv:");
-					numberOfRooms = scanner.nextInt();
-					if (numberOfRooms > 9 || numberOfRooms < 1)
-						System.out.println("Please enter a number between 1-9");
-					else
-						break;
-				}
-				int[] numberOfAdultsForRooms = new int[numberOfRooms];
-				int[] numberOfChildrenForRooms = new int[numberOfRooms];
-				for (int i = 0; i < numberOfRooms; i++) {
-					System.out.println("Enter number of adults for room " + (i + 1) + ":");
-					numberOfAdultsForRooms[i] = scanner.nextInt();
-					System.out.println("Enter number of children for room " + (i + 1) + ":");
-					numberOfChildrenForRooms[i] = scanner.nextInt();
-				}
+		EList<RoomBooking> roomInterests = new BasicEList<RoomBooking>();
+		for (int i = 0; i < numberOfRooms; i++) {
+			roomInterests.add(new RoomBookingImpl());
+		}
 
-				EList<RoomType> roomTypes = getRooms().availibleRoomTypes(numberOfAdultsForRooms[0],
-						numberOfChildrenForRooms[0], checkInDate, checkOutDate);
+		int room = 1;
+		for (RoomBooking roomInterest : roomInterests) {
+			roomInterest.setAdults(frame.input("number of adults for room " + room));
+			roomInterest.setChildren(frame.input("number of children for room " + room));
+			room++;
+		}
 
-				if (roomTypes.size() < 1) {
-					System.out.println("No rooms available.");
-					frame.goBack();
-					return;
-				}
+		room = 1;
+		for (RoomBooking roomInterest : roomInterests) {
+			EList<RoomType> roomTypes = getRooms().availibleRoomTypes(roomInterest.getAdults(),
+					roomInterest.getChildren(), checkInDate, checkOutDate);
 
-				// Recieve this input from user
-				EList<RoomBooking> selectedRooms = null;
-				PaymentDetails paymentDetails = null;
-				boolean payNow = false;
+			if (roomTypes.size() < 1) {
+				System.out.println("No rooms available.");
+				frame.goBack();
+				return;
+			}
 
-				Reservation reservation = reservations.make(selectedRooms, paymentDetails, payNow,"",false);
+			RoomType selectedRoomType = (RoomType)frame.displaySelectionMenu("Select room type for room " + room +":",
+					roomTypes.toArray());
+			roomInterest.setRoomtype(selectedRoomType);
+		}
 
-				// Display reservation number?
+		// Recieve this input from user
+		PaymentDetails paymentDetails = null;
+		boolean payNow = false;
 
-				// throw new UnsupportedOperationException();
+		Reservation reservation = reservations.make(roomInterests, paymentDetails, payNow,"",false);
+
+		System.out.println("Reservation successful");
+		System.out.println("Reservation nr is: " + reservation.getReservationId());
 	}
 
 	/**

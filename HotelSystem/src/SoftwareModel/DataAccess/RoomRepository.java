@@ -69,10 +69,10 @@ public interface RoomRepository extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model roomNumberRequired="true" roomNumberOrdered="false"
+	 * @model required="true" ordered="false" roomNumberRequired="true" roomNumberOrdered="false"
 	 * @generated
 	 */
-	void getRoom(int roomNumber);
+	Room getRoom(int roomNumber);
 
 	/**
 	 * <!-- begin-user-doc -->
