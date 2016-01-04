@@ -197,12 +197,13 @@ public class RoomsImpl extends MinimalEObjectImpl.Container implements Rooms {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public EList<RoomBooking> getBooking(String nameOfRoomResponsible) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		
+		return roombookings.findByRoomResponsible(nameOfRoomResponsible);
 	}
 
 	/**

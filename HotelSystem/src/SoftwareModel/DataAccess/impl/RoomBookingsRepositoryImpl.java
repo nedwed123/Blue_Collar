@@ -9,6 +9,7 @@ import SoftwareModel.DomainEntities.Reservation;
 import SoftwareModel.DomainEntities.RoomBooking;
 import SoftwareModel.DomainEntities.RoomResponsible;
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -109,13 +110,14 @@ public class RoomBookingsRepositoryImpl extends MinimalEObjectImpl.Container imp
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 */
-	public RoomBooking getByRoomResponsible(String name) {
+	public EList<RoomBooking> getByRoomResponsible(String name) {
+		EList<RoomBooking> bookings = new BasicEList<RoomBooking>();
 		for (RoomBooking booking : databasecontext.getRoomBookings()){
 			RoomResponsible roomresponsible = booking.getRoomresponsible();
 			if(roomresponsible.getFirstName() + roomresponsible.getLastName() == name)
-				return booking;
+				bookings.add(booking);
 		}
-		return null;
+		return bookings;
 	}
 
 	/**

@@ -122,11 +122,12 @@ public class ReservationViewImpl extends MinimalEObjectImpl.Container implements
 			
 			EList<RoomBooking> roombookings = res.getRoombooking();
 			
-			int i = 0;
+			int i = 1;
 			for (RoomBooking roomBooking : roombookings) {
 				System.out.println("-- Room " + i + " --------------");
-				//TODO: display room booking information
+				System.out.println(roomBooking.toString());
 				System.out.println("\t room info...");
+				i++;
 			}
 
 			frame.displayMenu("What do u want to do with the reservation?:",
@@ -147,7 +148,7 @@ public class ReservationViewImpl extends MinimalEObjectImpl.Container implements
 										}
 									}
 							),
-							new Frame.MenuItem("cancel reservation",
+							new Frame.MenuItem("Cancel reservation",
 									new Runnable() {
 										@Override
 										public void run() {

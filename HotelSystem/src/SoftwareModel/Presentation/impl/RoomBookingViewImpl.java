@@ -5,6 +5,7 @@ package SoftwareModel.Presentation.impl;
 import SoftwareModel.BusinessLogic.Rooms;
 import SoftwareModel.BusinessLogic.impl.RoomsImpl;
 import SoftwareModel.DomainEntities.RoomBooking;
+import SoftwareModel.DomainEntities.RoomType;
 import SoftwareModel.Presentation.Frame;
 import SoftwareModel.Presentation.PresentationPackage;
 import SoftwareModel.Presentation.RoomBookingView;
@@ -115,20 +116,21 @@ public class RoomBookingViewImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 */
 	public void run(Frame frame) {
-		System.out.println("Input room nr or name of room responsible guest");
-
-		Scanner in = new Scanner(System.in);
-		String input = in.next();
+		
+		String input = frame.inputTextFor("room nr or name of room responsible guest");
 		
 		RoomBooking roombooking = null;
 		// could be inside getBooking?
 		if(isInt(input)){
 			roombooking = rooms.getBooking(Integer.parseInt(input));
+		} else {
+			EList<RoomBooking> roomBookings = rooms.getBooking(input);
+			roombooking = (RoomBooking)frame.displaySelectionMenu("Select room booking", roomBookings.toArray());
 		}
 		
 		if(roombooking == null){
 			System.out.println("Unable to find roombooking");
-			frame.changeView(new EmployeeHomeViewImpl());
+			frame.goBack();
 		}
 		
 		// Display room booking

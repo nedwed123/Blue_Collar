@@ -63,7 +63,7 @@ public interface RoomBookingsRepository extends EObject {
 	 * @model required="true" ordered="false" nameDataType="org.eclipse.uml2.types.String" nameRequired="true" nameOrdered="false"
 	 * @generated
 	 */
-	RoomBooking getByRoomResponsible(String name);
+	EList<RoomBooking> getByRoomResponsible(String name);
 
 	/**
 	 * <!-- begin-user-doc -->

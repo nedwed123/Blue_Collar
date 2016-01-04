@@ -156,13 +156,15 @@ public class FrameImpl extends MinimalEObjectImpl.Container implements Frame {
 
 	public int input(String description){
 		AskFor(description);
-		return scanner.nextInt();
+		int in = scanner.nextInt();
+		scanner.nextLine();
+		return in;
 	}
 
 	@Override
 	public String inputTextFor(String description) {
 		AskFor(description);
-		return scanner.next();
+		return scanner.nextLine();
 	}
 
 	@Override
