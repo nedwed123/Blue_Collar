@@ -125,7 +125,7 @@ public class ReservationViewImpl extends MinimalEObjectImpl.Container implements
 			int i = 0;
 			for (RoomBooking roomBooking : roombookings) {
 				System.out.println("-- Room " + i + " --------------");
-				//TODO: display room booking information
+				System.out.println(roomBooking.toString());
 				System.out.println("\t room info...");
 			}
 

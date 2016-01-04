@@ -222,11 +222,11 @@ public class MakeReservationViewImpl extends MinimalEObjectImpl.Container implem
 			
 			// Add and set room responsible
 			RoomResponsible responsible = new RoomResponsibleImpl();
-			responsible.setFirstName(frame.inputTextFor("first name for room responsible for room " + room + ":"));
-			responsible.setLastName(frame.inputTextFor("last name for room responsible for room " + room + ":"));
-			responsible.setEmail(frame.inputTextFor("e-mail for room responsible for room " + room + ":"));
-			responsible.setAddress(frame.inputTextFor("address for room responsible for room " + room + ":"));
-			responsible.setPhoneNumber(frame.input("phone number for room responsible for room " + room + ":"));
+			responsible.setFirstName(frame.inputTextFor("first name for room responsible for room " + room));
+			responsible.setLastName(frame.inputTextFor("last name for room responsible for room " + room));
+			responsible.setEmail(frame.inputTextFor("e-mail for room responsible for room " + room));
+			responsible.setAddress(frame.inputTextFor("address for room responsible for room " + room));
+			responsible.setPhoneNumber(frame.input("phone number for room responsible for room " + room));
 			
 			roomInterest.setRoomresponsible(responsible);
 			
@@ -246,6 +246,7 @@ public class MakeReservationViewImpl extends MinimalEObjectImpl.Container implem
 		
 		System.out.println("Reservation successful");
 		System.out.println("Reservation nr is: " + reservation.getReservationId());
+		frame.goBack();
 	}
 
 	/**

@@ -189,7 +189,7 @@ public class ReservationsImpl extends MinimalEObjectImpl.Container implements Re
 		reservation.setPreliminaryCheckOut(selectedRooms.get(0).getCheckOutDate());
 		reservationsrepository.addNew(reservation);
 		
-		throw new UnsupportedOperationException();
+		return reservation;
 	}
 
 	/**
