@@ -4,14 +4,18 @@ package SoftwareModel.DataAccess.impl;
 
 import SoftwareModel.DataAccess.DataAccessPackage;
 import SoftwareModel.DataAccess.DatabaseContext;
-
+import SoftwareModel.DomainEntities.Availability;
+import SoftwareModel.DomainEntities.BedType;
 import SoftwareModel.DomainEntities.Reservation;
 import SoftwareModel.DomainEntities.Room;
 import SoftwareModel.DomainEntities.RoomBooking;
 import SoftwareModel.DomainEntities.RoomType;
+import SoftwareModel.DomainEntities.impl.RoomImpl;
+import SoftwareModel.DomainEntities.impl.RoomTypeImpl;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
@@ -57,6 +61,7 @@ public class DatabaseContextImpl extends MinimalEObjectImpl.Container implements
 	 * @generated
 	 * @ordered
 	 */
+	
 	protected EList<RoomType> roomTypes;
 
 	/**
@@ -67,6 +72,7 @@ public class DatabaseContextImpl extends MinimalEObjectImpl.Container implements
 	 * @generated
 	 * @ordered
 	 */
+	
 	protected EList<Reservation> reservations;
 
 	/**
@@ -95,7 +101,36 @@ public class DatabaseContextImpl extends MinimalEObjectImpl.Container implements
 	 * @generated
 	 */
 	public DatabaseContextImpl() {
-		super();
+		super();		
+		EList<BedType> singleBed = new BasicEList<BedType>();
+		EList<BedType> doubleBed = new BasicEList<BedType>();
+		EList<BedType> juniorBed = new BasicEList<BedType>();
+		EList<BedType> superiorBed = new BasicEList<BedType>();
+		
+		singleBed.add(0, BedType.SINGLE);
+		singleBed.add(1, BedType.KID);
+		
+		doubleBed.add(0, BedType.SINGLE);
+		doubleBed.add(1, BedType.SINGLE);
+		doubleBed.add(2, BedType.KID);
+		
+		juniorBed.add(0, BedType.QUEEN);
+		
+		superiorBed.add(0, BedType.KING);
+		
+		roomTypes = getRoomTypes();
+		
+		roomTypes.add(0, new RoomTypeImpl("Single Room", singleBed ,300.0, 25.0));
+		roomTypes.add(1, new RoomTypeImpl("Double Room", doubleBed, 450.0, 35.0));
+		roomTypes.add(2, new RoomTypeImpl("Junior Suite", juniorBed, 550.0, 45.0));
+		roomTypes.add(3, new RoomTypeImpl("Superior Suite", superiorBed, 700.0, 60.0));
+		
+		rooms = getRooms();
+		
+		rooms.add(new RoomImpl(101, roomTypes.get(0), Availability.AVAILIBLE));
+		rooms.add(new RoomImpl(102, roomTypes.get(1), Availability.AVAILIBLE));
+		rooms.add(new RoomImpl(201, roomTypes.get(2), Availability.AVAILIBLE));
+		rooms.add(new RoomImpl(202, roomTypes.get(3), Availability.AVAILIBLE));
 	}
 
 	/**

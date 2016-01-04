@@ -136,17 +136,7 @@ public class RoomTypeImpl extends MinimalEObjectImpl.Container implements RoomTy
 		this.beds = beds;
 		this.rate = rate;
 		this.size = size;
-		bedtype=new BasicEList<BedType>();
-		if (name.equals("Single Room"))
-			this.bedtype.add(0, beds.get(0));
-		else if (name.equals("Double Room"))
-			this.bedtype.add(0, beds.get(1));
-		else if (name.equals("Junior Suite"))
-			this.bedtype.add(0, beds.get(2));
-		else {
-			this.bedtype.add(0, beds.get(0));
-			this.bedtype.add(1, beds.get(1));
-		}
+		bedtype = beds;
 
 	}
 

@@ -132,7 +132,7 @@ public class RoomOperationsImpl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 */
-	public void addRoom(int roomNumber, Availability availability, String type) {
+	public void addRoom(int roomNumber, Availability availability, String type, EList<BedType> beds) {
 		RoomType roomType = roomrepository.getRoomType(type);
 
 		roomrepository.addRoom(new RoomImpl(roomNumber, roomType, availability));
@@ -255,7 +255,7 @@ public class RoomOperationsImpl extends MinimalEObjectImpl.Container implements 
 				makeRoomAvailable((Integer)arguments.get(0));
 				return null;
 			case BusinessLogicPackage.ROOM_OPERATIONS___ADD_ROOM__INT_AVAILABILITY_STRING:
-				addRoom((Integer)arguments.get(0), (Availability)arguments.get(1), (String)arguments.get(2));
+				addRoom((Integer)arguments.get(0), (Availability)arguments.get(1), (String)arguments.get(2), (EList<BedType>)arguments.get(3));
 				return null;
 			case BusinessLogicPackage.ROOM_OPERATIONS___REMOVE_ROOM__INT:
 				removeRoom((Integer)arguments.get(0));

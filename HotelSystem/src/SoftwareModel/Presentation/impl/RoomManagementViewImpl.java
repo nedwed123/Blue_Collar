@@ -50,17 +50,6 @@ public class RoomManagementViewImpl extends MinimalEObjectImpl.Container impleme
 	 */
 	public RoomManagementViewImpl() {
 		super();
-		EList<BedType> beds = new BasicEList<BedType>();
-		beds.add(0, BedType.SINGLE);
-		beds.add(1, BedType.QUEEN);
-		beds.add(2, BedType.KING);
-		roomoperations.addRoomType(25.0, 300, "Single Room", beds);
-		roomoperations.addRoomType(35.0, 450, "Double Room", beds);
-		roomoperations.addRoomType(45.0, 550, "Junior Suite", beds);
-		roomoperations.addRoomType(45.0, 700, "Superior Suite", beds);
-		roomoperations.addRoom(0, Availability.AVAILIBLE, "Single Room");
-		roomoperations.addRoom(1, Availability.AVAILIBLE, "Double Room");
-		roomoperations.addRoom(2, Availability.AVAILIBLE, "Double Room");
 	}
 
 	/**
@@ -117,6 +106,10 @@ public class RoomManagementViewImpl extends MinimalEObjectImpl.Container impleme
 	 */
 	public void run(Frame frame) {
 //		EList<Room> rooms = new BasicEList<Room>();
+		EList<BedType> singleBed = new BasicEList<BedType>();
+		EList<BedType> doubleBed = new BasicEList<BedType>();
+		EList<BedType> juniorBed = new BasicEList<BedType>();
+		EList<BedType> superiorBed = new BasicEList<BedType>();
 		for(int i=0;i<roomoperations.getRoomrepository().getRooms().size();i++){
 			System.out.println("/--------------------------------------/");
 			System.out.println("Room Number: " + roomoperations.getRoomrepository().getRooms().get(i).getNumber());
@@ -141,25 +134,33 @@ public class RoomManagementViewImpl extends MinimalEObjectImpl.Container impleme
 			String roomTypeOption = "";
 			if (roomType == 1) {
 				roomTypeOption = "Single Room";
+				singleBed.add(0, BedType.SINGLE);
+				singleBed.add(1, BedType.KID);
 			} else if (roomType == 2) {
 				roomTypeOption = "Double Room";
+				doubleBed.add(0, BedType.SINGLE);
+				doubleBed.add(1, BedType.SINGLE);
+				doubleBed.add(2, BedType.KID);
 			} else if (roomType == 3) {
 				roomTypeOption = "Junior Suite";
+				juniorBed.add(0, BedType.QUEEN);
 			} else if (roomType == 4) {
 				roomTypeOption = "Superior Suite";
-			}
+				superiorBed.add(0, BedType.KING);
+			}	
+			
 			switch (statusChoice) {
 			case 1:
-				roomoperations.addRoom(roomNumber, Availability.AVAILIBLE, roomTypeOption);
+				roomoperations.addRoom(roomNumber, Availability.AVAILIBLE, roomTypeOption, singleBed);
 				break;
 			case 2:
-				roomoperations.addRoom(roomNumber, Availability.TO_BE_CLEANED, roomTypeOption);
+				roomoperations.addRoom(roomNumber, Availability.TO_BE_CLEANED, roomTypeOption, doubleBed);
 				break;
 			case 3:
-				roomoperations.addRoom(roomNumber, Availability.UNDER_MAINTENENCE, roomTypeOption);
+				roomoperations.addRoom(roomNumber, Availability.UNDER_MAINTENENCE, roomTypeOption, juniorBed);
 				break;
 			case 4:
-				roomoperations.addRoom(roomNumber, Availability.USED, roomTypeOption);
+				roomoperations.addRoom(roomNumber, Availability.USED, roomTypeOption, superiorBed);
 				break;
 			default:
 				break;
