@@ -29,7 +29,7 @@ import junit.framework.TestCase;
 public class MakeReservationTests extends TestCase {
 
 	public void testMakeReservationReturnsUniqueReservationIds() {
-		EList<Room> rooms = DatabaseContextImpl.GetDatabaseContext().getRooms();
+		EList<Room> rooms = DatabaseContextImpl.GetNewDatabaseContext().getRooms();
 		
 		EList<BedType> beds = new BasicEList<BedType>();
 		beds.add(BedType.SINGLE);
@@ -56,5 +56,34 @@ public class MakeReservationTests extends TestCase {
 		Reservation reservation = reservations.make(bookings, paymentDetails , false, "", true);
 		Reservation reservation2 = reservations.make(bookings, paymentDetails , false, "", true);
 		assertNotEquals(reservation.getReservationId(), reservation2.getReservationId());
+	}
+	
+	public void testMakeReservationStoresReservation() {
+		EList<Room> rooms = DatabaseContextImpl.GetNewDatabaseContext().getRooms();
+		
+		EList<BedType> beds = new BasicEList<BedType>();
+		beds.add(BedType.SINGLE);
+		beds.add(BedType.KID);
+		RoomTypeImpl singleWithKid = new RoomTypeImpl("SingleParentWithKid",beds, 0.0, 0.0);
+
+		rooms.add(new RoomImpl(1,singleWithKid,Availability.AVAILIBLE));
+		rooms.add(new RoomImpl(2,singleWithKid,Availability.AVAILIBLE));
+		
+		Date startDate = new Date(1993, 8, 16);
+		Date endDate = new Date(1993, 8, 18);
+		
+		RoomBooking booking = new RoomBookingImpl();
+		booking.setRoomtype(singleWithKid);
+		booking.setAdults(1);
+		booking.setChildren(1);
+		booking.setCheckInDate(startDate);
+		booking.setCheckOutDate(endDate);
+		
+		PaymentDetails paymentDetails = new PaymentDetailsImpl();
+		EList<RoomBooking> bookings = new BasicEList<RoomBooking>();
+		
+		Reservations reservations = new ReservationsImpl();		
+		Reservation reservation = reservations.make(bookings, paymentDetails , false, "", true);
+		assertEquals(reservation, reservations.getReservation(reservation.getReservationId())); 
 	}
 }
