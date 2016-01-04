@@ -27,7 +27,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Reservation</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- end-user-doc -->reservationId
  * <p>
  * The following features are implemented:
  * </p>
@@ -102,7 +102,7 @@ public class ReservationImpl extends MinimalEObjectImpl.Container implements Res
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int RESERVATION_ID_EDEFAULT = 0;
+	protected static final int RESERVATION_ID_EDEFAULT = 1;
 
 	/**
 	 * The cached value of the '{@link #getReservationId() <em>Reservation Id</em>}' attribute.

@@ -589,7 +589,7 @@ public class RoomBookingImpl extends MinimalEObjectImpl.Container implements Roo
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuffer result = new StringBuffer();
 		result.append(" (IsCheckedIn: ");
 		result.append(isCheckedIn);
 		result.append(", adults: ");

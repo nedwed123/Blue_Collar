@@ -158,22 +158,21 @@ public class MakeReservationViewImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 */
-	private Date getDate(Date startDate) {
+	private Date getDate(Date startDate, Frame frame, String description) {
 
 		DateFormat format = new SimpleDateFormat("yy-MM-dd", Locale.ENGLISH);
-		Scanner scanner = new Scanner(System.in);
 		do{
 			
 			try {
 
-				String dateString = scanner.next();
+				String dateString = frame.inputTextFor(description);
 				Date date = format.parse(dateString);
 				if (date.after(startDate))
 					return date;
 				System.out.println("Please enter a later date than " + format.format(startDate));
 
 			} catch (ParseException e) {
-				System.out.println("Please enter a date in the correct format (format YY-MM-DD):");
+				System.out.println("Please enter a date in the correct format.");
 			}
 		} while (true);
 	}
@@ -182,11 +181,9 @@ public class MakeReservationViewImpl extends MinimalEObjectImpl.Container implem
 
 		System.out.println("Make Reservation\n---------------------");
 
-		System.out.println("Enter check in date (format YY-MM-DD): ");
-		Date checkInDate = getDate(new Date());
+		Date checkInDate = getDate(new Date(), frame, "check in date (format YY-MM-DD)");
 
-		System.out.println("Enter check out date (format YY-MM-DD): ");
-		Date checkOutDate = getDate(checkInDate);
+		Date checkOutDate = getDate(checkInDate, frame, "check out date (format YY-MM-DD)");
 
 		int numberOfRooms;
 		do{
@@ -240,7 +237,7 @@ public class MakeReservationViewImpl extends MinimalEObjectImpl.Container implem
 		paymentDetails.setPhoneNumber(frame.input("phone number of card holder:"));
 		
 		
-		boolean payNow = frame.inputTextFor(" if you want to pay now [y/n]:").toLowerCase() == "y";
+		boolean payNow = frame.inputTextFor("if you want to pay now [y/n]:").toLowerCase() == "y";
 		
 		Reservation reservation = reservations.make(roomInterests, paymentDetails, payNow,"",false);
 		
