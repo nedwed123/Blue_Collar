@@ -110,23 +110,21 @@ public class ReservationViewImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 */
 	public void run(Frame frame) {
-		System.out.println("Please input reservation number:\n");
-		Scanner in = new Scanner(System.in);
-		int input = in.nextInt();
+
+		int input = frame.input("reservation number");
 		final Reservation res = reservations.getReservation(input);
 		if(res != null)
 		{
 			System.out.println("Reservation:");
-			
-			//TODO: Display customer details?
-			
+			System.out.println(res.toString());
+						
 			EList<RoomBooking> roombookings = res.getRoombooking();
 			
 			int i = 1;
 			for (RoomBooking roomBooking : roombookings) {
 				System.out.println("-- Room " + i + " --------------");
-				System.out.println(roomBooking.toString());
-				System.out.println("\t room info...");
+				System.out.println(roomBooking.toString() + "\n");
+				//System.out.println(roomBooking);
 				i++;
 			}
 

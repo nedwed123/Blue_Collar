@@ -169,10 +169,10 @@ public class MakeReservationViewImpl extends MinimalEObjectImpl.Container implem
 				Date date = format.parse(dateString);
 				if (date.after(startDate))
 					return date;
-				System.out.println("Please enter a later date than " + format.format(startDate));
+				System.out.println("The date needs to be a later than " + format.format(startDate));
 
 			} catch (ParseException e) {
-				System.out.println("Please enter a date in the correct format.");
+				System.out.println("The format is incorrect.");
 			}
 		} while (true);
 	}
@@ -199,6 +199,8 @@ public class MakeReservationViewImpl extends MinimalEObjectImpl.Container implem
 		for (RoomBooking roomInterest : roomInterests) {
 			roomInterest.setAdults(frame.input("number of adults for room " + room));
 			roomInterest.setChildren(frame.input("number of children for room " + room));
+			roomInterest.setCheckInDate(checkInDate);
+			roomInterest.setCheckOutDate(checkOutDate);
 			room++;
 		}
 

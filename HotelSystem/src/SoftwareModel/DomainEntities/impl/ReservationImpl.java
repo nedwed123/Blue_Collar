@@ -9,8 +9,11 @@ import SoftwareModel.DomainEntities.Reservation;
 import SoftwareModel.DomainEntities.RoomBooking;
 
 import java.lang.reflect.InvocationTargetException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Collection;
 import java.util.Date;
+import java.util.Locale;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -505,16 +508,18 @@ public class ReservationImpl extends MinimalEObjectImpl.Container implements Res
 	 */
 	@Override
 	public String toString() {
+		
+		DateFormat format = new SimpleDateFormat("yy-MM-dd", Locale.ENGLISH);
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (preliminaryCheckIn: ");
-		result.append(preliminaryCheckIn);
-		result.append(", preliminaryCheckOut: ");
-		result.append(preliminaryCheckOut);
-		result.append(", reservationId: ");
+		StringBuffer result = new StringBuffer();
+		result.append("(Reservation number: ");
 		result.append(reservationId);
-		result.append(", discountCode: ");
+		result.append(", preliminary Check In: ");
+		result.append(format.format(preliminaryCheckIn));
+		result.append(", preliminary Check Out: ");
+		result.append(format.format(preliminaryCheckOut));
+		result.append(", discount code: ");
 		result.append(discountCode);
 		result.append(')');
 		return result.toString();
