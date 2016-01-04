@@ -48,7 +48,7 @@ public class RoomsFinderTest extends TestCase {
 		EList<BedType> beds = new BasicEList<BedType>();
 		beds.add(BedType.SINGLE);
 		beds.add(BedType.KID);
-		RoomTypeImpl singleWithKid = new RoomTypeImpl("SingleParentWithKid",beds);
+		RoomTypeImpl singleWithKid = new RoomTypeImpl("SingleParentWithKid",beds, 0.0, 0.0);
 
 		rooms.add(new RoomImpl(1,singleWithKid,Availability.AVAILIBLE));
 		rooms.add(new RoomImpl(2,singleWithKid,Availability.AVAILIBLE));
@@ -71,7 +71,7 @@ public class RoomsFinderTest extends TestCase {
 		EList<BedType> beds = new BasicEList<BedType>();
 		beds.add(BedType.SINGLE);
 		beds.add(BedType.KID);
-		RoomTypeImpl singleWithKid = new RoomTypeImpl("SingleParentWithKid",beds);
+		RoomTypeImpl singleWithKid = new RoomTypeImpl("SingleParentWithKid",beds, 0.0, 0.0);
 
 		rooms.add(new RoomImpl(1,singleWithKid,Availability.AVAILIBLE));
 		rooms.add(new RoomImpl(2,singleWithKid,Availability.AVAILIBLE));
@@ -105,7 +105,7 @@ public class RoomsFinderTest extends TestCase {
 		EList<RoomBooking> bookings = DatabaseContextImpl.GetDatabaseContext().getRoomBookings();
 
 		EList<BedType> beds = new BasicEList<BedType>();
-		RoomTypeImpl singleWithKid = new RoomTypeImpl("SingleParentWithKid",beds);
+		RoomTypeImpl singleWithKid = new RoomTypeImpl("SingleParentWithKid",beds, 0.0, 0.0);
 
 		RoomImpl room1 = new RoomImpl(1, singleWithKid, Availability.AVAILIBLE);
 		RoomImpl room2 = new RoomImpl(2, singleWithKid, Availability.AVAILIBLE);

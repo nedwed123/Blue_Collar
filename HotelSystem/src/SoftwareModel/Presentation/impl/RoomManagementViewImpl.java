@@ -6,7 +6,6 @@ import SoftwareModel.BusinessLogic.RoomOperations;
 import SoftwareModel.BusinessLogic.impl.RoomOperationsImpl;
 import SoftwareModel.DomainEntities.Availability;
 import SoftwareModel.DomainEntities.BedType;
-import SoftwareModel.DomainEntities.Room;
 import SoftwareModel.Presentation.Frame;
 import SoftwareModel.Presentation.PresentationPackage;
 import SoftwareModel.Presentation.RoomManagementView;
@@ -29,9 +28,7 @@ import java.util.Scanner;
  * The following features are implemented:
  * </p>
  * <ul>
- * <li>
- * {@link SoftwareModel.Presentation.impl.RoomManagementViewImpl#getRoomoperations
- * <em>Roomoperations</em>}</li>
+ *   <li>{@link SoftwareModel.Presentation.impl.RoomManagementViewImpl#getRoomoperations <em>Roomoperations</em>}</li>
  * </ul>
  *
  * @generated
@@ -68,7 +65,6 @@ public class RoomManagementViewImpl extends MinimalEObjectImpl.Container impleme
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -78,7 +74,6 @@ public class RoomManagementViewImpl extends MinimalEObjectImpl.Container impleme
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public RoomOperations getRoomoperations() {
@@ -87,43 +82,34 @@ public class RoomManagementViewImpl extends MinimalEObjectImpl.Container impleme
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public NotificationChain basicSetRoomoperations(RoomOperations newRoomoperations, NotificationChain msgs) {
 		RoomOperations oldRoomoperations = roomoperations;
 		roomoperations = newRoomoperations;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-					PresentationPackage.ROOM_MANAGEMENT_VIEW__ROOMOPERATIONS, oldRoomoperations, newRoomoperations);
-			if (msgs == null)
-				msgs = notification;
-			else
-				msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PresentationPackage.ROOM_MANAGEMENT_VIEW__ROOMOPERATIONS, oldRoomoperations, newRoomoperations);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public void setRoomoperations(RoomOperations newRoomoperations) {
 		if (newRoomoperations != roomoperations) {
 			NotificationChain msgs = null;
 			if (roomoperations != null)
-				msgs = ((InternalEObject) roomoperations).eInverseRemove(this,
-						EOPPOSITE_FEATURE_BASE - PresentationPackage.ROOM_MANAGEMENT_VIEW__ROOMOPERATIONS, null, msgs);
+				msgs = ((InternalEObject)roomoperations).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PresentationPackage.ROOM_MANAGEMENT_VIEW__ROOMOPERATIONS, null, msgs);
 			if (newRoomoperations != null)
-				msgs = ((InternalEObject) newRoomoperations).eInverseAdd(this,
-						EOPPOSITE_FEATURE_BASE - PresentationPackage.ROOM_MANAGEMENT_VIEW__ROOMOPERATIONS, null, msgs);
+				msgs = ((InternalEObject)newRoomoperations).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PresentationPackage.ROOM_MANAGEMENT_VIEW__ROOMOPERATIONS, null, msgs);
 			msgs = basicSetRoomoperations(newRoomoperations, msgs);
-			if (msgs != null)
-				msgs.dispatch();
-		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					PresentationPackage.ROOM_MANAGEMENT_VIEW__ROOMOPERATIONS, newRoomoperations, newRoomoperations));
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PresentationPackage.ROOM_MANAGEMENT_VIEW__ROOMOPERATIONS, newRoomoperations, newRoomoperations));
 	}
 
 	/**
@@ -219,87 +205,81 @@ public class RoomManagementViewImpl extends MinimalEObjectImpl.Container impleme
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case PresentationPackage.ROOM_MANAGEMENT_VIEW__ROOMOPERATIONS:
-			return basicSetRoomoperations(null, msgs);
+			case PresentationPackage.ROOM_MANAGEMENT_VIEW__ROOMOPERATIONS:
+				return basicSetRoomoperations(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case PresentationPackage.ROOM_MANAGEMENT_VIEW__ROOMOPERATIONS:
-			return getRoomoperations();
+			case PresentationPackage.ROOM_MANAGEMENT_VIEW__ROOMOPERATIONS:
+				return getRoomoperations();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case PresentationPackage.ROOM_MANAGEMENT_VIEW__ROOMOPERATIONS:
-			setRoomoperations((RoomOperations) newValue);
-			return;
+			case PresentationPackage.ROOM_MANAGEMENT_VIEW__ROOMOPERATIONS:
+				setRoomoperations((RoomOperations)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case PresentationPackage.ROOM_MANAGEMENT_VIEW__ROOMOPERATIONS:
-			setRoomoperations((RoomOperations) null);
-			return;
+			case PresentationPackage.ROOM_MANAGEMENT_VIEW__ROOMOPERATIONS:
+				setRoomoperations((RoomOperations)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case PresentationPackage.ROOM_MANAGEMENT_VIEW__ROOMOPERATIONS:
-			return roomoperations != null;
+			case PresentationPackage.ROOM_MANAGEMENT_VIEW__ROOMOPERATIONS:
+				return roomoperations != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-		case PresentationPackage.ROOM_MANAGEMENT_VIEW___RUN__FRAME:
-			run((Frame) arguments.get(0));
-			return null;
+			case PresentationPackage.ROOM_MANAGEMENT_VIEW___RUN__FRAME:
+				run((Frame)arguments.get(0));
+				return null;
 		}
 		return super.eInvoke(operationID, arguments);
 	}
