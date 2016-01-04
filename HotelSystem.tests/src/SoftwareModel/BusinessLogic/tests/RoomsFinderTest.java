@@ -21,26 +21,10 @@ import static org.mockito.Mockito.mock;
 
 public class RoomsFinderTest extends TestCase {
 
-	RoomRepository fakeRepo;
-	RoomBookingsRepository fakeBookings;
-	AvailibleRoomFinderImpl roomFinder;
-
 	public static void main(String[] args) {
 		TestRunner.run(RoomsFinderTest.class);
 	}
 
-	@Override
-	protected void setUp() throws Exception {
-		fakeRepo = mock(RoomRepository.class);
-		fakeBookings = mock(RoomBookingsRepository.class);
-		roomFinder = new AvailibleRoomFinderImpl(fakeBookings,fakeRepo);
-	}
-
-	@Override
-	protected void tearDown() throws Exception {
-		roomFinder = null;
-	}
-	
 	public void testAvailibleRoomTypesOnlyReturnsDistinctRoomTypes() {
 		AvailibleRoomFinderImpl roomFinder = new AvailibleRoomFinderImpl();
 		EList<Room> rooms = DatabaseContextImpl.GetDatabaseContext().getRooms();
