@@ -349,14 +349,13 @@ public class RoomTypeImpl extends MinimalEObjectImpl.Container implements RoomTy
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer();
+		result.append(name);
 		result.append(" (size: ");
 		result.append(size);
 		result.append(", rate: ");
 		result.append(rate);
 		result.append(", bedtype: ");
 		result.append(bedtype);
-		result.append(", name: ");
-		result.append(name);
 		result.append(", beds: ");
 		result.append(beds);
 		result.append(')');

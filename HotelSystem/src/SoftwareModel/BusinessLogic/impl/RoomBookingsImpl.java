@@ -196,7 +196,9 @@ public class RoomBookingsImpl extends MinimalEObjectImpl.Container implements Ro
 	public EList<RoomBooking> findByRoomResponsible(String roomResponsible) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		
+		return roombookingsrepository.getByRoomResponsible(roomResponsible);
+		
 	}
 
 	/**
