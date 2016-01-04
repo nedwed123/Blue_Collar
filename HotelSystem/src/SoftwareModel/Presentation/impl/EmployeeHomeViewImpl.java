@@ -50,7 +50,7 @@ public class EmployeeHomeViewImpl extends MinimalEObjectImpl.Container implement
 						new Frame.MenuItem("View/Edit reservation ",new ReservationViewImpl()),
 						new Frame.MenuItem("View/Edit room booking ",new RoomBookingViewImpl()),
 						new Frame.MenuItem("Room Management",new LoginViewImpl()),
-						new Frame.MenuItem("Exit",
+						new Frame.MenuItem("Exit system",
 								new Runnable() {
 									@Override
 									public void run() {

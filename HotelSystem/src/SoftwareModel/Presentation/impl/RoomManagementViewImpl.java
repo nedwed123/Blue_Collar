@@ -117,8 +117,8 @@ public class RoomManagementViewImpl extends MinimalEObjectImpl.Container impleme
 			System.out.println("Room Availability: " +roomoperations.getRoomrepository().getRooms().get(i).getAvailability());
 			
 		}
-		System.out.print("Available operations: \n" + "1.Add Room \n" + "2.Modify Rate \n" + "3.Make Room Available \n"
-				+ "4.Make Room Unavailable \n" + "5.Remove Room \n");
+		System.out.print("Available operations: \n" + "[1] Add Room \n" + "[2] Modify Rate \n" + "[3] Make Room Available \n"
+				+ "[4] Make Room Unavailable \n" + "[5] Remove Room \n" + "[6] Exit to home view\n");
 		Scanner scan = new Scanner(System.in);
 		int choice = scan.nextInt();
 		switch (choice) {
@@ -194,6 +194,8 @@ public class RoomManagementViewImpl extends MinimalEObjectImpl.Container impleme
 			System.out.println("Please enter room number to remove");
 			int roomNumberR = scan.nextInt();
 			roomoperations.removeRoom(roomNumberR);
+		case 6:
+			frame.changeView(new EmployeeHomeViewImpl());;
 		default:
 			break;
 

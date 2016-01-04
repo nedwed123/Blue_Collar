@@ -110,26 +110,24 @@ public class LoginViewImpl extends MinimalEObjectImpl.Container implements Login
 	 * <!-- end-user-doc -->
 	 */
 	public void run(Frame frame) {
-		Scanner scan = new Scanner(System.in);
-		System.out.println("Please enter username");
-		String username=scan.nextLine();
-		System.out.println("Please enter password");
-		String password=scan.nextLine();
+		
+		String username = frame.inputTextFor("username");
+		
+		String password = frame.inputTextFor("password");
+		
 		if(username.equals("Admin") && password.equals("pass")){
 			frame.changeView(new RoomManagementViewImpl());
-			return;
-		}else{
+		} else {
 			System.out.println("Incorrect username or password");
 			
 			try {
-				Thread.sleep(2000);
+				Thread.sleep(1000);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			
-			frame.goBack();
-			return;
+			frame.changeView(new EmployeeHomeViewImpl());
 		}
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
