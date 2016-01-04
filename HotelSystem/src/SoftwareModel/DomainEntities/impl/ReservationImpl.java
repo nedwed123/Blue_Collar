@@ -504,7 +504,6 @@ public class ReservationImpl extends MinimalEObjectImpl.Container implements Res
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	@Override
 	public String toString() {
