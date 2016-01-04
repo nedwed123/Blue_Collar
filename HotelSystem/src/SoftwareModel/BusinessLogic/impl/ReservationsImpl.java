@@ -10,6 +10,8 @@ import SoftwareModel.DataAccess.impl.ReservationsRepositoryImpl;
 import SoftwareModel.DomainEntities.PaymentDetails;
 import SoftwareModel.DomainEntities.Reservation;
 import SoftwareModel.DomainEntities.RoomBooking;
+import SoftwareModel.DomainEntities.impl.DomainEntitiesFactoryImpl;
+import SoftwareModel.DomainEntities.impl.ReservationImpl;
 
 import java.lang.reflect.InvocationTargetException;
 import org.eclipse.emf.common.notify.Notification;
@@ -174,11 +176,19 @@ public class ReservationsImpl extends MinimalEObjectImpl.Container implements Re
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public Reservation make(EList<RoomBooking> selectedRooms, PaymentDetails paymentDetails, boolean payNow, String discountCode, boolean madeByCustomer) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
+		
+		Reservation reservation = new ReservationImpl(selectedRooms);
+		reservation.setDiscountCode(discountCode);
+		reservation.setPaymentdetails(paymentDetails);
+		reservation.setPreliminaryCheckIn(selectedRooms.get(0).getCheckInDate());
+		reservation.setPreliminaryCheckOut(selectedRooms.get(0).getCheckOutDate());
+		reservationsrepository.addNew(reservation);
+		
 		throw new UnsupportedOperationException();
 	}
 

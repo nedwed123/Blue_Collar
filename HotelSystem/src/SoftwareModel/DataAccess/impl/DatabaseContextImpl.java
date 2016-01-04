@@ -325,6 +325,15 @@ public class DatabaseContextImpl extends MinimalEObjectImpl.Container implements
 
 	public static DatabaseContext instance = null;
 	
+	public static DatabaseContext GetNewDatabaseContext(){
+		instance = GetDatabaseContext();
+		instance.getRooms().clear();
+		instance.getReservations().clear();
+		instance.getRoomBookings().clear();
+		instance.getRoomTypes().clear();
+		return instance;
+	}
+	
 	public static DatabaseContext GetDatabaseContext() {
 		if(instance == null)
 			instance = new DatabaseContextImpl();

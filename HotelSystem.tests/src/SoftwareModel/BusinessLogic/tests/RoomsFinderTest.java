@@ -3,6 +3,7 @@
 package SoftwareModel.BusinessLogic.tests;
 
 import SoftwareModel.BusinessLogic.impl.AvailibleRoomFinderImpl;
+import SoftwareModel.DataAccess.DatabaseContext;
 import SoftwareModel.DataAccess.RoomBookingsRepository;
 import SoftwareModel.DataAccess.RoomRepository;
 import SoftwareModel.DataAccess.impl.DatabaseContextImpl;
@@ -21,29 +22,13 @@ import static org.mockito.Mockito.mock;
 
 public class RoomsFinderTest extends TestCase {
 
-	RoomRepository fakeRepo;
-	RoomBookingsRepository fakeBookings;
-	AvailibleRoomFinderImpl roomFinder;
-
 	public static void main(String[] args) {
 		TestRunner.run(RoomsFinderTest.class);
 	}
 
-	@Override
-	protected void setUp() throws Exception {
-		fakeRepo = mock(RoomRepository.class);
-		fakeBookings = mock(RoomBookingsRepository.class);
-		roomFinder = new AvailibleRoomFinderImpl(fakeBookings,fakeRepo);
-	}
-
-	@Override
-	protected void tearDown() throws Exception {
-		roomFinder = null;
-	}
-	
 	public void testAvailibleRoomTypesOnlyReturnsDistinctRoomTypes() {
 		AvailibleRoomFinderImpl roomFinder = new AvailibleRoomFinderImpl();
-		EList<Room> rooms = DatabaseContextImpl.GetDatabaseContext().getRooms();
+		EList<Room> rooms = DatabaseContextImpl.GetNewDatabaseContext().getRooms();
 
 		EList<BedType> beds = new BasicEList<BedType>();
 		beds.add(BedType.SINGLE);
@@ -64,9 +49,10 @@ public class RoomsFinderTest extends TestCase {
 	
 	public void testAvailibleRoomTypesDoesNotReturnedBookedRoomTypes() {
 		AvailibleRoomFinderImpl roomFinder = new AvailibleRoomFinderImpl();
-		
-		EList<Room> rooms = DatabaseContextImpl.GetDatabaseContext().getRooms();
-		EList<RoomBooking> bookings = DatabaseContextImpl.GetDatabaseContext().getRoomBookings();
+
+		DatabaseContext context = DatabaseContextImpl.GetNewDatabaseContext();
+		EList<Room> rooms = context.getRooms();
+		EList<RoomBooking> bookings = context.getRoomBookings();
 
 		EList<BedType> beds = new BasicEList<BedType>();
 		beds.add(BedType.SINGLE);
@@ -100,9 +86,9 @@ public class RoomsFinderTest extends TestCase {
 	
 	public void testAvailibleRoomDoesNotReturnUsedRooms() {
 		AvailibleRoomFinderImpl roomFinder = new AvailibleRoomFinderImpl();
-
-		EList<Room> rooms = DatabaseContextImpl.GetDatabaseContext().getRooms();
-		EList<RoomBooking> bookings = DatabaseContextImpl.GetDatabaseContext().getRoomBookings();
+		DatabaseContext context = DatabaseContextImpl.GetNewDatabaseContext();
+		EList<Room> rooms = context.getRooms();
+		EList<RoomBooking> bookings = context.getRoomBookings();
 
 		EList<BedType> beds = new BasicEList<BedType>();
 		RoomTypeImpl singleWithKid = new RoomTypeImpl("SingleParentWithKid",beds, 0.0, 0.0);

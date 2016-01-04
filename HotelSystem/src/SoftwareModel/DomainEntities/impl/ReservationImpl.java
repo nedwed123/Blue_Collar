@@ -162,6 +162,11 @@ public class ReservationImpl extends MinimalEObjectImpl.Container implements Res
 	public ReservationImpl() {
 		super();
 	}
+	
+	public ReservationImpl(EList<RoomBooking> roomBookings){
+		super();
+		this.roombooking = roomBookings;
+	}
 
 	/**
 	 * <!-- begin-user-doc -->
