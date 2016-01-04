@@ -43,7 +43,7 @@ public class EmployeeHomeViewImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 */
-	public void run(Frame frame) {
+	public void run(final Frame frame) {
 		frame.displayMenu("Welcome to Hotel Management System", 
 				new Frame.MenuItem[] {
 						new Frame.MenuItem("Create a reservation", new MakeReservationViewImpl()),

@@ -1,6 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: CustomerClient
+Bundle-Name: testing
 Bundle-SymbolicName: CustomerClient
 Bundle-Version: 1.0.0.qualifier
+Export-Package: customerClient
 Require-Bundle: org.eclipse.emf.ecore;bundle-version="2.11.1"

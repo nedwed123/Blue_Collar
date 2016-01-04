@@ -43,7 +43,7 @@ public class CustomerHomeViewImpl extends MinimalEObjectImpl.Container implement
 	 * Welcomes customer and asks for input
 	 * <!-- end-user-doc -->
 	 */
-	public void run(Frame frame) {
+	public void run(final Frame frame) {
 
 		frame.displayMenu("-- Welcome customer --", 
 				new Frame.MenuItem[] {

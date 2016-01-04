@@ -113,7 +113,7 @@ public class ReservationViewImpl extends MinimalEObjectImpl.Container implements
 		System.out.println("Please input reservation number:\n");
 		Scanner in = new Scanner(System.in);
 		int input = in.nextInt();
-		Reservation res = reservations.getReservation(input);
+		final Reservation res = reservations.getReservation(input);
 		if(res != null)
 		{
 			System.out.println("Reservation:");
