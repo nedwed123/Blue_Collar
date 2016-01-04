@@ -51,7 +51,8 @@ public class MakeReservationTests extends TestCase {
 		
 		PaymentDetails paymentDetails = new PaymentDetailsImpl();
 		EList<RoomBooking> bookings = new BasicEList<RoomBooking>();
-		
+		bookings.add(booking);
+
 		Reservations reservations = new ReservationsImpl();		
 		Reservation reservation = reservations.make(bookings, paymentDetails , false, "", true);
 		Reservation reservation2 = reservations.make(bookings, paymentDetails , false, "", true);
@@ -81,6 +82,7 @@ public class MakeReservationTests extends TestCase {
 		
 		PaymentDetails paymentDetails = new PaymentDetailsImpl();
 		EList<RoomBooking> bookings = new BasicEList<RoomBooking>();
+		bookings.add(booking);
 		
 		Reservations reservations = new ReservationsImpl();		
 		Reservation reservation = reservations.make(bookings, paymentDetails , false, "", true);
