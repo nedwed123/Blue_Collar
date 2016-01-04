@@ -9,8 +9,11 @@ import SoftwareModel.BusinessLogic.impl.RoomsImpl;
 import SoftwareModel.DomainEntities.PaymentDetails;
 import SoftwareModel.DomainEntities.Reservation;
 import SoftwareModel.DomainEntities.RoomBooking;
+import SoftwareModel.DomainEntities.RoomResponsible;
 import SoftwareModel.DomainEntities.RoomType;
+import SoftwareModel.DomainEntities.impl.PaymentDetailsImpl;
 import SoftwareModel.DomainEntities.impl.RoomBookingImpl;
+import SoftwareModel.DomainEntities.impl.RoomResponsibleImpl;
 import SoftwareModel.Presentation.Frame;
 import SoftwareModel.Presentation.MakeReservationView;
 import SoftwareModel.Presentation.PresentationPackage;
@@ -216,14 +219,31 @@ public class MakeReservationViewImpl extends MinimalEObjectImpl.Container implem
 			RoomType selectedRoomType = (RoomType)frame.displaySelectionMenu("Select room type for room " + room +":",
 					roomTypes.toArray());
 			roomInterest.setRoomtype(selectedRoomType);
+			
+			// Add and set room responsible
+			RoomResponsible responsible = new RoomResponsibleImpl();
+			responsible.setFirstName(frame.inputTextFor("first name for room responsible for room " + room + ":"));
+			responsible.setLastName(frame.inputTextFor("last name for room responsible for room " + room + ":"));
+			responsible.setEmail(frame.inputTextFor("e-mail for room responsible for room " + room + ":"));
+			responsible.setAddress(frame.inputTextFor("address for room responsible for room " + room + ":"));
+			responsible.setPhoneNumber(frame.input("phone number for room responsible for room " + room + ":"));
+			
+			roomInterest.setRoomresponsible(responsible);
+			
+			room++;
 		}
 
-		// Recieve this input from user
-		PaymentDetails paymentDetails = null;
-		boolean payNow = false;
-
+		// Receive input from user about reservation responsible
+		PaymentDetails paymentDetails = new PaymentDetailsImpl();
+		paymentDetails.setName(frame.inputTextFor("name of card holder:"));
+		paymentDetails.setAddress(frame.inputTextFor("address of card holder:"));
+		paymentDetails.setPhoneNumber(frame.input("phone number of card holder:"));
+		
+		
+		boolean payNow = frame.inputTextFor(" if you want to pay now [y/n]:").toLowerCase() == "y";
+		
 		Reservation reservation = reservations.make(roomInterests, paymentDetails, payNow,"",false);
-
+		
 		System.out.println("Reservation successful");
 		System.out.println("Reservation nr is: " + reservation.getReservationId());
 	}
