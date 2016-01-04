@@ -342,7 +342,6 @@ public class RoomTypeImpl extends MinimalEObjectImpl.Container implements RoomTy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	@Override
 	public String toString() {
