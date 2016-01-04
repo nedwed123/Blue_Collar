@@ -9,6 +9,7 @@ import SoftwareModel.DataAccess.RoomBookingsRepository;
 import SoftwareModel.DataAccess.RoomRepository;
 import SoftwareModel.DataAccess.impl.RoomBookingsRepositoryImpl;
 import SoftwareModel.DataAccess.impl.RoomRepositoryImpl;
+import SoftwareModel.DomainEntities.Availability;
 import SoftwareModel.DomainEntities.Room;
 import SoftwareModel.DomainEntities.RoomBooking;
 import SoftwareModel.DomainEntities.RoomType;
@@ -216,12 +217,40 @@ public class AvailibleRoomFinderImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	public int availibleRoom(RoomBooking roomBooking) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		
+		EList<RoomBooking> roomBookings = roombookingsrepository.getAll();
+		EList<RoomBooking> collidingRoomBookings = new BasicEList<RoomBooking>();
+
+		for (int i = 0; i < roomBookings.size(); i++) {
+			if (!(roomBooking.getCheckOutDate().before(roomBookings.get(i).getCheckInDate())
+					|| roomBooking.getCheckInDate().after(roomBookings.get(i).getCheckOutDate()))) 
+			{
+				collidingRoomBookings.add(roomBookings.get(i));
+			}
+		}
+		
+		EList<Room> rooms = roomrepository.getRooms();
+		
+		for (int i = 0; i < collidingRoomBookings.size(); i++){
+			for (int j = 0; j < rooms.size(); j++) 
+			{
+			    if (rooms.get(j).getRoomtype().equals(collidingRoomBookings.get(i).getRoomtype())) {
+			        // Remove the current element from the iterator and the list.
+			        rooms.remove(j);
+			    }
+			}
+		}
+		for(Room room : rooms)
+		{
+			if(room.getRoomtype().getName().equals(roomBooking.getRoomtype().getName()) && room.getAvailability() == Availability.AVAILIBLE)
+			{
+				return room.getNumber();
+			}
+			
+		}
+		return 0;
 	}
 
 	/**
