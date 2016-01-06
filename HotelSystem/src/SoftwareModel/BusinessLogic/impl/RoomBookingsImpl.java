@@ -183,6 +183,7 @@ public class RoomBookingsImpl extends MinimalEObjectImpl.Container implements Ro
 		Room room = availibleroomfinder.availibleRoom(roomBooking);
 		room.setAvailability(Availability.USED);
 		roomBooking.setRoom(room);
+		roomBooking.setIsCheckedIn(true);
 		return room.getNumber();
 	}
 
@@ -196,12 +197,12 @@ public class RoomBookingsImpl extends MinimalEObjectImpl.Container implements Ro
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public EList<RoomBooking> findByRoomResponsible(String roomResponsible) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return roombookingsrepository.getByRoomResponsible(roomResponsible);
 	}
 
 	/**
