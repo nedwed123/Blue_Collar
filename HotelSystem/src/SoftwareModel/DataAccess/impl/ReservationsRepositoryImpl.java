@@ -6,6 +6,8 @@ import SoftwareModel.DataAccess.DataAccessPackage;
 import SoftwareModel.DataAccess.DatabaseContext;
 import SoftwareModel.DataAccess.ReservationsRepository;
 import SoftwareModel.DomainEntities.Reservation;
+import SoftwareModel.DomainEntities.RoomBooking;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
@@ -126,6 +128,9 @@ public class ReservationsRepositoryImpl extends MinimalEObjectImpl.Container imp
 	 */
 	public Reservation addNew(Reservation reservation) {
 		databasecontext.getReservations().add(reservation);
+		
+		for(int i = 0; i < reservation.getRoombooking().size(); i++)
+			databasecontext.getRoomBookings().add(reservation.getRoombooking().get(i));
 		//TODO: is this really needed?
 		return reservation;
 	}
