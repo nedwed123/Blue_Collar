@@ -198,22 +198,33 @@ public class MakeReservationViewImpl extends MinimalEObjectImpl.Container implem
 
 		System.out.println("Make Reservation\n---------------------");
 
-		Date checkInDate = getDate(new Date(), frame, "check in date (format YY-MM-DD)");
+		Date checkInDate = getDate(new Date(new Date().getTime() - 1 * 24 * 3600 * 1000), frame, "check in date (format YY-MM-DD)");
 
 		Date checkOutDate = getDate(checkInDate, frame, "check out date (format YY-MM-DD)");
 		
 		
 
-		int numberOfRooms;
-		do{
-			numberOfRooms = frame.input("number of rooms to reserve (1-9)");
-		}while(numberOfRooms > 9 || numberOfRooms < 1);
 
+		int numberOfRooms=0;
+
+			
+			do{
+					numberOfRooms = frame.input("number of rooms to reserve (1-9)");
+					if (numberOfRooms > 9 || numberOfRooms < 1){
+						System.out.println("invalid number of room/s");
+					}else{
+						System.out.println("good choice!");
+					}
+				
+				}while(numberOfRooms > 9 || numberOfRooms < 1);
+
+		
+		
+		
 		EList<RoomBooking> roomInterests = new BasicEList<RoomBooking>();
 		for (int i = 0; i < numberOfRooms; i++) {
 			roomInterests.add(new RoomBookingImpl());
 		}
-
 		int room = 1;
 		for (RoomBooking roomInterest : roomInterests) {
 			roomInterest.setAdults(frame.input("number of adults for room " + room));
