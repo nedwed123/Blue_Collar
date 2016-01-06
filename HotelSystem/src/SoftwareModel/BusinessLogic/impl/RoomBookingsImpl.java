@@ -317,4 +317,8 @@ public class RoomBookingsImpl extends MinimalEObjectImpl.Container implements Ro
 		return super.eInvoke(operationID, arguments);
 	}
 
+	public void cancel(RoomBooking finalRoombooking) {
+		finalRoombooking.setIsCanceled(true);
+	}
+
 } //RoomBookingsImpl

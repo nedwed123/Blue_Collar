@@ -3,6 +3,7 @@
 package SoftwareModel.Presentation.impl;
 
 import SoftwareModel.BusinessLogic.Rooms;
+import SoftwareModel.BusinessLogic.impl.RoomBookingsImpl;
 import SoftwareModel.BusinessLogic.impl.RoomsImpl;
 import SoftwareModel.DomainEntities.RoomBooking;
 import SoftwareModel.Presentation.Frame;
@@ -42,7 +43,7 @@ public class RoomBookingViewImpl extends MinimalEObjectImpl.Container implements
 	 * @ordered
 	 */
 	protected Rooms rooms = new RoomsImpl();
-
+	RoomBookingsImpl roomBookings = new RoomBookingsImpl();
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -163,6 +164,15 @@ public class RoomBookingViewImpl extends MinimalEObjectImpl.Container implements
 					}
 			));
 		}
+		
+		menuItems.add(new Frame.MenuItem("Cancel",
+				new Runnable() {
+					@Override
+					public void run() {
+						roomBookings.cancel(finalRoombooking);
+					}
+				}
+		));
 	
 		menuItems.add(new Frame.MenuItem("Go back", new EmployeeHomeViewImpl()));
 		frame.displayMenu("What do u want to do with the room booking?:",menuItems);
