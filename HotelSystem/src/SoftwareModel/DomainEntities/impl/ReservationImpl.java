@@ -538,6 +538,18 @@ public class ReservationImpl extends MinimalEObjectImpl.Container implements Res
 		return false;
 	}
 	
+	private boolean isCancelled = false;
+
+	@Override
+	public boolean isCanceled() {
+		return isCancelled;
+	}
+
+	@Override
+	public void setIsCanceled(boolean shouldBeCancelled) {
+		isCancelled = shouldBeCancelled;
+	}
+	
 	
 
 } //ReservationImpl

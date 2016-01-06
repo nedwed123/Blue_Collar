@@ -45,6 +45,9 @@ public interface RoomBooking extends EObject {
 	 * @generated
 	 */
 	boolean isIsCheckedIn();
+	
+	boolean isCanceled();
+	void setIsCanceled(boolean shouldBeCanceled);
 
 	/**
 	 * Sets the value of the '{@link SoftwareModel.DomainEntities.RoomBooking#isIsCheckedIn <em>Is Checked In</em>}' attribute.
