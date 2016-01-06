@@ -10,7 +10,11 @@ import SoftwareModel.DomainEntities.RoomResponsible;
 import SoftwareModel.DomainEntities.RoomType;
 
 import java.lang.reflect.InvocationTargetException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Locale;
+
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.EList;
@@ -545,23 +549,26 @@ public class RoomBookingImpl extends MinimalEObjectImpl.Container implements Roo
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public String toString() {
+		DateFormat format = new SimpleDateFormat("yy-MM-dd", Locale.ENGLISH);
 		if (eIsProxy()) return super.toString();
-
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (IsCheckedIn: ");
+		
+		StringBuffer result = new StringBuffer();
+		result.append("Room responsible: ");
+		result.append(roomresponsible.getFirstName() + " " + roomresponsible.getLastName());
+		result.append("\n(Checked In: ");
 		result.append(isCheckedIn);
 		result.append(", adults: ");
 		result.append(adults);
 		result.append(", children: ");
 		result.append(children);
 		result.append(", checkOutDate: ");
-		result.append(checkOutDate);
+		result.append(format.format(checkOutDate));
 		result.append(", checkInDate: ");
-		result.append(checkInDate);
+		result.append(format.format(checkInDate));
 		result.append(')');
 		return result.toString();
 	}
