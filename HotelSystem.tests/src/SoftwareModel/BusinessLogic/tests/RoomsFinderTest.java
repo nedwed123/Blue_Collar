@@ -81,8 +81,7 @@ public class RoomsFinderTest extends TestCase {
 		EList<RoomType> roomtypes = roomFinder.availableRoomTypes(adults, children, startDate, endDate);
 		
 		assertEquals(0, roomtypes.size());
-	}
-	
+	}	
 	
 	public void testAvailibleRoomDoesNotReturnUsedRooms() {
 		AvailibleRoomFinderImpl roomFinder = new AvailibleRoomFinderImpl();
@@ -109,11 +108,45 @@ public class RoomsFinderTest extends TestCase {
 		booking.setRoom(room1);
 		booking.setIsCheckedIn(true);
 		bookings.add(booking);
+		
+		//Create a preliminary booking
+		RoomBooking booking2 = new RoomBookingImpl();
+		booking2.setCheckInDate(startDate);
+		booking2.setCheckOutDate(endDate);
+		booking2.setRoomtype(singleWithKid);
 
 		//Try make the same booking, should return room 2
-		Room room = roomFinder.availibleRoom(booking);
+		Room room = roomFinder.availibleRoom(booking2);
 		
 		assertEquals(2, room.getNumber());
+	}
+	
+	public void testAvailibleRoomReturnsRoom() {
+		AvailibleRoomFinderImpl roomFinder = new AvailibleRoomFinderImpl();
+		DatabaseContext context = DatabaseContextImpl.GetNewDatabaseContext();
+		EList<Room> rooms = context.getRooms();
+		EList<RoomBooking> bookings = context.getRoomBookings();
+
+		EList<BedType> beds = new BasicEList<BedType>();
+		RoomTypeImpl singleWithKid = new RoomTypeImpl("SingleParentWithKid",beds, 0.0, 0.0);
+
+		RoomImpl room1 = new RoomImpl(1, singleWithKid, Availability.AVAILIBLE);
+		rooms.add(room1);
+		
+		Date startDate = new Date(1993, 8, 16);
+		Date endDate = new Date(1993, 8, 18);
+
+		//Create a booking for room 1
+		RoomBooking booking = new RoomBookingImpl();
+		booking.setCheckInDate(startDate);
+		booking.setCheckOutDate(endDate);
+		booking.setRoomtype(singleWithKid);
+		bookings.add(booking);
+
+		//Try make the same booking, should return room 1
+		Room room = roomFinder.availibleRoom(booking);
+		
+		assertEquals(1, room.getNumber());
 	}
 
 }
