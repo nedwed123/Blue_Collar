@@ -13,6 +13,8 @@ import SoftwareModel.DomainEntities.RoomBooking;
 import SoftwareModel.DomainEntities.impl.ReservationImpl;
 
 import java.lang.reflect.InvocationTargetException;
+import java.util.Iterator;
+
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -220,8 +222,9 @@ public class ReservationsImpl extends MinimalEObjectImpl.Container implements Re
 	 */
 	public void cancel(Reservation reservation) {
 		reservation.setIsCanceled(true);
-		reservation.getRoombooking();
-		
+		for (RoomBooking booking : reservation.getRoombooking()) {
+			booking.setIsCanceled(true);
+		}
 	}
 
 	/**
