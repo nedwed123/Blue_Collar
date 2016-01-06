@@ -254,6 +254,13 @@ public class AvailibleRoomFinderImpl extends MinimalEObjectImpl.Container implem
 					&& room.getRoomtype().equals(roomBooking.getRoomtype()))
 				return room;
 		}
+		//No availible rooms are find, check if there is any to be cleaned
+		for (Room room : rooms) {
+			if(room.getAvailability() == Availability.TO_BE_CLEANED
+					&& room.getRoomtype().equals(roomBooking.getRoomtype()))
+				return room;
+		}
+		
 		return null;
 	}
 
