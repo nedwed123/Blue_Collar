@@ -220,7 +220,12 @@ public class AvailibleRoomFinderImpl extends MinimalEObjectImpl.Container implem
 	 */
 	public Room availibleRoom(RoomBooking roomBooking) {
 		
-		EList<RoomBooking> roomBookings = roombookingsrepository.getAll();
+		EList<RoomBooking> allRoomBookings = roombookingsrepository.getAll();
+		EList<RoomBooking> roomBookings = new BasicEList<RoomBooking>();
+		for(RoomBooking booking : allRoomBookings)
+			if(booking.getRoom() != null)
+				roomBookings.add(booking);
+		
 		EList<RoomBooking> collidingRoomBookings = new BasicEList<RoomBooking>();
 
 		for (int i = 0; i < roomBookings.size(); i++) {
