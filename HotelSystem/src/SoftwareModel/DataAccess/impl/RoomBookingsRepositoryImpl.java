@@ -114,7 +114,8 @@ public class RoomBookingsRepositoryImpl extends MinimalEObjectImpl.Container imp
 		EList<RoomBooking> bookings = new BasicEList<RoomBooking>();
 		for (RoomBooking booking : databasecontext.getRoomBookings()){
 			RoomResponsible roomresponsible = booking.getRoomresponsible();
-			if(roomresponsible.getFirstName() + roomresponsible.getLastName() == name)
+			System.out.println(roomresponsible.getFirstName() + " " + roomresponsible.getLastName());
+			if((roomresponsible.getFirstName() + " " + roomresponsible.getLastName()).equals(name))
 				bookings.add(booking);
 		}
 		return bookings;

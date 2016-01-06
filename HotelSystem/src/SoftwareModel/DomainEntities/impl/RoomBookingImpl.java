@@ -390,11 +390,13 @@ public class RoomBookingImpl extends MinimalEObjectImpl.Container implements Roo
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 */
 	public void checkOut() {
+		
 		if(room.getAvailability() == Availability.USED)
 		{
 			room.setAvailability(Availability.TO_BE_CLEANED);
 		}
-		
+		setRoom(null);
+		setIsCheckedIn(false);
 	}
 
 	/**

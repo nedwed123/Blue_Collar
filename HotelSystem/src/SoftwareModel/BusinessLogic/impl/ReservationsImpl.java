@@ -197,12 +197,11 @@ public class ReservationsImpl extends MinimalEObjectImpl.Container implements Re
 	 * 
 	 * @generated NOT
 	 */
-	protected int nextReservationID=1;
+	protected static int nextReservationID=1;
 
 	public Reservation make(EList<RoomBooking> selectedRooms, PaymentDetails paymentDetails, boolean payNow,
 			String discountCode, boolean madeByCustomer) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
+
 		Reservation reservation = new ReservationImpl(selectedRooms);
 		reservation.setDiscountCode(discountCode);
 		reservation.setPaymentdetails(paymentDetails);
