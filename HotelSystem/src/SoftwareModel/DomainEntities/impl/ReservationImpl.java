@@ -6,6 +6,7 @@ import SoftwareModel.DomainEntities.CustomerCancelationPolicy;
 import SoftwareModel.DomainEntities.DomainEntitiesPackage;
 import SoftwareModel.DomainEntities.PaymentDetails;
 import SoftwareModel.DomainEntities.Reservation;
+import SoftwareModel.DomainEntities.Room;
 import SoftwareModel.DomainEntities.RoomBooking;
 
 import java.lang.reflect.InvocationTargetException;
@@ -105,7 +106,7 @@ public class ReservationImpl extends MinimalEObjectImpl.Container implements Res
 	 * @generated
 	 * @ordered
 	 */
-	protected static int RESERVATION_ID_EDEFAULT;
+	protected static final int RESERVATION_ID_EDEFAULT=0;
 
 	/**
 	 * The cached value of the '{@link #getReservationId() <em>Reservation Id</em>}' attribute.
@@ -115,7 +116,7 @@ public class ReservationImpl extends MinimalEObjectImpl.Container implements Res
 	 * @generated
 	 * @ordered
 	 */
-	protected static int reservationId = RESERVATION_ID_EDEFAULT;
+	protected int reservationId = RESERVATION_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getDiscountCode() <em>Discount Code</em>}' attribute.
@@ -241,7 +242,6 @@ public class ReservationImpl extends MinimalEObjectImpl.Container implements Res
 	 * @generated
 	 */
 	public int getReservationId() {
-		reservationId++;
 		return reservationId;
 	}
 
@@ -524,5 +524,20 @@ public class ReservationImpl extends MinimalEObjectImpl.Container implements Res
 		result.append(')');
 		return result.toString();
 	}
+
+	@Override
+	public boolean equals(Object obj) {
+		
+		if(obj instanceof Reservation)
+		{
+			Reservation reservation = (Reservation) obj;
+			
+			return this.reservationId == reservation.getReservationId();
+		}
+		
+		return false;
+	}
+	
+	
 
 } //ReservationImpl
