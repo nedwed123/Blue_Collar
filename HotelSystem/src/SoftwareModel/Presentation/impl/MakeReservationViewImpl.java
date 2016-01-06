@@ -30,6 +30,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.DateTimeException;
 import java.util.*;
 
 /**
@@ -155,6 +156,8 @@ public class MakeReservationViewImpl extends MinimalEObjectImpl.Container implem
 			eNotify(new ENotificationImpl(this, Notification.SET, PresentationPackage.MAKE_RESERVATION_VIEW__ROOMS, oldRooms, rooms));
 	}
 
+
+	
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 */
@@ -169,7 +172,7 @@ public class MakeReservationViewImpl extends MinimalEObjectImpl.Container implem
 				Date date = format.parse(dateString);
 				if (date.after(startDate))
 					return date;
-				System.out.println("The date needs to be a later than " + format.format(startDate));
+				System.out.println("The date needs to be a later than  or the date is not a real date" + format.format(startDate));
 
 			} catch (ParseException e) {
 				System.out.println("The format is incorrect.");
@@ -234,11 +237,11 @@ public class MakeReservationViewImpl extends MinimalEObjectImpl.Container implem
 			
 			do{
 				children=frame.input("number of children for room " + room);
-				if(children>2 || children <=0){
+				if(children>2 || children <0){
 					System.out.println("Maximum number of children can be 2");
 					frame.input("number of children for room " + room);
 				}else{roomInterest.setChildren(children);}
-				}while(children>2 || children <=0);
+				}while(children>2 || children <0);
 			
 			
 			roomInterest.setCheckInDate(checkInDate);
