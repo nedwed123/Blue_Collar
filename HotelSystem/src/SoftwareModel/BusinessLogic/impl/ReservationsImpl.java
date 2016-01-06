@@ -216,12 +216,12 @@ public class ReservationsImpl extends MinimalEObjectImpl.Container implements Re
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @generated
+	 
 	 */
 	public void cancel(Reservation reservation) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		reservation.setIsCanceled(true);
+		reservation.getRoombooking();
+		
 	}
 
 	/**
