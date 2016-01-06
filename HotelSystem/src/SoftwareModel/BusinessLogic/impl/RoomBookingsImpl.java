@@ -13,6 +13,10 @@ import SoftwareModel.DomainEntities.Room;
 import SoftwareModel.DomainEntities.RoomBooking;
 
 import java.lang.reflect.InvocationTargetException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -176,8 +180,13 @@ public class RoomBookingsImpl extends MinimalEObjectImpl.Container implements Ro
 	 * @generated NOT
 	 */
 	public int checkIn(RoomBooking roomBooking) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
+		DateFormat format = new SimpleDateFormat("yy-MM-dd", Locale.ENGLISH);
+		Date date = new Date();
+		if (date.before(roomBooking.getCheckInDate())){
+			System.out.println("Can not Check In. \nThe reservation starts " + format.format(roomBooking.getCheckInDate()) + "\n");
+			return 0;
+		}
+		
 		Room room = availibleroomfinder.availibleRoom(roomBooking);
 		
 		room.setAvailability(Availability.USED);

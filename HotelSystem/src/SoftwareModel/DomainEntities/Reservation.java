@@ -46,6 +46,9 @@ public interface Reservation extends EObject {
 	 * @generated
 	 */
 	EList<RoomBooking> getRoombooking();
+	
+
+	boolean isCanceled();
 
 	/**
 	 * Returns the value of the '<em><b>Preliminary Check In</b></em>' attribute.
@@ -210,5 +213,8 @@ public interface Reservation extends EObject {
 	 * @generated
 	 */
 	void cancel();
+
+
+	void setIsCanceled(boolean shouldBeCancelled);
 
 } // Reservation

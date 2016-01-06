@@ -13,6 +13,8 @@ import SoftwareModel.DomainEntities.RoomBooking;
 import SoftwareModel.DomainEntities.impl.ReservationImpl;
 
 import java.lang.reflect.InvocationTargetException;
+import java.util.Iterator;
+
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -197,12 +199,11 @@ public class ReservationsImpl extends MinimalEObjectImpl.Container implements Re
 	 * 
 	 * @generated NOT
 	 */
-	protected int nextReservationID=1;
+	protected static int nextReservationID=1;
 
 	public Reservation make(EList<RoomBooking> selectedRooms, PaymentDetails paymentDetails, boolean payNow,
 			String discountCode, boolean madeByCustomer) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
+
 		Reservation reservation = new ReservationImpl(selectedRooms);
 		reservation.setDiscountCode(discountCode);
 		reservation.setPaymentdetails(paymentDetails);
@@ -216,12 +217,13 @@ public class ReservationsImpl extends MinimalEObjectImpl.Container implements Re
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @generated
+	 
 	 */
 	public void cancel(Reservation reservation) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		reservation.setIsCanceled(true);
+		for (RoomBooking booking : reservation.getRoombooking()) {
+			booking.setIsCanceled(true);
+		}
 	}
 
 	/**
@@ -239,7 +241,8 @@ public class ReservationsImpl extends MinimalEObjectImpl.Container implements Re
 	public void CheckInAllGuests(Reservation reservation) {
 		for (RoomBooking roomBooking : reservation.getRoombooking()) {
 			int roomNr = roombookings.checkIn(roomBooking);
-			System.out.println("Guest " + roomBooking.getRoomresponsible().getFirstName() + " "
+			if (roomNr > 0)
+				System.out.println("Guest " + roomBooking.getRoomresponsible().getFirstName() + " "
 					+ roomBooking.getRoomresponsible().getLastName() + " got room number " + roomNr);
 		}
 	}

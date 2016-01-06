@@ -390,11 +390,13 @@ public class RoomBookingImpl extends MinimalEObjectImpl.Container implements Roo
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 */
 	public void checkOut() {
+		
 		if(room.getAvailability() == Availability.USED)
 		{
 			room.setAvailability(Availability.TO_BE_CLEANED);
 		}
-		
+		setRoom(null);
+		setIsCheckedIn(false);
 	}
 
 	/**
@@ -562,6 +564,18 @@ public class RoomBookingImpl extends MinimalEObjectImpl.Container implements Roo
 		result.append(checkInDate);
 		result.append(')');
 		return result.toString();
+	}
+
+	private boolean isCancelled = false;
+
+	@Override
+	public boolean isCanceled() {
+		return isCancelled;
+	}
+
+	@Override
+	public void setIsCanceled(boolean shouldBeCancelled) {
+		isCancelled = shouldBeCancelled;
 	}
 	
 } // RoomBookingImpl
