@@ -52,16 +52,15 @@ public class CleanerHomeViewImpl extends MinimalEObjectImpl.Container implements
 		
 		System.out.println();
 		int roomNr;
-			roomNr = frame.input("a room as cleaned, '0' for exit");
-			if(roomNr == 0)
-			{
-				frame.exit();
-			}
-			else if(!availableRoomsFinder.setRoomAsCleaned(roomNr))
-			{
-				System.out.println("This room is either not Dirteh! or it does not exist, stupid.\n");
-			}
-		
+		roomNr = frame.input("a room as cleaned, '0' for exit");
+		if(roomNr == 0)
+		{
+			frame.exit();
+		}
+		else if(!availableRoomsFinder.setRoomAsCleaned(roomNr))
+		{
+			System.out.println("This room is either not Dirteh! or it does not exist, stupid.\n");
+		}
 	}
 
 

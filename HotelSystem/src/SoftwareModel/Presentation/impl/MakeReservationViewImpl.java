@@ -32,6 +32,8 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.DateTimeException;
 import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object '
@@ -196,8 +198,16 @@ public class MakeReservationViewImpl extends MinimalEObjectImpl.Container implem
 				System.out.println("The email format is incorrect.");
 			}
 		} while (true);
-        }
 		
+        }
+	
+	public static boolean validateName(String txt) {
+	    String regx = "[a-zA-Z]+\\.?";
+	    Pattern pattern = Pattern.compile(regx,Pattern.CASE_INSENSITIVE);
+	    Matcher matcher = pattern.matcher(txt);
+	    return matcher.find();
+
+	}
 
 	public void run(Frame frame) {
 
@@ -268,10 +278,34 @@ public class MakeReservationViewImpl extends MinimalEObjectImpl.Container implem
 			
 			// Add and set room responsible
 			RoomResponsible responsible = new RoomResponsibleImpl();
-			responsible.setFirstName(frame.inputTextFor("first name for room responsible for room " + room));
-			responsible.setLastName(frame.inputTextFor("last name for room responsible for room " + room));
+			String firstName="";
+			String lastName="";
+			
+			do{
+				 firstName= frame.inputTextFor("first name for room responsible for room ");
+				if(validateName(firstName)==false){
+					System.out.println("wrong name format");
+				}else{
+					responsible.setFirstName( firstName+ room);
+				}
+			}
+			while(!validateName(firstName));
+			
+			
+			
+			do{
+				 lastName= frame.inputTextFor("last name for room responsible for room " + room);
+				if(validateName(lastName)==false){
+					System.out.println("wrong last name format");
+					
+				}else{
+					responsible.setFirstName( firstName+ room);}
+				}while(!validateName(lastName));
+			
+			
 			String email= getEmail(frame, "e-mail for room responsible for room ");
 			responsible.setEmail(email + room);	
+			
 			responsible.setAddress(frame.inputTextFor("address for room responsible for room " + room));
 			responsible.setPhoneNumber(frame.input("phone number for room responsible for room " + room));
 			
