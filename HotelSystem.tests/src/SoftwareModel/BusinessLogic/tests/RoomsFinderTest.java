@@ -106,6 +106,7 @@ public class RoomsFinderTest extends TestCase {
 		booking.setCheckOutDate(endDate);
 		booking.setRoomtype(singleWithKid);
 		booking.setRoom(room1);
+		room1.setAvailability(Availability.USED);
 		booking.setIsCheckedIn(true);
 		bookings.add(booking);
 		

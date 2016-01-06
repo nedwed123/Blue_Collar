@@ -15,7 +15,7 @@ import SoftwareModel.DomainEntities.RoomBooking;
 import SoftwareModel.DomainEntities.RoomType;
 
 import java.lang.reflect.InvocationTargetException;
-
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.LinkedHashSet;
@@ -248,41 +248,11 @@ public class AvailibleRoomFinderImpl extends MinimalEObjectImpl.Container implem
 	 * <!-- end-user-doc -->
 	 */
 	public Room availibleRoom(RoomBooking roomBooking) {
-		
-		EList<RoomBooking> allRoomBookings = roombookingsrepository.getAll();
-		EList<RoomBooking> roomBookings = new BasicEList<RoomBooking>();
-		for(RoomBooking booking : allRoomBookings)
-			if(booking.getRoom() != null)
-				roomBookings.add(booking);
-		
-		EList<RoomBooking> collidingRoomBookings = new BasicEList<RoomBooking>();
-
-		for (int i = 0; i < roomBookings.size(); i++) {
-			if (!(roomBooking.getCheckOutDate().before(roomBookings.get(i).getCheckInDate())
-					|| roomBooking.getCheckInDate().after(roomBookings.get(i).getCheckOutDate()))) 
-			{
-				collidingRoomBookings.add(roomBookings.get(i));
-			}
-		}
-		
 		EList<Room> rooms = roomrepository.getRooms();
-		
-		for (int i = 0; i < collidingRoomBookings.size(); i++){
-			for (int j = 0; j < rooms.size(); j++) 
-			{
-			    if (rooms.get(j).getRoomtype().equals(collidingRoomBookings.get(i).getRoomtype())) {
-			        // Remove the current element from the iterator and the list.
-			        rooms.remove(j);
-			    }
-			}
-		}
-		for(Room room : rooms)
-		{
-			if(room.getRoomtype().getName().equals(roomBooking.getRoomtype().getName()) && room.getAvailability() == Availability.AVAILIBLE)
-			{
+		for (Room room : rooms) {
+			if(room.getAvailability() == Availability.AVAILIBLE
+					&& room.getRoomtype().equals(roomBooking.getRoomtype()))
 				return room;
-			}
-			
 		}
 		return null;
 	}
