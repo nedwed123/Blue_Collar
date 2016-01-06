@@ -4,8 +4,10 @@ import SoftwareModel.BusinessLogic.AvailibleRoomFinder;
 import SoftwareModel.BusinessLogic.RoomBookings;
 import SoftwareModel.BusinessLogic.impl.AvailibleRoomFinderImpl;
 import SoftwareModel.BusinessLogic.impl.RoomBookingsImpl;
+import SoftwareModel.DataAccess.DatabaseContext;
 import SoftwareModel.DataAccess.RoomBookingsRepository;
 import SoftwareModel.DataAccess.RoomRepository;
+import SoftwareModel.DataAccess.impl.DatabaseContextImpl;
 import SoftwareModel.DomainEntities.Availability;
 import SoftwareModel.DomainEntities.Room;
 import SoftwareModel.DomainEntities.RoomBooking;
@@ -22,6 +24,7 @@ public class CheckOutTests extends TestCase {
 	RoomBookings roomBookings;
 	
 	public void testCheckOutSetsAvailabilityToToBeCleaned() {
+		DatabaseContextImpl.GetNewDatabaseContext();
 		RoomBooking booking = new RoomBookingImpl();
 		RoomTypeImpl roomtype = new RoomTypeImpl();
 		booking.setRoomtype(roomtype);
