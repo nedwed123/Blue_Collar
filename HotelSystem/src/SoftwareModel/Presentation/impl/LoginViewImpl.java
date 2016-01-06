@@ -7,8 +7,6 @@ import SoftwareModel.Presentation.Frame;
 import SoftwareModel.Presentation.LoginView;
 import SoftwareModel.Presentation.PresentationPackage;
 import java.lang.reflect.InvocationTargetException;
-import java.util.Scanner;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;

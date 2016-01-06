@@ -565,7 +565,7 @@ public class DataAccessPackageImpl extends EPackageImpl implements DataAccessPac
 		op = initEOperation(getRoomBookingsRepository__Update__RoomBooking(), null, "update", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, theDomainEntitiesPackage.getRoomBooking(), "roomBooking", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		op = initEOperation(getRoomBookingsRepository__GetByRoomResponsible__String(), theDomainEntitiesPackage.getRoomBooking(), "getByRoomResponsible", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		op = initEOperation(getRoomBookingsRepository__GetByRoomResponsible__String(), theDomainEntitiesPackage.getRoomBooking(), "getByRoomResponsible", 0, -1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, theTypesPackage.getString(), "name", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		op = initEOperation(getRoomBookingsRepository__GetByReservationNr__int(), theDomainEntitiesPackage.getRoomBooking(), "getByReservationNr", 1, 1, IS_UNIQUE, !IS_ORDERED);

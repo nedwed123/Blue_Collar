@@ -196,7 +196,10 @@
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_bQlW8JdzEeWxL-7mJgccVg" name="name">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         </ownedParameter>
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_Kw4m4JzwEeWJusbskP8Asw" type="_5lCx4JXcEeWtZbi4EnRFrQ" direction="return"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_Kw4m4JzwEeWJusbskP8Asw" type="_5lCx4JXcEeWtZbi4EnRFrQ" direction="return">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_hQlgELRHEeW81eicEst4sA"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_hQn8ULRHEeW81eicEst4sA" value="*"/>
+        </ownedParameter>
       </ownedOperation>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_J7_0QJd0EeWxL-7mJgccVg" name="getByReservationNr">
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_VNv1UJd0EeWxL-7mJgccVg" name="reservationNumber">
@@ -452,8 +455,7 @@
       </ownedOperation>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_co-tYJhcEeWatpqnQATTNw" name="availibleRoom">
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_uDT2QJhcEeWatpqnQATTNw" name="roomBooking" type="_5lCx4JXcEeWtZbi4EnRFrQ"/>
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_PM4MsJzSEeWJusbskP8Asw" name="roomNr" direction="return">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_PM4MsJzSEeWJusbskP8Asw" name="roomNr" type="_jC8d8JXcEeWtZbi4EnRFrQ" direction="return">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_UXi6wJzSEeWJusbskP8Asw" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_UXi6wZzSEeWJusbskP8Asw" value="1"/>
         </ownedParameter>

@@ -111,9 +111,9 @@ public class RoomsFinderTest extends TestCase {
 		bookings.add(booking);
 
 		//Try make the same booking, should return room 2
-		int roomNr = roomFinder.availibleRoom(booking);
+		Room room = roomFinder.availibleRoom(booking);
 		
-		assertEquals(2, roomNr);
+		assertEquals(2, room.getNumber());
 	}
 
 }

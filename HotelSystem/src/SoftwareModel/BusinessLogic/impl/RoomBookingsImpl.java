@@ -8,6 +8,8 @@ import SoftwareModel.BusinessLogic.RoomBookings;
 
 import SoftwareModel.DataAccess.RoomBookingsRepository;
 import SoftwareModel.DataAccess.impl.RoomBookingsRepositoryImpl;
+import SoftwareModel.DomainEntities.Availability;
+import SoftwareModel.DomainEntities.Room;
 import SoftwareModel.DomainEntities.RoomBooking;
 
 import java.lang.reflect.InvocationTargetException;
@@ -173,12 +175,15 @@ public class RoomBookingsImpl extends MinimalEObjectImpl.Container implements Ro
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public int checkIn(RoomBooking roomBooking) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		Room room = availibleroomfinder.availibleRoom(roomBooking);
+		room.setAvailability(Availability.USED);
+		roomBooking.setRoom(room);
+		return room.getNumber();
 	}
 
 	public RoomBooking findByRoomNr(int roomNr) {
@@ -196,9 +201,7 @@ public class RoomBookingsImpl extends MinimalEObjectImpl.Container implements Ro
 	public EList<RoomBooking> findByRoomResponsible(String roomResponsible) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
-		
-		return roombookingsrepository.getByRoomResponsible(roomResponsible);
-		
+		throw new UnsupportedOperationException();
 	}
 
 	/**

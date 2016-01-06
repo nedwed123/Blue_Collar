@@ -98,7 +98,7 @@ public class DatabaseContextImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public DatabaseContextImpl() {
 		super();		

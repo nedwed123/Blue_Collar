@@ -218,7 +218,7 @@ public class AvailibleRoomFinderImpl extends MinimalEObjectImpl.Container implem
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 */
-	public int availibleRoom(RoomBooking roomBooking) {
+	public Room availibleRoom(RoomBooking roomBooking) {
 		
 		EList<RoomBooking> roomBookings = roombookingsrepository.getAll();
 		EList<RoomBooking> collidingRoomBookings = new BasicEList<RoomBooking>();
@@ -246,11 +246,11 @@ public class AvailibleRoomFinderImpl extends MinimalEObjectImpl.Container implem
 		{
 			if(room.getRoomtype().getName().equals(roomBooking.getRoomtype().getName()) && room.getAvailability() == Availability.AVAILIBLE)
 			{
-				return room.getNumber();
+				return room;
 			}
 			
 		}
-		return 0;
+		return null;
 	}
 
 	/**

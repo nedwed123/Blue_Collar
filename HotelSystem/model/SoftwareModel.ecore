@@ -156,7 +156,7 @@
       <eOperations name="update" ordered="false" lowerBound="1">
         <eParameters name="roomBooking" ordered="false" lowerBound="1" eType="#//DomainEntities/RoomBooking"/>
       </eOperations>
-      <eOperations name="getByRoomResponsible" ordered="false" lowerBound="1" eType="#//DomainEntities/RoomBooking">
+      <eOperations name="getByRoomResponsible" ordered="false" upperBound="-1" eType="#//DomainEntities/RoomBooking">
         <eParameters name="name" ordered="false" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
       </eOperations>
       <eOperations name="getByReservationNr" ordered="false" lowerBound="1" eType="#//DomainEntities/RoomBooking">
@@ -259,7 +259,7 @@
         <eParameters name="startDate" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
         <eParameters name="endDate" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
       </eOperations>
-      <eOperations name="availibleRoom" ordered="false" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//Integer">
+      <eOperations name="availibleRoom" ordered="false" lowerBound="1" eType="#//DomainEntities/Room">
         <eParameters name="roomBooking" ordered="false" lowerBound="1" eType="#//DomainEntities/RoomBooking"/>
       </eOperations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="roomrepository" ordered="false"

@@ -130,6 +130,17 @@ public class RoomOperationsImpl extends MinimalEObjectImpl.Container implements 
 	}
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void addRoom(int roomNumber, Availability availability, String type) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 */
 	public void addRoom(int roomNumber, Availability availability, String type, EList<BedType> beds) {
@@ -255,7 +266,7 @@ public class RoomOperationsImpl extends MinimalEObjectImpl.Container implements 
 				makeRoomAvailable((Integer)arguments.get(0));
 				return null;
 			case BusinessLogicPackage.ROOM_OPERATIONS___ADD_ROOM__INT_AVAILABILITY_STRING:
-				addRoom((Integer)arguments.get(0), (Availability)arguments.get(1), (String)arguments.get(2), (EList<BedType>)arguments.get(3));
+				addRoom((Integer)arguments.get(0), (Availability)arguments.get(1), (String)arguments.get(2));
 				return null;
 			case BusinessLogicPackage.ROOM_OPERATIONS___REMOVE_ROOM__INT:
 				removeRoom((Integer)arguments.get(0));

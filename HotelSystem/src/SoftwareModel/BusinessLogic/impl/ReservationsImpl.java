@@ -10,7 +10,6 @@ import SoftwareModel.DataAccess.impl.ReservationsRepositoryImpl;
 import SoftwareModel.DomainEntities.PaymentDetails;
 import SoftwareModel.DomainEntities.Reservation;
 import SoftwareModel.DomainEntities.RoomBooking;
-import SoftwareModel.DomainEntities.impl.DomainEntitiesFactoryImpl;
 import SoftwareModel.DomainEntities.impl.ReservationImpl;
 
 import java.lang.reflect.InvocationTargetException;
@@ -25,41 +24,44 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Reservations</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '
+ * <em><b>Reservations</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link SoftwareModel.BusinessLogic.impl.ReservationsImpl#getReservationsrepository <em>Reservationsrepository</em>}</li>
- *   <li>{@link SoftwareModel.BusinessLogic.impl.ReservationsImpl#getRoombookings <em>Roombookings</em>}</li>
+ * <li>
+ * {@link SoftwareModel.BusinessLogic.impl.ReservationsImpl#getReservationsrepository
+ * <em>Reservationsrepository</em>}</li>
+ * <li>{@link SoftwareModel.BusinessLogic.impl.ReservationsImpl#getRoombookings
+ * <em>Roombookings</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class ReservationsImpl extends MinimalEObjectImpl.Container implements Reservations {
 	/**
-	 * The cached value of the '{@link #getReservationsrepository() <em>Reservationsrepository</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The cached value of the '{@link #getReservationsrepository()
+	 * <em>Reservationsrepository</em>}' containment reference. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getReservationsrepository()
 	 * @ordered
 	 */
 	protected ReservationsRepository reservationsrepository = new ReservationsRepositoryImpl();
 
 	/**
-	 * The cached value of the '{@link #getRoombookings() <em>Roombookings</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The cached value of the '{@link #getRoombookings() <em>Roombookings</em>}
+	 * ' containment reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getRoombookings()
 	 * @ordered
 	 */
 	protected RoomBookings roombookings = new RoomBookingsImpl();
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public ReservationsImpl() {
@@ -67,8 +69,8 @@ public class ReservationsImpl extends MinimalEObjectImpl.Container implements Re
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -77,8 +79,8 @@ public class ReservationsImpl extends MinimalEObjectImpl.Container implements Re
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public ReservationsRepository getReservationsrepository() {
@@ -86,42 +88,52 @@ public class ReservationsImpl extends MinimalEObjectImpl.Container implements Re
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
-	public NotificationChain basicSetReservationsrepository(ReservationsRepository newReservationsrepository, NotificationChain msgs) {
+	public NotificationChain basicSetReservationsrepository(ReservationsRepository newReservationsrepository,
+			NotificationChain msgs) {
 		ReservationsRepository oldReservationsrepository = reservationsrepository;
 		reservationsrepository = newReservationsrepository;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, BusinessLogicPackage.RESERVATIONS__RESERVATIONSREPOSITORY, oldReservationsrepository, newReservationsrepository);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					BusinessLogicPackage.RESERVATIONS__RESERVATIONSREPOSITORY, oldReservationsrepository,
+					newReservationsrepository);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setReservationsrepository(ReservationsRepository newReservationsrepository) {
 		if (newReservationsrepository != reservationsrepository) {
 			NotificationChain msgs = null;
 			if (reservationsrepository != null)
-				msgs = ((InternalEObject)reservationsrepository).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - BusinessLogicPackage.RESERVATIONS__RESERVATIONSREPOSITORY, null, msgs);
+				msgs = ((InternalEObject) reservationsrepository).eInverseRemove(this,
+						EOPPOSITE_FEATURE_BASE - BusinessLogicPackage.RESERVATIONS__RESERVATIONSREPOSITORY, null, msgs);
 			if (newReservationsrepository != null)
-				msgs = ((InternalEObject)newReservationsrepository).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - BusinessLogicPackage.RESERVATIONS__RESERVATIONSREPOSITORY, null, msgs);
+				msgs = ((InternalEObject) newReservationsrepository).eInverseAdd(this,
+						EOPPOSITE_FEATURE_BASE - BusinessLogicPackage.RESERVATIONS__RESERVATIONSREPOSITORY, null, msgs);
 			msgs = basicSetReservationsrepository(newReservationsrepository, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BusinessLogicPackage.RESERVATIONS__RESERVATIONSREPOSITORY, newReservationsrepository, newReservationsrepository));
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					BusinessLogicPackage.RESERVATIONS__RESERVATIONSREPOSITORY, newReservationsrepository,
+					newReservationsrepository));
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public RoomBookings getRoombookings() {
@@ -129,42 +141,49 @@ public class ReservationsImpl extends MinimalEObjectImpl.Container implements Re
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public NotificationChain basicSetRoombookings(RoomBookings newRoombookings, NotificationChain msgs) {
 		RoomBookings oldRoombookings = roombookings;
 		roombookings = newRoombookings;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, BusinessLogicPackage.RESERVATIONS__ROOMBOOKINGS, oldRoombookings, newRoombookings);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					BusinessLogicPackage.RESERVATIONS__ROOMBOOKINGS, oldRoombookings, newRoombookings);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setRoombookings(RoomBookings newRoombookings) {
 		if (newRoombookings != roombookings) {
 			NotificationChain msgs = null;
 			if (roombookings != null)
-				msgs = ((InternalEObject)roombookings).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - BusinessLogicPackage.RESERVATIONS__ROOMBOOKINGS, null, msgs);
+				msgs = ((InternalEObject) roombookings).eInverseRemove(this,
+						EOPPOSITE_FEATURE_BASE - BusinessLogicPackage.RESERVATIONS__ROOMBOOKINGS, null, msgs);
 			if (newRoombookings != null)
-				msgs = ((InternalEObject)newRoombookings).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - BusinessLogicPackage.RESERVATIONS__ROOMBOOKINGS, null, msgs);
+				msgs = ((InternalEObject) newRoombookings).eInverseAdd(this,
+						EOPPOSITE_FEATURE_BASE - BusinessLogicPackage.RESERVATIONS__ROOMBOOKINGS, null, msgs);
 			msgs = basicSetRoombookings(newRoombookings, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BusinessLogicPackage.RESERVATIONS__ROOMBOOKINGS, newRoombookings, newRoombookings));
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BusinessLogicPackage.RESERVATIONS__ROOMBOOKINGS,
+					newRoombookings, newRoombookings));
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void updateReservationDetails(Reservation reservation) {
@@ -174,27 +193,27 @@ public class ReservationsImpl extends MinimalEObjectImpl.Container implements Re
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
-	public Reservation make(EList<RoomBooking> selectedRooms, PaymentDetails paymentDetails, boolean payNow, String discountCode, boolean madeByCustomer) {
+	public Reservation make(EList<RoomBooking> selectedRooms, PaymentDetails paymentDetails, boolean payNow,
+			String discountCode, boolean madeByCustomer) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
-		
+
 		Reservation reservation = new ReservationImpl(selectedRooms);
 		reservation.setDiscountCode(discountCode);
 		reservation.setPaymentdetails(paymentDetails);
 		reservation.setPreliminaryCheckIn(selectedRooms.get(0).getCheckInDate());
 		reservation.setPreliminaryCheckOut(selectedRooms.get(0).getCheckOutDate());
-		reservationsrepository.addNew(reservation);
-		
-		return reservation;
+		return reservationsrepository.addNew(reservation);
+
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void cancel(Reservation reservation) {
@@ -204,29 +223,28 @@ public class ReservationsImpl extends MinimalEObjectImpl.Container implements Re
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * Finds the reservation with the specified reservationNumber
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> Finds the reservation with the specified
+	 * reservationNumber <!-- end-user-doc -->
 	 */
 	public Reservation getReservation(int reservationNumber) {
 		return reservationsrepository.get(reservationNumber);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * Checks in all rooms bookings related to a reservation
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> Checks in all rooms bookings related to a
+	 * reservation <!-- end-user-doc -->
 	 */
 	public void CheckInAllGuests(Reservation reservation) {
 		for (RoomBooking roomBooking : reservation.getRoombooking()) {
-			roombookings.checkIn(roomBooking);
+			int roomNr = roombookings.checkIn(roomBooking);
+			System.out.println("Guest " + roomBooking.getRoomresponsible().getFirstName() + " "
+					+ roomBooking.getRoomresponsible().getLastName() + " got room number " + roomNr);
 		}
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * Checks in out rooms bookings related to a reservation
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> Checks in out rooms bookings related to a
+	 * reservation <!-- end-user-doc -->
 	 */
 	public void CheckOutAllGuests(Reservation reservation) {
 		for (RoomBooking roomBooking : reservation.getRoombooking()) {
@@ -235,116 +253,117 @@ public class ReservationsImpl extends MinimalEObjectImpl.Container implements Re
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case BusinessLogicPackage.RESERVATIONS__RESERVATIONSREPOSITORY:
-				return basicSetReservationsrepository(null, msgs);
-			case BusinessLogicPackage.RESERVATIONS__ROOMBOOKINGS:
-				return basicSetRoombookings(null, msgs);
+		case BusinessLogicPackage.RESERVATIONS__RESERVATIONSREPOSITORY:
+			return basicSetReservationsrepository(null, msgs);
+		case BusinessLogicPackage.RESERVATIONS__ROOMBOOKINGS:
+			return basicSetRoombookings(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case BusinessLogicPackage.RESERVATIONS__RESERVATIONSREPOSITORY:
-				return getReservationsrepository();
-			case BusinessLogicPackage.RESERVATIONS__ROOMBOOKINGS:
-				return getRoombookings();
+		case BusinessLogicPackage.RESERVATIONS__RESERVATIONSREPOSITORY:
+			return getReservationsrepository();
+		case BusinessLogicPackage.RESERVATIONS__ROOMBOOKINGS:
+			return getRoombookings();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case BusinessLogicPackage.RESERVATIONS__RESERVATIONSREPOSITORY:
-				setReservationsrepository((ReservationsRepository)newValue);
-				return;
-			case BusinessLogicPackage.RESERVATIONS__ROOMBOOKINGS:
-				setRoombookings((RoomBookings)newValue);
-				return;
+		case BusinessLogicPackage.RESERVATIONS__RESERVATIONSREPOSITORY:
+			setReservationsrepository((ReservationsRepository) newValue);
+			return;
+		case BusinessLogicPackage.RESERVATIONS__ROOMBOOKINGS:
+			setRoombookings((RoomBookings) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case BusinessLogicPackage.RESERVATIONS__RESERVATIONSREPOSITORY:
-				setReservationsrepository((ReservationsRepository)null);
-				return;
-			case BusinessLogicPackage.RESERVATIONS__ROOMBOOKINGS:
-				setRoombookings((RoomBookings)null);
-				return;
+		case BusinessLogicPackage.RESERVATIONS__RESERVATIONSREPOSITORY:
+			setReservationsrepository((ReservationsRepository) null);
+			return;
+		case BusinessLogicPackage.RESERVATIONS__ROOMBOOKINGS:
+			setRoombookings((RoomBookings) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case BusinessLogicPackage.RESERVATIONS__RESERVATIONSREPOSITORY:
-				return reservationsrepository != null;
-			case BusinessLogicPackage.RESERVATIONS__ROOMBOOKINGS:
-				return roombookings != null;
+		case BusinessLogicPackage.RESERVATIONS__RESERVATIONSREPOSITORY:
+			return reservationsrepository != null;
+		case BusinessLogicPackage.RESERVATIONS__ROOMBOOKINGS:
+			return roombookings != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	@SuppressWarnings("unchecked")
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case BusinessLogicPackage.RESERVATIONS___UPDATE_RESERVATION_DETAILS__RESERVATION:
-				updateReservationDetails((Reservation)arguments.get(0));
-				return null;
-			case BusinessLogicPackage.RESERVATIONS___MAKE__ELIST_PAYMENTDETAILS_BOOLEAN_STRING_BOOLEAN:
-				return make((EList<RoomBooking>)arguments.get(0), (PaymentDetails)arguments.get(1), (Boolean)arguments.get(2), (String)arguments.get(3), (Boolean)arguments.get(4));
-			case BusinessLogicPackage.RESERVATIONS___CANCEL__RESERVATION:
-				cancel((Reservation)arguments.get(0));
-				return null;
-			case BusinessLogicPackage.RESERVATIONS___GET_RESERVATION__INT:
-				return getReservation((Integer)arguments.get(0));
-			case BusinessLogicPackage.RESERVATIONS___CHECK_IN_ALL_GUESTS__RESERVATION:
-				CheckInAllGuests((Reservation)arguments.get(0));
-				return null;
-			case BusinessLogicPackage.RESERVATIONS___CHECK_OUT_ALL_GUESTS__RESERVATION:
-				CheckOutAllGuests((Reservation)arguments.get(0));
-				return null;
+		case BusinessLogicPackage.RESERVATIONS___UPDATE_RESERVATION_DETAILS__RESERVATION:
+			updateReservationDetails((Reservation) arguments.get(0));
+			return null;
+		case BusinessLogicPackage.RESERVATIONS___MAKE__ELIST_PAYMENTDETAILS_BOOLEAN_STRING_BOOLEAN:
+			return make((EList<RoomBooking>) arguments.get(0), (PaymentDetails) arguments.get(1),
+					(Boolean) arguments.get(2), (String) arguments.get(3), (Boolean) arguments.get(4));
+		case BusinessLogicPackage.RESERVATIONS___CANCEL__RESERVATION:
+			cancel((Reservation) arguments.get(0));
+			return null;
+		case BusinessLogicPackage.RESERVATIONS___GET_RESERVATION__INT:
+			return getReservation((Integer) arguments.get(0));
+		case BusinessLogicPackage.RESERVATIONS___CHECK_IN_ALL_GUESTS__RESERVATION:
+			CheckInAllGuests((Reservation) arguments.get(0));
+			return null;
+		case BusinessLogicPackage.RESERVATIONS___CHECK_OUT_ALL_GUESTS__RESERVATION:
+			CheckOutAllGuests((Reservation) arguments.get(0));
+			return null;
 		}
 		return super.eInvoke(operationID, arguments);
 	}
 
-} //ReservationsImpl
+} // ReservationsImpl

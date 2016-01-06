@@ -105,7 +105,7 @@ public class ReservationImpl extends MinimalEObjectImpl.Container implements Res
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int RESERVATION_ID_EDEFAULT = 1;
+	protected static final int RESERVATION_ID_EDEFAULT = 0;
 
 	/**
 	 * The cached value of the '{@link #getReservationId() <em>Reservation Id</em>}' attribute.

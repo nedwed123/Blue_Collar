@@ -5,6 +5,7 @@ package SoftwareModel.BusinessLogic;
 import SoftwareModel.DataAccess.RoomBookingsRepository;
 import SoftwareModel.DataAccess.RoomRepository;
 
+import SoftwareModel.DomainEntities.Room;
 import SoftwareModel.DomainEntities.RoomBooking;
 import SoftwareModel.DomainEntities.RoomType;
 
@@ -94,9 +95,9 @@ public interface AvailibleRoomFinder extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model dataType="org.eclipse.uml2.types.Integer" required="true" ordered="false" roomBookingRequired="true" roomBookingOrdered="false"
+	 * @model required="true" ordered="false" roomBookingRequired="true" roomBookingOrdered="false"
 	 * @generated
 	 */
-	int availibleRoom(RoomBooking roomBooking);
+	Room availibleRoom(RoomBooking roomBooking);
 
 } // AvailibleRoomFinder

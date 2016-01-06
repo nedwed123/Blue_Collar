@@ -72,6 +72,14 @@ public interface RoomOperations extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model roomNumberRequired="true" roomNumberOrdered="false" availabilityRequired="true" availabilityOrdered="false" typeDataType="org.eclipse.uml2.types.String" typeRequired="true" typeOrdered="false"
+	 * @generated
+	 */
+	void addRoom(int roomNumber, Availability availability, String type);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model roomNumberRequired="true" roomNumberOrdered="false" availabilityRequired="true" availabilityOrdered="false" typeDataType="org.eclipse.uml2.types.String" typeRequired="true" typeOrdered="false"
 	 */
 	void addRoom(int roomNumber, Availability availability, String type, EList<BedType> beds);
 

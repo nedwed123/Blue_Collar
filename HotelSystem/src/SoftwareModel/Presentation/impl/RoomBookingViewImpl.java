@@ -5,7 +5,6 @@ package SoftwareModel.Presentation.impl;
 import SoftwareModel.BusinessLogic.Rooms;
 import SoftwareModel.BusinessLogic.impl.RoomsImpl;
 import SoftwareModel.DomainEntities.RoomBooking;
-import SoftwareModel.DomainEntities.RoomType;
 import SoftwareModel.Presentation.Frame;
 import SoftwareModel.Presentation.PresentationPackage;
 import SoftwareModel.Presentation.RoomBookingView;
@@ -20,7 +19,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 /**
  * <!-- begin-user-doc -->

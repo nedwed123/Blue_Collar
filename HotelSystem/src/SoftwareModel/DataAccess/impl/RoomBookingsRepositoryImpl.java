@@ -148,10 +148,13 @@ public class RoomBookingsRepositoryImpl extends MinimalEObjectImpl.Container imp
 	public RoomBooking getByRoomNr(int roomNr) {
 		// TODO: implement this method, check get by room responsible
 		// Ensure that you remove @generated or mark it @generated NOT
-		EList<RoomBooking> bookings = databasecontext.getRoomBookings();
+		EList<RoomBooking> bookings = getAll();
 		if (bookings.size() < 1) {
 			System.out.println("Cannot find booking.");
+			return null;
+			
 		}
+		
 		throw new UnsupportedOperationException();
 	}
 
