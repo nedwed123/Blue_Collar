@@ -1,6 +1,5 @@
 package cleanerClient;
 
-import SoftwareModel.Presentation.impl.CustomerHomeViewImpl;
 import SoftwareModel.Presentation.impl.FrameImpl;
 
 public class Client {
