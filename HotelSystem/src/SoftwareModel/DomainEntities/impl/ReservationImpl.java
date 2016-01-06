@@ -105,7 +105,7 @@ public class ReservationImpl extends MinimalEObjectImpl.Container implements Res
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int RESERVATION_ID_EDEFAULT = 0;
+	protected static int RESERVATION_ID_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getReservationId() <em>Reservation Id</em>}' attribute.
@@ -115,7 +115,7 @@ public class ReservationImpl extends MinimalEObjectImpl.Container implements Res
 	 * @generated
 	 * @ordered
 	 */
-	protected int reservationId = RESERVATION_ID_EDEFAULT;
+	protected static int reservationId = RESERVATION_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getDiscountCode() <em>Discount Code</em>}' attribute.
@@ -241,6 +241,7 @@ public class ReservationImpl extends MinimalEObjectImpl.Container implements Res
 	 * @generated
 	 */
 	public int getReservationId() {
+		reservationId++;
 		return reservationId;
 	}
 

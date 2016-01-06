@@ -177,6 +177,15 @@ public class MakeReservationViewImpl extends MinimalEObjectImpl.Container implem
 		} while (true);
 	}
 
+	
+	private boolean isValidEmailAddress(Frame frame, String email) {
+		String inputEmail = frame.inputTextFor(email);
+		 String ePattern = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\])|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))$";
+         java.util.regex.Pattern p = java.util.regex.Pattern.compile(ePattern);
+         java.util.regex.Matcher m = p.matcher(inputEmail);
+         return m.matches();
+		}
+
 	public void run(Frame frame) {
 
 		System.out.println("Make Reservation\n---------------------");
