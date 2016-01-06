@@ -153,6 +153,35 @@ public class AvailibleRoomFinderImpl extends MinimalEObjectImpl.Container implem
 		}
 		return roombookingsrepository;
 	}
+	
+	public EList<Room> getToBoCleanedRooms() {
+		
+		EList<Room> dirtyRooms = new BasicEList<Room>();
+		
+		for(Room room : getRoomrepository().getRooms())
+		{
+			if(room.getAvailability() == Availability.TO_BE_CLEANED)
+			{
+				dirtyRooms.add(room);
+			}
+		}
+		
+		return dirtyRooms;
+	}
+	
+	public boolean setRoomAsCleaned(int roomNr)
+	{
+		for(Room room : getRoomrepository().getRooms())
+		{
+			if(room.getNumber() == roomNr && room.getAvailability() == Availability.TO_BE_CLEANED)
+			{
+				room.setAvailability(Availability.AVAILIBLE);
+				return true;
+			}
+		}
+		
+		return false;
+	}
 
 	/**
 	 * <!-- begin-user-doc -->
