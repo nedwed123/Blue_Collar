@@ -2,6 +2,7 @@
  */
 package SoftwareModel.DomainEntities.impl;
 
+import SoftwareModel.DomainEntities.Availability;
 import SoftwareModel.DomainEntities.DomainEntitiesPackage;
 import SoftwareModel.DomainEntities.Room;
 import SoftwareModel.DomainEntities.RoomBooking;
@@ -387,12 +388,10 @@ public class RoomBookingImpl extends MinimalEObjectImpl.Container implements Roo
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
 	 */
 	public void checkOut() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		
+		room.setAvailability(Availability.TO_BE_CLEANED);
 	}
 
 	/**

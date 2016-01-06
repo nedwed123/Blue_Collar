@@ -164,12 +164,10 @@ public class RoomBookingsImpl extends MinimalEObjectImpl.Container implements Ro
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	public void checkOut(RoomBooking roomBooking) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		
+		roomBooking.checkOut();
 	}
 
 	/**

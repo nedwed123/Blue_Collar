@@ -32,7 +32,7 @@ public class CheckOutTests extends TestCase {
 		Room room = new RoomImpl();
 		booking.setRoom(room);
 		roomBookings.checkOut(booking);
-		assertEquals(Availability.USED,room.getAvailability());
+		assertEquals(Availability.TO_BE_CLEANED,room.getAvailability());
 	}
 	
 	@Override
