@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import java.lang.reflect.InvocationTargetException;
+import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
@@ -133,12 +134,16 @@ public class FrameImpl extends MinimalEObjectImpl.Container implements Frame {
 		while(true){
 			Scanner scan=new Scanner(System.in);
 			System.out.print("Option :");
+			try{
 			choice=scan.nextInt();
-			if(choice < 0 || choice > choices.length)
+			if(choice <= 0 || choice > choices.length)
 				System.out.println("Impossible choice");
 			else
 				return choices[choice-1];
-		}
+			}catch(InputMismatchException ex){
+				System.out.println("Impossible choice");
+			}
+			}
 	}
 
 	public void displayMenu(String caption,MenuItem[] menu){
