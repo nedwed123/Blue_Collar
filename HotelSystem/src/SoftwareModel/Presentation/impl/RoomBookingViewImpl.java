@@ -157,7 +157,8 @@ public class RoomBookingViewImpl extends MinimalEObjectImpl.Container implements
 						@Override
 						public void run() {
 							int roomNr = rooms.checkIn(finalRoombooking);
-							System.out.println(finalRoombooking.getRoomresponsible().getFirstName() + " have been assigned room nr: " + roomNr);
+							if(roomNr > 0)
+								System.out.println(finalRoombooking.getRoomresponsible().getFirstName() + " have been assigned room nr: " + roomNr);
 						}
 					}
 			));
