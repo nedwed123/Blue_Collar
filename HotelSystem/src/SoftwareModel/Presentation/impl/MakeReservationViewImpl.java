@@ -278,19 +278,30 @@ public class MakeReservationViewImpl extends MinimalEObjectImpl.Container implem
 			
 			// Add and set room responsible
 			RoomResponsible responsible = new RoomResponsibleImpl();
+			String firstName="";
+			String lastName="";
 			
-			String firstName= frame.inputTextFor("first name for room responsible for room ");
+			do{
+				 firstName= frame.inputTextFor("first name for room responsible for room ");
+				if(validateName(firstName)==false){
+					System.out.println("wrong name format");
+				}else{
+					responsible.setFirstName( firstName+ room);
+				}
+			}
+			while(!validateName(firstName));
+			
 			
 			
 			do{
-			if(validateName(firstName)==false){
-				System.out.println("wrong name format");
-				firstName= frame.inputTextFor("first name for room responsible for room ");
-			}else{
-				responsible.setFirstName( firstName+ room);
-			}}while(!validateName(firstName));
+				 lastName= frame.inputTextFor("last name for room responsible for room " + room);
+				if(validateName(lastName)==false){
+					System.out.println("wrong last name format");
+					
+				}else{
+					responsible.setFirstName( firstName+ room);}
+				}while(!validateName(lastName));
 			
-			responsible.setLastName(frame.inputTextFor("last name for room responsible for room " + room));
 			
 			String email= getEmail(frame, "e-mail for room responsible for room ");
 			responsible.setEmail(email + room);	
