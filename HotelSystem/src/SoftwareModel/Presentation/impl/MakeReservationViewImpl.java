@@ -178,13 +178,21 @@ public class MakeReservationViewImpl extends MinimalEObjectImpl.Container implem
 	}
 
 	
-	private boolean isValidEmailAddress(Frame frame, String email) {
+	private String getEmail(Frame frame, String email) {
+		do{
+			
 		String inputEmail = frame.inputTextFor(email);
 		 String ePattern = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\])|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))$";
          java.util.regex.Pattern p = java.util.regex.Pattern.compile(ePattern);
          java.util.regex.Matcher m = p.matcher(inputEmail);
-         return m.matches();
-		}
+         if( m.matches()){
+        	 return inputEmail;
+         }else{
+				System.out.println("The email format is incorrect.");
+			}
+		} while (true);
+        }
+		
 
 	public void run(Frame frame) {
 
@@ -193,6 +201,8 @@ public class MakeReservationViewImpl extends MinimalEObjectImpl.Container implem
 		Date checkInDate = getDate(new Date(), frame, "check in date (format YY-MM-DD)");
 
 		Date checkOutDate = getDate(checkInDate, frame, "check out date (format YY-MM-DD)");
+		
+		
 
 		int numberOfRooms;
 		do{
@@ -232,7 +242,8 @@ public class MakeReservationViewImpl extends MinimalEObjectImpl.Container implem
 			RoomResponsible responsible = new RoomResponsibleImpl();
 			responsible.setFirstName(frame.inputTextFor("first name for room responsible for room " + room));
 			responsible.setLastName(frame.inputTextFor("last name for room responsible for room " + room));
-			responsible.setEmail(frame.inputTextFor("e-mail for room responsible for room " + room));
+			String email= getEmail(frame, "e-mail for room responsible for room ");
+			responsible.setEmail(email + room);	
 			responsible.setAddress(frame.inputTextFor("address for room responsible for room " + room));
 			responsible.setPhoneNumber(frame.input("phone number for room responsible for room " + room));
 			
