@@ -7,6 +7,8 @@ import SoftwareModel.DomainEntities.DomainEntitiesPackage;
 import SoftwareModel.DomainEntities.Reservation;
 
 import java.lang.reflect.InvocationTargetException;
+import java.util.Date;
+import java.util.concurrent.TimeUnit;
 
 import org.eclipse.emf.common.util.EList;
 
@@ -44,14 +46,19 @@ public class CustomerCancelationPolicyImpl extends MinimalEObjectImpl.Container 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	public void canBeCancelledByCustomer(Reservation reservation) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		Date currentDate = new Date();
+		Date checkInDate = reservation.getRoombooking().get(0).getCheckInDate();
+		//if(getDateDiff(currentDate, checkInDate, TimeUnit.DAYS) < 5)
+		//	return true;
 	}
 
+	public static long getDateDiff(Date date1, Date date2, TimeUnit timeUnit) {
+	    long diffInMillies = date2.getTime() - date1.getTime();
+	    return timeUnit.convert(diffInMillies,TimeUnit.MILLISECONDS);
+	}
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
