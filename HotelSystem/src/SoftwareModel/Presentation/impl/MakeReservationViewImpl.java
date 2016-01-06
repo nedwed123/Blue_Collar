@@ -198,7 +198,7 @@ public class MakeReservationViewImpl extends MinimalEObjectImpl.Container implem
 
 		System.out.println("Make Reservation\n---------------------");
 
-		Date checkInDate = getDate(new Date(), frame, "check in date (format YY-MM-DD)");
+		Date checkInDate = getDate(new Date(new Date().getTime() - 1 * 24 * 3600 * 1000), frame, "check in date (format YY-MM-DD)");
 
 		Date checkOutDate = getDate(checkInDate, frame, "check out date (format YY-MM-DD)");
 		
