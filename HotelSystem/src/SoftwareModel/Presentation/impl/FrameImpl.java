@@ -160,9 +160,14 @@ public class FrameImpl extends MinimalEObjectImpl.Container implements Frame {
 	}
 
 	public int input(String description){
+		int in = 0;
 		AskFor(description);
-		int in = scanner.nextInt();
-		scanner.nextLine();
+		try{
+		in = scanner.nextInt();
+		}catch (InputMismatchException e){
+		scanner.next();
+		System.out.println("invalid input");
+		}
 		return in;
 	}
 
