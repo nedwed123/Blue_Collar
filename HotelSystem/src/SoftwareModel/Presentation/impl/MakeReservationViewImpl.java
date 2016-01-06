@@ -169,10 +169,12 @@ public class MakeReservationViewImpl extends MinimalEObjectImpl.Container implem
 			try {
 
 				String dateString = frame.inputTextFor(description);
+				format.setLenient(false);
+			    format.parse(dateString);
 				Date date = format.parse(dateString);
 				if (date.after(startDate))
 					return date;
-				System.out.println("The date needs to be a later than  or the date is not a real date" + format.format(startDate));
+				System.out.println("The date needs to be a later than " + format.format(startDate) + "or the date is not a real date");
 
 			} catch (ParseException e) {
 				System.out.println("The format is incorrect.");
