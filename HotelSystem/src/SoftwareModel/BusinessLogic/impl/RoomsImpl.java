@@ -166,9 +166,7 @@ public class RoomsImpl extends MinimalEObjectImpl.Container implements Rooms {
 	 * @generated
 	 */
 	public void checkOut(RoomBooking roomBooking) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		roombookings.checkOut(roomBooking);
 	}
 
 	/**
@@ -177,9 +175,7 @@ public class RoomsImpl extends MinimalEObjectImpl.Container implements Rooms {
 	 * @generated
 	 */
 	public int checkIn(RoomBooking roomBooking) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return roombookings.checkIn(roomBooking);
 	}
 
 	public RoomBooking getBooking(int roomNr) {
