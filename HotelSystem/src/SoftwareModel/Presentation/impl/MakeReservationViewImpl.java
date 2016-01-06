@@ -169,6 +169,8 @@ public class MakeReservationViewImpl extends MinimalEObjectImpl.Container implem
 			try {
 
 				String dateString = frame.inputTextFor(description);
+				format.setLenient(false);
+			    format.parse(dateString);
 				Date date = format.parse(dateString);
 				if (date.after(startDate))
 					return date;
