@@ -6,6 +6,7 @@ import SoftwareModel.DomainEntities.CustomerCancelationPolicy;
 import SoftwareModel.DomainEntities.DomainEntitiesPackage;
 import SoftwareModel.DomainEntities.PaymentDetails;
 import SoftwareModel.DomainEntities.Reservation;
+import SoftwareModel.DomainEntities.Room;
 import SoftwareModel.DomainEntities.RoomBooking;
 
 import java.lang.reflect.InvocationTargetException;
@@ -524,5 +525,20 @@ public class ReservationImpl extends MinimalEObjectImpl.Container implements Res
 		result.append(')');
 		return result.toString();
 	}
+
+	@Override
+	public boolean equals(Object obj) {
+		
+		if(obj instanceof Reservation)
+		{
+			Reservation reservation = (Reservation) obj;
+			
+			return this.reservationId == reservation.getReservationId();
+		}
+		
+		return false;
+	}
+	
+	
 
 } //ReservationImpl
