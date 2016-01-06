@@ -563,5 +563,17 @@ public class RoomBookingImpl extends MinimalEObjectImpl.Container implements Roo
 		result.append(')');
 		return result.toString();
 	}
+
+	private boolean isCancelled = false;
+
+	@Override
+	public boolean isCanceled() {
+		return isCancelled;
+	}
+
+	@Override
+	public void setIsCanceled(boolean shouldBeCancelled) {
+		isCancelled = shouldBeCancelled;
+	}
 	
 } // RoomBookingImpl
