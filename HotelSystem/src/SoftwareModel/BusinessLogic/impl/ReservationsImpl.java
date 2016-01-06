@@ -241,7 +241,8 @@ public class ReservationsImpl extends MinimalEObjectImpl.Container implements Re
 	public void CheckInAllGuests(Reservation reservation) {
 		for (RoomBooking roomBooking : reservation.getRoombooking()) {
 			int roomNr = roombookings.checkIn(roomBooking);
-			System.out.println("Guest " + roomBooking.getRoomresponsible().getFirstName() + " "
+			if (roomNr > 0)
+				System.out.println("Guest " + roomBooking.getRoomresponsible().getFirstName() + " "
 					+ roomBooking.getRoomresponsible().getLastName() + " got room number " + roomNr);
 		}
 	}
