@@ -123,12 +123,17 @@ public class RoomBookingViewImpl extends MinimalEObjectImpl.Container implements
 			roombooking = rooms.getBooking(Integer.parseInt(input));
 		} else {
 			EList<RoomBooking> roomBookings = rooms.getBooking(input);
-			roombooking = (RoomBooking)frame.displaySelectionMenu("Select room booking", roomBookings.toArray());
+			if(roomBookings.size() < 1){
+				roombooking = null;
+				System.out.println("Unable to find any booking with that name.");
+			}
+			else 
+				roombooking = (RoomBooking)frame.displaySelectionMenu("Select room booking", roomBookings.toArray());
 		}
 		
 		if(roombooking == null){
-			System.out.println("Unable to find roombooking");
 			frame.goBack();
+			return;
 		}
 		
 		// Display room booking
@@ -157,7 +162,8 @@ public class RoomBookingViewImpl extends MinimalEObjectImpl.Container implements
 					}
 			));
 		}
-		menuItems.add(new Frame.MenuItem("Nothing", new Frame.Nothing()));
+	
+		menuItems.add(new Frame.MenuItem("Go back", new EmployeeHomeViewImpl()));
 		frame.displayMenu("What do u want to do with the room booking?:",menuItems);
 	}
 

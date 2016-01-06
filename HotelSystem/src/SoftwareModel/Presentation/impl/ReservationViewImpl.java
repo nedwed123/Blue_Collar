@@ -154,7 +154,7 @@ public class ReservationViewImpl extends MinimalEObjectImpl.Container implements
 										}
 									}
 							),
-							new Frame.MenuItem("Nothing",new Frame.Nothing())
+							new Frame.MenuItem("Go back",new Frame.Nothing())
 					});
 		}
 		else
@@ -163,45 +163,6 @@ public class ReservationViewImpl extends MinimalEObjectImpl.Container implements
 		}
 		
 		frame.goBack();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 */
-	public void Run(Frame frame) {
-		System.out.println("Please input reservation number:\n");
-		Scanner in = new Scanner(System.in);
-		int input = in.nextInt();
-		Reservation res = reservations.getReservation(input);
-		if(res != null)
-		{
-			System.out.println("Reservation:");
-			
-			//TODO: Display customer details?
-			
-			EList<RoomBooking> roombookings = res.getRoombooking();
-			
-			int i = 0;
-			for (RoomBooking roomBooking : roombookings) {
-				System.out.println("-- Room " + i + " --------------");
-				//TODO: display room booking information
-				System.out.println("\t room info...");
-			}
-			
-			System.out.println("What do u want to do with the reservation?:"
-					+ "1: Check in all rooms\n"
-					+ "2: cancel\n"
-					+ "3: nothing\n");
-			in.nextInt();
-			
-		}
-		else
-		{
-			System.out.println("Unable to find reservation");
-		}
-		
-		frame.changeView(new ReservationViewImpl());
 	}
 
 	/**

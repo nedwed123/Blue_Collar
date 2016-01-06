@@ -30,6 +30,7 @@ public class CheckOutTests extends TestCase {
 		booking.setRoomtype(roomtype);
 		AvailibleRoomFinder roomFinder = mock(AvailibleRoomFinder.class);
 		Room room = new RoomImpl();
+		room.setAvailability(Availability.USED);
 		booking.setRoom(room);
 		roomBookings.checkOut(booking);
 		assertEquals(Availability.TO_BE_CLEANED,room.getAvailability());
