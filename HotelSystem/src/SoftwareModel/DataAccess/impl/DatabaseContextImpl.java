@@ -127,7 +127,7 @@ public class DatabaseContextImpl extends MinimalEObjectImpl.Container implements
 		
 		rooms = getRooms();
 		
-		rooms.add(new RoomImpl(101, roomTypes.get(0), Availability.AVAILIBLE));
+		rooms.add(new RoomImpl(101, roomTypes.get(0), Availability.TO_BE_CLEANED));
 		rooms.add(new RoomImpl(102, roomTypes.get(1), Availability.AVAILIBLE));
 		rooms.add(new RoomImpl(201, roomTypes.get(2), Availability.AVAILIBLE));
 		rooms.add(new RoomImpl(202, roomTypes.get(3), Availability.AVAILIBLE));
