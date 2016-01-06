@@ -521,6 +521,8 @@ public class ReservationImpl extends MinimalEObjectImpl.Container implements Res
 		result.append(format.format(preliminaryCheckOut));
 		result.append(", discount code: ");
 		result.append(discountCode);
+		result.append("Canceled");
+		result.append(isCanceled());
 		result.append(')');
 		return result.toString();
 	}
