@@ -201,7 +201,7 @@ public class RoomsImpl extends MinimalEObjectImpl.Container implements Rooms {
 		
 		return roombookings.findByRoomResponsible(nameOfRoomResponsible);
 	}
-
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
