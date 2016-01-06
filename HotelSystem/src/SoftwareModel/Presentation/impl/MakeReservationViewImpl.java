@@ -198,37 +198,49 @@ public class MakeReservationViewImpl extends MinimalEObjectImpl.Container implem
 
 		System.out.println("Make Reservation\n---------------------");
 
-		Date checkInDate = getDate(new Date(new Date().getTime() - 1 * 24 * 3600 * 1000), frame, "check in date (format YY-MM-DD)");
+		Date checkInDate = getDate(new Date(), frame, "check in date (format YY-MM-DD)");
 
 		Date checkOutDate = getDate(checkInDate, frame, "check out date (format YY-MM-DD)");
 		
 		
-
-
 		int numberOfRooms=0;
-
-			
 			do{
 					numberOfRooms = frame.input("number of rooms to reserve (1-9)");
 					if (numberOfRooms > 9 || numberOfRooms < 1){
 						System.out.println("invalid number of room/s");
 					}else{
-						System.out.println("good choice!");
+						System.out.println("GOOD CHOICE!");
 					}
 				
 				}while(numberOfRooms > 9 || numberOfRooms < 1);
 
-		
-		
-		
 		EList<RoomBooking> roomInterests = new BasicEList<RoomBooking>();
 		for (int i = 0; i < numberOfRooms; i++) {
 			roomInterests.add(new RoomBookingImpl());
 		}
 		int room = 1;
+		
+		
 		for (RoomBooking roomInterest : roomInterests) {
-			roomInterest.setAdults(frame.input("number of adults for room " + room));
-			roomInterest.setChildren(frame.input("number of children for room " + room));
+			int adults;
+			int children;
+			do{
+			adults=frame.input("number of adults for room " + room);
+			if(adults>2 || adults <=0){
+				System.out.println("Maximum number of adults can be 2");
+				frame.input("number of adults for room " + room);
+			}else{roomInterest.setAdults(adults);}
+			}while(adults>2 || adults <=0);
+			
+			do{
+				children=frame.input("number of children for room " + room);
+				if(children>2 || children <=0){
+					System.out.println("Maximum number of children can be 2");
+					frame.input("number of children for room " + room);
+				}else{roomInterest.setChildren(children);}
+				}while(children>2 || children <=0);
+			
+			
 			roomInterest.setCheckInDate(checkInDate);
 			roomInterest.setCheckOutDate(checkOutDate);
 			room++;
