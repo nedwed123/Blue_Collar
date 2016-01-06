@@ -179,6 +179,7 @@ public class RoomBookingsImpl extends MinimalEObjectImpl.Container implements Ro
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		Room room = availibleroomfinder.availibleRoom(roomBooking);
+		
 		room.setAvailability(Availability.USED);
 		roomBooking.setRoom(room);
 		roomBooking.setIsCheckedIn(true);
@@ -189,7 +190,6 @@ public class RoomBookingsImpl extends MinimalEObjectImpl.Container implements Ro
 		return roombookingsrepository.getByRoomNr(roomNr);//roombookingsrepository.ge;
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
-		//throw new UnsupportedOperationException();
 	}
 
 	/**
