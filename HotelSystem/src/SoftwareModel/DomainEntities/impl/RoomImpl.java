@@ -544,4 +544,19 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 		return result.toString();
 	}
 
+	@Override
+	public boolean equals(Object obj) {
+		
+		if(obj instanceof Room)
+		{
+			Room room = (Room) obj;
+			
+			return this.number == room.getNumber();
+		}
+		
+		return false;
+	}
+	
+	
+
 } //RoomImpl

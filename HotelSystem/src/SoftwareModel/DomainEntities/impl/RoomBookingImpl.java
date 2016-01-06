@@ -561,5 +561,5 @@ public class RoomBookingImpl extends MinimalEObjectImpl.Container implements Roo
 		result.append(')');
 		return result.toString();
 	}
-
+	
 } // RoomBookingImpl
